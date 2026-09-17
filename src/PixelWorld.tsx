@@ -3,6 +3,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useReducer,
   useState,
   type ComponentType,
 } from "react";
@@ -13,6 +14,8 @@ import { ExpeditionJournal } from "./ExpeditionJournal";
 import { NpcDialogue } from "./NpcDialogue";
 import type { Npc } from "./pixel/npc-data";
 import { navigation } from "./site-data";
+import { HomePrologue } from "./home/HomePrologue";
+import { hasSeenIntro, initialStory, rememberIntro, STORY_BEATS, storyReducer } from "./home/story";
 
 type HeaderProps = { light?: boolean };
 
@@ -60,6 +63,17 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const [promptKey, setPromptKey] = useState<string | null>(null);
   const [atArchive, setAtArchive] = useState(false);
   const [started, setStarted] = useState(false);
+  const [introSeen] = useState(hasSeenIntro);
+  const [story, dispatchStory] = useReducer(storyReducer, introSeen, initialStory);
+  const isStory = story.phase !== "WORLD" && !failed;
+
+  useEffect(() => {
+    if (!isStory) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+    return () => { document.body.style.overflow = previous; };
+  }, [isStory]);
 
   const promptStation = useMemo(
     () => [...STATION_COPY, ARCHIVE_COPY].find((item) => item.key === promptKey) ?? null,
@@ -76,6 +90,11 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       engine = new PixelEngine(surface, host, {
         onLoadProgress: setProgress,
         onReady: () => setReady(true),
+        onIntroComplete: () => {
+          rememberIntro();
+          dispatchStory("ARRIVED");
+          requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }));
+        },
         onMode: setMode,
         onChapter: setChapter,
         onPrompt: (station) => setPromptKey(station ? station.key : null),
@@ -92,6 +111,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       return;
     }
     engineRef.current = engine;
+    if (!introSeen) engine.beginIntro();
     void engine.start().catch((error: unknown) => {
       console.error("DunaTerp world failed to prepare", error);
       if (engineRef.current === engine) { engine?.dispose(); setFailed(true); }
@@ -101,7 +121,18 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       engine?.dispose();
       engineRef.current = null;
     };
-  }, [navigate]);
+  }, [navigate, introSeen]);
+
+  useEffect(() => {
+    if (!ready || failed) return;
+    const engine = engineRef.current;
+    if (story.phase === "OPENING") engine?.beginIntro();
+    else if (story.phase === "TRANSITION") engine?.endIntro();
+    else if (story.phase !== "WORLD") {
+      const shot = STORY_BEATS[story.beat].shot;
+      engine?.setIntroShot(shot.u, shot.x, shot.y);
+    }
+  }, [ready, failed, story]);
 
   // Guided mode: page scroll drives the walk.
   useEffect(() => {
@@ -109,7 +140,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     if (!node) return;
     const update = () => {
       const engine = engineRef.current;
-      if (!engine || engine.mode === "free") return;
+      if (!engine || engine.mode === "free" || isStory) return;
       const top = node.getBoundingClientRect().top + window.scrollY;
       const travel = Math.max(1, node.offsetHeight - window.innerHeight);
       const value = (window.scrollY - top) / travel;
@@ -124,7 +155,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, []);
+  }, [isStory, ready]);
 
   // Free mode pins the document so wandering never scrolls the page away from
   // the world, and hands the scroll position back at the point the hero left.
@@ -201,6 +232,17 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true })));
   }, []);
 
+  const replayIntro = useCallback(() => {
+    const engine = engineRef.current;
+    if (!engine || !ready || failed) return;
+    setDialogueNpc(null);
+    setStarted(false);
+    setAtArchive(false);
+    engine.beginIntro();
+    window.scrollTo(0, 0);
+    dispatchStory("REPLAY");
+  }, [ready, failed]);
+
   const activeChapter = chapter >= 0 ? STATION_COPY[chapter] : null;
 
   return (
@@ -208,9 +250,9 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       id="main-content"
       tabIndex={-1}
       ref={root}
-      className={`px-world${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc ? " has-dialogue" : ""}`}
+      className={`px-world${isStory ? " is-prologue" : ""}${story.phase === "TRANSITION" ? " is-handoff" : ""}${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc ? " has-dialogue" : ""}`}
     >
-      <Header light />
+      <div className="home-world-header" inert={isStory}><Header light /></div>
 
       <div className="px-sticky">
         <div
@@ -218,39 +260,21 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           className="px-stage"
           aria-label="A pixel-art salt lake you can walk through"
         >
-          <canvas ref={canvas} className="px-canvas" tabIndex={0} aria-label="Salt lake exploration. Use WASD or arrow keys to move; E to interact with a nearby guide; Escape to return to guided mode." />
+          <canvas inert={isStory} ref={canvas} className="px-canvas" tabIndex={0} aria-label="Salt lake exploration. Use WASD or arrow keys to move; E to interact with a nearby guide; Escape to return to guided mode." />
         </div>
 
         {!ready && !failed && <LoadingScreen ratio={progress} />}
         {failed && <div className="px-loading" role="alert"><p>The salt lake could not load.</p><Link className="px-button" to="/wiki-map">Read all project chapters</Link><button className="px-button" type="button" onClick={() => window.location.reload()}>Try again</button></div>}
 
-        <section className="px-intro" inert={!ready || started || mode === "free"}>
-          <p className="px-coord"><span /> SCU–CHINA · CHENGDU · iGEM 2026</p>
-          <div className="px-worldmark">
-            <span className="px-worldmark-seal" aria-hidden="true">β</span>
-            <div>
-              <h1><span>Duna</span><i>Terp</i></h1>
-              <p>SALT-ADAPTED · COLOUR ENGINEERED</p>
-            </div>
-          </div>
-          <p className="px-intro-line">
-            One salt-adapted cell. A shared β-carotene hub. Explore the science behind colour and aroma.
-          </p>
-          <div className="px-intro-actions">
-            <button type="button" className="px-button px-button--primary" onClick={beginJourney}>
-              Walk the salt route <span aria-hidden="true">↓</span>
-            </button>
-            <button type="button" className="px-button" onClick={toggleMode}>
-              Explore freely <span aria-hidden="true">✥</span>
-            </button>
-            <Link className="px-button px-button--ghost" to="/project-description">
-              Read the project <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-          <p className="px-hint">
-            Scroll to walk · <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to take over
-          </p>
-        </section>
+        {ready && isStory && <HomePrologue state={story} onNext={() => dispatchStory("NEXT")} onSkip={() => dispatchStory("SKIP")} />}
+
+        <div className="px-world-ui" inert={isStory || !ready || failed}>
+        {!started && mode !== "free" && <section className="world-welcome">
+          <p>QUEST / THE SALT ROUTE</p>
+          <h1>Now the journey is yours.</h1>
+          <span>Scroll to follow the story. Use WASD, arrow keys or Free roam to explore.</span>
+          <button type="button" onClick={beginJourney}>FOLLOW THE SALT ROUTE ↓</button>
+        </section>}
 
         {activeChapter && mode !== "free" && !promptStation && !atArchive && (
           <button type="button" onClick={() => navigate(activeChapter.route)} className="px-hud px-chapter-card" style={{ "--px-accent": activeChapter.color } as React.CSSProperties}>
@@ -302,6 +326,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         </div>}
 
         {!dialogueNpc && <div className="px-controls">
+          <button type="button" className="story-replay" onClick={replayIntro} disabled={!ready || failed}>PLAY INTRO ↺</button>
           <button
             type="button"
             className={`px-mode${mode === "free" ? " is-on" : ""}`}
@@ -361,9 +386,10 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             <button type="button" className="px-button" onClick={restart}>Walk it again ↑</button>
           </footer>
         </section>
+        </div>
       </div>
 
-      <div className="px-scroll-story" inert={ready}>
+      <div className="px-scroll-story" inert={ready || isStory}>
         <div className="px-scroll-lead" aria-hidden="true" />
         {STATION_COPY.map((station, index) => (
           <section
