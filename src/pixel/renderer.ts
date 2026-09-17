@@ -205,8 +205,9 @@ export class PixelRenderer {
     prompt: { x: number; y: number; text: string; accent: string } | null;
     /** NPC names and overhead markers are intentionally shown in free mode. */
     showNpcLabels?: boolean;
+    hideStationLabels?: boolean;
   }) {
-    const { world, camera, drawables, time, daylight, prompt, showNpcLabels = false } = options;
+    const { world, camera, drawables, time, daylight, prompt, showNpcLabels = false, hideStationLabels = false } = options;
     const p = this.buffer;
     const ctx = p.ctx;
     const ox = Math.round(camera.x - p.w / 2);
@@ -282,12 +283,14 @@ export class PixelRenderer {
           Math.round(item.station.y - shadow.h / 2) - oy,
         );
         ctx.drawImage(sprite.canvas, x, y);
-        const plate = this.plateFor(item.station);
-        ctx.drawImage(
-          plate.canvas,
-          Math.round(item.station.x - plate.w / 2) - ox,
-          y - plate.h - 4,
-        );
+        if (!hideStationLabels) {
+          const plate = this.plateFor(item.station);
+          ctx.drawImage(
+            plate.canvas,
+            Math.round(item.station.x - plate.w / 2) - ox,
+            y - plate.h - 4,
+          );
+        }
       } else if (item.kind === "npc") {
         const sprite = this.npcSprite(item.npc, item.facing, item.frame);
         const shadow = atlas.shadowSmall;

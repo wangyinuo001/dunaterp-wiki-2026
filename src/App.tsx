@@ -140,7 +140,7 @@ function ScrollAndTitle() {
 export default function App() {
   const { pathname, search } = useLocation();
   return <><Link className="skip-link" to={{ pathname, search, hash: "#main-content" }}>Skip to content</Link><ScrollAndTitle /><Routes>
-    <Route path="/" element={<Suspense fallback={<><Header /><main id="main-content" tabIndex={-1} className="world-loading"><p className="page-eyebrow">SCU–CHINA / iGEM 2026</p><h1>DunaTerp.</h1><p role="status">Surveying the salt flats…</p><Link to="/wiki-map">Explore the Wiki ↗</Link></main></>}><PixelWorld Header={Header} /></Suspense>} />
+    <Route path="/" element={<Suspense fallback={<><main id="main-content" tabIndex={-1} className="world-loading"><p className="page-eyebrow">SCU–CHINA / iGEM 2026</p><h1>DunaTerp.</h1><p role="status">Surveying the salt flats…</p><Link to="/wiki-map">Explore the Wiki ↗</Link></main></>}><PixelWorld Header={Header} /></Suspense>} />
     <Route path="/wiki-map" element={<WikiMap />} />
     {pageOrder.map((slug) => <Route key={slug} path={`/${slug}`} element={<Article slug={slug} />} />)}
     <Route path="*" element={<Navigate to="/wiki-map" replace />} />

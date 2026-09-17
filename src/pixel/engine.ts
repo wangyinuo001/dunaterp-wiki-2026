@@ -23,6 +23,7 @@ export type Mode = "guided" | "free" | "returning";
 export type EngineEvents = {
   onLoadProgress: (ratio: number) => void;
   onReady: () => void;
+  onIntroComplete?: () => void;
   onMode: (mode: Mode) => void;
   /** Index into world.stations, or -1 between chapters. */
   onChapter: (index: number) => void;
@@ -77,6 +78,8 @@ export class PixelEngine {
   private returnTime = 0;
 
   private camera: Camera = { x: 0, y: 0 };
+  private introShot: Camera | null = null;
+  private introReturn: { elapsed: number; camera: Camera; hero: Camera } | null = null;
   private keys = new Set<string>();
   private stick: {
     active: boolean;
@@ -155,6 +158,7 @@ export class PixelEngine {
     window.addEventListener("keydown", this.onKeyDown);
     window.addEventListener("keyup", this.onKeyUp);
     window.addEventListener("blur", this.onBlur);
+    document.addEventListener("visibilitychange", this.onVisibilityChange);
     this.renderer.display.addEventListener("pointerdown", this.onPointerDown);
     window.addEventListener("pointermove", this.onPointerMove);
     window.addEventListener("pointerup", this.onPointerUp);
@@ -179,6 +183,7 @@ export class PixelEngine {
     window.removeEventListener("keydown", this.onKeyDown);
     window.removeEventListener("keyup", this.onKeyUp);
     window.removeEventListener("blur", this.onBlur);
+    document.removeEventListener("visibilitychange", this.onVisibilityChange);
     this.renderer.display.removeEventListener("pointerdown", this.onPointerDown);
     window.removeEventListener("pointermove", this.onPointerMove);
     window.removeEventListener("pointerup", this.onPointerUp);
@@ -191,6 +196,73 @@ export class PixelEngine {
     const height = this.host.clientHeight;
     if (!width || !height) return;
     this.renderer.resize(width, height, Math.min(window.devicePixelRatio || 1, 2));
+  }
+
+  /** Temporary camera/input ownership; the world, sprites and renderer are retained. */
+  beginIntro() {
+    this.setPaused(true);
+    this.mode = "guided";
+    this.events.onMode(this.mode);
+    this.u = this.targetU = 0.001;
+    this.uVelocity = 0;
+    this.introReturn = null;
+    const guide = this.npcs[0];
+    // Place the traveller on a safe patch beside the guide, off the boardwalk.
+    for (const dx of [24, -24, 32, -32, 0]) {
+      const x = guide.homeX + dx, y = guide.homeY + 10;
+      if (!isBlockedAt(this.world, x - BODY_HALF_W, y - BODY_HALF_H)
+        && !isBlockedAt(this.world, x + BODY_HALF_W, y + BODY_HALF_H)
+        && !isOnDeck(this.world, x, y)) {
+        this.hero.x = x; this.hero.y = y; break;
+      }
+    }
+    this.facing = "left";
+    this.setIntroShot(0.085, -65, -30);
+    this.camera = { ...this.introShot! };
+  }
+
+  setIntroShot(u: number, offsetX = 0, offsetY = 0) {
+    if (!this.paused || this.introReturn) return;
+    const point = this.world.path.sample(u);
+    this.introShot = { x: point.x + offsetX, y: point.y + offsetY };
+  }
+
+  /** Idempotent handoff. Completion is driven by the existing animation loop. */
+  endIntro() {
+    if (!this.introShot || this.introReturn) return;
+    this.introReturn = { elapsed: 0, camera: { ...this.camera }, hero: { x: this.hero.x, y: this.hero.y } };
+  }
+
+  private stepIntro(delta: number) {
+    if (!this.introShot) return;
+    const handoff = this.introReturn;
+    if (handoff) {
+      handoff.elapsed += delta;
+      const t = Math.min(1, handoff.elapsed / (this.reducedMotion ? 0.2 : 1.6));
+      const eased = t * t * (3 - 2 * t);
+      const start = this.world.path.sample(0.001);
+      this.hero.x = handoff.hero.x + (start.x - handoff.hero.x) * eased;
+      this.hero.y = handoff.hero.y + (start.y - handoff.hero.y) * eased;
+      this.camera.x = handoff.camera.x + (start.x - handoff.camera.x) * eased;
+      this.camera.y = handoff.camera.y + (start.y - handoff.camera.y) * eased;
+      if (this.reducedMotion) {
+        this.hero.x = start.x; this.hero.y = start.y;
+        this.camera.x = start.x; this.camera.y = start.y;
+      }
+      if (t >= 1) {
+        this.u = this.targetU = 0.001;
+        this.uVelocity = 0;
+        this.introReturn = null;
+        this.introShot = null;
+        this.setPaused(false);
+        this.events.onIntroComplete?.();
+      }
+    } else {
+      const ease = this.reducedMotion ? 1 : 1 - Math.exp(-2.2 * delta);
+      this.camera.x += (this.introShot.x - this.camera.x) * ease;
+      this.camera.y += (this.introShot.y - this.camera.y) * ease;
+      if (!this.reducedMotion) this.stepNpcs(delta);
+    }
   }
 
   // -- public control ------------------------------------------------------
@@ -367,6 +439,8 @@ export class PixelEngine {
   private onKeyUp = (event: KeyboardEvent) => {
     this.keys.delete(event.key.toLowerCase());
   };
+
+  private onVisibilityChange = () => { this.lastTime = performance.now(); };
 
   private onBlur = () => {
     this.keys.clear();
@@ -691,7 +765,8 @@ export class PixelEngine {
       this.lastTime = now;
       return;
     }
-    const delta = Math.min(0.04, Math.max(0, (now - this.lastTime) / 1000));
+    const elapsed = Math.max(0, (now - this.lastTime) / 1000);
+    const delta = Math.min(0.04, elapsed);
     this.lastTime = now;
 
     const modalOpen = this.hasOpenModal();
@@ -708,7 +783,7 @@ export class PixelEngine {
       else this.stepGuided(delta);
     }
 
-    this.updateProximity();
+    if (!this.introShot) this.updateProximity();
 
     // Camera leads slightly in the direction of travel, and on the guided
     // route it drifts toward whichever station is coming up so the landmark is
@@ -728,8 +803,11 @@ export class PixelEngine {
       }
     }
     const ease = 1 - Math.exp(-(this.mode === "free" ? 7.5 : 5.2) * delta);
-    this.camera.x += (this.hero.x + leadX - this.camera.x) * ease;
-    this.camera.y += (this.hero.y + leadY - this.camera.y) * ease;
+    if (this.introShot) this.stepIntro(elapsed);
+    else {
+      this.camera.x += (this.hero.x + leadX - this.camera.x) * ease;
+      this.camera.y += (this.hero.y + leadY - this.camera.y) * ease;
+    }
     this.renderer.clampCamera(this.camera);
 
     this.heroDrawable.x = this.hero.x;
@@ -742,8 +820,10 @@ export class PixelEngine {
       camera: this.camera,
       drawables: this.drawables,
       time: this.reducedMotion ? 0 : now / 1000,
-      daylight: this.u,
-      prompt: this.activeNpc
+      daylight: this.introReturn
+        ? 0.82 * (1 - Math.min(1, this.introReturn.elapsed / (this.reducedMotion ? 0.2 : 1.6)))
+        : this.introShot ? 0.82 : this.u,
+      prompt: this.introShot ? null : this.activeNpc
         ? {
           x: this.activeNpc.x,
           y: this.activeNpc.y - 26,
@@ -759,6 +839,7 @@ export class PixelEngine {
         }
         : null,
       showNpcLabels: this.mode === "free",
+      hideStationLabels: this.introShot !== null,
     });
   };
 }
