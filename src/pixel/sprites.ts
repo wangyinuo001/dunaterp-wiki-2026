@@ -476,7 +476,7 @@ function stationTheCell(): Painter {
 
 function stationLightArray(): Painter {
   const p = surface(66, 50);
-  // A rack of spectral lamps: the transcriptomics light-quality axis.
+  // A rack of lamps representing the public light-intensity comparison.
   block(p, 4, 40, 58, 6, "C", "G", "F");
   for (const x of [8, 56]) block(p, x, 10, 4, 32, "H", "2", "B");
   rect(p, 8, 10, 52, 3, "H");

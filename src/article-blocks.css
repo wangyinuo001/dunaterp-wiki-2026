@@ -18,7 +18,9 @@
 .research-table-details .research-table-scroll { max-height: 38rem; margin-bottom: 0; }
 .research-table-details thead { position: sticky; top: 0; }
 .research-equation, .research-code pre { max-width: 100%; overflow-x: auto; padding: 1.2rem; background: #edf3f1; border-left: 3px solid #26797d; margin: 1.6rem 0; }
-.research-equation pre { margin: 0; font-family: 'Cambria Math', 'STIX Two Math', Georgia, serif; font-size: 1.05rem; line-height: 2; white-space: pre; }
+.research-equation .katex-display { margin: 0; min-width: max-content; }
+.research-equation .katex { font-size: 1.08em; }
+.research-equation pre { margin: 0; white-space: pre; }
 .research-code pre { font-size: .875rem; line-height: 1.8; }
 .research-code>p { font-size: .875rem; margin-bottom: -.75rem; font-weight: 600; }
 .research-links { padding: 0; list-style: none; }

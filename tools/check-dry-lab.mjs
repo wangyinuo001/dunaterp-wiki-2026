@@ -44,16 +44,31 @@ try {
         React.createElement(ArticleBlocks, { blocks: section.blocks ?? [] })));
       assert(!html.includes('undefined'), section.title);
       assert(!html.includes('src="/figures/'), 'Figure omitted deployment base');
+      assert(!html.includes('research-equation-error'), `Equation failed to render: ${section.title}`);
     }
   }
   const data = JSON.parse(fs.readFileSync('src/content/dry-lab-tables.json','utf8'));
   assert.equal(data.TF_RANKING.rows.length,333);
   data.TF_RANKING.rows.forEach((row,i)=>assert.equal(Number(row[0]), i+1));
   assert.equal(data.RECOVERY.rows.length,16);
-  assert.equal(data.PARAMETERS.rows.length,31);
-  assert.equal(data.ELASTICITY.rows.length,29);
+  assert.equal(data.PARAMETERS.rows.length,27);
+  assert.equal(data.ELASTICITY.rows.length,25);
+  assert(data.ELASTICITY.rows.some(row => row[0] === 'u_lcyb'));
+  assert(!data.ELASTICITY.rows.some(row => /cpp|alpha_|hill_n/i.test(row[0])));
+  assert(!data.PARAMETERS.rows.some(row => /cpp|alpha_|hill_n/i.test(row[0])));
+  assert.equal(data.ROBUSTNESS.rows.length,28);
+  assert.deepEqual(data.ROBUSTNESS.rows.find(row => row[0] === 'expression' && row[1] === 'I')?.slice(2), ['2.375','-0.422','29.621','0.8984']);
   const ode = pages.model.sections.flatMap(s=>s.blocks ?? []).find(b=>b.kind==='equation' && b.label==='Nine-state ODE system');
-  assert.equal(ode.text.split('\n').length,9);
+  assert.equal((ode.text.match(/\\frac\{d/g) ?? []).length,9);
+  for (const slug of ['transcriptomics','model']) {
+    const captions = pages[slug].sections.flatMap(s => s.blocks ?? []).filter(b => b.kind === 'figure').map(b => b.caption);
+    captions.forEach((caption, i) => assert(caption.startsWith('Figure ' + (i + 1) + '.'), 'Figure numbering in ' + slug + ': ' + caption));
+  }
+  assert(!pages.model.sections.some(section => /CPP/i.test(JSON.stringify(section))), 'Unverified CPP regulator remains in modeling');
+  assert(!pages.transcriptomics.sections.some(section => section.title.startsWith('CPP')), 'CPP-only chapter remains');
+  for (const oldFigure of ['branch-allocation.png','light-intensity-pca.png','dry-lab/02_tf_candidates.png']) {
+    assert(!fs.existsSync(path.join('public/figures', oldFigure)), 'Obsolete figure remains: ' + oldFigure);
+  }
   const provenance = JSON.parse(fs.readFileSync('src/content/dry-lab-provenance.json','utf8'));
   for (const [file, hash] of Object.entries(provenance.figure_sha256)) {
     assert.equal(createHash('sha256').update(fs.readFileSync(`public/figures/dry-lab/${file}`)).digest('hex'), hash);
@@ -61,7 +76,7 @@ try {
   assert.equal(figures,11);
   const workflow = fs.readFileSync('.github/workflows/pages.yml','utf8');
   for(const slug of ['dry-lab','transcriptomics','metabolomics','protein','model','hardware']) assert(workflow.includes(`            ${slug} \\`));
-  console.log(`Dry Lab checks passed: 5 ordered chapters, 3 empty pages, ${figures} unchanged figures, ${tables} tables, 333 ranked transcripts and 9 ODEs.`);
+  console.log(`Dry Lab checks passed: 5 ordered chapters, 3 empty pages, ${figures} figures, ${tables} tables, 333 ranked transcripts and 9 ODEs.`);
 } finally {
   await server.close();
 }

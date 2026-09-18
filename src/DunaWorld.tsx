@@ -59,7 +59,7 @@ const chapters = [
     n: "04",
     kicker: "MATHEMATICAL MODEL",
     title: "Find where control moves",
-    body: "Expression, branch kinetics and network capacity ask when more LCYB stops producing a useful gain.",
+    body: "Promoter-response scenarios trace LCYB transcription and enzyme abundance to a simulated β-carotene pool; branch kinetics and FBA are separate model views.",
     link: "/model",
     c: "#f8cb54",
   },

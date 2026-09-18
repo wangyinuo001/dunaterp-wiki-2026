@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import katex from 'katex';
 import type { ContentBlock } from './content/types';
+import 'katex/dist/katex.min.css';
 import './article-blocks.css';
 
 function resolveAsset(src: string) {
@@ -19,12 +21,26 @@ function DataTable({ block }: { block: Extract<ContentBlock, { kind: 'table' }> 
   return block.collapsed ? <details className="research-table-details"><summary>{block.caption} <span>({block.rows.length} rows)</span></summary>{content}</details> : content;
 }
 
+function renderEquation(text: string): string | null {
+  try {
+    return katex.renderToString(text, { displayMode: true, throwOnError: true, trust: false });
+  } catch {
+    return null;
+  }
+}
+
+function Equation({ block }: { block: Extract<ContentBlock, { kind: 'equation' }> }) {
+  const html = renderEquation(block.text);
+  if (html === null) return <div className="research-equation research-equation-error" role="region" aria-label={block.label} tabIndex={0}><pre>{block.text}</pre></div>;
+  return <div className="research-equation" role="region" aria-label={block.label} tabIndex={0} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 export function ArticleBlocks({ blocks }: { blocks: ContentBlock[] }) {
   return <div className="research-blocks">{blocks.map((block, i) => {
     switch (block.kind) {
       case 'paragraph': return <p key={i}>{block.text}</p>;
       case 'heading': return <h3 key={i}>{block.text}</h3>;
-      case 'equation': return <div className="research-equation" role="region" aria-label={block.label} tabIndex={0} key={i}><pre>{block.text}</pre></div>;
+      case 'equation': return <Equation key={i} block={block} />;
       case 'code': return <div className="research-code" key={i}><p>{block.label}</p><pre tabIndex={0}><code>{block.text}</code></pre></div>;
       case 'figure': return <figure className="feature-figure research-figure" key={i}><a href={resolveAsset(block.src)} aria-label={`Open full-size figure: ${block.alt}`}><img src={resolveAsset(block.src)} alt={block.alt} loading="lazy" decoding="async" /></a><figcaption>{block.caption}<span className="figure-credit">Team analysis figure · CC BY 4.0</span></figcaption></figure>;
       case 'table': return <DataTable key={i} block={block} />;
