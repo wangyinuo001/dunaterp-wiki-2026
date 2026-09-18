@@ -1,4 +1,5 @@
 name: Deploy wiki to GitHub Pages
+run-name: Publish wiki preview
 
 on:
   push:
