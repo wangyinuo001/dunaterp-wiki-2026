@@ -73,6 +73,9 @@ main:focus:not(:focus-visible) { outline: none; }
 .section-number { font-size: .875rem; color: var(--muted); padding-top: .3rem; }
 .article-sections h2 { font-size: clamp(1.8rem,3vw,2.8rem); line-height: 1.15; letter-spacing: -.03em; font-weight: 400; }
 .article-sections p, .article-sections li { max-width: 68ch; font-size: 1.0625rem; line-height: 1.85; color: #365047; }
+.article-page--dry-lab .article-sections>section>div:last-child { min-width: 0; width: min(100%, 52rem); }
+.article-page--dry-lab .article-sections p,
+.article-page--dry-lab .article-sections li { max-width: none; }
 .article-sections ul { padding-left: 1.2rem; }
 .article-sections li { padding-left: .4rem; margin-bottom: .7rem; }
 .article-sections li::marker { color: #6a853c; }

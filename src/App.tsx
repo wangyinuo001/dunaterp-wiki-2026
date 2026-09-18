@@ -53,12 +53,12 @@ function Header({ light = false }: { light?: boolean }) {
     <nav className="desktop-nav" aria-label="Primary navigation">
       {navigation.map((group) => <details key={group.label} name="desktop-navigation">
         <summary className={group.items.some(([, href]) => href === currentPath) ? "is-current" : undefined}>{group.label}<span aria-hidden="true">⌄</span></summary>
-        <div className="nav-popover"><p>{group.label === 'Dry Lab' ? <Link to="/dry-lab">Dry Lab overview</Link> : group.label}</p>{group.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}<span aria-hidden="true">↗</span></Link>)}</div>
+        <div className="nav-popover"><p>{group.label === 'Dry Lab' ? <Link to="/dry-lab">Dry Lab</Link> : group.label}</p>{group.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}<span aria-hidden="true">↗</span></Link>)}</div>
       </details>)}
       <Link className="nav-index" to="/wiki-map" aria-current={currentPath === "/wiki-map" ? "page" : undefined}>Explore Wiki <span aria-hidden="true">↗</span></Link>
     </nav>
     <details className="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">
-      {navigation.map((group) => <div className="mobile-nav-group" key={group.label}><p>{group.label === 'Dry Lab' ? <Link to="/dry-lab">Dry Lab overview</Link> : group.label}</p>{group.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}</Link>)}</div>)}
+      {navigation.map((group) => <div className="mobile-nav-group" key={group.label}><p>{group.label === 'Dry Lab' ? <Link to="/dry-lab">Dry Lab</Link> : group.label}</p>{group.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}</Link>)}</div>)}
       <Link className="mobile-map-link" to="/wiki-map">Explore all pages ↗</Link>
     </nav></details>
   </header>;
@@ -98,7 +98,7 @@ function Article({ slug }: { slug: string }) {
   const group = navigation.find((item) => item.items.some(([, href]) => href === `/${slug}`));
   const figureSrc = page.figure ? resolveFigureSrc(page.figure.src) : "";
   const hasContent = page.sections.length > 0;
-  return <><Header /><main id="main-content" tabIndex={-1} className="article-page">
+  return <><Header /><main id="main-content" tabIndex={-1} className={`article-page${group?.label === 'Dry Lab' || slug === 'dry-lab' ? ' article-page--dry-lab' : ''}`}>
     <nav className="breadcrumbs" aria-label="Breadcrumb"><Link to="/wiki-map">Wiki</Link><span aria-hidden="true">/</span>{group && <>{group.label === 'Dry Lab' ? <Link to="/dry-lab">Dry Lab</Link> : <span>{group.label}</span>}<span aria-hidden="true">/</span></>}<span aria-current="page">{group?.items.find(([, href]) => href === `/${slug}`)?.[0] || page.title}</span></nav>
     <header className="article-hero"><div><p className="page-eyebrow">{page.eyebrow}</p><h1>{page.title}</h1></div>{page.intro && <div className="article-intro"><Status status={page.status} /><p>{page.intro}</p></div>}</header>
     {hasContent && <>
