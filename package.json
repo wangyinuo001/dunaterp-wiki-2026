@@ -21,7 +21,7 @@
     "katex": "^0.16.22",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "react-router-dom": "7.9.0",
+    "react-router-dom": "7.18.4",
     "three": "0.183.2"
   },
   "devDependencies": {
