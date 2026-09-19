@@ -74,7 +74,7 @@ try {
   for (const [file, hash] of Object.entries(provenance.figure_sha256)) {
     assert.equal(createHash('sha256').update(fs.readFileSync(`public/figures/dry-lab/${file}`)).digest('hex'), hash);
   }
-  assert.equal(figures,5);
+  assert.equal(figures,6);
   const workflow = fs.readFileSync('.github/workflows/pages.yml','utf8');
   for(const slug of ['dry-lab','transcriptomics','metabolomics','protein','model','hardware']) assert(workflow.includes(`            ${slug} \\`));
   console.log(`Dry Lab checks passed: 5 ordered chapters, 3 empty pages, ${figures} figures, ${tables} tables, 333 ranked transcripts and 5 core ODEs.`);
