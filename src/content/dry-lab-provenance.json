@@ -1,18 +1,11 @@
 {
-  "source": "Team-authored transcriptomics and mathematical modeling manuscript",
-  "source_sha256": "72c65d091a63be79c92a71b2681466d09ff37879e4e449b617e3a61a2afcae65",
-  "revision_date": "2026-09-18",
+  "source": "Team-authored transcriptomics analysis and regulatory LCYB model",
+  "revision_date": "2026-09-19",
   "figure_sha256": {
     "01_gene_recovery.png": "d3ac58241b6451850fe19dc962f682ab3620e8fe3ba81985d715fca7aead340c",
-    "03_ode_dynamics.png": "5b7ba779839d651d45782ab118597fbe3ffeb9dc43c8686502761c672a1ca10c",
-    "04_ode_robustness.png": "cb58740dfddb4f69c621bce417044bd3ec1c0ec3565aac00a38865a1cae9cf98",
-    "05_fba_tradeoff.png": "92013762eda2f92ce2de0c95e90db2b52a341201eac3fa92ed790632ff2b43be",
     "06_expression_qc.png": "389f4f02ac547ff2eeb60cf04a8ed030d0e06a6f0b3733b3857b9c98d9aead57",
     "07_differential_expression.png": "49bd2329655fc0b12df007bd5d1ef8fe87bf49c21bb9c16cdf489323debe2b42",
     "08_response_modules.png": "77493bdecffdb04e871180e67b3449dded6885f9e94af37aa5eb13fb7bc7692c",
-    "09_model_structure.png": "7d18ecf4cd604a8f723c00714c4ed42818b99210b62b4a2112288c0d9e3f2940",
-    "10_calibration.png": "c4a9175b07bd5d7ce0416da5cbfaf7f02dddcdd8610d24eea7b2b346a473ced3",
-    "11_local_sensitivity.png": "927c9bd885f8c4adc84057b3c7008f81f7a36e28e93b4685e6a540ea73093e77",
-    "13_promoter_regulation.png": "bf92745254e66784b1d744886ae34693815eec0065e2db035649852ee91b64de"
+    "14_regulatory_model.png": "2211806bad70f0c6bf619f41e65b8012f3dbf5dc348773e97f07a4310dc6de18"
   }
 }

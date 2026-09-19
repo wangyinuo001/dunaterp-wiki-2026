@@ -73,7 +73,7 @@ export const STATION_COPY: StationCopy[] = [
     index: "04",
     kicker: "MATHEMATICAL MODEL",
     title: "Find where control moves",
-    body: "A promoter-response scenario flows through LCYB transcript and enzyme abundance to a simulated β-carotene pool. Downstream branches and FBA are separate model views.",
+    body: "A five-state model connects regulator abundance and promoter occupancy to LCYB transcript, active enzyme and the β-carotene pool. Its parameters are reported with units and evidence status.",
     route: "/model",
     color: "#e9c43a",
     accent: "u",

@@ -59,7 +59,7 @@ const chapters = [
     n: "04",
     kicker: "MATHEMATICAL MODEL",
     title: "Find where control moves",
-    body: "Promoter-response scenarios trace LCYB transcription and enzyme abundance to a simulated β-carotene pool; branch kinetics and FBA are separate model views.",
+    body: "A five-state model connects regulator abundance and promoter occupancy to LCYB transcription, enzyme abundance and the β-carotene pool. Quantitative prediction begins after the listed kinetic inputs are measured.",
     link: "/model",
     c: "#f8cb54",
   },
