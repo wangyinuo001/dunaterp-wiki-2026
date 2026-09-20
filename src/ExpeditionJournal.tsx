@@ -7,7 +7,8 @@ import {
   type CSSProperties,
 } from "react";
 import "./expedition.css";
-import { getAtlas } from "./pixel/sprites";
+import { NPC_DEFINITIONS } from "./pixel/npc-data";
+import { npcPersonFrame } from "./pixel/sprites";
 
 /** IDs used by the world engine when an explorer meets a field contact. */
 // Shared with the compact in-world dialogue component.
@@ -240,16 +241,13 @@ export function PixelPortrait({ npc }: { npc: ExpeditionNpc }) {
   useEffect(() => {
     const ctx = portrait.current?.getContext("2d");
     if (!ctx) return;
-    const sprite = getAtlas().hero.down[0];
+    const appearance = NPC_DEFINITIONS.find((definition) => definition.id === npc.id);
+    if (!appearance) return;
+    const sprite = npcPersonFrame(appearance, "down", 0);
     ctx.clearRect(0, 0, 28, 28);
-    ctx.drawImage(sprite.canvas, 7, 4);
-    ctx.globalCompositeOperation = "source-atop";
-    ctx.globalAlpha = .24;
-    ctx.fillStyle = npc.accent;
-    ctx.fillRect(0, 0, 28, 28);
-    ctx.globalAlpha = 1;
-    ctx.globalCompositeOperation = "source-over";
-  }, [npc.accent]);
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(sprite.canvas, 6, 4);
+  }, [npc.id]);
   return <canvas ref={portrait} width={28} height={28} className="ej-portrait" aria-hidden="true" />;
 }
 

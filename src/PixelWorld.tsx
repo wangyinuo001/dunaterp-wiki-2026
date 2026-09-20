@@ -15,7 +15,7 @@ import { NpcDialogue } from "./NpcDialogue";
 import type { Npc } from "./pixel/npc-data";
 import { navigation } from "./site-data";
 import { HomePrologue } from "./home/HomePrologue";
-import { hasSeenIntro, initialStory, rememberIntro, STORY_BEATS, storyReducer } from "./home/story";
+import { initialStory, STORY_BEATS, storyReducer } from "./home/story";
 
 type HeaderProps = { light?: boolean };
 
@@ -63,8 +63,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const [promptKey, setPromptKey] = useState<string | null>(null);
   const [atArchive, setAtArchive] = useState(false);
   const [started, setStarted] = useState(false);
-  const [introSeen] = useState(hasSeenIntro);
-  const [story, dispatchStory] = useReducer(storyReducer, introSeen, initialStory);
+  const [story, dispatchStory] = useReducer(storyReducer, false, initialStory);
   const isStory = story.phase !== "WORLD" && !failed;
 
   useEffect(() => {
@@ -91,7 +90,6 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         onLoadProgress: setProgress,
         onReady: () => setReady(true),
         onIntroComplete: () => {
-          rememberIntro();
           dispatchStory("ARRIVED");
           requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }));
         },
@@ -111,7 +109,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       return;
     }
     engineRef.current = engine;
-    if (!introSeen) engine.beginIntro();
+    engine.beginIntro();
     void engine.start().catch((error: unknown) => {
       console.error("DunaTerp world failed to prepare", error);
       if (engineRef.current === engine) { engine?.dispose(); setFailed(true); }
@@ -121,7 +119,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       engine?.dispose();
       engineRef.current = null;
     };
-  }, [navigate, introSeen]);
+  }, [navigate]);
 
   useEffect(() => {
     if (!ready || failed) return;

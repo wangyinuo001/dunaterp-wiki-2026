@@ -132,6 +132,12 @@ export type Facing = "down" | "up" | "left" | "right";
 
 export type HeroSheet = Record<Facing, Painter[]>;
 
+export type NpcSpriteAppearance = {
+  tint: string;
+  accent: string;
+  accessory: "satchel" | "helmet" | "notebook";
+};
+
 function buildHero(): HeroSheet {
   const down = fromGrid(HERO_DOWN);
   const up = fromGrid(HERO_UP);
@@ -139,6 +145,96 @@ function buildHero(): HeroSheet {
   const right = mirrored(left);
   const frames = (base: Painter) => [0, 1, 2, 3].map((i) => heroFrame(base, i));
   return { down: frames(down), up: frames(up), left: frames(left), right: frames(right) };
+}
+
+// ---------------------------------------------------------------------------
+// Field contacts
+// ---------------------------------------------------------------------------
+// These figures deliberately use the same visual grammar as the people in the
+// opening story: a broad coloured cap, a warm square face, a solid coloured
+// body and two pale legs. Their small field accessories distinguish the three
+// guides without turning them back into recoloured copies of the player.
+
+const NPC_W = 16;
+const NPC_H = 20;
+const NPC_SKIN = "#deb78b";
+const NPC_LEGS = "#eadcb9";
+const NPC_INK = "#06221f";
+
+function fill(
+  p: Painter,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  colour: string,
+) {
+  p.ctx.fillStyle = colour;
+  p.ctx.fillRect(x, y, w, h);
+}
+
+/** A map-scale version of the opening story's pixel person. */
+export function npcPersonFrame(
+  appearance: NpcSpriteAppearance,
+  facing: Facing,
+  frameIndex: number,
+): Painter {
+  const p = surface(NPC_W, NPC_H);
+  const step = frameIndex % 4;
+  const bob = step % 2 === 1 ? -1 : 0;
+  const leftStep = step === 1 ? -1 : step === 3 ? 1 : 0;
+  const rightStep = -leftStep;
+  const { tint, accent, accessory } = appearance;
+
+  // Hat/cap: the same stepped silhouette used by StoryGlyph's person.
+  fill(p, 5, 1 + bob, 6, 2, tint);
+  fill(p, 3, 3 + bob, 10, 2, tint);
+  fill(p, 2, 5 + bob, 12, 2, tint);
+  fill(p, 3, 6 + bob, 10, 1, NPC_INK);
+
+  // Head. Side and rear views preserve the same block dimensions so the
+  // character does not change size while walking.
+  fill(p, 4, 7 + bob, 8, 5, NPC_INK);
+  fill(p, 5, 7 + bob, 6, 4, facing === "up" ? tint : NPC_SKIN);
+  if (facing === "down") {
+    fill(p, 6, 9 + bob, 1, 1, NPC_INK);
+    fill(p, 9, 9 + bob, 1, 1, NPC_INK);
+  } else if (facing === "left") {
+    fill(p, 5, 9 + bob, 1, 1, NPC_INK);
+  } else if (facing === "right") {
+    fill(p, 10, 9 + bob, 1, 1, NPC_INK);
+  }
+
+  // Solid story-card body with a one-pixel outline and bright identity stripe.
+  fill(p, 2, 12 + bob, 12, 5, NPC_INK);
+  fill(p, 3, 12 + bob, 10, 4, tint);
+  fill(p, 3, 12 + bob, 10, 1, accent);
+
+  // Walking legs remain pale, matching the opening glyph.
+  fill(p, 4 + leftStep, 17, 4, 3, NPC_INK);
+  fill(p, 5 + leftStep, 17, 2, 2, NPC_LEGS);
+  fill(p, 8 + rightStep, 17, 4, 3, NPC_INK);
+  fill(p, 9 + rightStep, 17, 2, 2, NPC_LEGS);
+
+  // Compact props retain each guide's role at map scale.
+  if (accessory === "helmet") {
+    fill(p, 4, 0 + bob, 8, 2, accent);
+    fill(p, 2, 2 + bob, 12, 1, accent);
+  } else if (accessory === "satchel") {
+    const bagX = facing === "left" ? 11 : 2;
+    fill(p, bagX, 13 + bob, 3, 4, NPC_INK);
+    fill(p, bagX + 1, 14 + bob, 2, 2, accent);
+    if (facing !== "up") {
+      const shoulderX = facing === "left" ? 10 : 4;
+      for (let i = 0; i < 5; i += 1) fill(p, shoulderX + (facing === "left" ? -i : i), 11 + i, 1, 1, NPC_INK);
+    }
+  } else {
+    const bookX = facing === "left" ? 1 : 12;
+    fill(p, bookX, 13 + bob, 3, 4, NPC_INK);
+    fill(p, bookX + (facing === "left" ? 1 : 0), 14 + bob, 2, 2, accent);
+  }
+
+  return p;
 }
 
 // ---------------------------------------------------------------------------

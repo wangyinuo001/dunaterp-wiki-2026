@@ -43,10 +43,3 @@ export function storyReducer(state: StoryState, event: StoryEvent): StoryState {
   const beat = state.beat + 1;
   return beat >= STORY_BEATS.length ? { ...state, phase: "TRANSITION" } : { beat, phase: STORY_BEATS[beat].phase };
 }
-export const INTRO_STORAGE_KEY = "dunaterpIntroSeen";
-export function hasSeenIntro() {
-  try { return localStorage.getItem(INTRO_STORAGE_KEY) === "true"; } catch { return false; }
-}
-export function rememberIntro() {
-  try { localStorage.setItem(INTRO_STORAGE_KEY, "true"); } catch { /* Exploration works without storage. */ }
-}

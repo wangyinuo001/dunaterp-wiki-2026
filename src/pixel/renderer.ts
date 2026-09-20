@@ -7,7 +7,7 @@
 
 import { drawText, textWidth } from "./font";
 import { rect, surface, type Painter } from "./paint";
-import { deckSegment, getAtlas, stationPlate, type Facing } from "./sprites";
+import { deckSegment, getAtlas, npcPersonFrame, stationPlate, type Facing } from "./sprites";
 import type { Npc } from "./npc-data";
 import { TILE, Tile, paintTile } from "./tiles";
 import {
@@ -39,7 +39,7 @@ export class PixelRenderer {
   private buffer: Painter;
   private ground: HTMLCanvasElement | null = null;
   private plates = new Map<string, Painter>();
-  /** Tinted/accessoried hero frames, cached so render never allocates canvases. */
+  /** Opening-story-style contact frames, cached so render never allocates canvases. */
   private npcSprites = new Map<string, Painter>();
   scale = 3;
 
@@ -154,43 +154,7 @@ export class PixelRenderer {
     const cached = this.npcSprites.get(key);
     if (cached) return cached;
 
-    const base = getAtlas().hero[facing][frame % 4];
-    const sprite = surface(base.w, base.h);
-    const ctx = sprite.ctx;
-    ctx.drawImage(base.canvas, 0, 0);
-
-    // Keep the original hero's palette and linework, then add a restrained
-    // source-atop tint so each NPC is readable at a glance without introducing
-    // a second art style.
-    ctx.save();
-    ctx.globalCompositeOperation = "source-atop";
-    ctx.globalAlpha = 0.34;
-    ctx.fillStyle = npc.tint;
-    ctx.fillRect(0, 0, sprite.w, sprite.h);
-    ctx.restore();
-
-    ctx.fillStyle = npc.accent;
-    ctx.strokeStyle = "#06221f";
-    ctx.lineWidth = 1;
-    if (npc.accessory === "helmet") {
-      // Hard, one-pixel helmet brim and crown.
-      ctx.fillRect(2, 1, 10, 2);
-      ctx.fillRect(4, 0, 6, 1);
-      ctx.fillStyle = "#06221f";
-      ctx.fillRect(2, 3, 10, 1);
-    } else if (npc.accessory === "satchel") {
-      // Satchel over one shoulder, plus a bright sample vial in hand.
-      ctx.fillRect(1, 10, 3, 6);
-      ctx.fillStyle = "#06221f";
-      ctx.fillRect(1, 10, 3, 1);
-      ctx.fillStyle = npc.accent;
-      ctx.fillRect(facing === "left" ? 10 : 1, 13, 2, 3);
-    } else {
-      // Research notebook held low; the pale edge survives the tint wash.
-      ctx.fillRect(facing === "left" ? 2 : 10, 12, 3, 4);
-      ctx.fillStyle = "#06221f";
-      ctx.fillRect(facing === "left" ? 2 : 10, 12, 3, 1);
-    }
+    const sprite = npcPersonFrame(npc, facing, frame);
     this.npcSprites.set(key, sprite);
     return sprite;
   }
