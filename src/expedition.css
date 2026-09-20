@@ -24,7 +24,7 @@
 }
 
 .ej-shell button {
-  font: inherit;
+  font-family: inherit;
 }
 
 .ej-launcher {
@@ -42,9 +42,8 @@
   color: var(--ej-ink);
   box-shadow: 5px 5px 0 rgba(6, 34, 31, .76);
   cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 900;
-  letter-spacing: .05em;
+  font: 800 .82rem/1 ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, monospace;
+  letter-spacing: .1em;
   text-transform: uppercase;
   transition: transform .08s steps(2), box-shadow .08s steps(2);
 }
@@ -991,11 +990,11 @@
 }
 
 /* Keep expedition controls clear of the movement bar and header. */
-.ej-launcher { top: 6rem; bottom: auto; right: 4.8rem; max-width: calc(100vw - 6rem); min-height: 44px; }
+.ej-launcher { top: 6rem; bottom: auto; right: 8.5rem; max-width: calc(100vw - 10rem); min-height: 44px; }
 .ej-header__dek, .ej-speech p, .ej-response, .ej-game__intro, .ej-contact-note, .ej-choice span, .ej-feedback { font-size: 1rem; }
 .ej-npc-card { min-width: 0; }
 .ej-npc-card__copy { min-width: 0; overflow-wrap: anywhere; }
 .ej-shell button { min-height: 44px; }
 .ej-dialog__body { min-height: 0; }
-@media (max-width: 800px) { .ej-launcher { top: 5.4rem; left: 1rem; right: auto; padding: .5rem; letter-spacing: 0; font-size: .875rem; } }
+@media (max-width: 800px) { .ej-launcher { top: 5.4rem; left: 1rem; right: auto; max-width: calc(100vw - 7.5rem); padding: .5rem; letter-spacing: .06em; font-size: .82rem; } }
 @media (max-height: 560px) { .ej-header__dek, .ej-contact-note { display: none; } .ej-header { padding: .6rem; } .ej-footer { padding: .5rem; } }

@@ -370,7 +370,7 @@
 .px-restart {
   position: absolute;
   z-index: 24;
-  right: clamp(1rem, 3vw, 2.5rem);
+  right: clamp(4.5rem, 6vw, 5rem);
   top: 6rem;
   width: 2.6rem;
   height: 2.6rem;
@@ -521,7 +521,7 @@
   .px-controls { left: 1rem; right: 1rem; bottom: 4.6rem; justify-items: stretch; text-align: center; }
   .px-mode { width: 100%; }
   .px-prompt { left: 1rem; right: 1rem; bottom: 12.5rem; transform: none; }
-  .px-restart { top: 5.4rem; }
+  .px-restart { top: 5.4rem; right: 4.5rem; }
   .px-route { bottom: 1.4rem; }
   .px-intro { width: 100%; }
   .px-intro-actions { display: grid; grid-template-columns: 1fr; width: 100%; }
