@@ -550,6 +550,7 @@
 .px-world.is-free .px-route { display: none; }
 .px-world.has-dialogue .ej-launcher,
 .px-world.has-dialogue .px-restart { display: none; }
+.px-world.has-dialogue .px-stage { filter: brightness(.72) saturate(.72); }
 .px-world .px-mode-help { font-size: .875rem; }
 .px-controls .px-touch-help { display: none; }
 .px-dpad { display: none; }

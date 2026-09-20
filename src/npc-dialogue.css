@@ -15,12 +15,13 @@
   color: var(--npc-ink);
   box-shadow: 10px 10px 0 rgba(6, 34, 31, .72);
   transform: translateX(-50%);
-  animation: npcDialogueIn .2s steps(4) both;
+  isolation: isolate;
+  animation: npcDialogueIn .16s steps(3) both;
 }
 
 @keyframes npcDialogueIn {
-  from { opacity: 0; transform: translate(-50%, 14px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+  from { transform: translate(-50%, 14px); }
+  to { transform: translate(-50%, 0); }
 }
 
 .npc-dialogue::before {
@@ -70,6 +71,7 @@
 .npc-dialogue__story {
   min-width: 0;
   padding: 1rem 1.2rem .9rem;
+  background: var(--npc-paper);
 }
 
 .npc-dialogue__nameplate {
@@ -91,13 +93,13 @@
 }
 
 .npc-dialogue__nameplate strong {
-  font: 900 1.12rem/1.1 ui-monospace, Menlo, monospace;
+  font: 900 1.25rem/1.1 ui-monospace, Menlo, monospace;
   letter-spacing: .04em;
   text-transform: uppercase;
 }
 
 .npc-dialogue__nameplate span {
-  font: 800 .78rem/1.2 ui-monospace, Menlo, monospace;
+  font: 900 .86rem/1.2 ui-monospace, Menlo, monospace;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -120,15 +122,16 @@
 .npc-dialogue__line {
   min-height: 4.6rem;
   margin: 0;
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1.55;
+  color: var(--npc-ink);
+  font-size: 1.08rem;
+  font-weight: 780;
+  line-height: 1.5;
 }
 
 .npc-dialogue__hint {
   margin: .65rem 0 0;
-  color: #4d625d;
-  font: 800 .75rem/1.4 ui-monospace, Menlo, monospace;
+  color: #304741;
+  font: 900 .8rem/1.4 ui-monospace, Menlo, monospace;
   letter-spacing: .05em;
   text-transform: uppercase;
 }
@@ -151,10 +154,10 @@
   width: 100%;
   padding: .62rem .7rem;
   border: 3px solid var(--npc-ink);
-  background: var(--npc-paper);
+  background: #fffaf0;
   color: var(--npc-ink);
   cursor: pointer;
-  font: 800 .8rem/1.3 ui-monospace, Menlo, monospace;
+  font: 900 .9rem/1.35 ui-monospace, Menlo, monospace;
   text-align: left;
   box-shadow: 3px 3px 0 var(--npc-ink);
 }
