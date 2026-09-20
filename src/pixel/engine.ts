@@ -826,7 +826,8 @@ export class PixelEngine {
       prompt: this.introShot ? null : this.activeNpc
         ? {
           x: this.activeNpc.x,
-          y: this.activeNpc.y - 26,
+          // Stack the interaction prompt above the NPC's marker and name.
+          y: this.activeNpc.y - 49,
           text: "E  TALK",
           accent: this.activeNpc.paletteKey,
         }
