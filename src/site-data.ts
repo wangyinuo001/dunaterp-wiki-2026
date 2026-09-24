@@ -32,16 +32,50 @@ export const pages: Record<string, WikiPage> = {
   metabolomics: emptyDryLabPage('Metabolomics'),
   protein: emptyDryLabPage('Protein'),
   "project-description": {
-    title: "A chassis shaped by salt",
+    title: "DunaTerp: a salt-adapted terpenoid platform",
     eyebrow: "Project description",
-    intro: "DunaTerp explores how the salt-adapted microalga Dunaliella salina can become a modular platform for high-value terpenoid ingredients. Our design connects native precursor metabolism, light-responsive regulation and separate downstream product branches.",
+    intro: "DunaTerp uses the halophilic microalga Dunaliella salina as a photosynthetic chassis and β-carotene as a shared metabolic hub, then directs carbon into four separately cultivated high-value terpenoid product strains.",
     status: "team-draft",
     sections: [
-      { eyebrow: "The idea", title: "Start from a natural hub", body: "Our design places β-carotene at the centre of the platform. Rather than treating every target as a separate pathway, we aim to enlarge and stabilise a shared precursor pool, then route it through product-specific downstream enzymes." },
-      { eyebrow: "Four product lines", title: "One hub, four destinations", body: "The repository explores four candidate product routes. Each is intended for a separately cultivated strain; this does not mean that four engineered production strains have been established.", items: ["Astaxanthin via ketolation and hydroxylation", "β-ionone via CCD1 cleavage", "Crocetin through a zeaxanthin-derived branch; crocin would require additional glycosylation", "β-citraurin through a zeaxanthin-cleavage branch"], note: "Product choices, enzyme sources and construct details must be checked against the team's final design before Wiki Freeze." },
-      { eyebrow: "Platform strategy", title: "Connect the cell to the cultivation system", body: "The proposed platform combines the native plastid MEP pathway with transcription-factor-mediated regulation, chloroplast-targeted expression elements and coordinated light and salt conditions. A flat-panel airlift reactor concept connects these cellular design questions to mixing and illumination. Each module requires its own validation; combining them on a diagram does not demonstrate a functioning production platform." },
-      { eyebrow: "Application", title: "Ingredients are the goal, validation is the next step", body: "Astaxanthin, β-ionone and crocetin motivate the platform through their pigment or aroma applications. The repository also explores β-citraurin as a fourth branch. Food use, productivity and environmental benefits are intended applications, not established properties of the engineered strains. They require product characterisation and an assessment of the complete production process." },
-      { eyebrow: "Shared control point", title: "LCYB at the branch", body: "Lycopene β-cyclase directs lycopene toward the β-carotene hub, so pathway structure selected LCYB for modeling. Public light-intensity data describe pathway expression and rank transcription-factor homologs; the five-state model defines how a measured promoter response can propagate through LCYB transcript and enzyme to β-carotene." },
+      {
+        eyebrow: "Why this chassis",
+        title: "Background & Challenge",
+        body: "Many high-value terpenoids are still obtained from plant material, where slow growth, seasonal supply, low product abundance and water- and land-intensive cultivation constrain production. Freshwater scarcity further limits conventional biomass routes. DunaTerp therefore starts with Dunaliella salina, a photosynthetic microalga that grows in seawater and hypersaline media and naturally accumulates carotenoids, linking solar carbon fixation to a salt-compatible production chassis."
+      },
+      {
+        eyebrow: "One shared metabolic hub",
+        title: "Biological Design",
+        body: "The design strengthens the native carotenoid pathway around β-carotene. LCYB directs lycopene into this shared hub, while light-responsive regulation and chloroplast-targeted expression coordinate hub supply. Product-specific enzymes then divide the platform into four separately cultivated production strains."
+      },
+      {
+        eyebrow: "Product architecture",
+        title: "Four High-Value Terpenoid Routes",
+        body: "Our platform branches from the β-carotene hub into four product routes. BKT and BCH convert the hub toward astaxanthin; CCD1 cleaves β-carotene to β-ionone; BCH supplies zeaxanthin for the GjCCD4a–GjALDH2C3 crocetin route and the CitCCD4 β-citraurin route.",
+        blocks: [
+          {
+            kind: "figure",
+            src: "/figures/project/01_product_routes.svg",
+            alt: "DunaTerp metabolic design from light and carbon through lycopene and beta-carotene to astaxanthin, beta-ionone, crocetin and beta-citraurin",
+            caption: "The native carotenoid pathway supplies a shared β-carotene hub. Product-specific enzymes create four separately cultivated branches."
+          }
+        ],
+        items: [
+          "Astaxanthin — BKT and BCH add keto and hydroxyl groups to β-carotene.",
+          "β-ionone — CCD1 cleaves β-carotene to release the aroma compound.",
+          "Crocetin — BCH supplies zeaxanthin, GjCCD4a forms crocetin dialdehyde and GjALDH2C3 oxidises it to crocetin.",
+          "β-citraurin — BCH supplies zeaxanthin and CitCCD4 performs the cleavage step."
+        ]
+      },
+      {
+        eyebrow: "From intracellular flux to cultivation",
+        title: "Product & Process Characterisation",
+        body: "Characterisation is organised around product identity, titre, conversion efficiency and by-product profiles for each strain. Light delivery, salinity, biomass productivity and recovery yield connect intracellular pathway performance to the flat-panel airlift process and provide a common basis for comparing the four production routes."
+      },
+      {
+        eyebrow: "Shared control point",
+        title: "LCYB Controls Entry to the Hub",
+        body: "Lycopene β-cyclase converts lycopene into the β-carotene hub used by every product branch. Transcriptomics identifies light-responsive pathway behaviour and ranks coexpressed transcription-factor homologs. The regulatory model then follows control from promoter occupancy through LCYB transcript and active enzyme to β-carotene formation."
+      },
     ],
   },
   engineering: {

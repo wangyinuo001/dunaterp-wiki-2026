@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">DunaTerp product architecture</title>
+  <desc id="desc">Light and carbon feed the native MEP carotenoid pathway. LCYB converts lycopene to a shared beta-carotene hub, which branches to astaxanthin, beta-ionone, crocetin and beta-citraurin.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#123e35"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#123e35" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .ink{fill:#123e35}.muted{fill:#526d66}.line{fill:none;stroke:#123e35;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .dash{fill:none;stroke:#5b7b73;stroke-width:4;stroke-linecap:round;stroke-dasharray:10 12;marker-end:url(#arrow)}
+      .kicker{font:700 22px Arial,sans-serif;letter-spacing:4px}.title{font:700 48px Georgia,serif}.nodeTitle{font:700 27px Arial,sans-serif}.nodeText{font:500 20px Arial,sans-serif}.enzyme{font:700 18px Arial,sans-serif;letter-spacing:.5px}.small{font:500 17px Arial,sans-serif}.product{font:700 25px Arial,sans-serif}.type{font:600 14px Arial,sans-serif;letter-spacing:.8px}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" rx="34" fill="#fbfaf3"/>
+  <path d="M0 0H1600V16H0Z" fill="#cdf558"/>
+  <text x="82" y="86" class="kicker muted">DUNATERP PRODUCT ARCHITECTURE</text>
+  <text x="82" y="145" class="title ink">One β-carotene hub, four product routes</text>
+  <text x="82" y="188" class="nodeText muted">A native carotenoid pathway supplies the hub; product-specific enzymes define each branch.</text>
+
+  <!-- native input and carotenoid backbone -->
+  <g filter="url(#shadow)">
+    <rect x="82" y="284" width="205" height="116" rx="24" fill="#e9f4ef" stroke="#123e35" stroke-width="3"/>
+    <text x="184" y="330" text-anchor="middle" class="nodeTitle ink">LIGHT + CO₂</text>
+    <text x="184" y="366" text-anchor="middle" class="nodeText muted">photosynthetic input</text>
+  </g>
+  <path class="line" d="M287 342H348"/>
+  <g filter="url(#shadow)">
+    <rect x="356" y="284" width="205" height="116" rx="24" fill="#dff4ec" stroke="#123e35" stroke-width="3"/>
+    <text x="458" y="330" text-anchor="middle" class="nodeTitle ink">MEP / GGPP</text>
+    <text x="458" y="366" text-anchor="middle" class="nodeText muted">native precursor supply</text>
+  </g>
+  <path class="line" d="M561 342H622"/>
+  <g filter="url(#shadow)">
+    <rect x="630" y="284" width="205" height="116" rx="24" fill="#f8d56b" stroke="#123e35" stroke-width="3"/>
+    <text x="732" y="330" text-anchor="middle" class="nodeTitle ink">LYCOPENE</text>
+    <text x="732" y="366" text-anchor="middle" class="nodeText muted">branch-point substrate</text>
+  </g>
+  <path class="line" d="M835 342H906"/>
+  <g>
+    <rect x="856" y="293" width="74" height="34" rx="17" fill="#123e35"/>
+    <text x="893" y="316" text-anchor="middle" class="enzyme" fill="#fbfaf3">LCYB</text>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="1048" cy="342" r="113" fill="#cdf558" stroke="#123e35" stroke-width="4"/>
+    <text x="1048" y="316" text-anchor="middle" class="type ink">SHARED HUB</text>
+    <text x="1048" y="354" text-anchor="middle" class="nodeTitle ink">β-CAROTENE</text>
+    <text x="1048" y="386" text-anchor="middle" class="small muted">common substrate</text>
+  </g>
+
+  <!-- upper product branches -->
+  <path class="line" d="M1139 275C1193 226 1230 224 1271 224"/>
+  <g>
+    <rect x="1158" y="216" width="104" height="34" rx="17" fill="#123e35"/>
+    <text x="1210" y="239" text-anchor="middle" class="enzyme" fill="#fbfaf3">BKT + BCH</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1280" y="166" width="250" height="118" rx="24" fill="#ff8b72" stroke="#123e35" stroke-width="3"/>
+    <text x="1405" y="215" text-anchor="middle" class="product ink">ASTAXANTHIN</text>
+    <text x="1405" y="251" text-anchor="middle" class="type muted">KETO-CAROTENOID PIGMENT</text>
+  </g>
+
+  <path class="line" d="M1161 342H1271"/>
+  <g>
+    <rect x="1176" y="295" width="72" height="34" rx="17" fill="#123e35"/>
+    <text x="1212" y="318" text-anchor="middle" class="enzyme" fill="#fbfaf3">CCD1</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1280" y="311" width="250" height="118" rx="24" fill="#ffb54a" stroke="#123e35" stroke-width="3"/>
+    <text x="1405" y="360" text-anchor="middle" class="product ink">β-IONONE</text>
+    <text x="1405" y="396" text-anchor="middle" class="type muted">APOCAROTENOID AROMA</text>
+  </g>
+
+  <!-- zeaxanthin intermediate and lower branches -->
+  <path class="line" d="M1048 455V523"/>
+  <g>
+    <rect x="1067" y="470" width="62" height="34" rx="17" fill="#123e35"/>
+    <text x="1098" y="493" text-anchor="middle" class="enzyme" fill="#fbfaf3">BCH</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="918" y="532" width="260" height="106" rx="24" fill="#87d8d6" stroke="#123e35" stroke-width="3"/>
+    <text x="1048" y="577" text-anchor="middle" class="nodeTitle ink">ZEAXANTHIN</text>
+    <text x="1048" y="610" text-anchor="middle" class="nodeText muted">shared hydroxylated intermediate</text>
+  </g>
+
+  <path class="line" d="M918 585C817 585 800 682 713 682H633"/>
+  <g>
+    <rect x="682" y="622" width="228" height="34" rx="17" fill="#123e35"/>
+    <text x="796" y="645" text-anchor="middle" class="enzyme" font-size="15" fill="#fbfaf3">GjCCD4a + GjALDH2C3</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="347" y="624" width="278" height="118" rx="24" fill="#f1cd5c" stroke="#123e35" stroke-width="3"/>
+    <text x="486" y="673" text-anchor="middle" class="product ink">CROCETIN</text>
+    <text x="486" y="709" text-anchor="middle" class="type muted">APOCAROTENOID PRODUCT</text>
+  </g>
+
+  <path class="line" d="M1178 585C1277 585 1296 682 1370 682H1400"/>
+  <g>
+    <rect x="1208" y="622" width="104" height="34" rx="17" fill="#123e35"/>
+    <text x="1260" y="645" text-anchor="middle" class="enzyme" fill="#fbfaf3">CitCCD4</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1318" y="624" width="212" height="118" rx="24" fill="#c8afff" stroke="#123e35" stroke-width="3"/>
+    <text x="1424" y="673" text-anchor="middle" class="product ink">β-CITRAURIN</text>
+    <text x="1424" y="709" text-anchor="middle" class="type muted">APOCAROTENOID PIGMENT</text>
+  </g>
+
+  <!-- design note -->
+  <rect x="82" y="800" width="1448" height="54" rx="16" fill="#123e35"/>
+  <circle cx="116" cy="827" r="8" fill="#cdf558"/>
+  <text x="140" y="834" class="nodeText" fill="#fbfaf3">Each product branch is assigned to a separately cultivated strain so that enzyme choice and process conditions can be characterised independently.</text>
+</svg>
