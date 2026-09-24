@@ -68,25 +68,25 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#7cc45a",
     initials: "MC",
     intro:
-      "Dunaliella salina is a wall-less, motile green alga that can live in hypersaline water. That biology gives us a useful chassis, while every engineered outcome still has to be measured.",
+      "Welcome to the brine edge. Most cells would call this a dead end; Dunaliella salina calls it home. We asked ourselves: why settle for one compound when nature gave this alga a carotenoid goldmine?",
     prompts: [
       {
         id: "why-alga",
-        label: "Why begin with this alga?",
+        label: "Why follow this salt dweller?",
         response:
-          "Its native salt adaptation and flexible carotenoid biology make it an interesting design context. They do not guarantee that a new construct will behave as intended.",
+          "Follow the salt and the clue appears: this wall-less, motile alga already thrives in hypersaline water and builds carotenoids. That gives our expedition a living chassis and a native metabolic trail to explore.",
       },
       {
         id: "cell-evidence",
-        label: "What counts as a cell note?",
+        label: "What belongs in the field notes?",
         response:
-          "Record what was observed, how it was compared, and what remains uncertain. A coloured culture is a clue; it is not by itself a product identification.",
+          "Write down what we saw, what we compared and how we measured it. A coloured culture is an exciting footprint; chromatography or spectroscopy tells us which molecule actually left it.",
       },
       {
         id: "careful-claim",
-        label: "How should I phrase a result?",
+        label: "How far can a claim travel?",
         response:
-          "Keep the claim close to the evidence: say what the data show, include the comparison, and avoid promising an effect that has not been tested.",
+          "Only as far as the evidence trail. Name the observation, the comparison and the uncertainty, then stop at the last confirmed marker. That is how another explorer can retrace our route.",
       },
     ],
   },
@@ -99,25 +99,25 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#e9c43a",
     initials: "IP",
     intro:
-      "The design uses a shared β-carotene hub and considers separate product routes. A map helps us ask where control could move; it cannot substitute for a characterized enzyme or a measured readout.",
+      "You made it to the product yards. One β-carotene hub sits at the centre, but four routes leave the gate. The real engineering question is not whether we can draw them—it is where the carbon actually goes.",
     prompts: [
       {
         id: "hub",
-        label: "What does the hub mean?",
+        label: "Why build around one hub?",
         response:
-          "It is a pathway junction in the design sketch. A shared intermediate lets us compare branch questions, but the actual flux and product identity need evidence.",
+          "Think of β-carotene as the busiest roundabout on the map. Strengthening its supply can support every destination, while LCYB controls how much lycopene enters that shared junction.",
       },
       {
         id: "branch",
-        label: "How do I choose a branch?",
+        label: "Which route comes first?",
         response:
-          "Start with the product definition, then check the proposed conversion and the evidence behind it. Treat each branch as a hypothesis until the measurements support it.",
+          "Choose the destination, trace every conversion backward, then check the enzyme, substrate and analytical readout at each turn. Astaxanthin, β-ionone, crocetin and β-citraurin each need their own strain and route card.",
       },
       {
         id: "model",
-        label: "What can a model tell us?",
+        label: "What does the model reveal?",
         response:
-          "A model can expose assumptions and suggest useful comparisons. It does not establish that a strain makes a product, especially when parameters are uncertain.",
+          "A model is our compass: it follows control from promoter occupancy to LCYB transcript, active enzyme and β-carotene. Sensitivity analysis then points to the measurements most likely to change our direction.",
       },
     ],
   },
@@ -130,25 +130,25 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#c4a8ff",
     initials: "AO",
     intro:
-      "A promising design still belongs in a wider conversation. Stakeholder questions can change what we build, what we measure, and whether a route should move beyond a contained lab setting.",
+      "The path opens into the commons here. A clever construct may begin the journey, but farmers, engineers, regulators and communities decide which questions the map must answer next.",
     prompts: [
       {
         id: "listen",
-        label: "What should we ask first?",
+        label: "Whose map are we missing?",
         response:
-          "Ask who may be affected, what they value, and what risks or benefits they see. A recorded perspective is evidence about that conversation, not a universal verdict.",
+          "Start with the people who grow, operate, regulate, process or live beside the system. Ask what they value, what worries them and what evidence would earn their trust; each answer adds a landmark we could not see alone.",
       },
       {
         id: "safety",
-        label: "When is a design ready?",
+        label: "What opens the next gate?",
         response:
-          "Readiness is a decision with defined criteria, not a feeling. Safety, containment, reproducibility, and stakeholder concerns all need explicit review.",
+          "The gate opens when the criteria are visible: containment, reproducibility, product evidence and stakeholder concerns all receive a documented answer. Readiness is a checkpoint the whole team can inspect.",
       },
       {
         id: "change-design",
-        label: "Can feedback change the route?",
+        label: "Can feedback reroute us?",
         response:
-          "Yes. A concern can lead to a new constraint or experiment. Keeping that change in the record makes the design more accountable.",
+          "Absolutely. A concern can become a design constraint, a new control or a different experiment. We mark every turn in the journal so the final route shows who helped shape it.",
       },
     ],
   },
