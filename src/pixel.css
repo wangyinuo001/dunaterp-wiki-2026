@@ -15,7 +15,7 @@
   --px-edge: 3px;
 
   position: relative;
-  min-height: 460svh;
+  min-height: 350svh;
   background: var(--px-deep);
   color: var(--px-salt);
   overflow: clip;
@@ -236,14 +236,19 @@
 .px-hud {
   position: absolute;
   z-index: 18;
-  left: clamp(1rem, 3vw, 3rem);
-  bottom: clamp(4.5rem, 9vh, 7rem);
-  width: min(30rem, calc(100% - 2rem));
+  left: clamp(1rem, 2.2vw, 2rem);
+  top: 6.2rem;
+  width: min(25rem, calc(100% - 2rem));
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
-  padding: 1.1rem;
-  background: var(--px-ink);
+  grid-template-columns: 2.5rem 1fr;
+  gap: .75rem;
+  align-items: center;
+  padding: .65rem .8rem;
+  border: var(--px-edge) solid var(--px-ink);
+  border-top-color: var(--px-accent);
+  background: rgba(253, 246, 227, .94);
+  color: var(--px-ink);
+  box-shadow: 4px 4px 0 rgba(6, 34, 31, .72);
   animation: pxHudIn .28s steps(4) both;
 }
 
@@ -255,36 +260,32 @@
 .px-hud-index {
   display: grid;
   place-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background: var(--px-accent);
   color: var(--px-ink);
-  font: 900 1.15rem/1 ui-monospace, Menlo, monospace;
+  font: 900 1rem/1 ui-monospace, Menlo, monospace;
 }
 
 .px-hud-kicker {
   margin: 0;
-  color: var(--px-accent);
-  font: 800 .74rem/1 ui-monospace, Menlo, monospace;
-  letter-spacing: .16em;
+  color: #49655f;
+  font: 800 .62rem/1 ui-monospace, Menlo, monospace;
+  letter-spacing: .12em;
 }
 
 .px-hud h2 {
-  margin: .5rem 0 .55rem;
-  font: 900 clamp(1.5rem, 2.6vw, 2.1rem)/1.05 ui-monospace, Menlo, monospace;
+  margin: .28rem 0 .32rem;
+  font: 900 clamp(1rem, 1.8vw, 1.25rem)/1.08 ui-monospace, Menlo, monospace;
   letter-spacing: -.01em;
 }
 
-.px-hud-body { margin: 0; font-size: .95rem; line-height: 1.55; color: rgba(253, 246, 227, .78); }
-
-.px-hud a {
+.px-hud .px-card-action {
   display: inline-block;
-  margin-top: .85rem;
-  color: var(--px-accent);
-  font: 800 .78rem/1 ui-monospace, Menlo, monospace;
-  letter-spacing: .1em;
+  color: #36514c;
+  font: 800 .65rem/1 ui-monospace, Menlo, monospace;
+  letter-spacing: .06em;
   text-transform: uppercase;
-  text-underline-offset: .3rem;
 }
 
 /* --- interaction prompt ------------------------------------------------- */
@@ -515,9 +516,8 @@
 }
 
 @media (max-width: 800px) {
-  .px-hud { left: 1rem; right: 1rem; width: auto; bottom: 8.5rem; padding: .9rem; }
-  .px-hud h2 { font-size: 1.3rem; }
-  .px-hud-body { font-size: .88rem; }
+  .px-hud { left: .75rem; right: .75rem; top: 5.4rem; width: auto; padding: .6rem .7rem; }
+  .px-hud h2 { font-size: 1rem; }
   .px-controls { left: 1rem; right: 1rem; bottom: 4.6rem; justify-items: stretch; text-align: center; }
   .px-mode { width: 100%; }
   .px-prompt { left: 1rem; right: 1rem; bottom: 12.5rem; transform: none; }
@@ -579,8 +579,8 @@
 .px-card-action { display: block; margin-top: .75rem; color: var(--px-accent); font: 800 .72rem monospace; text-transform: uppercase; }
 .px-chapter-card:hover, .px-fallback-card:hover { border-color: var(--px-accent); }
 .px-hud { max-width: 25rem; }
-.px-hud h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); }
-.px-hud-body { font-size: .86rem; }
+.px-hud h2 { font-size: clamp(1rem, 1.8vw, 1.25rem); }
+.px-hud .px-card-action { margin-top: .25rem; }
 .px-archive-grid nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
 .px-archive-card { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 3.25rem; padding: .7rem; border: 1px solid #fff5db33; background: #06221f; color: var(--px-salt); text-align: left; font: 700 .76rem/1.4 monospace; cursor: pointer; }
 .px-archive-card:hover { border-color: var(--px-accent); color: var(--px-accent); }

@@ -280,7 +280,6 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             <div>
               <p className="px-hud-kicker">{activeChapter.kicker}</p>
               <h2>{activeChapter.title}</h2>
-              <p className="px-hud-body">{activeChapter.body}</p>
               <span className="px-card-action">Explore chapter →</span>
             </div>
           </button>
@@ -397,7 +396,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             aria-labelledby={`px-chapter-${station.index}`}
           >
             <button type="button" className="px-fallback-card" onClick={() => navigate(station.route)}>
-              <p className="px-chapter-tag"><span>{station.index} / 06</span>{station.kicker}</p>
+              <p className="px-chapter-tag"><span>{station.index} / 04</span>{station.kicker}</p>
               <h2 id={`px-chapter-${station.index}`}>{station.title}</h2>
               <p>{station.body}</p>
               <span className="px-card-action">Explore chapter →</span>

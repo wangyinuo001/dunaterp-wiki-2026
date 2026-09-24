@@ -476,7 +476,7 @@ function rowboat(): Painter {
 }
 
 // ---------------------------------------------------------------------------
-// Stations — the six chapter landmarks and the archive at the end
+// Stations — the project-story landmarks and the archive at the end
 // ---------------------------------------------------------------------------
 
 function stationBrineEdge(): Painter {

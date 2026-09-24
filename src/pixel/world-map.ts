@@ -1,6 +1,6 @@
 // The salt lake.
 //
-// Terrain, the guided boardwalk route, the six chapter stations and every
+// Terrain, the guided boardwalk route, the four project-story stations and every
 // scattered prop are generated here from a fixed seed, so the world is
 // identical for every visitor while still avoiding hand-placing 400 objects.
 

@@ -52,7 +52,7 @@ owns is unambiguously team-generated.
 | `world-map.ts` | terrain generation, the route spline, station placement, prop scatter |
 | `renderer.ts` | ground pre-render, camera, y-sorted sprite pass, daylight wash |
 | `engine.ts` | input, the two modes, collision, the frame loop |
-| `station-copy.ts` | the six chapters and the archive — read by both canvas and DOM |
+| `station-copy.ts` | the four project-story chapters and the archive — read by both canvas and DOM |
 
 Four rules the art depends on, worth keeping if anyone edits it:
 

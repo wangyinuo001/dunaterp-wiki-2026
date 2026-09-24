@@ -125,8 +125,8 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     id: "researcher",
     name: "Ari",
     role: "Community researcher",
-    stationKey: "commons",
-    stationLabel: "Commons",
+    stationKey: "model-station",
+    stationLabel: "Process checkpoint",
     accent: "#c4a8ff",
     initials: "AO",
     intro:
@@ -157,12 +157,10 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
 const NPC_LIST = EXPEDITION_NPC_IDS.map((id) => NPCS[id]);
 
 const STATION_LABELS: Record<string, string> = {
-  "brine-edge": "Brine edge",
-  "the-cell": "The cell",
-  "light-array": "Light array",
-  "model-station": "Model station",
-  "product-yards": "Product yards",
-  commons: "Commons",
+  "brine-edge": "Background & challenge",
+  "the-cell": "Biological design",
+  "product-yards": "Product routes",
+  "model-station": "Product & process characterisation",
   archive: "Archive",
 };
 

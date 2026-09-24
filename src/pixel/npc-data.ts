@@ -49,8 +49,8 @@ export type Npc = NpcDefinition & {
 };
 
 /**
- * Three journal-facing NPCs. Their route positions sit just before stations
- * 01, 05 and 06, while their offsets put them on the surrounding salt flat.
+ * Three journal-facing NPCs. Their route positions sit near the biological,
+ * product and process stations, while their offsets put them on the salt flat.
  * Visitors can step off the route in free mode to meet them.
  */
 export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
@@ -61,7 +61,7 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     role: "Biologist",
     label: "BIOLOGIST",
     stationKey: "brine-edge",
-    u: 0.073,
+    u: 0.105,
     offset: -52,
     activityRadiusX: 26,
     activityRadiusY: 18,
@@ -78,7 +78,7 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     role: "Engineer",
     label: "ENGINEER",
     stationKey: "product-yards",
-    u: 0.723,
+    u: 0.635,
     offset: 54,
     activityRadiusX: 30,
     activityRadiusY: 18,
@@ -94,8 +94,8 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     name: "Ari",
     role: "Researcher",
     label: "RESEARCHER",
-    stationKey: "commons",
-    u: 0.873,
+    stationKey: "model-station",
+    u: 0.855,
     offset: -52,
     activityRadiusX: 28,
     activityRadiusY: 20,

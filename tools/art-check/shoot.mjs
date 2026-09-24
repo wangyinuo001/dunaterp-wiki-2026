@@ -22,6 +22,9 @@ const WIDTH = Number(process.env.ART_W ?? 1440);
 const HEIGHT = Number(process.env.ART_H ?? 900);
 const out = path.join(here, "shots");
 fs.mkdirSync(out, { recursive: true });
+for (const name of fs.readdirSync(out)) {
+  if (name.endsWith(".png")) fs.unlinkSync(path.join(out, name));
+}
 
 /** Mirrors the guided-mode camera bias in engine.ts. */
 function guidedCamera(u, hero) {
@@ -72,12 +75,10 @@ function shot(name, u, options = {}) {
 }
 
 shot("00-trailhead", 0.02);
-shot("01-brine-edge", world.stations[0].u, { prompt: "E  ENTER" });
-shot("02-the-cell", world.stations[1].u, { prompt: "E  ENTER" });
-shot("03-light-array", world.stations[2].u);
-shot("04-model-station", world.stations[3].u);
-shot("05-product-yards", world.stations[4].u);
-shot("06-commons", world.stations[5].u);
-shot("07-archive", 0.982);
-shot("08-open-flats", 0.33);
-shot("09-open-shore", 0.66);
+world.stations.forEach((station, index) => {
+  const number = String(index + 1).padStart(2, "0");
+  shot(`${number}-${station.key}`, station.u, index < 2 ? { prompt: "E  ENTER" } : {});
+});
+shot(`${String(world.stations.length + 1).padStart(2, "0")}-archive`, 0.982);
+shot("90-open-flats", 0.27);
+shot("91-open-shore", 0.72);
