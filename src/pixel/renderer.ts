@@ -247,7 +247,7 @@ export class PixelRenderer {
           Math.round(item.station.y - shadow.h / 2) - oy,
         );
         ctx.drawImage(sprite.canvas, x, y);
-        if (!hideStationLabels) {
+        if (!hideStationLabels && item.station.key !== "archive") {
           const plate = this.plateFor(item.station);
           const route = world.path.sample(item.station.u);
           const side = Math.sign(item.station.offset) || 1;

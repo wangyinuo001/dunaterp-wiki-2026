@@ -763,7 +763,6 @@ export function getAtlas(): Atlas {
       boulderL: boulder(true),
       boat: rowboat(),
       signScroll: signpost("SCROLL", "8"),
-      signArchive: signpost("ARCHIVE", "s"),
     },
     stations: {
       "brine-edge": stationBrineEdge(),

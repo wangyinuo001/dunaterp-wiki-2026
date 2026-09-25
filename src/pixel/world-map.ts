@@ -574,9 +574,6 @@ export function buildWorld(): World {
     y: head.y + head.dx * 52 + head.dy * 14,
     shadow: "small",
   });
-  const gate = path.sample(0.94);
-  props.push({ sprite: "signArchive", x: gate.x - 40, y: gate.y + 12, shadow: "small" });
-
   // A moored boat or two on the open water.
   for (const [bx, by] of [[17, 35], [14, 76], [19, 100]] as Array<[number, number]>) {
     props.push({ sprite: "boat", x: bx * TILE, y: by * TILE, shadow: "none" });
