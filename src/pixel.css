@@ -15,7 +15,7 @@
   --px-edge: 3px;
 
   position: relative;
-  min-height: 350svh;
+  min-height: 450svh;
   background: var(--px-deep);
   color: var(--px-salt);
   overflow: clip;
@@ -408,11 +408,11 @@
 /* --- scroll story ------------------------------------------------------- */
 
 .px-scroll-story { position: relative; z-index: 2; margin-top: -100svh; pointer-events: none; }
-.px-scroll-lead { height: 65svh; }
-.px-archive-space { height: 65svh; }
+.px-scroll-lead { height: 75svh; }
+.px-archive-space { height: 75svh; }
 
 .px-scroll-chapter {
-  min-height: 55svh;
+  min-height: 75svh;
   display: flex;
   align-items: center;
   padding: 0 clamp(1.2rem, 6vw, 7rem);
