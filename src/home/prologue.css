@@ -29,10 +29,10 @@
 .story-title h1 span { color: #cdf558; }
 .story-title > small { display: block; font-size: .7rem; letter-spacing: .18em; animation: story-caption .6s 2s both; }
 .story-title h2 { margin: 1.5rem 0 0; font: 800 clamp(.85rem, 1.7vw, 1.3rem)/1.55 monospace; letter-spacing: .15em; animation: story-caption .6s 2.4s both; }
-.story-chapter { position: absolute; z-index: 2; top: max(4.7rem, 8vh); left: max(1.5rem, 5vw); max-width: min(36rem, 48vw); padding: .8rem 1rem; border-left: 5px solid #cdf558; background: #06221ff2; box-shadow: 6px 6px 0 #061713a8; text-shadow: 2px 2px #06221f; }
+.story-chapter { position: absolute; z-index: 2; top: max(3.8rem, 6vh); left: 50%; width: max-content; max-width: calc(100% - 12rem); padding: .65rem 1.2rem .75rem; transform: translateX(-50%); border-bottom: 4px solid #cdf558; background: #06221fee; box-shadow: 0 5px 0 #0617138f; text-align: center; text-shadow: 2px 2px #06221f; }
 .story-chapter > span { color: #c6d2b4; font-size: .6rem; letter-spacing: .2em; }
 .story-chapter h1 { margin: .65rem 0; font: 800 clamp(.9rem, 1.8vw, 1.4rem)/1.3 monospace; color: #cdf558; }
-.story-scene-art { position: absolute; inset: 9.5rem 42vw 3.5rem 4vw; display: grid; place-items: center; min-width: 0; padding: 1.5rem; border: 2px solid #dce7c538; background: #06221f45; text-shadow: 2px 2px #06221f; animation: story-caption .35s ease-out both; }
+.story-scene-art { position: absolute; inset: 8.5rem 44vw 3.5rem 4vw; display: grid; place-items: center; min-width: 0; padding: 1.5rem; text-shadow: 2px 2px #06221f; animation: story-caption .35s ease-out both; }
 .story-glyph { display: block; width: 5rem; height: 5rem; image-rendering: pixelated; filter: drop-shadow(4px 5px #06221f88); }
 .story-items { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 6vw, 5rem); }
 .story-item { display: grid; justify-items: center; gap: 1rem; font-size: .85rem; text-align: center; animation: story-item .4s calc(var(--item) * .25s) both; }
@@ -72,23 +72,25 @@
 .story-quest p { color: #cdf558; font-size: .7rem; letter-spacing: .2em; }
 .story-quest h2 { font-size: 2rem; margin: .6rem; }
 .story-quest > span { font-size: .8rem; }
-.story-dialogue { position: absolute; z-index: 2; right: max(2rem, 5vw); top: 50%; display: flex; align-items: stretch; width: min(31rem, 36vw); transform: translateY(-38%); border: 3px solid #c3cc8f; outline: 3px solid #06221f; box-shadow: 7px 7px #06221f99, inset 0 0 0 3px #254d3e; background: #0a3028fa; animation: story-item .25s ease-out both; }
-.story-portrait { display: grid; align-content: center; justify-items: center; gap: .75rem; flex: 0 0 7.5rem; margin: .75rem 0 .75rem .75rem; border-right: 1px solid #8ba27a70; }
-.story-portrait .story-glyph { width: 3rem; height: 3rem; }
-.story-portrait > span { font-size: .5rem; letter-spacing: .1em; color: #adb997; }
-.story-dialogue-button { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: stretch; gap: .7rem; padding: 1rem 1.4rem; border: 0; background: transparent; color: #fff5db; text-align: left; cursor: pointer; font-family: inherit; }
+.story-dialogue-cluster { position: absolute; z-index: 2; right: max(2rem, 5vw); top: 50%; width: min(34rem, 38vw); transform: translateY(-42%); }
+.story-dialogue { position: relative; display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); align-items: stretch; width: 100%; border: 3px solid #c3cc8f; box-shadow: 7px 7px #061713b8; background: #0a3028fa; animation: story-item .25s ease-out both; }
+.story-portrait { display: grid; align-content: center; justify-items: center; margin: .75rem 0 .75rem .75rem; border-right: 1px solid #8ba27a70; }
+.story-portrait .story-glyph { width: 2.5rem; height: 2.5rem; }
+.story-portrait > span { display: none; }
+.story-dialogue-button { min-width: 0; display: flex; flex-direction: column; align-items: stretch; gap: .7rem; padding: 1rem 1.15rem; border: 0; background: transparent; color: #fff5db; text-align: left; cursor: pointer; font-family: inherit; }
+.home-prologue .story-dialogue-button:focus-visible { outline: 0; box-shadow: inset 0 -3px #cdf558; }
 .story-speaker { font-size: .7rem; color: #cdf558; letter-spacing: .08em; }
 .story-text { position: relative; display: block; font: 500 clamp(.88rem, 1.3vw, 1.05rem)/1.65 monospace; }
 .story-text-reserve { display: block; visibility: hidden; min-height: 3.3em; }
 .story-text-ink { position: absolute; inset: 0; }
 .story-cursor { display: inline-block; width: .4rem; height: .8rem; margin-left: 3px; background: #cdf558; }
 .story-next { display: flex; justify-content: end; gap: .65rem; font-size: .65rem; color: #cdf558; letter-spacing: .06em; }
-.story-dialogue--opening { left: 50%; right: auto; top: auto; bottom: 3.8rem; width: min(39rem, calc(100% - 3rem)); transform: translateX(-50%); border: 0; outline: 0; box-shadow: none; background: #06221fe8; }
+.story-dialogue--opening { position: absolute; left: 50%; right: auto; top: auto; bottom: 3.8rem; display: block; width: min(39rem, calc(100% - 3rem)); transform: translateX(-50%); border: 0; outline: 0; box-shadow: none; background: #06221fe8; }
 .story-dialogue--opening .story-dialogue-button { text-align: center; }
 .story-dialogue--opening .story-speaker { display: none; }
 .story-dialogue--opening .story-next { justify-content: center; margin-top: .25rem; font-size: .8rem; letter-spacing: .14em; }
-.story-progress { position: absolute; z-index: 3; right: max(2rem, 5vw); top: calc(50% + 12rem); display: flex; gap: 5px; width: min(31rem, 36vw); }
-.story-progress i { width: 12px; height: 3px; background: #eee4ba40; }
+.story-progress { display: flex; justify-content: center; gap: 6px; width: 100%; margin-top: 1rem; }
+.story-progress i { flex: 0 1 3.25rem; height: 4px; background: #eee4ba40; }
 .story-progress i.is-complete { background: #cdf558; }
 .story-controls-hint { position: absolute; z-index: 3; right: max(2rem, 5vw); bottom: max(1.2rem, env(safe-area-inset-bottom)); margin: 0; font-size: .6rem; color: #e8efd9; letter-spacing: .05em; background: #06221fcf; padding: .35rem .5rem; }
 .story-controls-hint > span { opacity: .65; }
@@ -103,16 +105,16 @@
 @keyframes story-fog { from { transform: translateX(-2%); } to { transform: translateX(3%); } }
 @keyframes story-out { 0%, 20% { opacity: 1; } 100% { opacity: 0; } }
 @media (max-width: 650px) {
-  .story-chapter { left: 1rem; top: 4rem; max-width: calc(100% - 5.5rem); padding: .55rem .7rem; }
+  .story-chapter { left: 50%; top: 3.8rem; width: auto; max-width: calc(100% - 5.5rem); padding: .5rem .7rem; }
   .story-title { width: calc(100% - 2rem); }
   .story-title h1 { font-size: clamp(2.7rem, 13vw, 5rem); }
   .story-title > p { font-size: .55rem; letter-spacing: .12em; }
   .story-title h2 { letter-spacing: .08em; }
   .story-scene-art { inset: 9rem 1rem 16.5rem; padding: .7rem; }
-  .story-dialogue { left: .75rem; right: .75rem; top: auto; bottom: 4.2rem; width: auto; transform: none; }
+  .story-dialogue-cluster { left: .75rem; right: .75rem; top: auto; bottom: 3.2rem; width: auto; transform: none; }
   .story-dialogue--opening { left: .75rem; right: .75rem; width: auto; transform: none; }
-  .story-portrait { flex-basis: 3.2rem; margin: .6rem 0 .6rem .3rem; }
-  .story-portrait > span { display: none; }
+  .story-dialogue { grid-template-columns: 3.4rem minmax(0, 1fr); }
+  .story-portrait { margin: .6rem 0 .6rem .3rem; }
   .story-portrait .story-glyph { width: 2.4rem; height: 2.4rem; }
   .story-dialogue-button { padding: .85rem; gap: .6rem; }
   .story-text { font-size: .84rem; line-height: 1.55; }
@@ -138,7 +140,7 @@
   .story-checkpoints { gap: .4rem; }
   .story-checkpoints > div { grid-template-columns: 5rem 1fr; gap: .5rem; padding: .55rem; }
   .story-checkpoints strong, .story-checkpoints span { font-size: .58rem; }
-  .story-progress { left: 1rem; right: 1rem; top: auto; bottom: 3.2rem; width: auto; }
+  .story-progress { margin-top: .65rem; }
   .story-controls-hint { display: none; }
   .px-world .route-start-cue { bottom: 8.5rem; }
 }
@@ -161,7 +163,7 @@
   .story-voices { gap: .5rem; }
   .story-voice { min-width: auto; padding: .25rem; }
   .story-signposts > div { margin-top: .2rem; padding: .25rem .6rem; }
-  .story-progress { top: auto; bottom: 1rem; }
+  .story-progress { margin-top: .35rem; }
   .story-controls-hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {

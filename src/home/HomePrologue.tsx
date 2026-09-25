@@ -33,8 +33,10 @@ export function HomePrologue({ state, onNext, onSkip }: { state: StoryState; onN
     </> : <>
       <header className="story-chapter"><span>DUNATERP / PROLOGUE</span><h1>{beat.chapter}</h1></header>
       <div key={`art-${state.beat}`} className="story-scene-art"><StoryIllustration beat={beat} /></div>
-      <StoryDialogue key={state.beat} speaker={beat.speaker} text={beat.text} label={state.beat === STORY_BEATS.length - 1 ? "START THE SALT ROUTE" : "Continue"} onNext={onNext} />
-      <div className="story-progress" aria-label={`Story ${state.beat + 1} of ${STORY_BEATS.length}`}>{STORY_BEATS.map((_, i) => <i key={i} className={i <= state.beat ? "is-complete" : ""} />)}</div>
+      <div className="story-dialogue-cluster">
+        <StoryDialogue key={state.beat} speaker={beat.speaker} text={beat.text} label={state.beat === STORY_BEATS.length - 1 ? "START THE SALT ROUTE" : "Continue"} onNext={onNext} />
+        <div className="story-progress" aria-label={`Story ${state.beat + 1} of ${STORY_BEATS.length}`}>{STORY_BEATS.map((_, i) => <i key={i} className={i <= state.beat ? "is-complete" : ""} />)}</div>
+      </div>
     </>}
     {!transition && <p className="story-controls-hint">Click · Enter · Space <span> / Reveal · Continue</span></p>}
   </section>;
