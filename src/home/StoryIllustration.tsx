@@ -41,7 +41,7 @@ export function StoryIllustration({ beat }: { beat: StoryBeat }) {
 
     case "journey":
       return <div className="story-quest">
-        <StoryGlyph kind="person" />
+        <StoryGlyph kind="hero" />
         <p>YOUR JOURNEY</p>
         <h2>THE SALT ROUTE</h2>
         <span>Follow the story · Meet the guides · Explore freely</span>

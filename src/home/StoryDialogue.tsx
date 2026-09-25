@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { StoryGlyph } from "./StoryGlyph";
-export function StoryDialogue({ text, speaker, label = "Continue", delay = 0, onNext, opening = false }: {
-  text: string; speaker: string; label?: string; delay?: number; onNext: () => void; opening?: boolean;
+export function StoryDialogue({ text, speaker, speakerTone = "#cdf558", label = "Continue", delay = 0, onNext, opening = false }: {
+  text: string; speaker: string; speakerTone?: string; label?: string; delay?: number; onNext: () => void; opening?: boolean;
 }) {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const [count, setCount] = useState(reduce ? text.length : 0);
@@ -30,8 +30,8 @@ export function StoryDialogue({ text, speaker, label = "Continue", delay = 0, on
     frame = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(frame); document.removeEventListener("visibilitychange", visibility); };
   }, [text, delay, reduce, revealed]);
-  return <div className={`story-dialogue${opening ? " story-dialogue--opening" : ""}`}>
-    {!opening && <div className="story-portrait"><StoryGlyph kind="person" /><span>FIELD NOTES</span></div>}
+  return <div className={`story-dialogue${opening ? " story-dialogue--opening" : ""}`} style={{ "--story-speaker": speakerTone } as CSSProperties}>
+    {!opening && <div className="story-portrait"><StoryGlyph kind="person" tone={speakerTone} /><span>FIELD NOTES</span></div>}
     <button ref={next} type="button" className="story-dialogue-button" onClick={advance}
       onKeyDown={(event) => { if ((event.key === "Enter" || event.key === " ") && event.repeat) event.preventDefault(); }}>
       <span className="story-speaker">{speaker}</span>

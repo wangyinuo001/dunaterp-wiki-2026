@@ -75,7 +75,7 @@
 .story-portrait > span { display: none; }
 .story-dialogue-button { min-width: 0; display: flex; flex-direction: column; align-items: stretch; gap: .7rem; padding: 1rem 1.15rem; border: 0; background: transparent; color: #fff5db; text-align: left; cursor: pointer; font-family: inherit; }
 .home-prologue .story-dialogue-button:focus-visible { outline: 0; box-shadow: inset 0 -3px #cdf558; }
-.story-speaker { font-size: .7rem; color: #cdf558; letter-spacing: .08em; }
+.story-speaker { font-size: .7rem; color: var(--story-speaker, #cdf558); letter-spacing: .08em; }
 .story-text { position: relative; display: block; font: 500 clamp(.88rem, 1.3vw, 1.05rem)/1.65 monospace; }
 .story-text-reserve { display: block; visibility: hidden; min-height: 3.3em; }
 .story-text-ink { position: absolute; inset: 0; }
