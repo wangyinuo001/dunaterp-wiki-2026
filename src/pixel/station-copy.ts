@@ -32,7 +32,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "brine-edge",
     short: "CHALLENGE",
-    plateNudge: { x: -58, y: -58 },
+    plateNudge: { x: -38, y: -48 },
     index: "01",
     kicker: "WHY DUNATERP",
     title: "Background & Challenge",
