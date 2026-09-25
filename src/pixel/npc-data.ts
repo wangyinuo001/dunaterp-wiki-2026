@@ -21,10 +21,10 @@ export type NpcDefinition = {
   label: string;
   /** Link to the nearby station chapter. */
   stationKey: string;
-  /** Normalised route position, 0 at the trailhead. */
-  u: number;
-  /** Lateral offset from the route in pixels. Its sign selects a bank. */
+  /** Lateral offset from the station along the route normal. */
   offset: number;
+  /** Small shift along the route tangent to place the character by their work area. */
+  along: number;
   /** Elliptical off-boardwalk activity area, in world pixels. */
   activityRadiusX: number;
   activityRadiusY: number;
@@ -61,8 +61,8 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     role: "Biologist",
     label: "BIOLOGIST",
     stationKey: "brine-edge",
-    u: 0.105,
     offset: -52,
+    along: -20,
     activityRadiusX: 26,
     activityRadiusY: 18,
     activitySpeed: 17,
@@ -78,8 +78,8 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     role: "Engineer",
     label: "ENGINEER",
     stationKey: "product-yards",
-    u: 0.635,
-    offset: 54,
+    offset: 52,
+    along: 40,
     activityRadiusX: 30,
     activityRadiusY: 18,
     activitySpeed: 20,
@@ -95,8 +95,8 @@ export const NPC_DEFINITIONS: readonly NpcDefinition[] = [
     role: "Researcher",
     label: "RESEARCHER",
     stationKey: "model-station",
-    u: 0.855,
     offset: -52,
+    along: -20,
     activityRadiusX: 28,
     activityRadiusY: 20,
     activitySpeed: 18,
@@ -120,37 +120,38 @@ function canNpcStand(world: World, x: number, y: number) {
 /** Build positioned NPC records and safe patrol targets for a generated world. */
 export function createNpcs(world: World): Npc[] {
   return NPC_DEFINITIONS.map((definition) => {
-    const sample = world.path.sample(definition.u);
-    const preferredX = sample.x + -sample.dy * definition.offset;
-    const preferredY = sample.y + sample.dx * definition.offset;
+    const station = world.stations.find((item) => item.key === definition.stationKey);
+    if (!station) throw new Error(`Missing NPC station: ${definition.stationKey}`);
+    const sample = world.path.sample(station.u);
+    const tangent = { x: sample.dx, y: sample.dy };
+    const normal = { x: -sample.dy, y: sample.dx };
+    const preferredX = sample.x + normal.x * definition.offset + tangent.x * definition.along;
+    const preferredY = sample.y + normal.y * definition.offset + tangent.y * definition.along;
 
-    // Terrain generation may occasionally put a boulder on the preferred
-    // location. Search a small deterministic grid and keep the closest safe,
-    // non-deck point as the activity-area centre.
-    const centreCandidates: Array<{ x: number; y: number }> = [];
-    for (const radius of [0, 8, 16, 24, 32]) {
-      for (let step = 0; step < 8; step += 1) {
-        const angle = (step / 8) * Math.PI * 2;
-        centreCandidates.push({
-          x: preferredX + Math.cos(angle) * radius,
-          y: preferredY + Math.sin(angle) * radius,
-        });
-      }
-    }
+    // Each guide belongs to a named station. These fallbacks preserve that
+    // composition while moving only a few pixels around a blocked prop.
+    const centreCandidates = [
+      [0, 0], [8, 0], [-8, 0], [0, 8], [0, -8], [16, 0], [-16, 0], [0, 16], [0, -16],
+    ].map(([along, across]) => ({
+      x: preferredX + tangent.x * along + normal.x * across,
+      y: preferredY + tangent.y * along + normal.y * across,
+    }));
     const centre = centreCandidates.find((point) => canNpcStand(world, point.x, point.y))
       ?? { x: preferredX, y: preferredY };
 
-    const activityPoints = [{ x: centre.x, y: centre.y }];
-    for (const radius of [0.45, 0.78, 1]) {
-      for (let step = 0; step < 12; step += 1) {
-        const angle = (step / 12) * Math.PI * 2;
-        const point = {
-          x: centre.x + Math.cos(angle) * definition.activityRadiusX * radius,
-          y: centre.y + Math.sin(angle) * definition.activityRadiusY * radius,
-        };
-        if (canNpcStand(world, point.x, point.y)) activityPoints.push(point);
-      }
-    }
+    // A short work loop reads as inspecting the nearby station rather than
+    // wandering randomly across the salt flat.
+    const activityPoints = [
+      [0, 0],
+      [definition.activityRadiusX * .55, 0],
+      [definition.activityRadiusX * .35, definition.activityRadiusY * .55],
+      [-definition.activityRadiusX * .45, definition.activityRadiusY * .3],
+      [0, -definition.activityRadiusY * .45],
+    ].map(([along, across]) => ({
+      x: centre.x + tangent.x * along + normal.x * across,
+      y: centre.y + tangent.y * along + normal.y * across,
+    })).filter((point) => canNpcStand(world, point.x, point.y));
+    if (!activityPoints.length) activityPoints.push({ x: centre.x, y: centre.y });
 
     return {
       ...definition,

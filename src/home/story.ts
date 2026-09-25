@@ -1,6 +1,7 @@
-/** Narrative only: edit copy and shot coordinates without changing input or movement. */
-export type StoryPhase = "OPENING" | "PROBLEM" | "DUNALIELLA" | "SOLUTION" | "HP" | "TRANSITION" | "WORLD";
-export type StoryVisual = "needs" | "resources" | "alga" | "traits" | "hub" | "products" | "voices" | "decisions" | "journey";
+/** Four beats mirror the four stations on the Salt Route. */
+export type StoryPhase = "OPENING" | "BACKGROUND" | "DESIGN" | "ROUTES" | "PROCESS" | "TRANSITION" | "WORLD";
+export type StoryVisual = "resources" | "traits" | "products" | "characterisation";
+
 export type StoryBeat = {
   phase: Exclude<StoryPhase, "OPENING" | "TRANSITION" | "WORLD">;
   chapter: string;
@@ -9,31 +10,52 @@ export type StoryBeat = {
   visual: StoryVisual;
   /** Position on the existing route plus a small camera offset in world pixels. */
   shot: { u: number; x: number; y: number };
-  voice?: number;
 };
+
 export const OPENING_HOOK = "In one of the world’s harshest environments, a tiny alga learned to turn salt and light into colour.";
-const shore = { u: 0.085, x: -65, y: -30 };
-const cell = { u: 0.245, x: 20, y: -28 };
+
 export const STORY_BEATS: readonly StoryBeat[] = [
-  { phase: "PROBLEM", chapter: "01 · THE PROBLEM", speaker: "Field guide", text: "Colours, flavours and nutrients surround our lives.", visual: "needs", shot: shore },
-  { phase: "PROBLEM", chapter: "01 · THE PROBLEM", speaker: "Field guide", text: "But many valuable terpenoids still depend on limited natural resources or production methods with environmental costs.", visual: "resources", shot: shore },
-  { phase: "DUNALIELLA", chapter: "02 · WHY DUNALIELLA?", speaker: "Field guide", text: "Then we looked at an organism that already thrives where few others can. Meet Dunaliella salina.", visual: "alga", shot: cell },
-  { phase: "DUNALIELLA", chapter: "02 · WHY DUNALIELLA?", speaker: "Field guide", text: "Salt tolerant. β-carotene rich. Photosynthetic. A tiny cell with remarkable potential.", visual: "traits", shot: cell },
-  { phase: "SOLUTION", chapter: "03 · OUR IDEA", speaker: "Researcher", text: "What if this tiny alga could become a platform for making more than β-carotene?", visual: "hub", shot: cell },
-  { phase: "SOLUTION", chapter: "03 · OUR IDEA", speaker: "Researcher", text: "Our goal: engineer a shared β-carotene hub for valuable terpenoids, including astaxanthin, β-ionone and crocetin, with food applications in mind.", visual: "products", shot: cell },
-  { phase: "HP", chapter: "04 · MORE THAN SCIENCE", speaker: "Field guide", text: "But a technology is meaningful only when it meets the needs of the world outside the lab.", visual: "voices", shot: shore },
-  { phase: "HP", chapter: "04 · MORE THAN SCIENCE", speaker: "Consumer · a design question", text: "Can it be safe?", visual: "voices", voice: 0, shot: shore },
-  { phase: "HP", chapter: "04 · MORE THAN SCIENCE", speaker: "Producer · a design question", text: "Can it be scalable?", visual: "voices", voice: 1, shot: shore },
-  { phase: "HP", chapter: "04 · MORE THAN SCIENCE", speaker: "Environment · a design question", text: "What happens if engineered algae escape?", visual: "voices", voice: 2, shot: shore },
-  { phase: "HP", chapter: "04 · MORE THAN SCIENCE", speaker: "Researcher · a design question", text: "Can biology offer a better route?", visual: "voices", voice: 3, shot: shore },
-  { phase: "HP", chapter: "05 · QUESTIONS BECOME DESIGN", speaker: "Field guide", text: "These questions shape DunaTerp: a photosynthetic chassis, a platform designed for food-grade terpenoids, and a biocontainment system.", visual: "decisions", shot: shore },
-  { phase: "HP", chapter: "05 · QUESTIONS BECOME DESIGN", speaker: "Field guide", text: "Different voices. One shared goal. A more sustainable way to make valuable molecules.", visual: "decisions", shot: shore },
-  { phase: "HP", chapter: "06 · YOUR JOURNEY", speaker: "Field guide", text: "Now the journey is yours. Follow the Salt Route to discover our story—or leave the path and explore freely.", visual: "journey", shot: shore },
+  {
+    phase: "BACKGROUND",
+    chapter: "01 · BACKGROUND & CHALLENGE",
+    speaker: "Field guide",
+    text: "Plant-derived terpenoids can be limited by slow growth, variable supply, low abundance, and substantial land and freshwater demands. Our route begins with that production challenge.",
+    visual: "resources",
+    shot: { u: 0.12, x: -52, y: -26 },
+  },
+  {
+    phase: "DESIGN",
+    chapter: "02 · BIOLOGICAL DESIGN",
+    speaker: "Dr. Lin · algal biologist",
+    text: "Dunaliella salina grows in saline media, fixes carbon with light and naturally supplies a carotenoid pathway. We place β-carotene at the centre as a shared metabolic hub.",
+    visual: "traits",
+    shot: { u: 0.36, x: 24, y: -26 },
+  },
+  {
+    phase: "ROUTES",
+    chapter: "03 · HIGH-VALUE PRODUCT ROUTES",
+    speaker: "Mara · pathway engineer",
+    text: "From the β-carotene hub, four separately cultivated strains route carbon toward astaxanthin, β-ionone, crocetin and β-citraurin through product-specific enzymes.",
+    visual: "products",
+    shot: { u: 0.62, x: -18, y: -28 },
+  },
+  {
+    phase: "PROCESS",
+    chapter: "04 · PRODUCT & PROCESS CHARACTERISATION",
+    speaker: "Ari · community researcher",
+    text: "The route ends by connecting intracellular performance to product identity, titre and conversion efficiency, then to light, salinity, biomass productivity and recovery.",
+    visual: "characterisation",
+    shot: { u: 0.84, x: 28, y: -26 },
+  },
 ];
 
 export type StoryState = { phase: StoryPhase; beat: number };
 export type StoryEvent = "NEXT" | "SKIP" | "ARRIVED" | "REPLAY";
-export function initialStory(seen: boolean): StoryState { return { phase: seen ? "WORLD" : "OPENING", beat: -1 }; }
+
+export function initialStory(seen: boolean): StoryState {
+  return { phase: seen ? "WORLD" : "OPENING", beat: -1 };
+}
+
 export function storyReducer(state: StoryState, event: StoryEvent): StoryState {
   if (event === "REPLAY" && state.phase === "WORLD") return initialStory(false);
   if (event === "ARRIVED") return state.phase === "TRANSITION" ? { ...state, phase: "WORLD" } : state;

@@ -21,13 +21,6 @@ type HeaderProps = { light?: boolean };
 
 const GROUP_ACCENTS = ["#cdf558", "#7de2ff", "#e9c43a", "#c4a8ff"];
 
-const GROUP_NOTES = [
-  "Build the chassis, test the constructs, keep every decision on record.",
-  "Connect light, regulation and pathway allocation with reproducible computation.",
-  "Let stakeholders, safety and sustainability change what the team builds.",
-  "Meet the team and see who contributed, supported and reviewed the work.",
-];
-
 function LoadingScreen({ ratio }: { ratio: number }) {
   const cells = 24;
   const filled = Math.round(ratio * cells);
@@ -203,7 +196,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     if (!node) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({
-      top: node.offsetTop + window.innerHeight * 0.9,
+      top: node.offsetTop + window.innerHeight * 0.08,
       behavior: reduce ? "instant" : "smooth",
     });
   }, []);
@@ -267,12 +260,11 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         {ready && isStory && <HomePrologue state={story} onNext={() => dispatchStory("NEXT")} onSkip={() => dispatchStory("SKIP")} />}
 
         <div className="px-world-ui" inert={isStory || !ready || failed}>
-        {!started && mode !== "free" && <section className="world-welcome">
-          <p>QUEST / THE SALT ROUTE</p>
-          <h1>Now the journey is yours.</h1>
-          <span>Scroll to follow the story. Use WASD, arrow keys or Free roam to explore.</span>
-          <button type="button" onClick={beginJourney}>FOLLOW THE SALT ROUTE ↓</button>
-        </section>}
+        {!started && mode !== "free" && <button type="button" className="route-start-cue" onClick={beginJourney}>
+          <span>THE SALT ROUTE</span>
+          <strong>SCROLL TO BEGIN</strong>
+          <b aria-hidden="true">↓</b>
+        </button>}
 
         {activeChapter && mode !== "free" && !promptStation && !atArchive && (
           <button type="button" onClick={() => navigate(activeChapter.route)} className="px-hud px-chapter-card" style={{ "--px-accent": activeChapter.color } as React.CSSProperties}>
@@ -280,6 +272,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             <div>
               <p className="px-hud-kicker">{activeChapter.kicker}</p>
               <h2>{activeChapter.title}</h2>
+              <p className="px-hud-body">{activeChapter.body}</p>
               <span className="px-card-action">Explore chapter →</span>
             </div>
           </button>
@@ -361,15 +354,14 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
 
         <section className="px-archive" inert={!atArchive || mode === "free"} aria-label="DunaTerp wiki index">
           <header>
-            <p>ARCHIVE · EVERY STANDARD ROUTE</p>
-            <h2>You reached the end of the lake.</h2>
+            <p>FIELD ARCHIVE</p>
+            <h2>Open any Wiki chapter.</h2>
           </header>
           <div className="px-archive-grid">
             {navigation.map((group, index) => (
               <section key={group.label} style={{ "--px-accent": GROUP_ACCENTS[index] } as React.CSSProperties}>
                 <p className="px-archive-index">{String(index + 1).padStart(2, "0")}</p>
                 <h3>{group.label}</h3>
-                <p className="px-archive-note">{GROUP_NOTES[index]}</p>
                 <nav aria-label={group.label}>
                   {group.items.map(([label, href]) => (
                     <button type="button" className="px-archive-card" key={href} onClick={() => navigate(href)}>{label}<b aria-hidden="true">→</b></button>

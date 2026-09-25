@@ -33,7 +33,7 @@ for (const reduced of [false, true]) {
   const world = engine.world, renderer = engine.renderer;
   engine.beginIntro();
   assert.equal(engine.isPaused, true);
-  assert.equal(isOnDeck(world, engine.hero.x, engine.hero.y), false, 'Traveller starts off the boardwalk');
+  assert.equal(isOnDeck(world, engine.hero.x, engine.hero.y), true, 'Traveller starts on the marked trailhead');
   assert.equal(isBlockedAt(world, engine.hero.x, engine.hero.y), false);
   engine.onKeyDown({ key:'w', repeat:false, target:new Element(), preventDefault() {} });
   assert.equal(engine.mode, 'guided', 'Story owns keyboard input');
@@ -42,18 +42,18 @@ for (const reduced of [false, true]) {
   const originalHandoff = engine.introReturn;
   engine.endIntro();
   assert.equal(engine.introReturn, originalHandoff, 'Repeated skip cannot restart transition');
-  for (let i=0; i<45; i++) engine.stepIntro(.04);
+  for (let i=0; i<25; i++) engine.stepIntro(.04);
   assert.equal(arrivals, 1);
   assert.equal(engine.world, world);
   assert.equal(engine.renderer, renderer);
   assert.equal(engine.isPaused, false);
-  const start = world.path.sample(.001);
+  const start = world.path.sample(.012);
   assert.equal(engine.hero.x, start.x);
   assert.equal(engine.hero.y, start.y);
   engine.onKeyDown({ key:'w', repeat:false, target:new Element(), preventDefault() {} });
   assert.equal(engine.mode, 'free', 'Control returns after handoff');
   engine.beginIntro(); engine.endIntro();
-  for (let i=0; i<45; i++) engine.stepIntro(.04);
+  for (let i=0; i<25; i++) engine.stepIntro(.04);
   assert.equal(arrivals, 2, 'Replay works without reloading the world');
 }
 console.log('PASS: ordered story, skip guards, replay, safe spawn, input ownership, handoff, reduced motion and same world/renderer');

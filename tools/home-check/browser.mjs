@@ -32,9 +32,9 @@ const canvas=await page.locator('.px-canvas').elementHandle();
 if((await page.locator('.story-next').textContent()).includes('Reveal'))await page.locator('.story-dialogue-button').click();
 await page.locator('.story-dialogue-button').focus();
 await page.keyboard.press('Enter');
-await page.waitForSelector('[data-story-state="PROBLEM"]');
-for(let i=0;i<14;i++){
- if(i===3||i===5||i===8||i===11)await page.screenshot({path:path.join(shots, `desktop-beat-${i}.png`)});
+await page.waitForSelector('[data-story-state="BACKGROUND"]');
+for(let i=0;i<4;i++){
+ await page.screenshot({path:path.join(shots, `desktop-beat-${i}.png`)});
  const button=page.locator('.story-dialogue-button');
  if((await button.locator('.story-next').textContent()).includes('Reveal'))await button.click();
  await button.click();
@@ -72,10 +72,10 @@ await mobile.goto('http://127.0.0.1:4175/dunaterp-wiki/');
 await mobile.waitForSelector('[data-story-state="OPENING"]');
 await mobile.screenshot({path:path.join(shots, 'opening-mobile.png')});
 await mobile.locator('.story-dialogue-button').tap();
-for(let i=0;i<14;i++){
+for(let i=0;i<4;i++){
  assert.ok(await mobile.locator('.story-dialogue-button').evaluate(e=>{const r=e.getBoundingClientRect();return r.bottom<=innerHeight && r.top>=0;}),`dialogue visible ${i}`);
  assert.ok(await mobile.locator('.home-prologue').evaluate(e=>e.scrollWidth<=e.clientWidth),`no horizontal overflow ${i}`);
- if(i===3||i===5||i===8||i===11)await mobile.screenshot({path:path.join(shots, `mobile-beat-${i}.png`)});
+ await mobile.screenshot({path:path.join(shots, `mobile-beat-${i}.png`)});
  await mobile.locator('.story-dialogue-button').tap();
 }
 await mobile.waitForSelector('.home-prologue',{state:'detached'});

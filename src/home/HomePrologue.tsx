@@ -26,9 +26,8 @@ export function HomePrologue({ state, onNext, onSkip }: { state: StoryState; onN
       }
     }}>
     <div className="story-atmosphere" aria-hidden="true"><div className="story-fog" />{Array.from({ length: 12 }, (_, i) => <i key={i} style={{ left: `${8 + i * 7}%`, top: `${12 + (i * 17) % 60}%`, animationDelay: `${-i * 1.7}s` }} />)}</div>
-    <div className="story-letterbox story-letterbox--top" aria-hidden="true" /><div className="story-letterbox story-letterbox--bottom" aria-hidden="true" />
     {!transition && <button type="button" className="story-skip" onClick={onSkip}>SKIP INTRO <span aria-hidden="true">↗</span></button>}
-    {transition ? <p className="story-handoff" role="status">NOW THE JOURNEY IS YOURS.</p> : opening ? <>
+    {transition ? null : opening ? <>
       <div className="story-title"><p>SALT · LIGHT · POSSIBILITY</p><h1>DUNA<span>TERP</span></h1><small>SCU-CHINA · iGEM 2026</small><h2>ONE TINY ALGA.<br />A BRIGHTER TOMORROW.</h2></div>
       <StoryDialogue key="opening" opening speaker="A story from the salt lake" text={OPENING_HOOK} label="PRESS ENTER TO BEGIN" delay={2400} onNext={onNext} />
     </> : <>

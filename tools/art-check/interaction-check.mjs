@@ -35,7 +35,7 @@ for (const npc of createNpcs(engine.world)) {
   assert.equal(talks, before + 1, 'E talks to the nearest NPC');
 }
 const startPositions = engine.npcs.map((npc) => ({ x: npc.x, y: npc.y }));
-const trailhead = engine.world.path.sample(0.001);
+const trailhead = engine.world.path.sample(0.012);
 Object.assign(engine.hero, { x: trailhead.x, y: trailhead.y });
 engine.updateProximity();
 for (let frame = 0; frame < 40; frame++) engine.stepNpcs(0.05);

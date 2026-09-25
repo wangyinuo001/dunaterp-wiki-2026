@@ -49,6 +49,8 @@ const INTERACT_RADIUS = 62;
 /** Hero collision box at the feet, in pixels. */
 const BODY_HALF_W = 5;
 const BODY_HALF_H = 3;
+const TRAILHEAD_U = 0.012;
+const INTRO_HANDOFF_SECONDS = 0.9;
 
 export class PixelEngine {
   readonly world: World;
@@ -67,8 +69,8 @@ export class PixelEngine {
 
   mode: Mode = "guided";
   /** Normalised position along the route. */
-  u = 0.001;
-  private targetU = 0.001;
+  u = TRAILHEAD_U;
+  private targetU = TRAILHEAD_U;
   private uVelocity = 0;
 
   private hero = { x: 0, y: 0, vx: 0, vy: 0 };
@@ -115,7 +117,7 @@ export class PixelEngine {
     this.host = host;
     this.events = events;
 
-    const start = this.world.path.sample(0.001);
+    const start = this.world.path.sample(TRAILHEAD_U);
     this.hero.x = start.x;
     this.hero.y = start.y;
     this.camera.x = start.x;
@@ -203,21 +205,16 @@ export class PixelEngine {
     this.setPaused(true);
     this.mode = "guided";
     this.events.onMode(this.mode);
-    this.u = this.targetU = 0.001;
+    this.u = this.targetU = TRAILHEAD_U;
     this.uVelocity = 0;
     this.introReturn = null;
-    const guide = this.npcs[0];
-    // Place the traveller on a safe patch beside the guide, off the boardwalk.
-    for (const dx of [24, -24, 32, -32, 0]) {
-      const x = guide.homeX + dx, y = guide.homeY + 10;
-      if (!isBlockedAt(this.world, x - BODY_HALF_W, y - BODY_HALF_H)
-        && !isBlockedAt(this.world, x + BODY_HALF_W, y + BODY_HALF_H)
-        && !isOnDeck(this.world, x, y)) {
-        this.hero.x = x; this.hero.y = y; break;
-      }
-    }
-    this.facing = "left";
-    this.setIntroShot(0.085, -65, -30);
+    // The traveller waits on the marked trailhead, already facing the route.
+    // This makes the handoff from prologue to exploration spatially legible.
+    const start = this.world.path.sample(TRAILHEAD_U);
+    this.hero.x = start.x;
+    this.hero.y = start.y;
+    this.updateFacing(start.dx, start.dy);
+    this.setIntroShot(0.12, -52, -26);
     this.camera = { ...this.introShot! };
   }
 
@@ -238,9 +235,9 @@ export class PixelEngine {
     const handoff = this.introReturn;
     if (handoff) {
       handoff.elapsed += delta;
-      const t = Math.min(1, handoff.elapsed / (this.reducedMotion ? 0.2 : 1.6));
+      const t = Math.min(1, handoff.elapsed / (this.reducedMotion ? 0.2 : INTRO_HANDOFF_SECONDS));
       const eased = t * t * (3 - 2 * t);
-      const start = this.world.path.sample(0.001);
+      const start = this.world.path.sample(TRAILHEAD_U);
       this.hero.x = handoff.hero.x + (start.x - handoff.hero.x) * eased;
       this.hero.y = handoff.hero.y + (start.y - handoff.hero.y) * eased;
       this.camera.x = handoff.camera.x + (start.x - handoff.camera.x) * eased;
@@ -250,7 +247,7 @@ export class PixelEngine {
         this.camera.x = start.x; this.camera.y = start.y;
       }
       if (t >= 1) {
-        this.u = this.targetU = 0.001;
+        this.u = this.targetU = TRAILHEAD_U;
         this.uVelocity = 0;
         this.introReturn = null;
         this.introShot = null;
@@ -269,7 +266,7 @@ export class PixelEngine {
 
   /** Called from the scroll handler while in guided mode. */
   setScrollProgress(value: number) {
-    this.targetU = Math.max(0.001, Math.min(0.999, value));
+    this.targetU = Math.max(TRAILHEAD_U, Math.min(0.999, value));
   }
 
   enterFree() {
@@ -821,7 +818,7 @@ export class PixelEngine {
       drawables: this.drawables,
       time: this.reducedMotion ? 0 : now / 1000,
       daylight: this.introReturn
-        ? 0.82 * (1 - Math.min(1, this.introReturn.elapsed / (this.reducedMotion ? 0.2 : 1.6)))
+        ? 0.82 * (1 - Math.min(1, this.introReturn.elapsed / (this.reducedMotion ? 0.2 : INTRO_HANDOFF_SECONDS)))
         : this.introShot ? 0.82 : this.u,
       prompt: this.introShot ? null : this.activeNpc
         ? {
