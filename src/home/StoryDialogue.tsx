@@ -30,12 +30,27 @@ export function StoryDialogue({ text, speaker, speakerTone = "#cdf558", label = 
     frame = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(frame); document.removeEventListener("visibilitychange", visibility); };
   }, [text, delay, reduce, revealed]);
+  const visibleCount = complete ? text.length : count;
+  const cursorAt = complete ? -1 : text.slice(0, visibleCount).trimEnd().length - 1;
+  const parts = text.split(/(\s+)/);
+  const stableText = parts.map((part, partIndex) => {
+    const start = parts.slice(0, partIndex).join("").length;
+    if (/^\s+$/.test(part)) return <span key={`space-${partIndex}`}>{part}</span>;
+    return <span className="story-word" key={`word-${partIndex}`}>
+      {Array.from(part).map((character, characterIndex) => {
+        const index = start + characterIndex;
+        return <span className={`story-char${index < visibleCount ? " is-visible" : ""}`} key={index}>
+          {character}{index === cursorAt && <i className="story-cursor" />}
+        </span>;
+      })}
+    </span>;
+  });
   return <div className={`story-dialogue${opening ? " story-dialogue--opening" : ""}`} style={{ "--story-speaker": speakerTone } as CSSProperties}>
     {!opening && <div className="story-portrait"><StoryGlyph kind="person" tone={speakerTone} /><span>FIELD NOTES</span></div>}
     <button ref={next} type="button" className="story-dialogue-button" onClick={advance}
       onKeyDown={(event) => { if ((event.key === "Enter" || event.key === " ") && event.repeat) event.preventDefault(); }}>
       <span className="story-speaker">{speaker}</span>
-      <span className="story-text" aria-hidden="true"><span className="story-text-reserve">{text}</span><span className="story-text-ink">{complete ? text : text.slice(0, count)}{!complete && <i className="story-cursor" />}</span></span>
+      <span className="story-text" aria-hidden="true"><span className="story-text-ink">{stableText}</span></span>
       <span className="story-sr">{text}</span>
       <span className="story-next">{complete ? label : "Reveal text"} <span aria-hidden="true">▸</span></span>
     </button>
