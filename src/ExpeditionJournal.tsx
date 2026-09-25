@@ -53,6 +53,7 @@ export type ExpeditionNpc = {
   accent: string;
   initials: string;
   intro: string;
+  chapterHint: string;
   prompts: NpcPrompt[];
 };
 
@@ -68,7 +69,8 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#7cc45a",
     initials: "MC",
     intro:
-      "Welcome to the brine edge. Most cells would call this a dead end; Dunaliella salina calls it home. We asked ourselves: why settle for one compound when nature gave this alga a carotenoid goldmine?",
+      "The first orange salt pond I saw looked almost lifeless, and that contradiction stayed with me. I want to know what Dunaliella can build here—but I still ask whether every bright colour is really the molecule we hoped for.",
+    chapterHint: "Field trail: Wet Lab → Description, Experiments and Results",
     prompts: [
       {
         id: "why-alga",
@@ -99,7 +101,8 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#e9c43a",
     initials: "IP",
     intro:
-      "You made it to the product yards. One β-carotene hub sits at the centre, but four routes leave the gate. The real engineering question is not whether we can draw them—it is where the carbon actually goes.",
+      "I distrust a tidy pathway diagram until the carbon actually moves through it. Four routes leave this β-carotene hub; my task is to find the bottleneck, and my hesitation is always the same: did we strengthen one branch by starving another?",
+    chapterHint: "Field trail: Wet Lab → Engineering; Dry Lab → Mathematical Modeling",
     prompts: [
       {
         id: "hub",
@@ -130,7 +133,8 @@ export const NPCS: Record<ExpeditionNpcId, ExpeditionNpc> = {
     accent: "#c4a8ff",
     initials: "AO",
     intro:
-      "The path opens into the commons here. A clever construct may begin the journey, but farmers, engineers, regulators and communities decide which questions the map must answer next.",
+      "Whenever a design looks complete, I look for the person whose question is missing. I listen for practical worries that never appear in a pathway diagram, then ask whether the project changed because someone trusted us with them.",
+    chapterHint: "Field trail: Human Practices → Human Practices and Sustainability",
     prompts: [
       {
         id: "listen",
@@ -179,6 +183,7 @@ type JournalProgress = {
 };
 
 const STORAGE_KEY = "dunaterp.expedition-journal.v1";
+const PROGRESS_EVENT = "dunaterp:journal-progress";
 
 function emptyProgress(): JournalProgress {
   return {
@@ -230,6 +235,18 @@ function writeProgress(progress: JournalProgress) {
   } catch {
     // Storage is an enhancement; the live journal remains usable.
   }
+}
+
+// Shared by the compact world dialogue and the full journal so its 0/3 counter
+// changes as soon as a real conversation begins.
+// eslint-disable-next-line react-refresh/only-export-components
+export function recordNpcVisit(npcId: ExpeditionNpcId) {
+  if (typeof window === "undefined") return;
+  const current = readProgress();
+  if (current.visited[npcId]) return;
+  const next = { ...current, visited: { ...current.visited, [npcId]: true } };
+  writeProgress(next);
+  window.dispatchEvent(new CustomEvent<JournalProgress>(PROGRESS_EVENT, { detail: next }));
 }
 
 type Feedback = { tone: "hint" | "correct" | "try"; text: string };
@@ -602,6 +619,15 @@ export function ExpeditionJournal({
     writeProgress(progress);
   }, [progress]);
 
+  useEffect(() => {
+    const syncProgress = (event: Event) => {
+      const update = (event as CustomEvent<JournalProgress>).detail;
+      if (update) setProgress(update);
+    };
+    window.addEventListener(PROGRESS_EVENT, syncProgress);
+    return () => window.removeEventListener(PROGRESS_EVENT, syncProgress);
+  }, []);
+
   const markNpcVisited = useCallback((npcId: ExpeditionNpcId) => {
     setProgress((current) => {
       if (current.visited[npcId]) return current;
@@ -662,6 +688,7 @@ export function ExpeditionJournal({
   const activeNpc = NPCS[selectedNpc];
   const nearbyStation = currentStationKey ? STATION_LABELS[currentStationKey] : null;
   const completedGames = GAME_IDS.filter((gameId) => progress.games[gameId]).length;
+  const visitedNpcs = Object.values(progress.visited).filter(Boolean).length;
   const completionPercent = Math.round((completedGames / GAME_IDS.length) * 100);
 
   const completeGame = useCallback((gameId: GameId) => {
@@ -693,7 +720,7 @@ export function ExpeditionJournal({
       >
         <span className="ej-launcher__icon" aria-hidden="true">▤</span>
         <span>Expedition journal</span>
-        <span className="ej-launcher__key" aria-hidden="true">{completedGames}/3</span>
+        <span className="ej-launcher__key" aria-label={`${visitedNpcs} of 3 guides met`}>{visitedNpcs}/3</span>
       </button>
 
       <dialog
@@ -729,7 +756,7 @@ export function ExpeditionJournal({
             <aside className="ej-contacts" aria-label="Field contacts">
               <div className="ej-section-heading">
                 <p className="ej-eyebrow">FIELD CONTACTS</p>
-                <p>{Object.values(progress.visited).filter(Boolean).length}/3 met</p>
+                <p>{visitedNpcs}/3 met</p>
               </div>
               <div className="ej-npc-list">
                 {NPC_LIST.map((npc) => {

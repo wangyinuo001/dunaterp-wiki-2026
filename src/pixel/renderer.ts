@@ -143,7 +143,7 @@ export class PixelRenderer {
   private plateFor(station: Station): Painter {
     let plate = this.plates.get(station.key);
     if (!plate) {
-      plate = stationPlate(station.index, station.short, station.accent, station.mapLines);
+      plate = stationPlate(station.index, station.short, station.accent);
       this.plates.set(station.key, plate);
     }
     return plate;
@@ -167,7 +167,7 @@ export class PixelRenderer {
     /** 0 at the trailhead, 1 at the archive — drives the light. */
     daylight: number;
     prompt: { x: number; y: number; text: string; accent: string } | null;
-    /** NPC names and overhead markers are intentionally shown in free mode. */
+    /** NPC names and overhead markers keep optional guides visible on the route. */
     showNpcLabels?: boolean;
     hideStationLabels?: boolean;
   }) {
@@ -251,8 +251,8 @@ export class PixelRenderer {
           const plate = this.plateFor(item.station);
           const route = world.path.sample(item.station.u);
           const side = Math.sign(item.station.offset) || 1;
-          const plateX = item.station.x - route.dy * side * 66 + (item.station.plateNudge?.x ?? 0);
-          const plateY = item.station.y + route.dx * side * 66 - sprite.h / 2 + (item.station.plateNudge?.y ?? 0);
+          const plateX = item.station.x - route.dy * side * 58 + (item.station.plateNudge?.x ?? 0);
+          const plateY = item.station.y + route.dx * side * 58 - sprite.h / 2 + (item.station.plateNudge?.y ?? 0);
           ctx.drawImage(
             plate.canvas,
             Math.round(plateX - plate.w / 2) - ox,

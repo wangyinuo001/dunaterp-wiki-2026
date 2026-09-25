@@ -84,6 +84,7 @@ export function NpcDialogue({ npcId, onClose }: NpcDialogueProps) {
         <p className="npc-dialogue__hint">
           {selected ? "Choose another question or continue exploring." : "Choose a question."}
         </p>
+        <p className="npc-dialogue__chapter-hint">{npc.chapterHint}</p>
       </div>
 
       <div className="npc-dialogue__choices" role="group" aria-label={`Questions for ${npc.name}`}>

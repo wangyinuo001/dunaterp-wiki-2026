@@ -38,5 +38,13 @@ export function StoryIllustration({ beat }: { beat: StoryBeat }) {
           ["PROCESS", "Light · salinity · recovery"],
         ].map(([title, detail], index) => <div key={title} style={stagger(index)}><strong>{title}</strong><span>{detail}</span></div>)}
       </div>;
+
+    case "journey":
+      return <div className="story-quest">
+        <StoryGlyph kind="person" />
+        <p>YOUR JOURNEY</p>
+        <h2>THE SALT ROUTE</h2>
+        <span>Follow the story · Meet the guides · Explore freely</span>
+      </div>;
   }
 }

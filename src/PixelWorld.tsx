@@ -9,16 +9,16 @@ import {
 } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { PixelEngine, type Mode } from "./pixel/engine";
-import { ARCHIVE_COPY, STATION_COPY } from "./pixel/station-copy";
-import { ExpeditionJournal } from "./ExpeditionJournal";
+import { STATION_COPY } from "./pixel/station-copy";
+import { ExpeditionJournal, recordNpcVisit } from "./ExpeditionJournal";
 import { NpcDialogue } from "./NpcDialogue";
+import { StationDialogue } from "./StationDialogue";
 import type { Npc } from "./pixel/npc-data";
 import { navigation } from "./site-data";
 import { HomePrologue } from "./home/HomePrologue";
 import { initialStory, STORY_BEATS, storyReducer } from "./home/story";
 
 type HeaderProps = { light?: boolean };
-
 const GROUP_ACCENTS = ["#cdf558", "#7de2ff", "#e9c43a", "#c4a8ff"];
 
 function LoadingScreen({ ratio }: { ratio: number }) {
@@ -45,6 +45,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const engineRef = useRef<PixelEngine | null>(null);
   const scrollLock = useRef(0);
+  const archiveTimer = useRef<number | null>(null);
 
   const [npcPrompt, setNpcPrompt] = useState<Npc | null>(null);
   const [dialogueNpc, setDialogueNpc] = useState<Npc | null>(null);
@@ -54,10 +55,19 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const [mode, setMode] = useState<Mode>("guided");
   const [chapter, setChapter] = useState(-1);
   const [promptKey, setPromptKey] = useState<string | null>(null);
+  const [stationDialogueKey, setStationDialogueKey] = useState<string | null>(null);
   const [atArchive, setAtArchive] = useState(false);
   const [started, setStarted] = useState(false);
   const [story, dispatchStory] = useReducer(storyReducer, false, initialStory);
   const isStory = story.phase !== "WORLD" && !failed;
+  const promptStation = useMemo(
+    () => STATION_COPY.find((item) => item.key === promptKey) ?? null,
+    [promptKey],
+  );
+  const stationDialogue = useMemo(
+    () => STATION_COPY.find((item) => item.key === stationDialogueKey) ?? null,
+    [stationDialogueKey],
+  );
 
   useEffect(() => {
     if (!isStory) return;
@@ -67,10 +77,12 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     return () => { document.body.style.overflow = previous; };
   }, [isStory]);
 
-  const promptStation = useMemo(
-    () => [...STATION_COPY, ARCHIVE_COPY].find((item) => item.key === promptKey) ?? null,
-    [promptKey],
-  );
+  useEffect(() => {
+    if ((!dialogueNpc && !stationDialogue) || mode === "free") return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
+  }, [dialogueNpc, stationDialogue, mode]);
 
   useEffect(() => {
     const host = stage.current;
@@ -88,10 +100,17 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         },
         onMode: setMode,
         onChapter: setChapter,
-        onPrompt: (station) => setPromptKey(station ? station.key : null),
-        onEnter: (station) => navigate(station.route),
+        interactableStationKeys: STATION_COPY.map((station) => station.key),
+        onPrompt: (station) => setPromptKey(
+          station ? station.key : null,
+        ),
+        onEnter: (station) => {
+          engineRef.current?.setPaused(true);
+          setStationDialogueKey(station.key);
+        },
         onNpcPrompt: setNpcPrompt,
         onNpcInteract: (npc) => {
+          recordNpcVisit(npc.id);
           engineRef.current?.setPaused(true);
           setDialogueNpc(npc);
         },
@@ -112,7 +131,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       engine?.dispose();
       engineRef.current = null;
     };
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     if (!ready || failed) return;
@@ -137,7 +156,18 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       const value = (window.scrollY - top) / travel;
       engine.setScrollProgress(value);
       setStarted(value > 0.012);
-      setAtArchive(value > 0.955);
+      if (value >= 0.997) {
+        if (!atArchive && archiveTimer.current === null) {
+          archiveTimer.current = window.setTimeout(() => {
+            archiveTimer.current = null;
+            setAtArchive(true);
+          }, 900);
+        }
+      } else {
+        if (archiveTimer.current !== null) window.clearTimeout(archiveTimer.current);
+        archiveTimer.current = null;
+        setAtArchive(false);
+      }
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -145,8 +175,10 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     return () => {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
+      if (archiveTimer.current !== null) window.clearTimeout(archiveTimer.current);
+      archiveTimer.current = null;
     };
-  }, [isStory, ready]);
+  }, [isStory, ready, atArchive]);
 
   // Free mode pins the document so wandering never scrolls the page away from
   // the world, and hands the scroll position back at the point the hero left.
@@ -195,6 +227,9 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     const engine = engineRef.current;
     const wasFree = engine?.mode === "free";
     if (wasFree) engine?.exitFree();
+    if (archiveTimer.current !== null) window.clearTimeout(archiveTimer.current);
+    archiveTimer.current = null;
+    setAtArchive(false);
     const scroll = () => {
       const node = root.current;
       if (!node) return;
@@ -213,10 +248,17 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true })));
   }, []);
 
+  const closeStationDialogue = useCallback(() => {
+    setStationDialogueKey(null);
+    engineRef.current?.setPaused(false);
+    requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true })));
+  }, []);
+
   const replayIntro = useCallback(() => {
     const engine = engineRef.current;
     if (!engine || !ready || failed) return;
     setDialogueNpc(null);
+    setStationDialogueKey(null);
     setStarted(false);
     setAtArchive(false);
     engine.beginIntro();
@@ -231,7 +273,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       id="main-content"
       tabIndex={-1}
       ref={root}
-      className={`px-world${isStory ? " is-prologue" : ""}${story.phase === "TRANSITION" ? " is-handoff" : ""}${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc ? " has-dialogue" : ""}`}
+      className={`px-world${isStory ? " is-prologue" : ""}${story.phase === "TRANSITION" ? " is-handoff" : ""}${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc || stationDialogue ? " has-dialogue" : ""}`}
     >
       <div className="home-world-header" inert={isStory}><Header light /></div>
 
@@ -251,25 +293,26 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
 
         <div className="px-world-ui" inert={isStory || !ready || failed}>
         {mode === "free" && <ExpeditionJournal
-          currentStationKey={npcPrompt?.stationKey ?? promptKey}
+          currentStationKey={npcPrompt?.stationKey ?? promptKey ?? activeChapter?.key ?? null}
           onOpenChange={(open) => { engineRef.current?.setPaused(open); if (!open) requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }))); }}
           onTravel={(key) => { engineRef.current?.travelToStation(key); canvas.current?.focus({ preventScroll: true }); }}
         />}
-        {npcPrompt && mode === "free" && !dialogueNpc && <div className="px-prompt" style={{ "--px-accent": npcPrompt.accent } as React.CSSProperties}>
+        {npcPrompt && mode === "free" && !dialogueNpc && !stationDialogue && <div className="px-prompt" style={{ "--px-accent": npcPrompt.accent } as React.CSSProperties}>
           <span className="px-prompt-key">E</span>
           <div><p>{npcPrompt.role} · OFF-ROUTE FIELD GUIDE</p><button type="button" onClick={() => engineRef.current?.talkToNpc()}>Talk to {npcPrompt.name}</button></div>
         </div>}
 
-        {promptStation && !dialogueNpc && !atArchive && (
-          <button type="button"
-            className="px-prompt px-chapter-card"
-            onClick={() => navigate(promptStation.route)}
+        {promptStation && !dialogueNpc && !stationDialogue && (
+          <button
+            type="button"
+            className="px-prompt px-station-prompt"
+            onClick={() => engineRef.current?.interact()}
             style={{ "--px-accent": promptStation.color } as React.CSSProperties}
           >
-            <span className="px-prompt-key">{mode === "free" ? "E" : "↵"}</span>
+            <span className="px-prompt-key">E</span>
             <div>
-              <p>{promptStation.index} · {promptStation.kicker}</p>
-              <strong>{promptStation.title} <span aria-hidden="true">→</span></strong>
+              <p>{promptStation.index} · ROUTE NOTE</p>
+              <strong>View {promptStation.title}</strong>
             </div>
           </button>
         )}
@@ -287,7 +330,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           ))}
         </div>}
 
-        {!dialogueNpc && !atArchive && <div className="px-controls">
+        {!dialogueNpc && !stationDialogue && !atArchive && <div className="px-controls">
           <button type="button" className="story-replay" onClick={replayIntro} disabled={!ready || failed}>PLAY INTRO ↺</button>
           <button
             type="button"
@@ -301,7 +344,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           {mode === "free" && <p className="px-touch-help">Hold arrows or drag the lake to move. Use the Talk button near a guide.</p>}
           {mode === "free" && (
             <p className="px-mode-help">
-              <kbd>WASD</kbd> move · <kbd>Shift</kbd> run · <kbd>E</kbd> enter · <kbd>Esc</kbd> return
+              <kbd>WASD</kbd> move · <kbd>Shift</kbd> run · <kbd>E</kbd> talk · <kbd>Esc</kbd> return
             </p>
           )}
         </div>}
@@ -310,7 +353,11 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           <NpcDialogue npcId={dialogueNpc.id} onClose={closeNpcDialogue} />
         )}
 
-        {!atArchive && <button type="button" className="px-restart" onClick={restart} aria-label="Return to the trailhead">↑</button>}
+        {stationDialogue && (
+          <StationDialogue station={stationDialogue} onClose={closeStationDialogue} />
+        )}
+
+        {!dialogueNpc && !stationDialogue && !atArchive && <button type="button" className="px-restart" onClick={restart} aria-label="Return to the trailhead">↑</button>}
 
         <div className="px-route" aria-hidden="true">
           {STATION_COPY.map((station) => (
@@ -345,6 +392,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             <button type="button" className="px-button" onClick={restart}>Walk it again ↑</button>
           </footer>
         </section>
+
         </div>
       </div>
 

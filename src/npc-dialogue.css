@@ -136,6 +136,15 @@
   text-transform: uppercase;
 }
 
+.npc-dialogue__chapter-hint {
+  margin: .55rem 0 0;
+  padding-top: .5rem;
+  border-top: 2px solid color-mix(in srgb, var(--npc-ink) 24%, transparent);
+  color: #304741;
+  font: 800 .72rem/1.45 ui-monospace, Menlo, monospace;
+  letter-spacing: .025em;
+}
+
 .npc-dialogue__choices {
   display: grid;
   align-content: center;

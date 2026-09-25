@@ -1,6 +1,6 @@
-/** Four beats mirror the four stations on the Salt Route. */
-export type StoryPhase = "OPENING" | "BACKGROUND" | "DESIGN" | "ROUTES" | "PROCESS" | "TRANSITION" | "WORLD";
-export type StoryVisual = "resources" | "traits" | "products" | "characterisation";
+/** Five beats tell the project story before the visitor enters the world. */
+export type StoryPhase = "OPENING" | "BACKGROUND" | "DESIGN" | "ROUTES" | "PROCESS" | "JOURNEY" | "TRANSITION" | "WORLD";
+export type StoryVisual = "resources" | "traits" | "products" | "characterisation" | "journey";
 
 export type StoryBeat = {
   phase: Exclude<StoryPhase, "OPENING" | "TRANSITION" | "WORLD">;
@@ -46,6 +46,14 @@ export const STORY_BEATS: readonly StoryBeat[] = [
     text: "The route ends by connecting intracellular performance to product identity, titre and conversion efficiency, then to light, salinity, biomass productivity and recovery.",
     visual: "characterisation",
     shot: { u: 0.84, x: 28, y: -26 },
+  },
+  {
+    phase: "JOURNEY",
+    chapter: "05 · YOUR JOURNEY",
+    speaker: "Field guide",
+    text: "Step onto the Salt Route to revisit the project as a place, or leave the boardwalk to meet three optional field guides. The complete Wet Lab, Dry Lab, Human Practices and People chapters remain in the navigation above.",
+    visual: "journey",
+    shot: { u: 0.04, x: 0, y: -18 },
   },
 ];
 

@@ -777,19 +777,14 @@ export function getAtlas(): Atlas {
   return atlas;
 }
 
-/** Signage generated on demand for the numbered station plates. */
-export function stationPlate(index: string, label: string, accent: string, lines: [string, string]): Painter {
-  const heading = `${index} ${label}`;
-  const bodyOptions = { tracking: 1 } as const;
-  const w = Math.max(textWidth(heading), textWidth(lines[0], bodyOptions), textWidth(lines[1], bodyOptions)) + 14;
-  const p = surface(w, 42);
-  block(p, 0, 0, w, 39, "2", "1", "3");
+/** Compact station identifier; detailed copy opens only when the stop is viewed. */
+export function stationPlate(index: string, label: string, accent: string): Painter {
+  const text = `${index} ${label}`;
+  const w = textWidth(text) + 12;
+  const p = surface(w, 16);
+  block(p, 0, 0, w, 13, "2", "1", "3");
   rect(p, 0, 0, w, 1, accent);
   rect(p, 2, 3, 2, 7, accent);
-  drawText(p, heading, 7, 3, "F", { shadow: "1" });
-  rect(p, 5, 13, w - 10, 1, "4");
-  drawText(p, lines[0], 7, 17, "c", bodyOptions);
-  rect(p, 5, 27, w - 10, 9, "1");
-  drawText(p, lines[1], 7, 28, "F", { ...bodyOptions, shadow: "1" });
+  drawText(p, text, 7, 3, "F", { shadow: "1" });
   return p;
 }

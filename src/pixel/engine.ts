@@ -30,6 +30,10 @@ export type EngineEvents = {
   onPrompt: (station: Station | null) => void;
   /** Fired when the visitor confirms an interaction. */
   onEnter: (station: Station) => void;
+  /** Keep station labels in the world while reserving interaction for NPCs. */
+  stationInteractions?: boolean;
+  /** Restrict interactions to selected route stops while leaving scenery intact. */
+  interactableStationKeys?: readonly string[];
   /** Optional free-roam NPC prompt and journal interaction hooks. */
   onNpcPrompt?: (npc: Npc | null) => void;
   onNpcInteract?: (npc: Npc) => void;
@@ -45,7 +49,8 @@ const FOLLOW_STIFFNESS = 70;
 const FOLLOW_DAMPING = 15;
 const MAX_FOLLOW_SPEED = 0.48;
 
-const INTERACT_RADIUS = 62;
+const STATION_INTERACT_RADIUS = 108;
+const NPC_INTERACT_RADIUS = 62;
 /** Hero collision box at the feet, in pixels. */
 const BODY_HALF_W = 5;
 const BODY_HALF_H = 3;
@@ -710,13 +715,16 @@ export class PixelEngine {
   private updateProximity() {
     let nearestStation: Station | null = null;
     let nearestNpc: Npc | null = null;
-    let nearestStationDistance = INTERACT_RADIUS;
-    let nearestNpcDistance = INTERACT_RADIUS;
-    for (const station of [...this.world.stations, this.world.archive]) {
-      const distance = Math.hypot(station.x - this.hero.x, station.y + 6 - this.hero.y);
-      if (distance < nearestStationDistance) {
-        nearestStationDistance = distance;
-        nearestStation = station;
+    let nearestStationDistance = STATION_INTERACT_RADIUS;
+    let nearestNpcDistance = NPC_INTERACT_RADIUS;
+    if (this.events.stationInteractions !== false) {
+      for (const station of [...this.world.stations, this.world.archive]) {
+        if (this.events.interactableStationKeys && !this.events.interactableStationKeys.includes(station.key)) continue;
+        const distance = Math.hypot(station.x - this.hero.x, station.y + 6 - this.hero.y);
+        if (distance < nearestStationDistance) {
+          nearestStationDistance = distance;
+          nearestStation = station;
+        }
       }
     }
     if (this.mode === "free") {
@@ -832,11 +840,13 @@ export class PixelEngine {
         ? {
           x: this.hero.x,
           y: this.hero.y - 26,
-          text: this.mode === "free" ? "E  ENTER" : this.activeStation.index,
+          text: "E  VIEW",
           accent: this.activeStation.accent,
         }
         : null,
-      showNpcLabels: this.mode === "free",
+      // The guides remain visible during the guided walk; interaction still
+      // requires free roam so they read as optional side conversations.
+      showNpcLabels: this.introShot === null,
       hideStationLabels: this.introShot !== null,
     });
   };
