@@ -19,6 +19,8 @@ export type StationCopy = {
   short: string;
   /** Two compact lines printed on the in-world station plate. */
   mapLines: [string, string];
+  /** Small art-directed adjustment after the plate is moved off the route. */
+  plateNudge?: { x: number; y: number };
   /** Position along the boardwalk route, 0 at the trailhead. */
   u: number;
   /** Lateral offset from the route in pixels; negative is left of travel. */
@@ -30,7 +32,8 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "brine-edge",
     short: "CHALLENGE",
-    mapLines: ["PLANT SUPPLY IS LIMITED", "SALT-READY CHASSIS"],
+    mapLines: ["PLANT SUPPLY: LIMITED", "SALT-READY CHASSIS"],
+    plateNudge: { x: 0, y: 28 },
     index: "01",
     kicker: "WHY DUNATERP",
     title: "Background & Challenge",
@@ -45,7 +48,8 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "the-cell",
     short: "DESIGN",
-    mapLines: ["D. SALINA MAKES A SHARED", "BETA-CAROTENE HUB"],
+    mapLines: ["D. SALINA BUILDS", "BETA-CAROTENE HUB"],
+    plateNudge: { x: 0, y: -24 },
     index: "02",
     kicker: "ONE SHARED HUB",
     title: "Biological Design",
@@ -75,7 +79,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "model-station",
     short: "PROCESS",
-    mapLines: ["CELL OUTPUT MEETS PROCESS", "CULTURE AND RECOVERY"],
+    mapLines: ["CELL OUTPUT TO PROCESS", "CULTURE + RECOVERY"],
     index: "04",
     kicker: "FROM CELL TO CULTIVATION",
     title: "Product & Process Characterisation",

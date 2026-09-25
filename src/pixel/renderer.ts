@@ -251,8 +251,8 @@ export class PixelRenderer {
           const plate = this.plateFor(item.station);
           const route = world.path.sample(item.station.u);
           const side = Math.sign(item.station.offset) || 1;
-          const plateX = item.station.x - route.dy * side * 66;
-          const plateY = item.station.y + route.dx * side * 66 - sprite.h / 2;
+          const plateX = item.station.x - route.dy * side * 66 + (item.station.plateNudge?.x ?? 0);
+          const plateY = item.station.y + route.dx * side * 66 - sprite.h / 2 + (item.station.plateNudge?.y ?? 0);
           ctx.drawImage(
             plate.canvas,
             Math.round(plateX - plate.w / 2) - ox,
