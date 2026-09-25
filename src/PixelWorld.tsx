@@ -161,7 +161,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           archiveTimer.current = window.setTimeout(() => {
             archiveTimer.current = null;
             setAtArchive(true);
-          }, 900);
+          }, 700);
         }
       } else {
         if (archiveTimer.current !== null) window.clearTimeout(archiveTimer.current);
