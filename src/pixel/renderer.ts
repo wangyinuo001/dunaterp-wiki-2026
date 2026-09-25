@@ -249,10 +249,14 @@ export class PixelRenderer {
         ctx.drawImage(sprite.canvas, x, y);
         if (!hideStationLabels) {
           const plate = this.plateFor(item.station);
+          const route = world.path.sample(item.station.u);
+          const side = Math.sign(item.station.offset) || 1;
+          const plateX = item.station.x - route.dy * side * 66;
+          const plateY = item.station.y + route.dx * side * 66 - sprite.h / 2;
           ctx.drawImage(
             plate.canvas,
-            Math.round(item.station.x - plate.w / 2) - ox,
-            y - plate.h - 4,
+            Math.round(plateX - plate.w / 2) - ox,
+            Math.round(plateY - plate.h / 2) - oy,
           );
         }
       } else if (item.kind === "npc") {
