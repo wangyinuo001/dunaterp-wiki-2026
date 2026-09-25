@@ -81,7 +81,7 @@
 .story-text-ink { position: absolute; inset: 0; }
 .story-cursor { display: inline-block; width: .4rem; height: .8rem; margin-left: 3px; background: #cdf558; }
 .story-next { display: flex; justify-content: end; gap: .65rem; font-size: .65rem; color: #cdf558; letter-spacing: .06em; }
-.story-dialogue--opening { position: absolute; left: 50%; right: auto; top: auto; bottom: 3.8rem; display: block; width: min(39rem, calc(100% - 3rem)); transform: translateX(-50%); border: 0; outline: 0; box-shadow: none; background: #06221fe8; }
+.story-dialogue--opening { position: absolute; left: 50%; right: auto; top: auto; bottom: clamp(3rem, 5.5vh, 5rem); display: block; width: min(42rem, calc(100% - 3rem)); transform: translateX(-50%); border: 0; outline: 0; box-shadow: none; background: #06221fe8; animation: story-opening-dialogue .35s ease-out both; }
 .story-dialogue--opening .story-dialogue-button { text-align: center; }
 .story-dialogue--opening .story-speaker { display: none; }
 .story-dialogue--opening .story-next { justify-content: center; margin-top: .25rem; font-size: .8rem; letter-spacing: .14em; }
@@ -95,6 +95,7 @@
 @keyframes story-reveal { from { background: #06221f; } to { background: transparent; } }
 @keyframes story-logo { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
 @keyframes story-caption { from { opacity: 0; } to { opacity: 1; } }
+@keyframes story-opening-dialogue { from { opacity: 0; } to { opacity: 1; } }
 @keyframes story-item { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 @keyframes story-idle { 50% { transform: translateY(-4px); } }
 @keyframes story-drift { from { transform: translate(0, 12px); } to { transform: translate(18px, -32px); } }
