@@ -174,7 +174,16 @@ export const modeling: WikiPage = {
       h('Quantitative findings'),
       p('Promoter occupancy rises from 10% to 90% as T/Kd rises from 1/9 to 9, an 81-fold span in effective regulator concentration relative to binding affinity. Half occupancy occurs at T = Kd. Writing r = u_bound/u_unbound, the steady-state LCYB transcript and active-enzyme fold relative to an unbound promoter is 1 + (r − 1)θ. At half occupancy this becomes (1 + r)/2: 1.50-fold for r = 2, 2.50-fold for r = 4, and 0.75-fold for r = 0.5. At T = 10Kd, where occupancy is 90.9%, the corresponding folds are 1.91, 3.73 and 0.55.'),
       p('The largest occupancy response occurs around T ≈ Kd. In the saturated T ≫ Kd regime, expression approaches the ceiling or floor set by r. With lycopene and enzyme-kinetic parameters held fixed, the instantaneous LCYB flux changes in the same proportion as active LCYB; the absolute β-carotene pool additionally depends on substrate supply, Michaelis constants, downstream outflow and loss.'),
-      code('Core implementation', 'theta = T / (Kd + T)\nu_lcyb = u_unbound * (1 - theta) + u_bound * theta\nv_lcyb = q_lcyb * E * L / (km_lcyb + L)\n\ndT = s_T - (delta_T + mu) * T\ndm = u_lcyb - (delta_m + mu) * m\ndE = k_tl * m - (delta_E + mu) * E\ndL = v_supply - v_lcyb - (k_L + mu) * L\ndB = v_lcyb - v_out - (k_B + mu) * B'),
+      eq('Core implementation', String.raw`\begin{aligned}
+\theta&=\frac{T}{K_d+T}\\
+u_{\mathrm{LCYB}}&=u_{\mathrm{unbound}}(1-\theta)+u_{\mathrm{bound}}\theta\\
+v_{\mathrm{LCYB}}&=q_{\mathrm{LCYB}}E\frac{L}{K_{m,\mathrm{LCYB}}+L}\\[4pt]
+\frac{dT}{dt}&=s_T-(\delta_T+\mu)T\\
+\frac{dm}{dt}&=u_{\mathrm{LCYB}}-(\delta_m+\mu)m\\
+\frac{dE}{dt}&=k_{\mathrm{tl}}m-(\delta_E+\mu)E\\
+\frac{dL}{dt}&=v_{\mathrm{supply}}-v_{\mathrm{LCYB}}-(k_L+\mu)L\\
+\frac{dB}{dt}&=v_{\mathrm{LCYB}}-v_{\mathrm{out}}-(k_B+\mu)B
+\end{aligned}`),
     ),
     section('Interface with metabolomics',
       p('The downstream metabolomics model begins at the β-carotene input flux. The interface therefore passes the LCYB rate directly to that model while leaving its product-specific equations and parameters unchanged.'),
