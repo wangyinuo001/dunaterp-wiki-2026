@@ -11,10 +11,6 @@
 .px-world .px-stage { transition: transform .9s cubic-bezier(.4, 0, .2, 1); }
 .px-world.is-prologue:not(.is-handoff) .px-stage { transform: scale(1.12); }
 .px-world.is-prologue .px-canvas { pointer-events: none; }
-.px-world .route-start-cue { position: absolute; z-index: 19; left: 50%; bottom: 5.2rem; display: grid; grid-template-columns: auto auto auto; align-items: center; gap: .65rem; padding: .7rem .9rem; transform: translateX(-50%); border: 3px solid #06221f; background: #cdf558; color: #06221f; box-shadow: 5px 5px 0 #06221f; cursor: pointer; font-family: ui-monospace, Menlo, monospace; }
-.route-start-cue span { font: 800 .62rem/1 monospace; letter-spacing: .12em; opacity: .72; }
-.route-start-cue strong { font: 900 .76rem/1 monospace; letter-spacing: .08em; }
-.route-start-cue b { font-size: 1rem; }
 .px-world .story-replay { border: 0; padding: .4rem; background: #06221fd9; color: #fdf6e3; font: 700 .65rem monospace; letter-spacing: .08em; cursor: pointer; }
 .home-prologue { position: absolute; inset: 0; z-index: 50; isolation: isolate; overflow: hidden; color: #fff5db; font-family: ui-monospace, Menlo, monospace; outline: none; }
 .home-prologue.is-opening { animation: story-reveal 1.5s ease-out both; }
@@ -142,7 +138,6 @@
   .story-checkpoints strong, .story-checkpoints span { font-size: .58rem; }
   .story-progress { margin-top: .65rem; }
   .story-controls-hint { display: none; }
-  .px-world .route-start-cue { bottom: 8.5rem; }
 }
 @media (max-height: 600px) {
   .story-title { padding-top: 2rem; }

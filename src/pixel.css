@@ -55,7 +55,6 @@
 /* --- shared chrome ------------------------------------------------------ */
 
 .px-panel,
-.px-hud,
 .px-prompt,
 .px-archive > div > section,
 .px-scroll-chapter > .px-fallback-card {
@@ -228,73 +227,6 @@
   color: rgba(253, 246, 227, .66);
   font: 700 .78rem/1.6 ui-monospace, Menlo, monospace;
   letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-/* --- chapter HUD -------------------------------------------------------- */
-
-.px-hud {
-  position: absolute;
-  z-index: 18;
-  left: clamp(1rem, 2.2vw, 2rem);
-  top: 6.2rem;
-  width: min(32rem, calc(100% - 2rem));
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: .75rem;
-  align-items: center;
-  padding: .65rem .8rem;
-  border: var(--px-edge) solid var(--px-ink);
-  border-top-color: var(--px-accent);
-  background: var(--px-salt);
-  color: var(--px-ink);
-  box-shadow: 4px 4px 0 rgba(6, 34, 31, .72);
-  animation: pxHudIn .28s steps(4) both;
-}
-
-@keyframes pxHudIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
-
-.px-hud-index {
-  display: grid;
-  place-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: var(--px-accent);
-  color: var(--px-ink);
-  font: 900 1rem/1 ui-monospace, Menlo, monospace;
-}
-
-.px-hud-kicker {
-  margin: 0;
-  color: #49655f;
-  font: 800 .62rem/1 ui-monospace, Menlo, monospace;
-  letter-spacing: .12em;
-}
-
-.px-hud h2 {
-  margin: .28rem 0 .32rem;
-  font: 900 clamp(1rem, 1.8vw, 1.25rem)/1.08 ui-monospace, Menlo, monospace;
-  letter-spacing: -.01em;
-}
-
-.px-hud-body {
-  display: -webkit-box;
-  margin: 0;
-  overflow: hidden;
-  color: #36514c;
-  font: 650 .78rem/1.4 system-ui, sans-serif;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.px-hud .px-card-action {
-  display: inline-block;
-  color: #36514c;
-  font: 800 .65rem/1 ui-monospace, Menlo, monospace;
-  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
@@ -474,7 +406,7 @@
 
 .px-archive-grid nav a:hover { color: var(--px-accent); }
 
-.px-archive > footer { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: .7rem; }
+.px-archive > footer { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: .7rem; }
 .px-archive > footer .px-button { padding: .65rem .8rem; font-size: .72rem; }
 
 /* --- scroll story ------------------------------------------------------- */
@@ -526,8 +458,6 @@
 }
 
 @media (max-width: 800px) {
-  .px-hud { left: .75rem; right: .75rem; top: 5.4rem; width: auto; padding: .6rem .7rem; }
-  .px-hud h2 { font-size: 1rem; }
   .px-controls { left: 1rem; right: 1rem; bottom: 4.6rem; justify-items: stretch; text-align: center; }
   .px-mode { width: 100%; }
   .px-prompt { left: 1rem; right: 1rem; bottom: 12.5rem; transform: none; }
@@ -541,12 +471,10 @@
 }
 
 @media (max-height: 560px) {
-  .px-hud { display: none; }
   .px-intro { padding-block: 1rem; gap: .6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .px-hud { animation: none; }
   .px-button, .px-route i, .px-archive { transition: none; }
 }
 
@@ -565,7 +493,6 @@
 .px-controls .px-touch-help { display: none; }
 .px-dpad { display: none; }
 .px-world .px-intro-line { font-size: 1.0625rem; }
-.px-world .px-hud-body { font-size: .78rem; }
 .px-world .px-prompt p { font-size: .875rem; line-height: 1.4; letter-spacing: .04em; }
 .px-world.has-failed .px-loading { position: fixed; }
 @media (pointer: coarse), (max-width: 800px) {
@@ -588,13 +515,9 @@
 .px-chapter-card, .px-fallback-card { color: inherit; font: inherit; text-align: left; cursor: pointer; }
 .px-card-action { display: block; margin-top: .75rem; color: var(--px-accent); font: 800 .72rem monospace; text-transform: uppercase; }
 .px-chapter-card:hover, .px-fallback-card:hover { border-color: var(--px-accent); }
-.px-hud { max-width: 32rem; }
-.px-hud h2 { font-size: clamp(1rem, 1.8vw, 1.25rem); }
-.px-hud .px-card-action { margin-top: .25rem; }
 .px-archive-grid nav { grid-template-columns: 1fr; gap: .3rem; }
 .px-archive-card { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 2.35rem; padding: .42rem .55rem; border: 1px solid #fff5db33; background: #06221f; color: var(--px-salt); text-align: left; font: 700 .68rem/1.25 monospace; cursor: pointer; }
 .px-archive-card:hover { border-color: var(--px-accent); color: var(--px-accent); }
-@media (max-width: 800px) { .px-hud { max-width: none; } }
 .px-prompt.px-chapter-card { color: var(--px-ink); }
 
 @media (max-width: 650px) {

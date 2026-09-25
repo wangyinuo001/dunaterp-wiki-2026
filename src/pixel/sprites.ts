@@ -762,8 +762,7 @@ export function getAtlas(): Atlas {
       boulderS: boulder(false),
       boulderL: boulder(true),
       boat: rowboat(),
-      signStart: signpost("SALT ROUTE", "8"),
-      signFree: signpost("FREE ROAM", "x"),
+      signScroll: signpost("SCROLL", "8"),
       signArchive: signpost("ARCHIVE", "s"),
     },
     stations: {
@@ -780,13 +779,17 @@ export function getAtlas(): Atlas {
 }
 
 /** Signage generated on demand for the numbered station plates. */
-export function stationPlate(index: string, label: string, accent: string): Painter {
-  const text = `${index} ${label}`;
-  const w = textWidth(text) + 12;
-  const p = surface(w, 16);
-  block(p, 0, 0, w, 13, "2", "1", "3");
+export function stationPlate(index: string, label: string, accent: string, lines: [string, string]): Painter {
+  const heading = `${index} ${label}`;
+  const bodyOptions = { tracking: 0 } as const;
+  const w = Math.max(textWidth(heading), textWidth(lines[0], bodyOptions), textWidth(lines[1], bodyOptions)) + 14;
+  const p = surface(w, 39);
+  block(p, 0, 0, w, 36, "2", "1", "3");
   rect(p, 0, 0, w, 1, accent);
   rect(p, 2, 3, 2, 7, accent);
-  drawText(p, text, 7, 3, "F", { shadow: "1" });
+  drawText(p, heading, 7, 3, "F", { shadow: "1" });
+  rect(p, 5, 13, w - 10, 1, "4");
+  drawText(p, lines[0], 7, 17, "c", bodyOptions);
+  drawText(p, lines[1], 7, 27, "c", bodyOptions);
   return p;
 }

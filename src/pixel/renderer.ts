@@ -143,7 +143,7 @@ export class PixelRenderer {
   private plateFor(station: Station): Painter {
     let plate = this.plates.get(station.key);
     if (!plate) {
-      plate = stationPlate(station.index, station.short, station.accent);
+      plate = stationPlate(station.index, station.short, station.accent, station.mapLines);
       this.plates.set(station.key, plate);
     }
     return plate;

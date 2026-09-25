@@ -565,10 +565,15 @@ export function buildWorld(): World {
     });
   });
 
-  // Signposts at the trailhead and the archive approach.
+  // One small scroll cue sits beside the trailhead. Keeping the centre of the
+  // boardwalk empty makes the traveller visible as soon as the prologue ends.
   const head = path.sample(0.012);
-  props.push({ sprite: "signStart", x: head.x - 34, y: head.y + 10, shadow: "small" });
-  props.push({ sprite: "signFree", x: head.x + 34, y: head.y + 22, shadow: "small" });
+  props.push({
+    sprite: "signScroll",
+    x: head.x - head.dy * 52 + head.dx * 14,
+    y: head.y + head.dx * 52 + head.dy * 14,
+    shadow: "small",
+  });
   const gate = path.sample(0.94);
   props.push({ sprite: "signArchive", x: gate.x - 40, y: gate.y + 12, shadow: "small" });
 

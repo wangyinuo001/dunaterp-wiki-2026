@@ -17,6 +17,8 @@ export type StationCopy = {
   accent: string;
   /** Short label for the in-world sign plate. */
   short: string;
+  /** Two compact lines printed on the in-world station plate. */
+  mapLines: [string, string];
   /** Position along the boardwalk route, 0 at the trailhead. */
   u: number;
   /** Lateral offset from the route in pixels; negative is left of travel. */
@@ -28,6 +30,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "brine-edge",
     short: "CHALLENGE",
+    mapLines: ["PLANT SUPPLY IS LIMITED", "SALT-READY CHASSIS"],
     index: "01",
     kicker: "WHY DUNATERP",
     title: "Background & Challenge",
@@ -42,6 +45,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "the-cell",
     short: "DESIGN",
+    mapLines: ["D. SALINA MAKES A SHARED", "BETA-CAROTENE HUB"],
     index: "02",
     kicker: "ONE SHARED HUB",
     title: "Biological Design",
@@ -56,6 +60,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "product-yards",
     short: "PRODUCTS",
+    mapLines: ["ONE HUB, FOUR PRODUCTS", "SEPARATE STRAINS"],
     index: "03",
     kicker: "FOUR TERPENOID BRANCHES",
     title: "High-Value Product Routes",
@@ -70,6 +75,7 @@ export const STATION_COPY: StationCopy[] = [
   {
     key: "model-station",
     short: "PROCESS",
+    mapLines: ["CELL OUTPUT MEETS PROCESS", "CULTURE AND RECOVERY"],
     index: "04",
     kicker: "FROM CELL TO CULTIVATION",
     title: "Product & Process Characterisation",
@@ -86,6 +92,7 @@ export const STATION_COPY: StationCopy[] = [
 export const ARCHIVE_COPY: StationCopy = {
   key: "archive",
   short: "ARCHIVE",
+  mapLines: ["EVERY WIKI CHAPTER", "IN ONE FINAL INDEX"],
   index: "END",
   kicker: "EVERY STANDARD ROUTE",
   title: "The DunaTerp archive",

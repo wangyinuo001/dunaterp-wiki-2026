@@ -191,16 +191,6 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     else { engine.enterFree(); canvas.current?.focus({ preventScroll: true }); }
   }, [ready, failed]);
 
-  const beginJourney = useCallback(() => {
-    const node = root.current;
-    if (!node) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({
-      top: node.offsetTop + window.innerHeight * 0.08,
-      behavior: reduce ? "instant" : "smooth",
-    });
-  }, []);
-
   const restart = useCallback(() => {
     const engine = engineRef.current;
     const wasFree = engine?.mode === "free";
@@ -260,24 +250,6 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         {ready && isStory && <HomePrologue state={story} onNext={() => dispatchStory("NEXT")} onSkip={() => dispatchStory("SKIP")} />}
 
         <div className="px-world-ui" inert={isStory || !ready || failed}>
-        {!started && mode !== "free" && <button type="button" className="route-start-cue" onClick={beginJourney}>
-          <span>THE SALT ROUTE</span>
-          <strong>SCROLL TO BEGIN</strong>
-          <b aria-hidden="true">↓</b>
-        </button>}
-
-        {activeChapter && mode !== "free" && !promptStation && !atArchive && (
-          <button type="button" onClick={() => navigate(activeChapter.route)} className="px-hud px-chapter-card" style={{ "--px-accent": activeChapter.color } as React.CSSProperties}>
-            <span className="px-hud-index">{activeChapter.index}</span>
-            <div>
-              <p className="px-hud-kicker">{activeChapter.kicker}</p>
-              <h2>{activeChapter.title}</h2>
-              <p className="px-hud-body">{activeChapter.body}</p>
-              <span className="px-card-action">Explore chapter →</span>
-            </div>
-          </button>
-        )}
-
         {mode === "free" && <ExpeditionJournal
           currentStationKey={npcPrompt?.stationKey ?? promptKey}
           onOpenChange={(open) => { engineRef.current?.setPaused(open); if (!open) requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }))); }}
@@ -288,7 +260,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           <div><p>{npcPrompt.role} · OFF-ROUTE FIELD GUIDE</p><button type="button" onClick={() => engineRef.current?.talkToNpc()}>Talk to {npcPrompt.name}</button></div>
         </div>}
 
-        {promptStation && !dialogueNpc && (
+        {promptStation && !dialogueNpc && !atArchive && (
           <button type="button"
             className="px-prompt px-chapter-card"
             onClick={() => navigate(promptStation.route)}
@@ -315,7 +287,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           ))}
         </div>}
 
-        {!dialogueNpc && <div className="px-controls">
+        {!dialogueNpc && !atArchive && <div className="px-controls">
           <button type="button" className="story-replay" onClick={replayIntro} disabled={!ready || failed}>PLAY INTRO ↺</button>
           <button
             type="button"
@@ -338,9 +310,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           <NpcDialogue npcId={dialogueNpc.id} onClose={closeNpcDialogue} />
         )}
 
-        <button type="button" className="px-restart" onClick={restart} aria-label="Return to the trailhead">
-          ↑
-        </button>
+        {!atArchive && <button type="button" className="px-restart" onClick={restart} aria-label="Return to the trailhead">↑</button>}
 
         <div className="px-route" aria-hidden="true">
           {STATION_COPY.map((station) => (
