@@ -28,7 +28,7 @@
 .story-chapter { position: absolute; z-index: 2; top: max(3.8rem, 6vh); left: 50%; width: max-content; max-width: calc(100% - 12rem); padding: .65rem 1.2rem .75rem; transform: translateX(-50%); border-bottom: 4px solid #cdf558; background: #06221fee; box-shadow: 0 5px 0 #0617138f; text-align: center; text-shadow: 2px 2px #06221f; }
 .story-chapter > span { color: #c6d2b4; font-size: .6rem; letter-spacing: .2em; }
 .story-chapter h1 { margin: .65rem 0; font: 800 clamp(.9rem, 1.8vw, 1.4rem)/1.3 monospace; color: #cdf558; }
-.story-scene-art { position: absolute; inset: 8.5rem 44vw 3.5rem 4vw; display: grid; place-items: center; min-width: 0; padding: 1.5rem; text-shadow: 2px 2px #06221f; animation: story-caption .35s ease-out both; }
+.story-scene-art { position: absolute; inset: 8.5rem 4vw 3.5rem 44vw; display: grid; place-items: center; min-width: 0; padding: 1.5rem; text-shadow: 2px 2px #06221f; animation: story-caption .35s ease-out both; }
 .story-glyph { display: block; width: 5rem; height: 5rem; image-rendering: pixelated; filter: drop-shadow(4px 5px #06221f88); }
 .story-items { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 6vw, 5rem); }
 .story-item { display: grid; justify-items: center; gap: 1rem; font-size: .85rem; text-align: center; animation: story-item .4s calc(var(--item) * .25s) both; }
@@ -68,7 +68,7 @@
 .story-quest p { color: #cdf558; font-size: .7rem; letter-spacing: .2em; }
 .story-quest h2 { font-size: 2rem; margin: .6rem; }
 .story-quest > span { font-size: .8rem; }
-.story-dialogue-cluster { position: absolute; z-index: 2; right: max(2rem, 5vw); top: 50%; width: min(34rem, 38vw); transform: translateY(-42%); }
+.story-dialogue-cluster { position: absolute; z-index: 2; left: max(2rem, 5vw); right: auto; top: 50%; width: min(34rem, 38vw); transform: translateY(-42%); }
 .story-dialogue { position: relative; display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); align-items: stretch; width: 100%; border: 3px solid #c3cc8f; box-shadow: 7px 7px #061713b8; background: #0a3028fa; animation: story-item .25s ease-out both; }
 .story-portrait { display: grid; align-content: center; justify-items: center; margin: .75rem 0 .75rem .75rem; border-right: 1px solid #8ba27a70; }
 .story-portrait .story-glyph { width: 2.5rem; height: 2.5rem; }
