@@ -1,5 +1,5 @@
 import type { ContentBlock } from './content/types';
-import { dryLabNavigation, dryLabIndex, emptyDryLabPage, modeling, transcriptomics } from './content/dry-lab';
+import { dryLabNavigation, dryLabIndex, emptyDryLabPage, metabolomics, modeling, transcriptomics } from './content/dry-lab';
 
 export type WikiSection = {
   title: string;
@@ -29,7 +29,7 @@ export const navigation: Array<{ label: string; items: ReadonlyArray<readonly [s
 export const pages: Record<string, WikiPage> = {
   'dry-lab': dryLabIndex,
   transcriptomics,
-  metabolomics: emptyDryLabPage('Metabolomics'),
+  metabolomics,
   protein: emptyDryLabPage('Protein'),
   "project-description": {
     title: "DunaTerp: a salt-adapted terpenoid platform",
