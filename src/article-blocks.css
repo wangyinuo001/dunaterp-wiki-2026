@@ -36,3 +36,11 @@
 @media print {
   .research-table-details .research-table-scroll { max-height: none; overflow: visible; }
 }
+.pbr-widget-shell {
+  width: 100%;
+  margin: 1.75rem 0 2rem;
+}
+
+.pbr-widget-shell > div {
+  width: 100%;
+}
