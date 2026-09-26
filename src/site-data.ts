@@ -1,5 +1,5 @@
 import type { ContentBlock } from './content/types';
-import { dryLabNavigation, dryLabIndex, emptyDryLabPage, modeling, transcriptomics } from './content/dry-lab';
+import { dryLabNavigation, dryLabIndex, emptyDryLabPage, modeling, transcriptomics, hardware } from './content/dry-lab';
 
 export type WikiSection = {
   title: string;
@@ -104,7 +104,7 @@ export const pages: Record<string, WikiPage> = {
     ],
   },
   model: modeling,
-  hardware: emptyDryLabPage('Hardware'),
+  hardware,
   contribution: {
     title: "Leave a map for the next team", eyebrow: "Bronze contribution · standard URL", intro: "Candidate contributions described in the project draft are organised here for the team to validate, document and release with their underlying files.", status: "team-draft",
     sections: [

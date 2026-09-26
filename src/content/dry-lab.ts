@@ -199,3 +199,408 @@ export const dryLabIndex: WikiPage = {
 };
 
 export const emptyDryLabPage = (title: string): WikiPage => ({ title, eyebrow: `Dry Lab / ${title}`, intro: '', status: 'structure-only', sections: [] });
+
+const hardwareFig = (
+  name: string,
+  alt: string,
+  caption: string,
+): ContentBlock => ({
+  kind: 'figure',
+  src: `/figures/hardware/${name}.png`,
+  alt,
+  caption,
+});
+
+export const hardware: WikiPage = {
+  title: 'Hardware',
+  eyebrow: 'Dry Lab / Hardware',
+  status: 'team-draft',
+  intro:
+    'We developed a flat-panel airlift photobioreactor with symmetric double-sided illumination, together with a reduced-order engineering model to explore how reactor design and operating conditions may influence cultivation and production.',
+  sections: [
+    section(
+      'Photobioreactor Design for DunaTerp',
+      p(
+        'The performance of a photosynthetic production system depends not only on the engineered cells, but also on the physical environment in which they grow. For Dunaliella salina, light delivery, biomass self-shading, mixing, cultivation strategy, and energy consumption are closely connected.',
+      ),
+      p(
+        'Our hardware modeling consists of five connected components: optical transport, cultivation dynamics, two-stage optimization, light–dark cycling, and scale-up with energy consumption.',
+      ),
+    ),
+
+    section(
+      'Optical Transport',
+      p(
+        'As biomass accumulates, cells absorb and scatter incident light. This creates an uneven light environment inside the reactor: regions near the illuminated surfaces receive stronger light, while deeper regions can become increasingly light-limited. To describe this effect, we modeled light propagation across the flat-panel reactor under symmetric illumination from both transparent faces.',
+      ),
+
+      eq(
+        'Optical transport under symmetric double-sided illumination',
+        String.raw`\begin{aligned}
+\frac{d}{dz}
+\begin{bmatrix}
+I^+(z,t)\\
+I^-(z,t)
+\end{bmatrix}
+&=
+X(t)
+\begin{bmatrix}
+-(k_a+b k_s) & b k_s\\
+-b k_s & k_a+b k_s
+\end{bmatrix}
+\begin{bmatrix}
+I^+(z,t)\\
+I^-(z,t)
+\end{bmatrix}\\[4pt]
+I^+(0,t)&=I_F(t),\qquad
+I^-(L,t)=I_B(t)\\[4pt]
+I_F(t)&=I_B(t)=I_0(t)\\[4pt]
+G(z,t)&=I^+(z,t)+I^-(z,t)\\[4pt]
+\bar I(t)&=\frac{1}{L}\int_0^L G(z,t)\,dz
+\end{aligned}`,
+      ),
+
+      customTable(
+        'Variables used in the optical transport model',
+        ['Symbol', 'Meaning', 'Unit'],
+        [
+          ['I⁺', 'Forward photon flux inside the flat panel', 'µmol photons m⁻² s⁻¹'],
+          ['I⁻', 'Backward photon flux inside the flat panel', 'µmol photons m⁻² s⁻¹'],
+          ['I_F', 'Incident irradiance at the front face', 'µmol photons m⁻² s⁻¹'],
+          ['I_B', 'Incident irradiance at the rear face', 'µmol photons m⁻² s⁻¹'],
+          [
+            'I₀',
+            'Per-face incident irradiance under symmetric double-sided illumination',
+            'µmol photons m⁻² s⁻¹',
+          ],
+          ['X', 'Biomass concentration', 'g L⁻¹'],
+          ['k_a', 'Biomass-specific absorption coefficient', 'm² kg⁻¹'],
+          ['k_s', 'Biomass-specific scattering coefficient', 'm² kg⁻¹'],
+          ['b', 'Fraction of scattered light redirected backward', 'dimensionless'],
+          ['G', 'Total local irradiance', 'µmol photons m⁻² s⁻¹'],
+          ['L', 'Reactor optical path / panel thickness', 'm'],
+          ['Ī', 'Average irradiance across the optical path', 'µmol photons m⁻² s⁻¹'],
+        ],
+      ),
+
+      p(
+        'The model calculates the spatial light distribution inside the reactor and allows us to examine how biomass concentration and reactor geometry affect internal illumination.',
+      ),
+
+      hardwareFig(
+        'A_optical_field_heatmap_double_sided',
+        'Simulated light field across a flat-panel photobioreactor under symmetric double-sided illumination at different biomass concentrations.',
+        'Figure 1. Simulated optical field under symmetric double-sided illumination. Increasing biomass concentration strengthens self-shading and reduces irradiance in the central region of the reactor.',
+      ),
+
+      p(
+        'The optical field remains approximately symmetric because both large faces receive the same incident irradiance. As biomass increases, however, the centre of the reactor becomes progressively darker. This shows why increasing external illumination alone cannot fully eliminate internal light limitation and why maintaining a short optical path is important for our photobioreactor design.',
+      ),
+    ),
+
+    section(
+      'Cultivation Dynamics',
+      p(
+        'We next connected the calculated light environment to biomass growth, nutrient consumption, and product formation. The cultivation module describes the dynamic changes of biomass, nutrient availability, and product concentration over time.',
+      ),
+
+      eq(
+        'Cultivation dynamics',
+        String.raw`\begin{aligned}
+\frac{d}{dt}
+\begin{bmatrix}
+X\\
+N\\
+P
+\end{bmatrix}
+&=
+\begin{bmatrix}
+(\mu-k_d)X\\
+-\mu X/Y_{X/N}\\
+(\alpha\mu+\beta(t))X-k_pP
+\end{bmatrix}\\[5pt]
+\mu(t)
+&=
+\mu_{\max}
+\frac{g_I(\bar I(t))}{g_I(I_{\mathrm{opt}})}
+\frac{N(t)}{K_N+N(t)}\\[4pt]
+g_I(I)
+&=
+\frac{I}{K_I+I+I^2/K_{\mathrm{inh}}}\\[4pt]
+I_{\mathrm{opt}}
+&=
+\sqrt{K_IK_{\mathrm{inh}}}
+\end{aligned}`,
+      ),
+
+      customTable(
+        'Variables used in the cultivation model',
+        ['Symbol', 'Meaning', 'Unit'],
+        [
+          ['X', 'Biomass concentration', 'g L⁻¹'],
+          ['N', 'Limiting nutrient concentration', 'g L⁻¹'],
+          ['P', 'Target-product concentration', 'mg L⁻¹'],
+          ['μ', 'Actual specific growth rate', 'd⁻¹'],
+          ['μ_max', 'Maximum specific growth rate', 'd⁻¹'],
+          ['k_d', 'Biomass decay / maintenance-loss constant', 'd⁻¹'],
+          ['Y_X/N', 'Biomass yield on limiting nutrient', 'g biomass g⁻¹ nutrient'],
+          [
+            'α',
+            'Growth-associated production coefficient',
+            'mg product g⁻¹ biomass',
+          ],
+          [
+            'β',
+            'Non-growth-associated production coefficient',
+            'mg product g⁻¹ biomass d⁻¹',
+          ],
+          ['k_p', 'Product degradation constant', 'd⁻¹'],
+          ['K_N', 'Nutrient half-saturation parameter', 'g L⁻¹'],
+          ['K_I', 'Light-saturation parameter', 'µmol photons m⁻² s⁻¹'],
+          ['K_inh', 'Photoinhibition parameter', 'µmol photons m⁻² s⁻¹'],
+          ['I_opt', 'Predicted optimum irradiance for growth', 'µmol photons m⁻² s⁻¹'],
+        ],
+      ),
+
+      p(
+        'The model includes both light limitation and photoinhibition, so stronger illumination does not necessarily correspond to faster predicted growth. This module therefore links the physical light environment generated by the reactor directly to the biological response of the culture.',
+      ),
+    ),
+
+    section(
+      'Two-Stage Cultivation Strategy',
+      p(
+        'Conditions that favour rapid biomass accumulation may not be identical to those that favour product formation. We therefore explored a two-stage cultivation strategy. The first stage focuses on biomass growth, while the second represents a production-oriented condition.',
+      ),
+
+      eq(
+        'Two-stage cultivation and productivity optimization',
+        String.raw`\begin{aligned}
+\big[I_F(t),I_B(t),\beta(t)\big]
+&=
+\begin{cases}
+[I_g,I_g,\beta_g], & 0\le t<t_s\\
+[I_p,I_p,\beta_p], & t_s\le t\le T
+\end{cases}\\[5pt]
+Q_P(I_g,t_s)
+&=
+\frac{P(T;I_g,t_s)}{T}\\[4pt]
+(I_g^*,t_s^*)
+&=
+\underset{I_g,t_s}{\arg\max}\;Q_P(I_g,t_s)
+\end{aligned}`,
+      ),
+
+      customTable(
+        'Variables used in the two-stage cultivation model',
+        ['Symbol', 'Meaning', 'Unit'],
+        [
+          [
+            'I_g',
+            'Per-face irradiance during the growth stage',
+            'µmol photons m⁻² s⁻¹',
+          ],
+          [
+            'I_p',
+            'Per-face irradiance during the production stage',
+            'µmol photons m⁻² s⁻¹',
+          ],
+          [
+            'β_g',
+            'Non-growth-associated production coefficient during the growth stage',
+            'mg product g⁻¹ biomass d⁻¹',
+          ],
+          [
+            'β_p',
+            'Non-growth-associated production coefficient during the production stage',
+            'mg product g⁻¹ biomass d⁻¹',
+          ],
+          ['t_s', 'Switching time from growth to production stage', 'd'],
+          ['T', 'Total cultivation time', 'd'],
+          ['Q_P', 'Volumetric product productivity', 'mg L⁻¹ d⁻¹'],
+          ['P(T)', 'Final product concentration', 'mg L⁻¹'],
+        ],
+      ),
+
+      p(
+        'We explored different combinations of growth-stage illumination and switching time to examine their effects on predicted productivity.',
+      ),
+
+      hardwareFig(
+        'C_productivity_heatmap_double_sided',
+        'Heat map of predicted product productivity across growth-stage irradiance and switching time under double-sided illumination.',
+        'Figure 2. Predicted productivity across different combinations of growth-stage per-face irradiance and switching time.',
+      ),
+
+      p(
+        'The heat map shows that productivity depends on the combined effect of illumination and cultivation timing rather than on either parameter alone. To make the overall design space easier to understand, we also visualized the same response as a three-dimensional surface.',
+      ),
+
+      hardwareFig(
+        'D_3D_product_surface_double_sided',
+        'Three-dimensional response surface showing predicted productivity as a function of growth-stage irradiance and switching time.',
+        'Figure 3. Three-dimensional representation of the predicted productivity landscape.',
+      ),
+
+      p(
+        'Together, these simulations allow cultivation conditions to be treated as an engineering design space instead of selecting operating parameters independently.',
+      ),
+    ),
+
+    section(
+      'Light–Dark Cycling',
+      p(
+        'Cells inside an airlift photobioreactor continuously move through different regions of the reactor. Gas-driven circulation can carry cells from bright regions near illuminated surfaces into darker internal regions and then back again. As a result, individual cells experience changing light conditions rather than a constant irradiance.',
+      ),
+
+      eq(
+        'Reduced-order light–dark cycling',
+        String.raw`\begin{aligned}
+t_{\mathrm{cycle}}
+&=
+\frac{L_{\mathrm{loop}}}{\bar U}\\[4pt]
+t_L
+&=
+\phi_Lt_{\mathrm{cycle}}\\[4pt]
+t_D
+&=
+(1-\phi_L)t_{\mathrm{cycle}}\\[4pt]
+f_{I,\mathrm{cycle}}
+&=
+\phi_Lf_I(I_L)
++
+(1-\phi_L)f_I(I_D)\\[4pt]
+\mu_{\mathrm{cycle}}
+&=
+\mu_{\max}
+f_{I,\mathrm{cycle}}
+\frac{N}{K_N+N}
+\end{aligned}`,
+      ),
+
+      customTable(
+        'Variables used in the light–dark cycling model',
+        ['Symbol', 'Meaning', 'Unit'],
+        [
+          ['t_cycle', 'Time for one representative circulation cycle', 's'],
+          ['L_loop', 'Representative circulation-path length', 'm'],
+          ['Ū', 'Mean liquid velocity', 'm s⁻¹'],
+          ['φ_L', 'Fraction of the circulation cycle spent in bright regions', 'dimensionless'],
+          ['t_L', 'Residence time in the bright region per cycle', 's'],
+          ['t_D', 'Residence time in the dark region per cycle', 's'],
+          ['I_L', 'Representative irradiance in the bright region', 'µmol photons m⁻² s⁻¹'],
+          ['I_D', 'Representative irradiance in the dark region', 'µmol photons m⁻² s⁻¹'],
+          ['f_I,cycle', 'Effective light-response factor over one circulation cycle', 'dimensionless'],
+          ['μ_cycle', 'Effective specific growth rate under light–dark cycling', 'd⁻¹'],
+        ],
+      ),
+
+      p(
+        'This reduced representation connects reactor hydrodynamics to cellular light exposure without requiring a full CFD simulation. In our design, mixing therefore contributes not only to gas and nutrient transfer, but also to light management.',
+      ),
+    ),
+
+    section(
+      'Scale-Up and Energy Consumption',
+      p(
+        'Simply increasing photobioreactor thickness can increase the optical path and worsen self-shading. We therefore considered numbering-up as the main scale-up strategy, increasing total production capacity by operating multiple similar flat-panel modules while maintaining the optical characteristics of each module.',
+      ),
+
+      eq(
+        'Scale-up, energy consumption and simplified economic outputs',
+        String.raw`\begin{aligned}
+V_m
+&=
+AL\\[4pt]
+\frac{A_{\mathrm{ill}}}{V_m}
+&=
+\frac{2}{L}\\[4pt]
+n
+&=
+\left\lceil
+\frac{V_T}{AL}
+\right\rceil\\[4pt]
+Q_{g,T}
+&=
+nQ_{g,m}\\[4pt]
+E_{\mathrm{LED}}
+&=
+\frac{2nA}{\eta_{\mathrm{LED}}}
+\Big[
+I_gt_s+I_p(T-t_s)
+\Big]\\[4pt]
+M_{\mathrm{annual}}
+&=
+\eta_RP(T)V_T
+\frac{365}{T+t_{\mathrm{turn}}}\\[4pt]
+\Pi
+&=
+pM_{\mathrm{annual}}-OPEX\\[4pt]
+ROI
+&=
+\frac{\Pi}{CAPEX}\\[4pt]
+T_{\mathrm{payback}}
+&=
+\frac{CAPEX}{\Pi}
+\end{aligned}`,
+      ),
+
+      customTable(
+        'Variables used in scale-up and consumption estimates',
+        ['Symbol', 'Meaning', 'Unit'],
+        [
+          ['V_m', 'Working volume of one flat-panel module', 'm³'],
+          ['A', 'Large-face area of one module', 'm²'],
+          ['L', 'Panel thickness / optical path length', 'm'],
+          ['A_ill', 'Total illuminated area of one module', 'm²'],
+          ['V_T', 'Target total working volume', 'm³'],
+          ['n', 'Required number of modules', 'dimensionless'],
+          ['Q_g,T', 'Total gas volumetric flow after numbering-up', 'm³ s⁻¹'],
+          ['Q_g,m', 'Gas volumetric flow for one module', 'm³ s⁻¹'],
+          ['E_LED', 'LED energy consumption', 'model-dependent energy unit'],
+          ['η_LED', 'LED photon efficacy', 'µmol photons J⁻¹'],
+          ['η_R', 'Downstream recovery fraction', 'dimensionless'],
+          ['M_annual', 'Annual recovered product mass', 'kg year⁻¹'],
+          ['t_turn', 'Turnaround time between cultivation batches', 'd'],
+          ['p', 'Product selling price', 'USD kg⁻¹'],
+          ['Π', 'Annual operating profit', 'USD year⁻¹'],
+          ['OPEX', 'Annual operating expenditure', 'USD year⁻¹'],
+          ['CAPEX', 'Capital expenditure', 'USD'],
+          ['ROI', 'Return on investment', 'year⁻¹'],
+          ['T_payback', 'Simple payback time', 'year'],
+        ],
+      ),
+
+      p(
+        'This part of the model highlights the trade-off between biological performance and engineering cost. Higher illumination may improve cultivation under some conditions, but it also increases electricity consumption. Therefore, the condition producing the highest biological output is not necessarily the most attractive engineering condition.',
+      ),
+    ),
+
+    section(
+      'Interactive Hardware Design Tool',
+      p(
+        'To make the model easier to explore, we developed an interactive browser-based PBR tool. Users can modify key reactor and cultivation parameters and immediately observe how the predicted system response changes.',
+      ),
+      { kind: 'pbr-widget' },
+      p(
+        'The tool runs directly in the browser without requiring a Python backend. Instead of presenting only one fixed parameter set, the interactive interface allows users to explore how different assumptions affect the predicted reactor behaviour.',
+      ),
+    ),
+
+    section(
+      'Scope and Limitations',
+      p(
+        'Our model is intended as a reduced-order engineering framework for scenario exploration, rather than a fully experimentally calibrated digital twin.',
+      ),
+      p(
+        'The optical module simplifies radiative transport, while the circulation module represents hydrodynamics using characteristic parameters rather than full CFD.',
+      ),
+      p(
+        'Most kinetic, product, and economic parameters in the current implementation are illustrative nominal values rather than direct measurements from the final engineered strain.',
+      ),
+      p(
+        'The model is therefore primarily used to explore engineering relationships, compare operating scenarios, identify influential parameters, and visualize trade-offs between light, growth, productivity, and energy consumption. Future experimental measurements could be used to further calibrate and validate the model.',
+      ),
+    ),
+  ],
+};
