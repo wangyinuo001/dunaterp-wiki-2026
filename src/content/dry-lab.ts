@@ -15,9 +15,9 @@ const section = (title: string, ...blocks: ContentBlock[]): WikiSection => ({ ti
 export const dryLabNavigation = [
   ['Overview', '/dry-lab'],
   ['Transcriptomics', '/transcriptomics'],
+  ['Mathematical Modeling', '/model'],
   ['Metabolomics', '/metabolomics'],
   ['Protein', '/protein'],
-  ['Mathematical Modeling', '/model'],
   ['Hardware Modeling', '/hardware'],
   ['Hardware Design', '/hardware-design'],
 ] as const;
@@ -29,9 +29,9 @@ export const dryLabMenuGroups = [
 
 const modelingChapters = [
   ['Transcriptomics', '/transcriptomics', 'Rank pathway-associated regulators using published D. salina light-response RNA-seq.'],
+  ['Mathematical Modeling', '/model', 'Trace promoter occupancy through LCYB expression to the β-carotene pool.'],
   ['Metabolomics', '/metabolomics', 'Compare four product routes across eight A–H conditions, then test pathway branch points.'],
   ['Protein', '/protein', 'Screen LCYB variants and examine the proposed TF2146–DNA interaction.'],
-  ['Mathematical Modeling', '/model', 'Trace promoter occupancy through LCYB expression to the β-carotene pool.'],
 ] as const;
 
 export const transcriptomics: WikiPage = {

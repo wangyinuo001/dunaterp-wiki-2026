@@ -15,9 +15,9 @@ try {
   assert.deepEqual(items, [
     ['Overview', '/dry-lab'],
     ['Transcriptomics', '/transcriptomics'],
+    ['Mathematical Modeling', '/model'],
     ['Metabolomics', '/metabolomics'],
     ['Protein', '/protein'],
-    ['Mathematical Modeling', '/model'],
     ['Hardware Modeling', '/hardware'],
     ['Hardware Design', '/hardware-design'],
   ]);
