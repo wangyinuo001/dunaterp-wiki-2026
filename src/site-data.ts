@@ -1,7 +1,6 @@
 import type { ContentBlock } from './content/types';
 import { safety } from './content/safety';
 import { protein } from './content/protein';
-import { wetLabSections } from './content/experiments';
 import { dryLabNavigation, dryLabIndex, hardware, hardwareDesign, metabolomics, modeling, transcriptomics } from './content/dry-lab';
 
 export type WikiSection = {
@@ -105,16 +104,88 @@ export const pages: Record<string, WikiPage> = {
     ],
   },
   engineering: {
-    title: "Design is a loop, not a line", eyebrow: "Engineering success · standard URL", intro: "This page is structured around Design → Build → Test → Learn so judges can follow each iteration without hunting through the site.", status: "structure-only",
+    title: "Design is a loop, not a line", eyebrow: "Engineering success · standard URL", intro: "The kill-switch module is documented here as an iterative engineering program: first prove that MazF can suppress Dunaliella salina growth, then tune toxin output to a controllable level, and finally assemble the full salt-controlled circuit.", status: "team-draft",
     sections: [
-      { eyebrow: "Design rationale", title: "Connect regulation to the lycopene branch", body: "Pathway structure places LCYB at the conversion from lycopene to β-carotene. The regulatory model therefore links promoter occupancy, LCYB transcription and active enzyme abundance to lycopene cyclisation, while leaving unmeasured parameters explicit." },
-      { eyebrow: "Computational design", title: "Track the main product", body: "The five-state model connects regulatory-factor concentration and promoter affinity to LCYB transcription, active enzyme and β-carotene. Project measurements of binding, transcription, degradation, substrate supply and product removal activate the numerical comparison of regulator variants." },
-      { eyebrow: "Team evidence required", title: "Complete the biological cycle", body: "Add construct maps, build records, controls, raw measurements, failed attempts, analysis code and the exact design change made after testing.", items: ["Design rationale", "Build evidence", "Test protocol and controls", "Learned change for the next cycle"] },
+      {
+        eyebrow: "Kill switch architecture",
+        title: "Engineer a Salt-Controlled Suicide Switch",
+        body: "The biosafety strategy is to let engineered Dunaliella salina survive in high-salt working conditions but lose viability after transfer to low-salt external environments. The circuit therefore couples a salt-responsive antitoxin module to a constitutive toxin module.",
+        blocks: [
+          { kind: "paragraph", text: "In the intended final design, high salt activates PDCA1 and drives mazE expression. MazE neutralises the low-level MazF produced from the Pip-driven toxin module, so cells remain viable in the target niche." },
+          { kind: "paragraph", text: "After transfer to low salt, PDCA1 shuts down, no new MazE is produced, and the remaining MazF is no longer buffered. The resulting toxin activity is expected to stop growth and kill cells outside the intended cultivation environment." },
+          { kind: "figure", src: "/figures/wet-lab/engineer1.png", alt: "Working principle of the salt-controlled suicide switch under high-salt conditions with PDCA1-driven MazE neutralising low-level MazF.", caption: "Figure 1. High salt activates PDCA1, drives mazE expression and allows MazE to neutralise basal MazF so that cells survive." },
+          { kind: "figure", src: "/figures/wet-lab/engineer2.png", alt: "Working principle of the salt-controlled suicide switch under low-salt conditions with loss of MazE protection and MazF-driven cell death.", caption: "Figure 2. Under low salt, PDCA1 is shut down, no new MazE is produced and persistent MazF activity drives cell death." },
+        ],
+      },
+      {
+        eyebrow: "Cycle I",
+        title: "Validate MazF as the Killing Effector",
+        body: "The first engineering question was whether MazF could retain killing activity in the eukaryotic chassis D. salina. Cycle I therefore used a deliberately strong constitutive expression design to test feasibility before attempting circuit balancing.",
+        blocks: [
+          { kind: "heading", text: "Design" },
+          { kind: "paragraph", text: "A validation plasmid, p1302-CaMV35S-mazF, was constructed with mazF under the strong constitutive CaMV 35S promoter. Three experimental groups were defined for comparison: MazF transformants, empty-vector transformants and wild type." },
+          { kind: "heading", text: "Build" },
+          { kind: "paragraph", text: "mazF was cloned into the pCAMBIA1302 backbone, verified by colony PCR and sequencing, and introduced into D. salina by osmotic transformation. Independent transformants were selected with hygromycin B and then cultured in parallel with the two control groups." },
+          { kind: "heading", text: "Test" },
+          { kind: "paragraph", text: "Growth was monitored for 10 days in 0.5 M NaCl PKS/DM liquid medium using OD680. This assay tested whether strong MazF expression could suppress D. salina growth relative to both controls." },
+          { kind: "figure", src: "/figures/wet-lab/engineer3.png", alt: "Plasmid map of p1302-CaMV35S-mazF used for MazF validation in Dunaliella salina.", caption: "Figure 3. Plasmid map of p1302-CaMV35S-mazF (10,130 bp)." },
+          { kind: "figure", src: "/figures/wet-lab/engineer4.png", alt: "Colony PCR verification of p1302-CaMV35S-mazF construction.", caption: "Figure 4. Colony PCR verification of p1302-CaMV35S-mazF." },
+          { kind: "figure", src: "/figures/wet-lab/engineer5.png", alt: "Ten-day growth curves comparing wild type, empty-vector and MazF transformant Dunaliella salina strains.", caption: "Figure 5. Growth curves of WT, empty-vector and MazF transformants over 10 days. MazF transformants remained strongly growth-inhibited relative to both controls." },
+          { kind: "heading", text: "Learn" },
+          { kind: "paragraph", text: "MazF retained strong growth-inhibitory activity in D. salina, establishing that the toxin module is feasible in the chosen chassis. At the same time, strong-promoter-driven toxin expression appeared too severe for a stable final circuit, so the next iteration focused on reducing leak and creating a workable neutralisation window for MazE." },
+        ],
+      },
+      {
+        eyebrow: "Cycle II and III",
+        title: "Tune Toxin Output and Assemble the Full Circuit",
+        body: "After proving that MazF could suppress growth, the engineering goal shifted from feasibility to controllability. The toxin module was redesigned around weaker expression and orthogonal selection, then paired with a salt-responsive antitoxin design for final assembly.",
+        blocks: [
+          { kind: "heading", text: "Cycle II: weaken the toxin module" },
+          { kind: "paragraph", text: "Two engineering changes were introduced. First, the backbone was switched to pCAMBIA1302-bar so the toxin module would use phosphinothricin resistance and remain orthogonal to the hygromycin-marked antitoxin vector. Second, the endogenous low-abundance promoter Pip was chosen to drive mazF, with the aim of lowering toxin output while preserving killing efficacy." },
+          { kind: "paragraph", text: "p1302-Pip-mazF was assembled by homologous recombination, verified by colony PCR and sequencing, and transformed into D. salina. The growth-kinetics assay of weakly expressed MazF is underway and will determine whether this lower-expression design preserves an adequate kill window." },
+          { kind: "figure", src: "/figures/wet-lab/engineer6.png", alt: "Plasmid map of p1302-Pip-mazF using the bar selection marker and weak Pip promoter.", caption: "Figure 6. Plasmid map of p1302-Pip-mazF (bar) (11,181 bp)." },
+          { kind: "figure", src: "/figures/wet-lab/engineer7.png", alt: "Colony PCR verification of the p1302-Pip-mazF weak-promoter toxin construct.", caption: "Figure 7. Colony PCR verification of p1302-Pip-mazF. Positive clones were identified before algal transformation and phenotypic testing." },
+          { kind: "heading", text: "Cycle II: learn" },
+          { kind: "paragraph", text: "The weak Pip promoter and bar marker create a more practical toxin module for final assembly: toxin expression is expected to be more controllable, and the marker system is now compatible with orthogonal double selection." },
+          { kind: "heading", text: "Cycle III: final assembly in progress" },
+          { kind: "paragraph", text: "The next step is to build p1302-PDCA1-mazE, in which the salt-responsive promoter PDCA1 drives the antitoxin. This vector will be co-transformed with p1302-bar-Pip-mazF and selected using hygromycin/phosphinothricin double selection." },
+          { kind: "paragraph", text: "The final engineering test is a salt-switch assay from high salt to low salt. Success means robust growth in high salt, loss of protection after the switch, and clear survival or growth differences once the full circuit is triggered." },
+        ],
+      },
     ],
   },
   experiments: {
-    title: "Experiments", eyebrow: "Wet Lab", intro: "Molecular cloning, Dunaliella salina transformation, genomic DNA extraction, qPCR and product separation.", status: "team-draft",
-    sections: wetLabSections,
+    title: "Make every step reproducible", eyebrow: "Experiments", intro: "This page records the wet-lab validation workflow for the salt-controlled kill switch, from MazF toxicity tests through weak-promoter tuning to PDCA1 salt-response verification.", status: "team-draft",
+    sections: [
+      {
+        title: "Wet-lab protocols",
+        body: "The kill-switch module was validated through three connected experiment sets: MazF toxicity verification, weak-promoter toxin tuning and PDCA1 salt-response testing.",
+        blocks: [
+          { kind: "heading", text: "1. Verification of MazF toxicity (p1302-CaMV35S-mazF)" },
+          { kind: "paragraph", text: "MazF is the killing component of the mazEF toxin-antitoxin system and serves as the core lethal element of the kill-switch design. To test whether MazF can suppress D. salina growth, mazF was placed under the constitutive CaMV 35S promoter in p1302-CaMV35S-mazF and functionally characterised." },
+          { kind: "paragraph", text: "The construct was assembled in the pCAMBIA1302 backbone, verified by colony PCR and sequencing, and introduced into D. salina strain FACHB-435 by osmotic transformation. Cells were pre-adapted in 1 M NaCl for 8 h, resuspended in 0.1 M NaCl medium, mixed with 5.46 μg plasmid DNA and 15 μL of 0.1% Triton X-100, vortexed for 90 s, and allowed to recover for 48 h." },
+          { kind: "paragraph", text: "Transformants were selected with hygromycin B and compared with wild-type and empty-vector controls. All three groups were cultured in 0.5 M NaCl PKS/DM medium at 26 °C under 50 μmol photons m⁻² s⁻¹ and a 16 h light / 8 h dark photoperiod. OD680 was measured daily for 10 days." },
+          { kind: "figure", src: "/figures/wet-lab/experiment1.png", alt: "Plasmid map of p1302-CaMV35S-mazF used for MazF toxicity verification.", caption: "Figure 1. Plasmid map of p1302-CaMV35S-mazF (10,130 bp)." },
+          { kind: "figure", src: "/figures/wet-lab/experiment2.png", alt: "Colony PCR verification of p1302-CaMV35S-mazF with marker, colonies and no-template control lanes.", caption: "Figure 2. Colony PCR verification of p1302-CaMV35S-mazF. M, DNA ladder; NTC, no-template control." },
+          { kind: "figure", src: "/figures/wet-lab/experiment3.png", alt: "Ten-day growth curves comparing wild type, empty-vector and MazF transformant Dunaliella salina strains.", caption: "Figure 3. Growth curves of WT, empty-vector and MazF transformants over 10 days. MazF expression strongly inhibited D. salina growth." },
+          { kind: "paragraph", text: "Result: the MazF group remained close to its initial density and stayed clearly below both controls throughout the assay. This confirms that MazF retains strong growth-inhibitory activity in the eukaryotic microalgal host." },
+          { kind: "heading", text: "2. Weak-promoter toxin vector characterisation (p1302-bar-Pip-mazF)" },
+          { kind: "paragraph", text: "Because strong toxin expression made stable maintenance difficult, the toxin module was rebuilt with a weaker endogenous promoter and an orthogonal marker. pCAMBIA1302-bar was used as the backbone, and the low-abundance promoter Pip was selected to drive mazF." },
+          { kind: "paragraph", text: "The Pip promoter and mazF were amplified, assembled into the linearised backbone by multi-fragment homologous recombination, and transformed into E. coli DH5α. Positive clones were identified on kanamycin plates by colony PCR and confirmed by sequencing." },
+          { kind: "paragraph", text: "The verified plasmid was introduced into D. salina by the same osmotic-transformation workflow and selected on phosphinothricin-containing medium. Positive transformants are being followed by OD680 growth-kinetics assays to determine whether weakly expressed MazF still provides sufficient killing efficacy." },
+          { kind: "figure", src: "/figures/wet-lab/experiment4.png", alt: "Plasmid map of p1302-Pip-mazF using a bar marker and the weak Pip promoter.", caption: "Figure 4. Plasmid map of p1302-Pip-mazF (bar) (11,181 bp)." },
+          { kind: "figure", src: "/figures/wet-lab/experiment5.png", alt: "Colony PCR verification of the p1302-Pip-mazF weak-promoter toxin construct.", caption: "Figure 5. Colony PCR verification of p1302-Pip-mazF. Clear specific bands were observed at the expected size." },
+          { kind: "paragraph", text: "Current status: molecular construction and sequence verification are complete; the algal growth assay for the weak-promoter toxin module is still in progress." },
+          { kind: "heading", text: "3. Validation of the PDCA1 salt-responsive system (p2301-PDCA1-EGFP)" },
+          { kind: "paragraph", text: "The final circuit depends on PDCA1 as the salt-responsive input promoter. To verify its suitability, the endogenous PDCA1 promoter was fused to EGFP in the reporter plasmid p2301-PDCA1-EGFP." },
+          { kind: "paragraph", text: "The reporter was assembled by homologous recombination into the linearised pCAMBIA2301 backbone, screened by colony PCR and confirmed by sequencing. Transformants were then assigned to media containing different NaCl concentrations, for example 0.5 M, 2 M and 3 M NaCl." },
+          { kind: "paragraph", text: "EGFP fluorescence will be quantified across the salt gradient to establish the dynamic range of PDCA1 transcriptional activity and to test whether the promoter provides a usable high-salt versus low-salt switch input for the complete kill-switch design." },
+          { kind: "figure", src: "/figures/wet-lab/experiment6.png", alt: "Plasmid map of p2301-PDCA1-EGFP used to test PDCA1 salt responsiveness.", caption: "Figure 6. Plasmid map of p2301-PDCA1-EGFP (11,250 bp)." },
+        ],
+      },
+      { title: "Transcriptomics workflow", body: "The Transcriptomics page follows the carotenoid pathway from sequence annotation to replicate-aware light comparisons, then carries the LCYB response into the mathematical model." },
+      { title: "Modelling workflow", body: "The Mathematical Modeling page records a five-state ODE from regulatory-factor activity through promoter occupancy and LCYB expression to β-carotene. The implementation requires explicit parameters and initial values, so published observations and project measurements remain distinguishable." },
+    ],
   },
   results: {
     title: "Evidence, with its limits visible", eyebrow: "Results", intro: "This draft separates observed computational results, model-dependent predictions and measurements that still need to be made.", status: "team-draft",
