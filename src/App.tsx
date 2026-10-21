@@ -250,7 +250,12 @@ function tocChapters(slug: string, sections: TocSection[]): TocChapter[] {
     if (members.length === 0) return [];
     const allIds = new Set(members.flatMap((section) => [section.id, ...section.children.map((child) => child.id)]));
     const links = members.length === 1
-      ? members[0].children.map((child) => ({ ...child, activeIds: new Set([child.id]) }))
+      ? members[0].children.map((child) => {
+          const cycle = slug === 'engineering' && members[0].title === 'Safety Module'
+            ? child.title.match(/^(Cycle [IVX]+)\s*[\u2014\u2013-]\s*Design$/)
+            : null;
+          return { ...child, ...(cycle ? { title: cycle[1], titleRuns: undefined } : {}), activeIds: new Set([child.id]) };
+        })
       : members.map((section) => ({
           id: section.id,
           title: section.title,
