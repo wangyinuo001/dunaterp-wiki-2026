@@ -16,7 +16,8 @@
     "preview": "vite preview",
     "art:check": "vite build --config tools/art-check/vite.config.ts && node tools/art-check/shoot.mjs",
     "preview:single": "vite build --config tools/preview/vite.config.ts && node tools/preview/build.mjs",
-    "deploy:prepare": "vite build --config tools/deploy/vite.config.ts && node tools/deploy/check.mjs && node tools/deploy/prepare.mjs"
+    "deploy:prepare": "vite build --config tools/deploy/vite.config.ts && node tools/deploy/check.mjs && node tools/deploy/prepare.mjs",
+    "check:results": "node tools/check-results.mjs"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "0.17.3",

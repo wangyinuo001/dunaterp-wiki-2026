@@ -1153,24 +1153,6 @@
       "journalAbbr": "Int J Mol Sci",
       "doi": "10.3390/ijms26073174",
       "source": "https://api.crossref.org/works/10.3390%2Fijms26073174"
-    },
-    "SCU-China (2026). Biosafety-Results. Team experimental report supplied for this Results page. Figures 4-1–4-11; construction, growth assays and current circuit status.": {
-      "kind": "report",
-      "authors": [
-        "SCU-China"
-      ],
-      "title": "Biosafety-Results",
-      "year": "2026",
-      "notes": "Unpublished team experimental report. Figures 4-1–4-11; construction, growth assays and current circuit status. Source: team-supplied Biosafety-Results.docx."
-    },
-    "/engineering": {
-      "kind": "report",
-      "authors": [
-        "SCU-China"
-      ],
-      "title": "Engineering: CPP2146, CCD1, BKT and CitCCD4 construction and characterisation",
-      "year": "2026",
-      "notes": "Team experimental records summarised on the Engineering page of this Wiki."
     }
   },
   "pendingMetadata": [

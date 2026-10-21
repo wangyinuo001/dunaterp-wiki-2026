@@ -16,8 +16,6 @@ def format_entry(entry):
     before_title=authors+' '
     title=entry['title'].rstrip(' .')
     links=[]
-    if entry['kind']=='report':
-        return {'text':f"{authors} {sentence(entry['title'])} {entry['year']}. {entry.get('notes','')}".strip(),'links':[]}
     if entry['kind']=='article':
         issue='('+entry['issue']+')'if entry.get('issue')else''
         volume=';'+entry['volume']+issue if entry.get('volume')else''

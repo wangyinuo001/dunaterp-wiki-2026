@@ -1,51 +1,45 @@
-# Project Results review
+# Project Results document import
 
-The Results page uses the current GitHub main branch, existing team Engineering
-and dry-lab records, and `D:/IGEM/result/Biosafety-Results.zip`. It inherits the
-shared article layout, typography, lake hero, reading progress, responsive
-contents panel, figure links and footer. Project navigation, the Wiki Map and
-GitHub Pages direct links now include Results.
+The Results page is built strictly from `D:/IGEM/result/Results_总.docx`.
+It replaces the earlier editorial summaries. No scientific prose, conclusions,
+statistics, references or future plans were added or rewritten.
 
-## Official guidance
+The native article contains six modules in Word order: CPP2146, β-Ionone,
+Crocetin, Astaxanthin, β-Citraurin and Biosafety. All 42 figure numbers,
+46 image panels, ten tables, captions, source heading text and body paragraphs
+are retained. Short module names are used only in the contents navigation.
+The shared Project hero, typography, reading column, footer, figure links and
+responsive table scrolling are reused. Word panels described as top/bottom
+are stacked; Figure 3 is displayed as A/B panels.
 
-- [Team Wiki](https://competition.igem.org/deliverables/team-wiki)
-- [Best Wiki ballot](https://competition.igem.org/judging/special-prizes):
-  evidence, clear navigation, documentation and attribution.
-- [Project Awards ballot](https://competition.igem.org/judging/project-prizes):
-  measured or modelled data must support the project’s claims.
+`tools/import-results.py` records the source document hash, source body indices,
+resolved run formatting and image hashes in `docs/results-sources.json`.
+Its fidelity check compares 53,241 non-whitespace characters and their bold,
+italic, subscript/superscript and hyperlink properties against Word. All
+46 exported panels preserve the original pixels after the two crops already
+stored in the document. Original primer identifiers, including DsTF2146-F,
+are retained as supplied.
 
-The page covers observations, figures, interpretation, unsuccessful attempts,
-limitations, an analysis summary and future work. Experimental observations,
-model predictions and pending work are distinguished. No new experimental
-data, statistical results or citations were generated.
+The document contains an internal inconsistency between the CPP2146 transcript
+interpretations in its source paragraphs 22 and 26. Both paragraphs are kept
+verbatim under the user's strict document-following instruction. Scientific
+review should resolve this in the source document before any requested rewrite.
 
-## Scientific review before publication
+Six panel occurrences reuse verified official iGEM CDN mappings. Forty panel
+occurrences currently use local paths for GitHub review. Before official iGEM
+release, upload the pending files from `work/results-upload/` to the official
+asset service, replace their runtime mappings with the returned URLs, and
+record the verified URLs/hashes in the official CDN manifest.
 
-The new report and older Engineering safety text disagree on the Pip–MazF
-day-six value (about 0.05 versus about 0.165) and the extent of PDCA1
-salt-gradient characterisation. Results follows the newly supplied document
-and plot. Engineering has been preserved; the team should reconcile these
-records before publication.
+This change does not publish to the official iGEM website. The source DOCX
+remains outside Git. The existing CC BY 4.0 and GitLab footer links remain.
 
-The supplied plots have error bars and significance symbols without specifying
-their definitions. The page states this without inferring replicate numbers,
-tests or p-values. OD680 is a growth readout, rather than a direct death assay.
-Qualitative fluorescence and candidate TLC bands are not presented as
-quantified salt responsiveness or definitive product identity.
+## Verification
 
-The sequencing-result panels are construct/sequence alignment overviews;
-captions distinguish them from raw chromatograms. All 11 source figures and
-their hashes are recorded in `docs/results-sources.json`.
-
-## Official asset hosting
-
-This is a GitHub/local review implementation. The 11 imported lossless WebP
-figures currently use local paths. Before official release, upload them using
-the official iGEM asset service, replace their `deploy-assets.json` entries
-with the returned `static.igem.wiki` URLs and record verified hashes/URLs in
-`docs/igem-cdn-assets.json`. No official upload or official release is claimed.
-The shared CC BY 4.0 and GitLab footer links remain.
-
-Codex assisted with source comparison, English summaries, figure extraction,
-integration and verification. The team must review scientific interpretation
-and reconcile source differences before release.
+TypeScript, the production build, ESLint and the Results fidelity check pass.
+The site-wide bibliography command passes its source-format and citation-order
+checks, then fails the existing TF2146 naming assertion for `dry-lab` on the
+current main branch. That unrelated source wording is preserved. The same
+assertion is exempted only for Results, whose source primer identifiers must
+remain verbatim. The prior assertion that Results must be absent is updated
+because the user explicitly requested restoring this page.

@@ -183,12 +183,6 @@ type TocChapterDefinition = { title: string; start: number; end: number };
  * remains present in the article.
  */
 const TOC_CHAPTERS: Record<string, TocChapterDefinition[]> = {
-  results: [
-    { title: "Platform Results", start: 0, end: 2 },
-    { title: "Biosafety Experiments", start: 3, end: 6 },
-    { title: "Computational Evidence", start: 7, end: 7 },
-    { title: "Discussion & Next Steps", start: 8, end: 9 },
-  ],
   experiments: [
     { title: "Experiment Overview", start: 0, end: 0 },
     { title: "Experiment Documents", start: 1, end: 5 },
@@ -450,6 +444,7 @@ function Article({ slug }: { slug: string }) {
     slug === 'attributions' ? ' article-page--attributions' : '',
     slug === 'project-description' ? ' article-page--description' : '',
     slug === 'design' ? ' article-page--design' : '',
+    slug === 'results' ? ' article-page--results' : '',
     slug === 'engineering' ? ' article-page--engineering' : '',
   ].join("");
   return <><Header /><PageProgress pathname={`/${slug}`} stops={progressStops} accent={articleAccent} /><main id="main-content" tabIndex={-1} style={{ "--article-accent": articleAccent, "--article-hero-image": `url("${heroImage}")` } as CSSProperties} className={articleClassName}>

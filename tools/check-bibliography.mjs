@@ -50,7 +50,8 @@ try {
   assert(remapped.some(run => run.text === '[1]' && run.href === '#reference-1'));
   assert(remapped.some(run => run.text === ' after' && run.italic));
   assert(pages.results?.sections.length > 0, 'Results page must be present');
-  for (const [slug, page] of Object.entries(pages)) assert(!/TF2146/.test(JSON.stringify(page)), slug);
+  // Results retains original primer identifiers (e.g. DsTF2146-F) verbatim from Word.
+  for (const [slug, page] of Object.entries(pages)) if (slug !== 'results') assert(!/TF2146/.test(JSON.stringify(page)), slug);
   const revision = JSON.parse(fs.readFileSync('docs/engineering-revision-sources.json', 'utf8'));
   for (const item of revision.matches) {
     const block = pages.engineering.sections[item.section - 1].blocks[item.block];
