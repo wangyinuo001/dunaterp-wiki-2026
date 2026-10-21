@@ -17,7 +17,7 @@ try {
   assert.deepEqual(items, [
     ['Overview', '/model'],
     ['Transcriptomics', '/transcriptomics'],
-    ['数学建模', '/mathematical-modeling'],
+    ['Mathematical Modeling', '/mathematical-modeling'],
     ['Metabolomics', '/metabolomics'],
     ['Protein', '/protein'],
     ['Safety', '/safety-and-security'],
@@ -27,7 +27,7 @@ try {
   assert.equal(new Set(pageOrder).size, pageOrder.length);
   assert.equal(pages.model, dryLabIndex);
   assert.equal(pages['mathematical-modeling'], modeling);
-  assert.equal(pages['mathematical-modeling'].title, '数学建模');
+  assert.equal(pages['mathematical-modeling'].title, 'Mathematical Modeling');
   assert.equal(pages['human-practices'], ihpProjectImprovement);
   assert(ihpNavigation.some(([, href]) => href === '/human-practices'));
   for (const [legacy, canonical] of Object.entries(pageRedirects)) {
@@ -65,8 +65,7 @@ try {
   let tables = 0;
   for (const slug of ['model','transcriptomics','mathematical-modeling','protein','safety-and-security']) {
     const page = pages[slug];
-    const { title: _title, eyebrow: _eyebrow, ...englishContent } = page;
-    assert(!/[\u3400-\u9fff]/u.test(JSON.stringify(englishContent)), `Non-English content: ${slug}`);
+    assert(!/[\u3400-\u9fff]/u.test(JSON.stringify(page)), `Non-English content: ${slug}`);
     for (const section of page.sections) {
       for (const block of section.blocks ?? []) {
         const figureBlocks = block.kind === 'figure' ? [block] : block.kind === 'figure-row' || block.kind === 'figure-grid' ? block.figures : [];

@@ -13,7 +13,7 @@ const section = (title: string, ...blocks: ContentBlock[]): WikiSection => ({ ti
 export const dryLabNavigation = [
   ['Overview', '/model'],
   ['Transcriptomics', '/transcriptomics'],
-  ['数学建模', '/mathematical-modeling'],
+  ['Mathematical Modeling', '/mathematical-modeling'],
   ['Metabolomics', '/metabolomics'],
   ['Protein', '/protein'],
   ['Safety', '/safety-and-security'],
@@ -181,7 +181,7 @@ export const metabolomics: WikiPage = {
 };
 
 export const modeling: WikiPage = {
-  title: '数学建模', eyebrow: 'Dry Lab / 数学建模', status: 'team-draft',
+  title: 'Mathematical Modeling', eyebrow: 'Dry Lab / Mathematical Modeling', status: 'team-draft',
   intro: 'Transcriptomics identifies LCYB as the light-responsive control point, while protein analysis supplies two molecular levers on that node: LCYB enzyme design and TF2146–DNA recognition. This page connects those inputs through a five-state dynamic model of promoter occupancy, LCYB transcript, active enzyme, lycopene conversion and β-carotene formation. Its output is the time-dependent β-carotene input passed to the downstream allocation model.',
   references: [refs.bintu2005, refs.liang2017, refs.lan2022, refs.mialoundama2010],
   sections: [

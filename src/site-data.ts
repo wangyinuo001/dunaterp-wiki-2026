@@ -52,7 +52,7 @@ export const archiveNavigation = navigation.map((group) => group.label === "Dry 
       ...group,
       items: [
         ["Transcriptomics", "/transcriptomics"],
-        ["数学建模", "/mathematical-modeling"],
+        ["Mathematical Modeling", "/mathematical-modeling"],
         ["Metabolomics", "/metabolomics"],
         ["Protein", "/protein"],
         ["Safety", "/safety-and-security"],
