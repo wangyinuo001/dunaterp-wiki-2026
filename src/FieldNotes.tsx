@@ -79,10 +79,10 @@ export function FieldPanel({ site, onClose }: { site: FieldDefinition; onClose: 
   }, []);
   return <dialog ref={ref} className="fd-dialog" aria-labelledby="field-panel-title" onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
     <div className="fd-paper">
-      <header className="fd-header"><div><p className="fd-eyebrow">{site.kind === "item" ? "FIELD DISCOVERY / ADDED TO YOUR JOURNAL" : site.category}</p><h2 id="field-panel-title">{site.title}</h2></div><button type="button" className="fd-close" onClick={onClose} aria-label="Close field note">×</button></header>
+      <header className="fd-header"><div><p className="fd-eyebrow">{site.kind === "item" ? "FIELD DISCOVERY" : site.category}</p><h2 id="field-panel-title">{site.title}</h2></div><button type="button" className="fd-close" onClick={onClose} aria-label="Close field note">×</button></header>
       <div className="fd-panel-layout"><div className="fd-specimen"><FieldIcon site={site} /><span>{site.kind === "item" ? site.category : "THE FIELD POST"}</span><small>{site.kind === "item" ? "Illustrated discovery" : "Off the boardwalk"}</small></div>
         <div className="fd-panel-copy">{site.kind === "listener" ? <FeedbackNote /> : <DiscoveryText site={site} />}</div></div>
-      <footer className="fd-footer"><span>{site.kind === "item" ? "Saved in Expedition journal → Discoveries" : "Take your questions back to the project."}</span><button type="button" className="fd-primary" onClick={onClose}>Back to exploring →</button></footer>
+      <footer className="fd-footer">{site.kind !== "item" && <span>Take your questions back to the project.</span>}<button type="button" className="fd-primary" onClick={onClose}>Back to exploring →</button></footer>
     </div>
   </dialog>;
 }
