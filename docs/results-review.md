@@ -25,12 +25,10 @@ interpretations in its source paragraphs 22 and 26. Both paragraphs are kept
 verbatim under the user's strict document-following instruction. Scientific
 review should resolve this in the source document before any requested rewrite.
 
-34 panel occurrences use verified official iGEM CDN mappings. 12 panel
-occurrences still use local files for GitHub Pages. Official publication is
-pending completion of the remaining official asset uploads.
-
-This change does not publish to the official iGEM website. The source DOCX
-remains outside Git. The existing CC BY 4.0 and GitLab footer links remain.
+All 46 panel occurrences use official iGEM CDN URLs. The 40 newly mapped
+panel exports were downloaded and verified against their lossless SHA-256.
+Six existing panel mappings reuse the official asset manifest. The source
+DOCX remains outside Git.
 
 ## Verification
 

@@ -203,14 +203,14 @@
     "bytes": 47488
   },
   {
-    "source": "figures/dry-lab/图片4.png",
+    "source": "figures/dry-lab/鍥剧墖4.png",
     "url": "https://static.igem.wiki/teams/6212/wiki/dunaterp-8c2b1ff129fc.webp",
     "sha256": "8c2b1ff129fc9d59cceab493a37df84391d151345245c4226ce560a08b173bba",
     "sourceSha256": "04e0f3f8babcbb98764cb091e859345c44b63a86e7ea9b0a91f41b30e739a7fc",
     "bytes": 27186
   },
   {
-    "source": "figures/dry-lab/图片5.png",
+    "source": "figures/dry-lab/鍥剧墖5.png",
     "url": "https://static.igem.wiki/teams/6212/wiki/dunaterp-e500178b0bba.webp",
     "sha256": "e500178b0bba2f00f723a0fbf78b625ed259e5e20ec8fd9fa4ea9a08d24dfd67",
     "sourceSha256": "41ce6bab33df169ed15fef2641c8aafc6743dc43f762482172fa80267a67785e",
@@ -2476,5 +2476,89 @@
     "sha256": "998048e08b871c8f7f7fbb7209aef263bbfda4d16471e1b82a1a7663fc5949d3",
     "sourceSha256": "1969882b099eea87add558dd692c471624efa7c873784915817ae1d102651479",
     "bytes": 16504
+  },
+  {
+    "source": "figures/results/results-20-1-064063be5861.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-20-1-064063be5861.webp",
+    "sha256": "064063be5861c082bd838b72f4920229f592735591ef7b63cf0230fc41341269",
+    "sourceSha256": "8754ecb7a22bec3355df4c5dbce88bbfaa9f8a405ca687be380c07510d40a47d",
+    "bytes": 578590
+  },
+  {
+    "source": "figures/results/results-21-1-d8c8249c5fae.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-21-1-d8c8249c5fae.webp",
+    "sha256": "d8c8249c5faedddbe595416b1d260cb559cb266a8f905647482dbc2e63a1cdba",
+    "sourceSha256": "8da00fbe41373e417f9e1b5b5021f54c458c8ffb295875004f0d54c82194ad62",
+    "bytes": 311490
+  },
+  {
+    "source": "figures/results/results-22-1-029c8db5d6b6.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-22-1-029c8db5d6b6.webp",
+    "sha256": "029c8db5d6b6dd592e4ec762d0df77a71f0e5b45de55fa524e7716eb9bdcf2ce",
+    "sourceSha256": "c5fd2bd4facfa89e950ede96a5fac70096db89a85e4bd5e7d516cf923cfb9082",
+    "bytes": 505202
+  },
+  {
+    "source": "figures/results/results-24-1-a7105c644323.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-24-1-a7105c644323.webp",
+    "sha256": "a7105c6443234b27e59aada962476189318e5d77ddaa8957a8c50413cdadf74e",
+    "sourceSha256": "4d261a0508e01554c5b48f37f8bdba73cc598e7a395e17dfa885ab63047dfcec",
+    "bytes": 363490
+  },
+  {
+    "source": "figures/results/results-25-1-fe9cf5462a75.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-25-1-fe9cf5462a75.webp",
+    "sha256": "fe9cf5462a75b494362d33d69b0aa1da3274d7f06bd37bf9d848385f727184ec",
+    "sourceSha256": "9d31997c576c61ce1acc107c1ab3447e90ec3ab98be20b737e5f0e8c80b5a77e",
+    "bytes": 411800
+  },
+  {
+    "source": "figures/results/results-27-1-097d60083a63.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-27-1-097d60083a63.webp",
+    "sha256": "097d60083a63f0313243796b73d8273d39003012509242d297eba29d018be592",
+    "sourceSha256": "e6b6527bbada750d292a13b202f406e43e336914aa87fbcf7b567ea41d06d277",
+    "bytes": 288318
+  },
+  {
+    "source": "figures/results/results-30-1-f3f2d05476e3.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-30-1-f3f2d05476e3.webp",
+    "sha256": "f3f2d05476e3a24eb2d299e9e1ed8d3303186280041d46aeccb38a2a4e7f1f49",
+    "sourceSha256": "b3e827805d088b34564b6475ac1d0ac157ad5f2870ce7761a707f0ef2a74e313",
+    "bytes": 1650954
+  },
+  {
+    "source": "figures/results/results-31-1-ef0673d0b511.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-31-1-ef0673d0b511.webp",
+    "sha256": "ef0673d0b511e5f5e9cddef58d60a7759abb9880335976fb6543bf8732b9b52e",
+    "sourceSha256": "59d86ac260a20bf0379aa0604a252cfd41dfaf7747cd83f0f711e4ab52bfee9c",
+    "bytes": 191550
+  },
+  {
+    "source": "figures/results/results-33-1-9a2232599ca7.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-33-1-9a2232599ca7.webp",
+    "sha256": "9a2232599ca7232b077d9bc77159f291f6a9a618122092c9165bd704cac9296b",
+    "sourceSha256": "16d1cd62a862fbbcd97af86c12149fe7692de3aa987fabcbeb5f24a83a49e765",
+    "bytes": 76792
+  },
+  {
+    "source": "figures/results/results-37-1-64ab85a570e5.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-37-1-64ab85a570e5.webp",
+    "sha256": "64ab85a570e580ad5767df5455926fad8b965e2eab78a4c7b5660c3a04820242",
+    "sourceSha256": "7b274db548e3463042cc4a91c5d6eded5cee6282d974ad8b587c18a011e168cd",
+    "bytes": 70500
+  },
+  {
+    "source": "figures/results/results-39-1-9e64cf3ee0e1.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-39-1-9e64cf3ee0e1.webp",
+    "sha256": "9e64cf3ee0e18ae8e920c55498f8086b57ddd69dfad27bd6697c4cd9facf8e56",
+    "sourceSha256": "bbccf03c0a849e8613de52056cd61d0be70cf95a2fe1cf0b4f00d51e4f5196b2",
+    "bytes": 65050
+  },
+  {
+    "source": "figures/results/results-40-1-748ec7526322.webp",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/results-40-1-748ec7526322.webp",
+    "sha256": "748ec7526322b198a6b92c36bcc713a6f04b4668af964539a755b19242d450b7",
+    "sourceSha256": "35596855291c942feaaeec5f7959943bab1774abd45d599e80501d88ea2c1b54",
+    "bytes": 71358
   }
 ]
