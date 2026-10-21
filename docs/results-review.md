@@ -25,11 +25,9 @@ interpretations in its source paragraphs 22 and 26. Both paragraphs are kept
 verbatim under the user's strict document-following instruction. Scientific
 review should resolve this in the source document before any requested rewrite.
 
-Six panel occurrences reuse verified official iGEM CDN mappings. Forty panel
-occurrences currently use local paths for GitHub review. Before official iGEM
-release, upload the pending files from `work/results-upload/` to the official
-asset service, replace their runtime mappings with the returned URLs, and
-record the verified URLs/hashes in the official CDN manifest.
+34 panel occurrences use verified official iGEM CDN mappings. 12 panel
+occurrences still use local files for GitHub Pages. Official publication is
+pending completion of the remaining official asset uploads.
 
 This change does not publish to the official iGEM website. The source DOCX
 remains outside Git. The existing CC BY 4.0 and GitLab footer links remain.
@@ -38,7 +36,7 @@ remains outside Git. The existing CC BY 4.0 and GitLab footer links remain.
 
 TypeScript, the production build, ESLint and the Results fidelity check pass.
 The site-wide bibliography command passes its source-format and citation-order
-checks, then fails the existing TF2146 naming assertion for `dry-lab` on the
+checks, then fails the existing TF2146 naming assertion for `model` on the
 current main branch. That unrelated source wording is preserved. The same
 assertion is exempted only for Results, whose source primer identifiers must
 remain verbatim. The prior assertion that Results must be absent is updated
