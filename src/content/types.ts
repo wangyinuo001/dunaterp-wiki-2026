@@ -10,7 +10,7 @@ export type ContentBlock =
   | { kind: 'figure-grid'; figures: { src: string; alt: string; caption: string; width?: number; height?: number }[]; caption?: string; captionRuns?: DocumentTextRun[]; className?: string }
   | { kind: 'member-grid'; members: TeamMember[] }
   | { kind: 'chapter-grid'; items: { index: string; title: string; text: string; href: string }[] }
-  | { kind: 'table'; caption: string; columns: string[]; rows: string[][]; columnRuns?: DocumentTextRun[][]; cellRuns?: DocumentTextRun[][][]; collapsed?: boolean }
+  | { kind: 'table'; caption: string; captionRuns?: DocumentTextRun[]; columns: string[]; rows: string[][]; columnRuns?: DocumentTextRun[][]; cellRuns?: DocumentTextRun[][][]; collapsed?: boolean }
   | { kind: 'links'; links: { label: string; href: string }[] }
   | { kind: 'attribution-list'; entries: AttributionEntry[] }
   | { kind: 'official-attributions' }

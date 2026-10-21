@@ -1,0 +1,5416 @@
+{
+  "sourceDocument": "D:\\IGEM\\result\\Results_总.docx",
+  "documentSha256": "eb0d6f9757ad431ba8fa09e29eb4f5b223484c2dcf2130e0105353f170559039",
+  "wordingChanged": false,
+  "moduleOrder": [
+    "CPP2146",
+    "β-Ionone",
+    "Crocetin",
+    "Astaxanthin",
+    "β-Citraurin",
+    "Biosafety"
+  ],
+  "figures": 42,
+  "imagePanels": 46,
+  "tables": 10,
+  "fidelity": {
+    "textAndFormattingMatch": true,
+    "sourceUnits": 208,
+    "charactersVerified": 53241,
+    "italicCharacters": 503,
+    "subscriptCharacters": 148
+  },
+  "assets": [
+    {
+      "figure": 1,
+      "bodyIndex": 7,
+      "source": "word/media/image1.png",
+      "sourceSha256": "9ed0b38a9ed3f4f5257104dcf3d9c18173f29117d0cfa15686ed746961c71144",
+      "output": "figures/results/results-01-1-405f287f5f67.webp",
+      "sha256": "405f287f5f679119edd4d789bc3c3ecbe154f7c367bff68472c4cdb960743ee3",
+      "bytes": 641814,
+      "originalWidth": 4800,
+      "originalHeight": 2200,
+      "width": 4800,
+      "height": 2200,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-01-1-405f287f5f67.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 2,
+      "bodyIndex": 12,
+      "source": "word/media/image2.png",
+      "sourceSha256": "95bf8260ab2f7c0184e01f392762519b42ffd029d2920d2cc8447a06a00dca0f",
+      "output": "figures/results/results-02-1-ce5a3ba86fe4.webp",
+      "sha256": "ce5a3ba86fe492c763e04842a193fc39beaff665abd3dbdeb5f8f46698954a23",
+      "bytes": 36602,
+      "originalWidth": 1410,
+      "originalHeight": 775,
+      "width": 1410,
+      "height": 775,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-02-1-ce5a3ba86fe4.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 3,
+      "bodyIndex": 17,
+      "source": "word/media/image3.jpeg",
+      "sourceSha256": "01c8a033f17c983587d96af0c9e329f4513896bc74142291559f98481cdb48c6",
+      "output": "figures/results/results-03-1-ba48221e715b.webp",
+      "sha256": "ba48221e715be9765c6fd0e8263b835e9d2a0a21fd600938c2a5b8717ebb40d7",
+      "bytes": 1097106,
+      "originalWidth": 1920,
+      "originalHeight": 1440,
+      "width": 1920,
+      "height": 1440,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-03-1-ba48221e715b.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 3,
+      "bodyIndex": 18,
+      "source": "word/media/image4.png",
+      "sourceSha256": "19f05c654267c496f7f6a60a2da8236de6d6437c830989ac2e4d9d37ad0f1447",
+      "output": "figures/results/results-03-2-ca7cced5f297.webp",
+      "sha256": "ca7cced5f2971bf8f3e74582c0b5664f86659503cc19e2e656959594cb87b356",
+      "bytes": 225178,
+      "originalWidth": 648,
+      "originalHeight": 486,
+      "width": 648,
+      "height": 486,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-03-2-ca7cced5f297.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 4,
+      "bodyIndex": 24,
+      "source": "word/media/image5.png",
+      "sourceSha256": "c780d262872a46c1f3b4f2072a9bf3e5d2a79ddd22fe121be26156c465475bab",
+      "output": "figures/results/results-04-1-cad72c38ec75.webp",
+      "sha256": "cad72c38ec75b7da246a3e6c02827813056fce3cbfa31f727a07fd8e682d2051",
+      "bytes": 50236,
+      "originalWidth": 1567,
+      "originalHeight": 793,
+      "width": 1567,
+      "height": 793,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-04-1-cad72c38ec75.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 5,
+      "bodyIndex": 37,
+      "source": "word/media/image6.png",
+      "sourceSha256": "0087ff3a6e0af077ae1538a8ff09b6b915f0b44a569446e0001a6ad7ac0d429d",
+      "output": "figures/wet-lab/engineering-total/engineering-total-06-a111fa7f10e7.webp",
+      "sha256": "a111fa7f10e711b19a57378532ac1ee7f8ff5e9cfd750ed0f87465f7377bad77",
+      "bytes": 41970,
+      "originalWidth": 1126,
+      "originalHeight": 975,
+      "width": 1126,
+      "height": 975,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-06-a111fa7f10e7.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 6,
+      "bodyIndex": 49,
+      "source": "word/media/image7.png",
+      "sourceSha256": "494b8dbc4d40518c36b7bfd1f90fed307e914881ea1b305419d44259003b0e4f",
+      "output": "figures/results/results-06-1-290a9ee7ad8e.webp",
+      "sha256": "290a9ee7ad8e87bebef230546453cb580b503cbbb609b764ee997d51801c03e0",
+      "bytes": 566830,
+      "originalWidth": 3706,
+      "originalHeight": 900,
+      "width": 3706,
+      "height": 900,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-06-1-290a9ee7ad8e.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 7,
+      "bodyIndex": 52,
+      "source": "word/media/image8.jpeg",
+      "sourceSha256": "c7cebb3846aa51b0af2ef245c272abb93bdc97189d29132abed23477ef41193b",
+      "output": "figures/results/results-07-1-d1bbf511d06a.webp",
+      "sha256": "d1bbf511d06a6506072c016851405a401e49021059bc4d757bcd602a39dc5a8d",
+      "bytes": 924152,
+      "originalWidth": 1440,
+      "originalHeight": 1920,
+      "width": 1440,
+      "height": 1920,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-07-1-d1bbf511d06a.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 8,
+      "bodyIndex": 55,
+      "source": "word/media/image9.jpeg",
+      "sourceSha256": "5668984d946ed134b74d0c1308a9f47c12d0fa42210cdcea81f3d23c434dc871",
+      "output": "figures/results/results-08-1-a184229b236b.webp",
+      "sha256": "a184229b236bd924b140d0b72527b8ca66278cb38b054f7c70348c57636e7293",
+      "bytes": 225532,
+      "originalWidth": 1392,
+      "originalHeight": 1040,
+      "width": 1392,
+      "height": 700,
+      "crop": {
+        "l": 0,
+        "t": 0,
+        "r": 0,
+        "b": 32649
+      },
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-08-1-a184229b236b.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 9,
+      "bodyIndex": 60,
+      "source": "word/media/image10.png",
+      "sourceSha256": "7997289fb1793a413f01c3c457958bd1ed9b78875675ef325cf3a857409e5e43",
+      "output": "figures/results/results-09-1-3ab3e72eddb0.webp",
+      "sha256": "3ab3e72eddb006e630d34cc5d9fb459dfaae427567e55f7597477e2c57dfffff",
+      "bytes": 758570,
+      "originalWidth": 1500,
+      "originalHeight": 1144,
+      "width": 1500,
+      "height": 1144,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-26-1-3ab3e72eddb0.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 10,
+      "bodyIndex": 65,
+      "source": "word/media/image11.png",
+      "sourceSha256": "0cc713e1f85d7f8cf6383a5cb1a959e4f943943eb2a150af3956253d9109cf71",
+      "output": "figures/results/results-10-1-2ebf4dd1d313.webp",
+      "sha256": "2ebf4dd1d31343c8553b764ed67818e04412ccac8dcdfe0fe60904caca04cb28",
+      "bytes": 580266,
+      "originalWidth": 2422,
+      "originalHeight": 2131,
+      "width": 2422,
+      "height": 2131,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-10-1-2ebf4dd1d313.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 11,
+      "bodyIndex": 67,
+      "source": "word/media/image12.png",
+      "sourceSha256": "2bf60fbd78792d6ed8e1187c7553c45b61e71d032cadc7f090bce341d4253049",
+      "output": "figures/results/results-11-1-cd79d56fa5db.webp",
+      "sha256": "cd79d56fa5db1e146a2eba882db94d98e200dd8b1d7a63418d4edc78c4cc103c",
+      "bytes": 26456,
+      "originalWidth": 2172,
+      "originalHeight": 352,
+      "width": 2172,
+      "height": 352,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-11-1-cd79d56fa5db.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 12,
+      "bodyIndex": 72,
+      "source": "word/media/image13.png",
+      "sourceSha256": "327e7d33c2e60c3aa7ebb1c453879458d0f0d6282bf78dd94e25ee99f352d5cc",
+      "output": "figures/results/results-12-1-5b83593e4fe0.webp",
+      "sha256": "5b83593e4fe09361a882a3e4b5a24300beda879c71d9e23fb78fe4055e524af8",
+      "bytes": 16746,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "width": 1920,
+      "height": 1080,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-12-1-5b83593e4fe0.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 13,
+      "bodyIndex": 88,
+      "source": "word/media/image14.png",
+      "sourceSha256": "14b3eb459d0b8edf512435d0583a420f409d89f63c470aa2ae75f3c849b1a633",
+      "output": "figures/results/results-13-1-79fa6e340f85.webp",
+      "sha256": "79fa6e340f8520c31bd4ca4123f81b6ccab27b84ce01cd877258b3f476f2f72e",
+      "bytes": 151800,
+      "originalWidth": 4670,
+      "originalHeight": 2309,
+      "width": 4670,
+      "height": 2309,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-13-1-79fa6e340f85.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 14,
+      "bodyIndex": 90,
+      "source": "word/media/image15.png",
+      "sourceSha256": "5d22ebaaba7a9065fcc9da4b76b8e18bd57aea28f864b04cdcd33b4db45c31b1",
+      "output": "figures/results/results-14-1-5f890a519bab.webp",
+      "sha256": "5f890a519bab00cecc328c9571a58a4f4f5829de120f16d51c43e5ce245b191e",
+      "bytes": 28874,
+      "originalWidth": 2220,
+      "originalHeight": 1170,
+      "width": 2220,
+      "height": 1170,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-14-1-5f890a519bab.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 15,
+      "bodyIndex": 105,
+      "source": "word/media/image16.png",
+      "sourceSha256": "5d3384ead61ba1cf5b10b58ed0d953d9588a70a034a3c4e0f5f00d40a02fc3cb",
+      "output": "figures/results/results-15-1-dcde2eb05c51.webp",
+      "sha256": "dcde2eb05c51d007bb3b6d208d6f56bd43c11cbdedaf1382a2fc05d50a69926c",
+      "bytes": 507410,
+      "originalWidth": 2900,
+      "originalHeight": 3690,
+      "width": 2900,
+      "height": 3690,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-15-1-dcde2eb05c51.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 16,
+      "bodyIndex": 110,
+      "source": "word/media/image17.png",
+      "sourceSha256": "fab65a53498143109ca9dc1e398b69b6a61306b24915f593e30d011b234d47cc",
+      "output": "figures/results/results-16-1-68a1c0eeb4dc.webp",
+      "sha256": "68a1c0eeb4dc23fb23efdca0743ae9c25967c2eb5925e3589e8a80d986903c5c",
+      "bytes": 968448,
+      "originalWidth": 2385,
+      "originalHeight": 1823,
+      "width": 2385,
+      "height": 1823,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-16-1-68a1c0eeb4dc.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 17,
+      "bodyIndex": 114,
+      "source": "word/media/image18.png",
+      "sourceSha256": "05288a93d584b928f49be85580c8b98d871e1740ff5ee9399d95d10630b989e9",
+      "output": "figures/results/results-17-1-a0eb9d365744.webp",
+      "sha256": "a0eb9d3657448cc572dc301da79f5cc387fcb04ea9a7b93caced30dc0c78f2fd",
+      "bytes": 31466,
+      "originalWidth": 1405,
+      "originalHeight": 643,
+      "width": 1405,
+      "height": 643,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-17-1-a0eb9d365744.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 17,
+      "bodyIndex": 115,
+      "source": "word/media/image19.png",
+      "sourceSha256": "9b7b957ef21e8d02d5df66d6d8d2e76c87fa99800769bfcc7085f224409a07a4",
+      "output": "figures/results/results-17-2-f031659ac1b6.webp",
+      "sha256": "f031659ac1b616ddfd3f1be23e852c6568b919fd0c5f1008d77104d895a429d3",
+      "bytes": 33158,
+      "originalWidth": 1395,
+      "originalHeight": 535,
+      "width": 1395,
+      "height": 535,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-17-2-f031659ac1b6.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 18,
+      "bodyIndex": 119,
+      "source": "word/media/image20.png",
+      "sourceSha256": "f2bd88035cc3bb43fa812fab90ce2917c81d47cb93cca3ec868492262409b0c3",
+      "output": "figures/results/results-18-1-7e3d743046e8.webp",
+      "sha256": "7e3d743046e88d738b60015b9c1d760cbf5413f644ecea626fee615ff465df87",
+      "bytes": 307710,
+      "originalWidth": 1282,
+      "originalHeight": 622,
+      "width": 1282,
+      "height": 622,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-18-1-7e3d743046e8.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 18,
+      "bodyIndex": 120,
+      "source": "word/media/image21.png",
+      "sourceSha256": "85a99131236d3b1724aea0d5fd78c9d0c2ebfd3e467b337480bdcb89995d6d5e",
+      "output": "figures/results/results-18-2-fe8a1a61c143.webp",
+      "sha256": "fe8a1a61c14373573f02f42dcd618dcf39d3f3ec5c04bd703b5beb3c1ab7c7cd",
+      "bytes": 610584,
+      "originalWidth": 1600,
+      "originalHeight": 805,
+      "width": 1600,
+      "height": 805,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-18-2-fe8a1a61c143.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 19,
+      "bodyIndex": 125,
+      "source": "word/media/image22.png",
+      "sourceSha256": "728defcc2a3806c22ca78830338310167af52e37b3d5ba99ed79c876f3dae896",
+      "output": "figures/results/results-19-1-3e60f17133a6.webp",
+      "sha256": "3e60f17133a634a5652d27e70ee85fc4a81e6af31f3a05257bc9d90663634d16",
+      "bytes": 494896,
+      "originalWidth": 1387,
+      "originalHeight": 679,
+      "width": 1387,
+      "height": 679,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-19-1-3e60f17133a6.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 20,
+      "bodyIndex": 137,
+      "source": "word/media/image23.png",
+      "sourceSha256": "8754ecb7a22bec3355df4c5dbce88bbfaa9f8a405ca687be380c07510d40a47d",
+      "output": "figures/results/results-20-1-064063be5861.webp",
+      "sha256": "064063be5861c082bd838b72f4920229f592735591ef7b63cf0230fc41341269",
+      "bytes": 578590,
+      "originalWidth": 3000,
+      "originalHeight": 2350,
+      "width": 3000,
+      "height": 2350,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 21,
+      "bodyIndex": 141,
+      "source": "word/media/image24.png",
+      "sourceSha256": "8da00fbe41373e417f9e1b5b5021f54c458c8ffb295875004f0d54c82194ad62",
+      "output": "figures/results/results-21-1-d8c8249c5fae.webp",
+      "sha256": "d8c8249c5faedddbe595416b1d260cb559cb266a8f905647482dbc2e63a1cdba",
+      "bytes": 311490,
+      "originalWidth": 1919,
+      "originalHeight": 1271,
+      "width": 1919,
+      "height": 1271,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 22,
+      "bodyIndex": 146,
+      "source": "word/media/image25.png",
+      "sourceSha256": "c5fd2bd4facfa89e950ede96a5fac70096db89a85e4bd5e7d516cf923cfb9082",
+      "output": "figures/results/results-22-1-029c8db5d6b6.webp",
+      "sha256": "029c8db5d6b6dd592e4ec762d0df77a71f0e5b45de55fa524e7716eb9bdcf2ce",
+      "bytes": 505202,
+      "originalWidth": 1456,
+      "originalHeight": 687,
+      "width": 1456,
+      "height": 687,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 22,
+      "bodyIndex": 147,
+      "source": "word/media/image26.png",
+      "sourceSha256": "895aa7658f0f24a52642b635539d3b30024785b45e604955c41c47f1a402b086",
+      "output": "figures/results/results-22-2-bde5d762a317.webp",
+      "sha256": "bde5d762a3177bf35cf2c12584ed652c0c950dbb44a823b908af031c3faabde0",
+      "bytes": 469442,
+      "originalWidth": 1299,
+      "originalHeight": 652,
+      "width": 1299,
+      "height": 652,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-pr35-16-bde5d762a317.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 23,
+      "bodyIndex": 151,
+      "source": "word/media/image27.png",
+      "sourceSha256": "55e90d4510f2e890ea6685f05c656eebf083799b883895ae168bcef9e4b1e500",
+      "output": "figures/wet-lab/engineering-total/engineering-total-17-c88cf64c8ee5.webp",
+      "sha256": "c88cf64c8ee578e4fac6e9d7dc7ddc08e632a7084345edd743fb961c75d614ad",
+      "bytes": 496626,
+      "originalWidth": 1384,
+      "originalHeight": 693,
+      "width": 1384,
+      "height": 693,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-17-c88cf64c8ee5.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 24,
+      "bodyIndex": 163,
+      "source": "word/media/image28.png",
+      "sourceSha256": "4d261a0508e01554c5b48f37f8bdba73cc598e7a395e17dfa885ab63047dfcec",
+      "output": "figures/results/results-24-1-a7105c644323.webp",
+      "sha256": "a7105c6443234b27e59aada962476189318e5d77ddaa8957a8c50413cdadf74e",
+      "bytes": 363490,
+      "originalWidth": 2492,
+      "originalHeight": 900,
+      "width": 2492,
+      "height": 900,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 25,
+      "bodyIndex": 167,
+      "source": "word/media/image29.jpeg",
+      "sourceSha256": "9d31997c576c61ce1acc107c1ab3447e90ec3ab98be20b737e5f0e8c80b5a77e",
+      "output": "figures/results/results-25-1-fe9cf5462a75.webp",
+      "sha256": "fe9cf5462a75b494362d33d69b0aa1da3274d7f06bd37bf9d848385f727184ec",
+      "bytes": 411800,
+      "originalWidth": 1500,
+      "originalHeight": 936,
+      "width": 1500,
+      "height": 936,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 26,
+      "bodyIndex": 172,
+      "source": "word/media/image10.png",
+      "sourceSha256": "7997289fb1793a413f01c3c457958bd1ed9b78875675ef325cf3a857409e5e43",
+      "output": "figures/results/results-26-1-3ab3e72eddb0.webp",
+      "sha256": "3ab3e72eddb006e630d34cc5d9fb459dfaae427567e55f7597477e2c57dfffff",
+      "bytes": 758570,
+      "originalWidth": 1500,
+      "originalHeight": 1144,
+      "width": 1500,
+      "height": 1144,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-26-1-3ab3e72eddb0.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 27,
+      "bodyIndex": 177,
+      "source": "word/media/image30.png",
+      "sourceSha256": "e6b6527bbada750d292a13b202f406e43e336914aa87fbcf7b567ea41d06d277",
+      "output": "figures/results/results-27-1-097d60083a63.webp",
+      "sha256": "097d60083a63f0313243796b73d8273d39003012509242d297eba29d018be592",
+      "bytes": 288318,
+      "originalWidth": 2384,
+      "originalHeight": 1484,
+      "width": 2384,
+      "height": 1484,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 28,
+      "bodyIndex": 179,
+      "source": "word/media/image31.png",
+      "sourceSha256": "e7831d687dbe50768e2f4ace833fb0e71e79bfb2c2b16439db7784ecf1d3d689",
+      "output": "figures/results/results-28-1-cde6038a86a9.webp",
+      "sha256": "cde6038a86a9b425a717e25259c30bc5aa7b70fbf5bcad181cc1f94b162a3b4b",
+      "bytes": 33102,
+      "originalWidth": 2280,
+      "originalHeight": 372,
+      "width": 2280,
+      "height": 372,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-28-1-cde6038a86a9.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 29,
+      "bodyIndex": 184,
+      "source": "word/media/image32.png",
+      "sourceSha256": "cbe7f07a19a1d4003a5832dc03963353c4bba21930ea0c27ef533fbcf74ab8f8",
+      "output": "figures/results/results-29-1-7b00a991c7f4.webp",
+      "sha256": "7b00a991c7f40f07d78801bad8b9689f283b39b2aed47907a6ee9a1baa45b423",
+      "bytes": 15636,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "width": 1920,
+      "height": 1080,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-29-1-7b00a991c7f4.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 30,
+      "bodyIndex": 199,
+      "source": "word/media/image33.png",
+      "sourceSha256": "b3e827805d088b34564b6475ac1d0ac157ad5f2870ce7761a707f0ef2a74e313",
+      "output": "figures/results/results-30-1-f3f2d05476e3.webp",
+      "sha256": "f3f2d05476e3a24eb2d299e9e1ed8d3303186280041d46aeccb38a2a4e7f1f49",
+      "bytes": 1650954,
+      "originalWidth": 1988,
+      "originalHeight": 1772,
+      "width": 1988,
+      "height": 1772,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 31,
+      "bodyIndex": 214,
+      "source": "word/media/image34.png",
+      "sourceSha256": "59d86ac260a20bf0379aa0604a252cfd41dfaf7747cd83f0f711e4ab52bfee9c",
+      "output": "figures/results/results-31-1-ef0673d0b511.webp",
+      "sha256": "ef0673d0b511e5f5e9cddef58d60a7759abb9880335976fb6543bf8732b9b52e",
+      "bytes": 191550,
+      "originalWidth": 4263,
+      "originalHeight": 2323,
+      "width": 4263,
+      "height": 2323,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 32,
+      "bodyIndex": 230,
+      "source": "word/media/image35.png",
+      "sourceSha256": "9e59647dfb3bd8851b36192a371ffffb5b677b9bd6ee89b3252463f8af986908",
+      "output": "figures/results/results-32-1-9e1a4be96a2f.webp",
+      "sha256": "9e1a4be96a2f2afc0aaa4534dc126ea814f41e1ed1d76edf011307946de36c47",
+      "bytes": 94730,
+      "originalWidth": 1512,
+      "originalHeight": 1211,
+      "width": 1512,
+      "height": 1211,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-32-1-9e1a4be96a2f.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 33,
+      "bodyIndex": 232,
+      "source": "word/media/image36.png",
+      "sourceSha256": "16d1cd62a862fbbcd97af86c12149fe7692de3aa987fabcbeb5f24a83a49e765",
+      "output": "figures/results/results-33-1-9a2232599ca7.webp",
+      "sha256": "9a2232599ca7232b077d9bc77159f291f6a9a618122092c9165bd704cac9296b",
+      "bytes": 76792,
+      "originalWidth": 1116,
+      "originalHeight": 415,
+      "width": 1116,
+      "height": 415,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 34,
+      "bodyIndex": 234,
+      "source": "word/media/image37.png",
+      "sourceSha256": "08461415cfbd427fc558eab72bb713319e62dd044fb175568fe3c8fd9e16cec2",
+      "output": "figures/wet-lab/engineering-total/engineering-total-27-0f572425d269.webp",
+      "sha256": "0f572425d26900f95272f9d3e8bd48080bb3aff373bd13918f657604e8d94ea7",
+      "bytes": 36788,
+      "originalWidth": 1106,
+      "originalHeight": 347,
+      "width": 1106,
+      "height": 347,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-27-0f572425d269.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 35,
+      "bodyIndex": 240,
+      "source": "word/media/image38.png",
+      "sourceSha256": "ba0a2cc7a6dc3017d4f9e0c762dcb44055526ca099ceeee6897533bf3838dc1a",
+      "output": "figures/results/results-35-1-3698c4c42fb2.webp",
+      "sha256": "3698c4c42fb280f9317621023d07591594e1488ad2e0df0f160da72a883e136c",
+      "bytes": 10024,
+      "originalWidth": 1336,
+      "originalHeight": 866,
+      "width": 1336,
+      "height": 866,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-35-1-3698c4c42fb2.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 36,
+      "bodyIndex": 248,
+      "source": "word/media/image39.png",
+      "sourceSha256": "1265270519550c9564eeafa428b31c889141654080a72e118e1d6fb46f41d17f",
+      "output": "figures/wet-lab/experiment6.png",
+      "sha256": "1265270519550c9564eeafa428b31c889141654080a72e118e1d6fb46f41d17f",
+      "bytes": 244590,
+      "originalWidth": 1267,
+      "originalHeight": 1118,
+      "width": 1267,
+      "height": 1118,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/dunaterp-a6d792c95b69.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 37,
+      "bodyIndex": 250,
+      "source": "word/media/image40.png",
+      "sourceSha256": "7b274db548e3463042cc4a91c5d6eded5cee6282d974ad8b587c18a011e168cd",
+      "output": "figures/results/results-37-1-64ab85a570e5.webp",
+      "sha256": "64ab85a570e580ad5767df5455926fad8b965e2eab78a4c7b5660c3a04820242",
+      "bytes": 70500,
+      "originalWidth": 1105,
+      "originalHeight": 544,
+      "width": 1105,
+      "height": 441,
+      "crop": {
+        "l": 0,
+        "t": 0,
+        "r": 0,
+        "b": 18871
+      },
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 38,
+      "bodyIndex": 252,
+      "source": "word/media/image41.png",
+      "sourceSha256": "8ce4d4b02f837f485ea583baf85a210453e943bd5c7b2bd805554c76836b0555",
+      "output": "figures/wet-lab/kill-switch-engineering/killswitch-cycle3-sequencing.png",
+      "sha256": "8ce4d4b02f837f485ea583baf85a210453e943bd5c7b2bd805554c76836b0555",
+      "bytes": 52351,
+      "originalWidth": 1814,
+      "originalHeight": 682,
+      "width": 1814,
+      "height": 682,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/lab/kill-switch-engineering/killswitch-cycle3-sequencing-02f85f1c9121.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 39,
+      "bodyIndex": 260,
+      "source": "word/media/image42.png",
+      "sourceSha256": "bbccf03c0a849e8613de52056cd61d0be70cf95a2fe1cf0b4f00d51e4f5196b2",
+      "output": "figures/results/results-39-1-9e64cf3ee0e1.webp",
+      "sha256": "9e64cf3ee0e18ae8e920c55498f8086b57ddd69dfad27bd6697c4cd9facf8e56",
+      "bytes": 65050,
+      "originalWidth": 806,
+      "originalHeight": 744,
+      "width": 806,
+      "height": 744,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 40,
+      "bodyIndex": 262,
+      "source": "word/media/image43.png",
+      "sourceSha256": "35596855291c942feaaeec5f7959943bab1774abd45d599e80501d88ea2c1b54",
+      "output": "figures/results/results-40-1-748ec7526322.webp",
+      "sha256": "748ec7526322b198a6b92c36bcc713a6f04b4668af964539a755b19242d450b7",
+      "bytes": 71358,
+      "originalWidth": 890,
+      "originalHeight": 523,
+      "width": 890,
+      "height": 523,
+      "crop": null,
+      "url": null,
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 41,
+      "bodyIndex": 264,
+      "source": "word/media/image44.png",
+      "sourceSha256": "95d2fe35d61133a4f4ee3e7bca1d17034909a0240c35fc93f7281621c55cbb7d",
+      "output": "figures/wet-lab/kill-switch-engineering/killswitch-cycle2-sequencing.png",
+      "sha256": "95d2fe35d61133a4f4ee3e7bca1d17034909a0240c35fc93f7281621c55cbb7d",
+      "bytes": 44730,
+      "originalWidth": 1658,
+      "originalHeight": 660,
+      "width": 1658,
+      "height": 660,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/lab/kill-switch-engineering/killswitch-cycle2-sequencing-1ab5409edce7.webp",
+      "pixelsMatchWordCrop": true
+    },
+    {
+      "figure": 42,
+      "bodyIndex": 268,
+      "source": "word/media/image45.png",
+      "sourceSha256": "1969882b099eea87add558dd692c471624efa7c873784915817ae1d102651479",
+      "output": "figures/results/results-42-1-998048e08b87.webp",
+      "sha256": "998048e08b871c8f7f7fbb7209aef263bbfda4d16471e1b82a1a7663fc5949d3",
+      "bytes": 16504,
+      "originalWidth": 1002,
+      "originalHeight": 517,
+      "width": 1002,
+      "height": 517,
+      "crop": null,
+      "url": "https://static.igem.wiki/teams/6212/wiki/results/results-42-1-998048e08b87.webp",
+      "pixelsMatchWordCrop": true
+    }
+  ],
+  "sourceUnits": [
+    {
+      "bodyIndex": 0,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "1.Validation of the CPP2146 Regulatory Module"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 1,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We evaluated a CPP2146 expression construct and examined carotenoid composition and transcript levels in Dunaliella salina. The results support an association between CPP2146 overexpression, increased transcript levels of the tested pathway genes, and a higher proportion of β-carotene among the five carotenoids shown."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 2,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Preparation of fragments for Gibson assembly",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 3,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The CPP2146 expression construct was assembled using Gibson assembly with a pCAMBIA1302 backbone and the RBCS2 promoter. PCR products for CPP2146 and RBCS2 had expected lengths of 1,374 bp and 419 bp, respectively. Their major bands migrated between the corresponding marker bands, consistent with these expected sizes. Amplification of the vector backbone yielded a major high molecular weight band. Smearing and additional lower molecular weight bands were also visible in some lanes (Figure 1)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 4,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 1. Primers used for vector linearization and CPP2146 amplification. Sequences are shown from 5′ to 3′.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 5,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Primer"
+            }
+          ],
+          [
+            {
+              "text": "Sequence"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pCAMBIA1302-F"
+            }
+          ],
+          [
+            {
+              "text": "AGTCAGATCTACCATGGTCAAGAGTCC"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "DsTF2146-F"
+            }
+          ],
+          [
+            {
+              "text": "CTTGACCATGGTAGATCTGACTATGGATCCTGCTGGTAACCTGTTGC"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "pCAMBIA1302-R"
+            }
+          ],
+          [
+            {
+              "text": "ATTGGTGACCAGCTCGAATTTCC"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "DsTF2146-R"
+            }
+          ],
+          [
+            {
+              "text": "GAAATTCGAGCTGGTCACCAATTTACCTACAAGAATCATCAGCAGGGCAC"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 8,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 1. PCR products prepared for Gibson assembly. (A) CPP2146 amplification, expected product size 1,374 bp; M, DL2000 marker; lanes 1–4, CPP2146 PCR samples. (B) pCAMBIA1302 backbone amplification; M, B500353 marker on both sides; lanes 1–4, vector PCR samples. (C) RBCS2 amplification, expected product size 419 bp; M, B500350 marker; lanes 1–2, RBCS2 PCR samples. Marker sizes are indicated in bp. Sample lanes are numbered from left to right; numbers do not denote confirmed independent clones. Original gel images are unchanged, with labels added outside the image boundaries.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 9,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "\n"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 10,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Sequencing assessment of the recombinant plasmid",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 11,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The assembled CPP2146 plasmid was subjected to sequencing. The supplied alignment view shows sequencing reads spanning the plasmid and the region containing RBCS2, CPP2146, and the NOS terminator (Figure 2). This provides coverage evidence for assessment of the intended expression construct. Base level sequence identity and the absence of mutations cannot be established from this overview alone."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 13,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 2. Sequencing alignment overview of the CPP2146 expression plasmid. The annotated map shows the RBCS2 promoter, CPP2146 insert, NOS terminator, and vector backbone features; aligned reads are displayed above the map.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 14,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "\n"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 15,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Cell pretreatment and cultivation after transformation",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 16,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Dunaliella salina cells were pretreated before introduction of the CPP2146 expression construct. The pretreated cell suspensions prepared for transformation are shown in Figure 3A. Following transformation, the cells were transferred to liquid medium for recovery and subsequent cultivation (Figure 3B). These photographs document the cell preparation and post-transformation cultivation stages of the CPP2146 experiment."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 17,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "A\n",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 18,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "B\n",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 19,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 3. Cell pretreatment and cultivation after transformation in the CPP2146 experiment. (A) Pretreated D. salina cells prepared for transformation. (B) D. salina cultures maintained in liquid medium following transformation with the CPP2146 expression construct.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 20,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "\n"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 21,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Increased transcript levels in the CPP2146 strain",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 22,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "RT-qPCR analysis showed that CPP2146 mRNA levels were higher in the overexpression strain than in the control, supporting increased CPP2146 transcription from the expression construct. The tested downstream carotenoid metabolism genes also exhibited higher mRNA levels. Together with the LC-MS/MS results, these findings support an association between CPP2146 overexpression, transcriptional upregulation of the tested pathway genes, and altered carotenoid composition."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 23,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "These expression changes do not establish direct binding of CPP2146 to the promoters of the affected genes or distinguish direct regulation from indirect responses."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 25,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 4. Relative transcript levels of CPP2146 and the tested downstream carotenoid metabolism genes in the overexpression strain and control.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 26,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The RT-qPCR results explain this change at the transcriptional level: Overexpression of CPP2146 downregulated the expression of upstream carotenoid synthesis genes PDS, ZDS, CrtISO, and the key gene LCYE for the α-carotene branch, while significantly upregulated the β-carotene branch gene LCYB. The weakened transcriptional activity of the upstream pathway suggests a decrease in the transcriptional drive for total precursor synthesis, while the inhibition of LCYE and the activation of LCYB redirect the metabolic branch towards β-carotene."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 28,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Calibration for LC MS/MS analysis",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 29,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Calibration models were established for phytoene, α-carotene, β-carotene, γ-carotene, and lycopene using 1/x-weighted linear regression (Table 2). The reported correlation coefficients (r) ranged from 0.99129 to 0.99751. The β-carotene calibration equation was y = 8.25531 × 10⁵x − 6913.22310, with r = 0.9949. These calibration parameters provide the analytical context for the carotenoid composition comparison presented below."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 30,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 2. LC-MS/MS calibration parameters for five carotenoids.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 31,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Compound",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "RT",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Regression equation",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "r",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Weight"
+            }
+          ],
+          [
+            {
+              "text": "LLOQ",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "ULOQ",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "(E/Z)-Phytoene"
+            }
+          ],
+          [
+            {
+              "text": "5.00"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.41755 × 10⁵x − 1022.22286"
+            }
+          ],
+          [
+            {
+              "text": "0.99751"
+            }
+          ],
+          [
+            {
+              "text": "1/x"
+            }
+          ],
+          [
+            {
+              "text": "0.05"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "α-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "6.00"
+            }
+          ],
+          [
+            {
+              "text": "y = 9.87944 × 10⁵x − 425.15213"
+            }
+          ],
+          [
+            {
+              "text": "0.99689"
+            }
+          ],
+          [
+            {
+              "text": "1/x"
+            }
+          ],
+          [
+            {
+              "text": "0.01"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "6.35"
+            }
+          ],
+          [
+            {
+              "text": "y = 8.25531 × 10⁵x − 6913.22310"
+            }
+          ],
+          [
+            {
+              "text": "0.9949"
+            }
+          ],
+          [
+            {
+              "text": "1/x"
+            }
+          ],
+          [
+            {
+              "text": "0.0025"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "γ-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "7.47"
+            }
+          ],
+          [
+            {
+              "text": "y = 3.66160 × 10⁵x − 5915.10615"
+            }
+          ],
+          [
+            {
+              "text": "0.99129"
+            }
+          ],
+          [
+            {
+              "text": "1/x"
+            }
+          ],
+          [
+            {
+              "text": "0.1"
+            }
+          ],
+          [
+            {
+              "text": "10"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Lycopene"
+            }
+          ],
+          [
+            {
+              "text": "8.42"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.46972 × 10⁵x − 6093.64342"
+            }
+          ],
+          [
+            {
+              "text": "0.99294"
+            }
+          ],
+          [
+            {
+              "text": "1/x"
+            }
+          ],
+          [
+            {
+              "text": "0.05"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 32,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "RT, retention time; r, correlation coefficient; LLOQ, lower limit of quantification; ULOQ, upper limit of quantification.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 34,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Changes in carotenoid composition detected by LC MS/MS",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 35,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "LC-MS/MS analysis revealed a shift in carotenoid composition in the CPP2146 strain compared with wild type (WT). The proportion of β-carotene among the five carotenoids shown increased from 45.6% in WT to 77.5% in the CPP2146 strain, corresponding to an increase of 31.9 percentage points. The proportions of γ-carotene, α-carotene, lycopene, and phytoene were lower in the CPP2146 strain (Figure 5)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 36,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "These results indicate a shift toward a β-carotene-dominated composition and are consistent with a potential role for CPP2146 in modulating carotenoid accumulation patterns. The compositional data alone do not establish an increase in absolute β-carotene content or a change in metabolic flux."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 38,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 5. Relative composition of five carotenoids detected by LC-MS/MS in WT and the CPP2146 strain. Stacked bars show the proportions of β-carotene, γ-carotene, α-carotene, lycopene, and phytoene. β-Carotene percentages are labeled within the bars.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 40,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Overall findings",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 41,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fragment amplification and sequencing coverage provided evidence toward validation of the CPP2146 expression construct. Functional measurements showed a higher β-carotene proportion and increased mRNA levels of CPP2146 and the tested downstream genes. These observations support further evaluation of CPP2146 as a candidate regulatory element for carotenoid engineering in D. salina, while its direct targets and effects on absolute product yield remain to be established."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 43,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "2.Construction and Evaluation of the β-Ionone"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 44,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Design and construction of the expression vectors",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 45,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The three constructs described in this report share the pCAMBIA1302 backbone. The original CaMV 35S::mgfp5::6×His expression cassette of the backbone was removed by inverse PCR, retaining the NOS terminator, the hygromycin resistance gene (HygR, for algal selection), the kanamycin resistance gene (KanR, for bacterial selection), the pVS1 origin of replication and the RB/LB borders; the expression cassette of interest was then inserted upstream of the NOS terminator (Table 3). The three constructs differ only in the promoter and the N-terminal sequence: D1 is driven by the enhanced CaMV 35S promoter, C1 replaces 35S with the endogenous "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " Rubisco small-subunit promoter RBCS2, and C3 fuses a 47 aa chloroplast transit peptide (SP) to the N-terminus of RBCS2-driven CCD1, directing the dioxygenase to the chloroplast where its substrate resides. (Fig. 6)"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 46,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 3 Three expression vectors of the β-ionone system",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 47,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Construct (project ID)",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Promoter",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Coding sequence",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Length (bp)",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Design intent",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p1302-35S-gaccatgg-CCD1 (D1)"
+            }
+          ],
+          [
+            {
+              "text": "enhanced CaMV 35S"
+            }
+          ],
+          [
+            {
+              "text": "CCD1, 1,617 bp"
+            }
+          ],
+          [
+            {
+              "text": "11,399"
+            }
+          ],
+          [
+            {
+              "text": "35S-driven control"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p1302-RBCS2-CCD1 (C1)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "CCD1"
+            }
+          ],
+          [
+            {
+              "text": "11,303"
+            }
+          ],
+          [
+            {
+              "text": "Cytosolic expression"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p1302-RBCS2-signal peptide-CCD1 (C3)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "SP (47 aa)–CCD1"
+            }
+          ],
+          [
+            {
+              "text": "11,444"
+            }
+          ],
+          [
+            {
+              "text": "Chloroplast targeting"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 50,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 6 Plasmid maps of the three expression vectors.",
+          "bold": true
+        },
+        {
+          "text": " (a) p1302-35S-gaccatgg-CCD1 (D1, 11,399 bp); (b) p1302-RBCS2-CCD1 (C1, 11,303 bp); (c) p1302-RBCS2-signal peptide-CCD1 (C3, 11,444 bp). All three vectors share the same pCAMBIA1302 backbone (HygR, KanR, pVS1 ori, RB/LB borders) and differ only in the promoter and the N-terminal sequence; the main restriction sites and the binding positions of the colony PCR / sequencing primers are annotated."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 51,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The fragments were synthesized and codon-optimized by Sangon Biotech and assembled by three-fragment Gibson assembly at a backbone : promoter : gene molar ratio of 1 : 4 : 3. The products were heat-shock transformed into "
+        },
+        {
+          "text": "Escherichia coli",
+          "italic": true
+        },
+        {
+          "text": " DH5α and selected on 50 mg/L kanamycin plates. Single colonies grew on every construct plate, indicating that the assembly products had been successfully introduced into the host (Fig.7)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 53,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 7 Kanamycin resistance plates after transformation of ",
+          "bold": true
+        },
+        {
+          "text": "Escherichia coli",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": " DH5α with the Gibson assembly products (11–12 August).",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 54,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Colony PCR with primers spanning the promoter–gene junction (expected product ~1.9 kb) identified multiple positive clones among the C1 and C3 transformants (Fig. 8). Single clones were picked, cultured overnight and their plasmids extracted for sequencing."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 56,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 8 Colony PCR screening of the C1 and C3 transformants.",
+          "bold": true
+        },
+        {
+          "text": " M: 100–2,000 bp DNA marker; lanes 1–5 are C1 (p1302-RBCS2-CCD1) transformants and lanes 6–11 are C3 (p1302-RBCS2-SP-CCD1) transformants. Positive clones showed a single target band at the expected position (approximately 1.9 kb), indicating correct assembly of the expression cassette."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 57,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transformation of ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": " and identification of transformants",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 58,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The verified plasmids were introduced into "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " by the osmotic-difference plasmid transformation method, and cultures were screened and maintained in hygromycin-containing medium. The first transformation round used C1; C3 and 35S-CCD1 lines were added subsequently."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 59,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transformants were identified by PCR with cassette-specific primers: RBCS2-F and CCD1-R for C1, with primer controls and a wild-type control included (Fig. 9). The transformants amplified a target band of the expected size, whereas the wild-type control showed no corresponding band, indicating that the expression cassette had been introduced into the "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " cells. After transfer to liquid medium, the transformant cultures were normally green and grew well, and could enter induction and product detection."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 61,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 9 PCR identification of ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": " transformants.",
+          "bold": true
+        },
+        {
+          "text": " M1: 500–15,000 bp DNA marker; M2: 100–2,000 bp DNA marker. Lanes 1–5 are C1 transformant samples and lanes 6–8 are control samples. Transformants showed a target band at the expected position, and the wild-type control showed no corresponding band."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 62,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Sequencing verification and recombination of the 35S promoter",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 63,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Positive clones were submitted for Sanger sequencing and whole-plasmid sequencing. The consensus sequence of C1 was 11,303 bp, exactly matching the designed length and covering the RBCS2 promoter, the complete coding sequence, the NOS terminator and the HygR resistance cassette, with no high-confidence variants in the filtered variant table; the promoter–gene junction and the coding region of C3 were likewise fully covered by Sanger reads. "
+        },
+        {
+          "text": "All three plasmids are suitable for ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": " transformation.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 64,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "D1 also sequenced successfully, but "
+        },
+        {
+          "text": "D1 recombined far more often",
+          "bold": true
+        },
+        {
+          "text": ": in this round its consensus sequence was 10,813 bp, 586 bp shorter than the design, with the missing segment falling in the 35S promoter region while the rest of the backbone and the inserted fragment were intact (Figs. 10 and 11). Sequencing of several independent clones showed that the deletions were not of a constant length and that the breakpoints were not fixed — recombination "
+        },
+        {
+          "text": "frequently occurs between the two 35S promoters carried by the construct",
+          "bold": true
+        },
+        {
+          "text": " (the enhanced 35S retained in the backbone and the 35S of the expression cassette), and the homologous recombination mediated by these two repeats produces deletions of variable length. This makes it an "
+        },
+        {
+          "text": "indeterminate (variable) recombination",
+          "bold": true
+        },
+        {
+          "text": " event, so no single sequencing gap can be taken as characteristic of the construct. This is consistent with the CaMV 35S promoter being rich in tandem repeats and thus a hotspot of homologous recombination."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 66,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 10 Sequencing read alignment maps of the three constructs D1, C1 and C3 (top to bottom).",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 68,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 11 Map of the recombined 35S region in p1302-35S-gaccatgg-CCD1 (D1).",
+          "bold": true
+        },
+        {
+          "text": " Light yellow bars indicate the T-DNA region and the red marks show the coverage and deletions of the sequencing reads in this region; a deletion/rearrangement is visible between the two 35S promoters."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 69,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Similar recombination also appeared after transfer into "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": ": 35S-driven transformants readily lost the expression cassette during hygromycin selection and liquid subculturing, and their yield of stable lines was clearly lower than that of the RBCS2 series. On these two grounds we switched uniformly to the endogenous "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " RBCS2 promoter from the second transformation round onwards, keeping the 35S constructs only as controls (the comparison of 35S and RBCS2 transcript levels is given in Section 4)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 70,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transcript levels (RT-qPCR)",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 71,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transcript abundance of CCD1 in each line was measured by RT-qPCR (actin as the internal reference, 6 technical replicates per group) and expressed relative to actin (2"
+        },
+        {
+          "text": "−ΔCt",
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": ") (Fig. 12, Table 4). The CCD1 transcript of the wild type was only 1.6 × 10⁻³ of the actin level (ΔCt = +9.27 ± 1.61, i.e. about 1/600), whereas C1 reached 17 times the actin level (ΔCt = −4.10 ± 1.70), C3 14 times (ΔCt = −3.80) and 35S-CCD1 2.4 times (ΔCt = −1.29 ± 0.61). All three transgenic lines had transcript abundances exceeding that of the actin reference itself, a hallmark of driving by a strong heterologous promoter, showing that the introduced CCD1 was indeed transcribed efficiently."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 73,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig.12 Transcript abundance of CCD1 in each line relative to the internal reference gene actin (2",
+          "bold": true
+        },
+        {
+          "text": "−ΔCt",
+          "bold": true,
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": ", logarithmic y-axis).",
+          "bold": true
+        },
+        {
+          "text": " Bar heights are 2"
+        },
+        {
+          "text": "−ΔCt",
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": " and error bars are converted from the within-group standard deviation of ΔCt; C3 has only 1 technical replicate, hence no error bar, and its value is an estimate."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 74,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 4 Summary of CCD1 transcript levels",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 75,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Line",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Promoter",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "n",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "ΔCt",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Relative to actin (2",
+              "bold": true
+            },
+            {
+              "text": "−ΔCt",
+              "bold": true,
+              "verticalAlign": "superscript"
+            },
+            {
+              "text": ")",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Relative to WT",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "WT"
+            }
+          ],
+          [
+            {
+              "text": "—"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "+9.27 ± 1.61"
+            }
+          ],
+          [
+            {
+              "text": "1.6 × 10⁻³"
+            }
+          ],
+          [
+            {
+              "text": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "C1 (RBCS2-CCD1)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "−4.10 ± 1.70"
+            }
+          ],
+          [
+            {
+              "text": "17"
+            }
+          ],
+          [
+            {
+              "text": "10,624"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "C3 (RBCS2-SP-CCD1)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "1"
+            }
+          ],
+          [
+            {
+              "text": "−3.80 (estimated)"
+            }
+          ],
+          [
+            {
+              "text": "14"
+            }
+          ],
+          [
+            {
+              "text": "8,649"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "35S-CCD1"
+            }
+          ],
+          [
+            {
+              "text": "CaMV 35S"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "−1.29 ± 0.61"
+            }
+          ],
+          [
+            {
+              "text": "2.4"
+            }
+          ],
+          [
+            {
+              "text": "1,513"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 77,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The two comparisons provided further information that can be used for decision-making. First, "
+        },
+        {
+          "text": "the promoter effect was stable",
+          "bold": true
+        },
+        {
+          "text": ": for the same gene, the ΔCt of 35S was 2.81 cycles higher than that of RBCS2, with a consistent direction in 6/6 replicates, i.e. the transcript abundance of 35S was only 0.14 times that of RBCS2. This corroborates the observation in Section 3 that the 35S construct is prone to recombination loss, and independently supports the decision to switch to RBCS2. Second, "
+        },
+        {
+          "text": "the transit peptide did not affect transcription",
+          "bold": true
+        },
+        {
+          "text": ": C3 differed from C1 by only 0.30 cycles (0.81 times, within the error range of a single-well estimate), so any difference between the two in product accumulation can only come from protein localisation or stability, not from the mRNA level."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 78,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "It should be noted that the 6 wells per group are technical replicates of the same cDNA batch, and that no biological replicates or standard curve were included; the abundances above are therefore order-of-magnitude judgements rather than precise quantification."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 79,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Thin-layer chromatography",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 80,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Total pigment extracts of C1, C3 and the wild type were analysed by thin-layer chromatography (TLC) in an acetone/methanol system, with a β-ionone standard run on the same plate as a control. The result: "
+        },
+        {
+          "text": "no β-ionone band could be resolved on the plate, neither in the samples nor in the standard",
+          "bold": true
+        },
+        {
+          "text": ". Even with the entire procedure performed on ice in the dark and with development started immediately after spotting, only a very faint trace at the spotting origin was visible, and it disappeared during development."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 81,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The reason is directly related to the physical properties of β-ionone: its boiling point is about 126 °C and its vapour pressure is high, so it is lost by evaporation at every step, including blow-drying after spotting, development and plate drying; the visual detection limit of conventional TLC is about 2–10 ng/spot, whereas."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 82,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "the amount actually loaded at the spotting volume is far below this. We therefore do not use TLC as a means of product determination in this system, and detection of β-ionone was switched to widely targeted LC-MS/MS ."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 83,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Widely targeted mass spectrometry",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 84,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To screen for the cleavage products of CCD1 without a standard curve, C1, C3 and the wild type were analysed by widely targeted UPLC-MS/MS metabolomics (1510 metabolites, semi-quantitative peak areas, 1 sample per group; Fig.13, Fig. 14). This batch contained no standards and no standard curve was established; all values are semi-quantitative peak areas and can only serve as between-group ratios."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 85,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The canonical product of CCD1, β-ionone, was detectable in all three samples, but its net change was small (1.34 times in C1 and 1.04 times in C3 relative to the wild type), and α-ionone was 1.45 and 1.08 times. These compounds are likewise affected by evaporative loss and cannot serve as a criterion for enzyme activity."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 86,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The non-volatile C18 apocarotenoids gave a more stable readout. C"
+        },
+        {
+          "text": "18",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "26",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O (258.4 Da) is represented by 4 records in the result library: β-apo-13-carotenone (Level 1, confirmed with a standard; 2.94 times in C1 and 2.13 times in C3), octadeca-2,9,11,13,15-pentaenal (Level 1; 2.80 / 2.14), 9-cis-β-apo-13-carotenone (Level 2; 2.88 / 2.22) and 13-apo-β-carotenone (Level 2; 4.43 / 4.51). All four records increased consistently in both transgenic lines, by 2.1–4.5 times, on two MRM channels (259.2→119.09 and 259.2→175.15). Terpenoids as a class were simultaneously down-regulated (median log₂FC −0.41 and −0.38), so this rise against the trend is difficult to explain by a global difference in signal."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 87,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "C3, which carries the chloroplast transit peptide, did not achieve higher product accumulation: the four records in C3 were only 0.72–1.02 times the C1 level (none reached the differential threshold), whereas its upstream precursor mevalonate was 2.02 times that of C1. This indicates that the limiting factor is not substrate supply but the enzyme itself or the re-conversion of the product inside the chloroplast, consistent with the Section 4 result that C3 and C1 have comparable transcript levels."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 89,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 13 β-ionone-related metabolic network in ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": " (C1 / C3 versus WT).",
+          "bold": true
+        },
+        {
+          "text": " Fill = peak-intensity ratio C1 / WT, outline = C3 / WT; dark blue = direct CCD1 cleavage products, light blue = eccentric cleavage products (enzyme not identified), grey = non-CCD1 origin; dashed boxes = not detected (e.g. the C14 dialdehyde, hydroxy-β-ionone). The light-blue C"
+        },
+        {
+          "text": "18",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "26",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O node lists the 4 records of this molecular formula one by one."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 91,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig.14 Peak intensities of carotenoid cleavage products in C1, C3 and the wild type.",
+          "bold": true
+        },
+        {
+          "text": " The y-axis is UPLC-MS/MS peak intensity (logarithmic scale) and each group has 1 sample; the first three groups are the C13 ionones and the latter three are the less volatile C18 apocarotenoids. β-ionone changed very little because of volatilisation (1.04–1.34 times), whereas the C18 records rose consistently 2.1–4.5 times in C1 and C3."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 92,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "This method has three coverage gaps. First, none of the 1510 metabolites is a C40 pigment, so \"substrate consumption\" cannot be demonstrated directly from these data and can only be inferred indirectly from the rise of the C18 products. Second, the canonical co-products of CCD1, namely the C14 dialdehyde (C"
+        },
+        {
+          "text": "14",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "16",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O"
+        },
+        {
+          "text": "2",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "), the C17 dialdehyde, 6-methyl-5-hepten-2-one and 3-hydroxy-β-ionone, were all present as 0 records in this batch. Third, if the C18 products are indeed formed by eccentric cleavage at the 13,14 position, the stoichiometry requires that C22 apocarotenoids are formed at the same time, yet C"
+        },
+        {
+          "text": "22",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "30",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O, C"
+        },
+        {
+          "text": "22",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "28",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O and C"
+        },
+        {
+          "text": "22",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "H"
+        },
+        {
+          "text": "32",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "O were also 0 records. These data can therefore serve only as indirect evidence of enhanced carotenoid turnover."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 93,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Summary",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 94,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "This report completes the full chain of validation for the β-ionone system. First, we constructed and sequence-verified the three expression vectors D1, C1 and C3; all three plasmids are suitable for "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " transformation, the consensus sequence of C1 (RBCS2-CCD1) matching the design exactly, whereas D1 showed a very high recombination rate (586 bp missing from the 35S promoter region). Second, PCR confirmed that the expression cassette was integrated in the C1 transformants, and RT-qPCR confirmed that the transgene was transcribed efficiently: with actin as the internal reference, the CCD1 transcript of C1 reached 17 times the actin level, whereas the wild type carried only 1.6 × 10⁻³ of it; after the introduction of the chloroplast transit peptide, C3 showed a transcript abundance comparable to C1 (14 times). Third, 35S-driven transcript abundance was only 0.14 times that of RBCS2 (consistent in 6/6 replicates), in line with the observation that 35S is readily lost by recombination; on this basis RBCS2 was adopted uniformly thereafter. Fourth, TLC could not give an interpretable band because β-ionone is too volatile (the standard was likewise invisible); in the widely targeted mass spectrometry the net change of β-ionone was only 1.04–1.34 times, but the non-volatile C18 apocarotenoids rose consistently 2.1–4.5 times in C1 and C3, providing indirect evidence of enhanced carotenoid turnover."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 95,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The next round should: move β-ionone detection to HS-SPME-GC-MS; add paired products such as the C14 dialdehyde and C22 apocarotenoids; and raise the number of biological replicates to n ≥ 3."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 98,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "3.Construction and Evaluation of the Crocetin Synthesis"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 99,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We developed a two-gene crocetin synthesis module in Dunaliella salina using GjCCD4a and GjALDH2C3 from Gardenia jasminoides. Three expression designs were evaluated sequentially. TLC did not reveal a clear crocetin-like signal in the initial or RBCS2-promoter designs, whereas the RBCS2 constructs carrying N-terminal SP sequences yielded a candidate band near the crocetin standard."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 100,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Expression constructs and optimization strategy",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 101,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "GjCCD4a and GjALDH2C3 were carried on separate pCAMBIA1302-derived plasmids for co-transformation. The initial design used CaMV 35S promoters for the target genes. Subsequent designs replaced these promoters with RBCS2 and then added N-terminal signal peptide (SP) sequences. All six plasmid designs are shown in Figure 15, and the paired constructs are summarized in Table 5."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 102,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 5. Paired expression constructs evaluated during optimization. Lengths refer to the annotated plasmid designs.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 103,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Design",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Target-gene configuration",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "GjALDH2C3 plasmid",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "GjCCD4a plasmid",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Initial"
+            }
+          ],
+          [
+            {
+              "text": "CaMV 35S; no added SP"
+            }
+          ],
+          [
+            {
+              "text": "11,320 bp"
+            }
+          ],
+          [
+            {
+              "text": "11,803 bp"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Promoter replacement"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2; no added SP"
+            }
+          ],
+          [
+            {
+              "text": "11,253 bp"
+            }
+          ],
+          [
+            {
+              "text": "11,736 bp"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "SP fusion"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2; N-terminal SP"
+            }
+          ],
+          [
+            {
+              "text": "11,432 bp"
+            }
+          ],
+          [
+            {
+              "text": "11,915 bp"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 106,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 15. All six plasmid designs for the crocetin synthesis module. (A, B) Initial CaMV 35S-driven GjALDH2C3 and GjCCD4a constructs. (C, D) RBCS2-driven GjALDH2C3 and GjCCD4a constructs. (E, F) RBCS2-driven constructs with N-terminal SP sequences fused to GjALDH2C3 and GjCCD4a, respectively. Each row shows the paired plasmids used for the corresponding co-transformation design."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 108,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "PCR amplification of the pathway genes",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 109,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Agarose gel electrophoresis showed prominent PCR products for both GjALDH2C3 and GjCCD4a (Figure 16). The major bands in both groups migrated between the 1,000 and 2,000 bp bands of the DL2000 marker. Smearing and additional low molecular weight bands were also observed, particularly in the GjCCD4a group. These results document preparation of the target-gene amplification products for subsequent plasmid construction."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 111,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 16. Agarose gel electrophoresis of target-gene PCR products. From left to right: M, DL2000 marker; lanes 1–4, GjALDH2C3 PCR products; M, DL2000 marker; lanes 5–8, GjCCD4a PCR products. DL2000 bands are 2,000, 1,000, 750, 500, 250, and 100 bp from top to bottom. Lane numbers indicate loading order."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 112,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Sequencing assessment of two key constructs",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 113,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Sequencing alignments were obtained for the RBCS2-driven GjALDH2C3 and GjCCD4a plasmids (Figure 17). The overview images show coverage across the target expression regions. A deletion in the promoter upstream of the hygromycin-resistance gene was identified in the GjCCD4a construct. The two plasmids were used together in co-transformation, with the functional resistance cassette on the companion plasmid serving as the intended selection marker. Antibiotic selection alone does not establish the presence of both pathway genes in the same algal cell."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 116,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 17. Sequencing alignment overviews of two key RBCS2-driven plasmids. Top, GjALDH2C3 construct; bottom, GjCCD4a construct. The GjCCD4a alignment contains a deletion in the promoter region upstream of the hygromycin-resistance gene. Target-gene regions and vector features are annotated in the maps."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 117,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "TLC screening of the initial and RBCS2 designs",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 118,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Pigment extracts were compared with a crocetin standard by TLC under visible light and UV illumination. With the initial co-transformation design, no clear sample band corresponding to the standard was observed. Replacing the target-gene promoters with RBCS2 also did not produce a clearly discernible corresponding band under either observation condition (Figure 18). Promoter replacement alone therefore did not yield a detectable crocetin-like TLC signal under the tested conditions."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 121,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 18. TLC screening before and after promoter replacement. Top, initial GjALDH2C3/GjCCD4a co-transformation; bottom, co-transformation with RBCS2-driven constructs. Each pair shows visible-light observation on the left and UV observation on the right. Lanes: T, transformed sample; NC, negative control; S, crocetin standard. Dashed boxes mark the standard. Original images and user-supplied annotations are retained."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 123,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "A candidate product band after N terminal SP fusion",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 124,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "After N-terminal SP sequences were added to both RBCS2-driven constructs, the transformed sample displayed a faint yellow band under visible light and a dark band under UV illumination near the migration position of the crocetin standard (Figure 19). A comparably clear corresponding band was not evident in the negative control. The appearance of this signal after SP fusion provides preliminary support for the expression-optimization strategy and is consistent with accumulation of a candidate crocetin-like product."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 126,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 19. TLC screening after N-terminal SP fusion to the RBCS2-driven GjALDH2C3 and GjCCD4a constructs. Left, visible-light observation; right, UV observation. Lanes: T, transformed sample; NC, negative control; S, crocetin standard. Dashed boxes indicate the candidate sample band and standard band. The original images and annotations are retained.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 127,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Interpretation and next steps",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 128,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The sequential designs progressed from no clear standard-associated TLC signal to a candidate band after SP fusion. This qualitative result supports further evaluation of the optimized two-enzyme module. TLC migration and appearance alone do not confirm crocetin identity, quantify production, or demonstrate increased transcript levels or successful subcellular targeting. Product identity should be tested using an orthogonal method such as LC-MS/MS against an authentic standard; gene-expression analysis and localization measurements would help assess the basis of the observed change."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 129,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Overall, the results establish a documented construct-development workflow and a preliminary product-screening signal for the SP-containing design, providing a basis for further validation of crocetin synthesis in D. salina."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 131,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "4.Construction and Evaluation of the Astaxanthin "
+        }
+      ]
+    },
+    {
+      "bodyIndex": 132,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We evaluated an HpBKT-based astaxanthin synthesis module in Dunaliella salina through sequential promoter replacement and N-terminal transit peptide fusion. PCR amplification and plasmid designs documented construction of the module. TLC revealed changes in candidate pigment regions during optimization, providing preliminary screening evidence for further product identification."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 133,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Expression constructs and optimization strategy",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 134,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Three pCAMBIA1302-derived HpBKT constructs were compared: the initial CaMV 35S-driven design, an RBCS2-driven design, and an RBCS2-driven design with an N-terminal transit peptide (annotated SP in the plasmid map). All three maps are presented in Figure 20, with their annotated lengths summarized in Table 6."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 135,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 6. BKT expression constructs evaluated during optimization.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 136,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Design",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Target-gene configuration",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Plasmid length",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Initial"
+            }
+          ],
+          [
+            {
+              "text": "CaMV 35S; no added transit peptide"
+            }
+          ],
+          [
+            {
+              "text": "10,639 bp"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Promoter replacement"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2; no added transit peptide"
+            }
+          ],
+          [
+            {
+              "text": "10,572 bp"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Transit peptide fusion"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2; N-terminal transit peptide"
+            }
+          ],
+          [
+            {
+              "text": "10,751 bp"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 138,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 20. All three BKT plasmid designs. (A) pCAMBIA1302-HpBKT_DsOpt. (B) pCAMBIA1302-RBCS2-BKT. (C) P1302-RBCS2-SP-BKT. The target-gene cassettes differ in promoter selection and addition of an N-terminal transit peptide; each includes a NOS terminator."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 139,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "PCR amplification of BKT",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 140,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Agarose gel electrophoresis showed strong major amplification bands in all four BKT sample lanes, migrating near the 750 bp band of the DL2000 marker (Figure 21). Some smearing and weaker low molecular weight bands were also visible. These observations document recovery of the BKT PCR products for the construction workflow."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 142,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 21. Agarose gel electrophoresis of BKT PCR products. Lanes 1–4, BKT PCR samples; M, DL2000 marker. Marker bands are 2,000, 1,000, 750, 500, 250, and 100 bp from top to bottom. Lane numbers indicate loading order. The original gel photograph is retained, with labels placed outside its boundaries."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 143,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "TLC screening before and after promoter replacement",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 144,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Pigment extracts from transformed samples were compared with a negative control and an astaxanthin standard under visible light and UV illumination. In the initial construct, no clear orange sample band corresponding to the standard was evident under visible light. The marked UV region was affected by nearby endogenous pigment bands and was not sufficient for a confident assignment (Figure 22, top)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 145,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "After replacement of the target-gene promoter with RBCS2, the transformed sample showed a changed yellow-brown pigment region and an associated change in UV appearance within the marked candidate region (Figure 22, bottom). The migration positions and appearances were not identical to those of the standard, so these observations were treated as candidate signals rather than confirmation of astaxanthin."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 148,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 22. TLC screening of the initial and RBCS2-driven BKT constructs. Top, initial construct; bottom, promoter-replacement construct. Each pair shows visible-light observation on the left and UV observation on the right. T, transformed sample; NC, negative control; S, astaxanthin standard. Dashed boxes indicate the user-marked candidate and standard regions. Original images and annotations are retained."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 149,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "TLC screening after transit peptide fusion",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 150,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Following addition of an N-terminal transit peptide to the RBCS2-driven BKT construct, a pigment region remained visible in the transformed sample under visible light, with a corresponding marked UV region (Figure 23). The pigment pattern differed from that of the negative control. These observations support continued investigation of the transit-peptide-containing construct, but the photographs do not establish increased astaxanthin production relative to the RBCS2-only construct."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 152,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 23. TLC screening of the RBCS2-driven BKT construct carrying an N-terminal transit peptide. Left, visible-light observation; right, UV observation. T, transformed sample; NC, negative control; S, astaxanthin standard. Dashed boxes mark candidate pigment and standard regions. The original images and annotations are retained.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 153,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Interpretation and next steps",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 154,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The three designs provide a sequential framework for evaluating BKT expression optimization. TLC documented changes in pigment patterns after promoter replacement and transit peptide fusion, but these qualitative observations alone do not confirm astaxanthin identity, demonstrate higher expression, or verify subcellular targeting. Comparison across plates also cannot establish a quantitative increase in yield."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 155,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Further validation should compare candidate compounds with an authentic astaxanthin standard using LC-MS/MS or another suitable analytical method. Expression and localization measurements would help distinguish changes in enzyme abundance from changes in substrate access. Future profiling of ketolated and hydroxylated carotenoid intermediates could clarify potential pathway bottlenecks."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 157,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "5.Construction and Evaluation of the β-Citraurin"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 158,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Design and construction of the expression vectors",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 159,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The two constructs described in this report share the pCAMBIA1302 backbone. The original CaMV 35S::mgfp5::6×His expression cassette of the backbone was removed by inverse PCR, retaining the NOS terminator, the hygromycin resistance gene (HygR, for algal selection), the kanamycin resistance gene (KanR, for bacterial selection), the pVS1 origin of replication and the RB/LB borders; the expression cassette of interest was then inserted upstream of the NOS terminator (Table 7). D2 is driven by the enhanced CaMV 35S promoter, and C2 replaces 35S with the endogenous "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " RBCS2 promoter; the two are otherwise identical in sequence. (Fig. 24)"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 160,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 7 Expression vectors of the β-citraurin system",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 161,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Construct (project ID)",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Promoter",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Coding sequence",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Length (bp)",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Design intent",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p1302-35S-gaccatgg-CitCCD4 (D2)"
+            }
+          ],
+          [
+            {
+              "text": "enhanced CaMV 35S"
+            }
+          ],
+          [
+            {
+              "text": "CitCCD4, 1,692 bp"
+            }
+          ],
+          [
+            {
+              "text": "11,474"
+            }
+          ],
+          [
+            {
+              "text": "35S-driven control"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "p1302-RBCS2-CitCCD4 (C2)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "CitCCD4"
+            }
+          ],
+          [
+            {
+              "text": "11,378"
+            }
+          ],
+          [
+            {
+              "text": "Relies on the native plastid signal"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 164,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 24 Plasmid maps of the two expression vectors.",
+          "bold": true
+        },
+        {
+          "text": " (a) p1302-35S-gaccatgg-CitCCD4 (D2, 11,474 bp); (b) p1302-RBCS2-CitCCD4 (C2, 11,378 bp). Both vectors share the same pCAMBIA1302 backbone (HygR, KanR, pVS1 ori, RB/LB borders) and differ only in the promoter; the main restriction sites and the binding positions of the primers are annotated."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 165,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The fragments were synthesized and codon-optimized by Sangon Biotech and assembled by three-fragment Gibson assembly at a backbone : promoter : gene molar ratio of 1 : 4 : 3. The products were heat-shock transformed into "
+        },
+        {
+          "text": "Escherichia coli",
+          "italic": true
+        },
+        {
+          "text": " DH5α and selected on 50 mg/L kanamycin plates."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 166,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Colony PCR with primers spanning the promoter–gene junction (expected product ~1.9 kb) amplified the target band from both the C2 and the D2 transformants, with a circular plasmid included as positive control (Fig. 25)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 168,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 25 Colony PCR screening of the C2 and D2 transformants.",
+          "bold": true
+        },
+        {
+          "text": " M1 is a 500–15,000 bp DNA marker and M2 a 100–2,000 bp DNA marker; lane 1 is the circular plasmid control, lanes 2–4 are C2 (p1302-RBCS2-CitCCD4) transformants and lanes 5–7 are D2 (p1302-35S-gaccatgg-CitCCD4) transformants. Every transformant showed the target band at the expected position."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 169,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transformation of ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": " and identification of transformants",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 170,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The verified plasmids were introduced into "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " by the osmotic-difference plasmid transformation method, and cultures were screened and maintained in hygromycin-containing medium. The first transformation round used D2; the C2 line was added subsequently."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 171,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transformants were identified by PCR with cassette-specific primers: 35S and D2-CitCCD4 for D2, and RBCS2-F and C2-CitCCD4 for C2, with primer controls and a wild-type control included (Fig. 26). The transformants amplified a target band of the expected size, whereas the wild-type control showed no corresponding band, indicating that the expression cassette had been introduced into the "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " cells. After transfer to liquid medium, the transformant cultures were normally green and grew well, and could enter induction and product detection."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 173,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig.26 PCR identification of ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": " transformants.",
+          "bold": true
+        },
+        {
+          "text": " M1: 500–15,000 bp DNA marker; M2: 100–2,000 bp DNA marker. Lanes 4–5 are transformant samples from the first transformation round (C1 and D2), and lanes 6–8 are the primer and wild-type controls. Transformants showed a target band at the expected position, and the wild-type control showed no corresponding band."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 174,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Sequencing and recombination of the 35S promoter",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 175,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Positive clones were submitted for Sanger sequencing and whole-plasmid sequencing, and "
+        },
+        {
+          "text": "both C2 and D2 gave sequencing results that were good enough to take forward into transformation",
+          "bold": true
+        },
+        {
+          "text": ". The consensus sequence of C2 was 11,378 bp, exactly matching the designed length and covering the RBCS2 promoter, the complete coding sequence, the NOS terminator and the HygR resistance cassette, with no high-confidence variants in the filtered variant table."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 176,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "D2 also sequenced successfully, but its assembly was clearly less stable than that of C2: "
+        },
+        {
+          "text": "D2 recombined far more often",
+          "bold": true
+        },
+        {
+          "text": ". In this round its consensus sequence was 10,549 bp, shorter than the designed 11,474 bp, with the missing segment falling in the 35S promoter region. Sequencing of several independent clones showed that the deletions were not of a constant length and that the breakpoints were not fixed — recombination "
+        },
+        {
+          "text": "frequently occurs between the two 35S promoters carried by the construct",
+          "bold": true
+        },
+        {
+          "text": " (the enhanced 35S retained in the backbone and the 35S of the expression cassette), and the homologous recombination mediated by these two repeats produces deletions of variable length. This makes it an "
+        },
+        {
+          "text": "indeterminate (variable) recombination",
+          "bold": true
+        },
+        {
+          "text": " event, so no single sequencing gap can be taken as characteristic of the construct (Figs. 27 and 28). This is consistent with the CaMV 35S promoter being rich in tandem repeats and thus a hotspot of homologous recombination."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 178,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 27 Sequencing read alignment maps of the two constructs D2 and C2 (top to bottom).",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 180,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 28 Map of the recombined 35S region in p1302-35S-gaccatgg-CitCCD4 (D2).",
+          "bold": true
+        },
+        {
+          "text": " Light yellow bars indicate the T-DNA region and the red marks show the coverage and deletions of the sequencing reads in this region; a deletion/rearrangement is visible between the two 35S promoters."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 181,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Similar recombination also appeared after transfer into "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": ": 35S-driven transformants readily lost the expression cassette during hygromycin selection and liquid subculturing, and their yield of stable lines was clearly lower than that of the RBCS2 series. On this basis, subsequent transformations used the endogenous "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " RBCS2 promoter uniformly, keeping the 35S constructs only as controls."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 182,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transcript levels (RT-qPCR)",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 183,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Transcript abundance of CitCCD4 in each line was measured by RT-qPCR (actin as the internal reference, 6 technical replicates per group) and expressed relative to actin (2"
+        },
+        {
+          "text": "−ΔCt",
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": ") (Fig. 29, Table 8). The non-transgenic wild type gave 3.1 × 10⁻³ (ΔCt = +8.36 ± 1.36), C2 gave 1.1 (ΔCt = −0.10 ± 0.66) and 35S-CitCCD4 gave 1.5 (ΔCt = −0.59 ± 2.01)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 185,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 29 Transcript abundance of CitCCD4 in each line relative to the internal reference gene actin (2",
+          "bold": true
+        },
+        {
+          "text": "−ΔCt",
+          "bold": true,
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": ", logarithmic y-axis).",
+          "bold": true
+        },
+        {
+          "text": " Bar heights are 2"
+        },
+        {
+          "text": "−ΔCt",
+          "verticalAlign": "superscript"
+        },
+        {
+          "text": " and error bars are converted from the within-group standard deviation of ΔCt."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 186,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 8 Summary of CitCCD4 transcript levels",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 187,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Line",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Promoter",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "n",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "ΔCt",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Relative to actin (2",
+              "bold": true
+            },
+            {
+              "text": "−ΔCt",
+              "bold": true,
+              "verticalAlign": "superscript"
+            },
+            {
+              "text": ")",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Relative to WT",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "WT"
+            }
+          ],
+          [
+            {
+              "text": "—"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "+8.36 ± 1.36"
+            }
+          ],
+          [
+            {
+              "text": "3.1 × 10⁻³"
+            }
+          ],
+          [
+            {
+              "text": "1"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "C2 (RBCS2-CitCCD4)"
+            }
+          ],
+          [
+            {
+              "text": "RBCS2"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "−0.10 ± 0.66"
+            }
+          ],
+          [
+            {
+              "text": "1.1"
+            }
+          ],
+          [
+            {
+              "text": "351"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "35S-CitCCD4"
+            }
+          ],
+          [
+            {
+              "text": "CaMV 35S"
+            }
+          ],
+          [
+            {
+              "text": "6"
+            }
+          ],
+          [
+            {
+              "text": "−0.59 ± 2.01"
+            }
+          ],
+          [
+            {
+              "text": "1.5"
+            }
+          ],
+          [
+            {
+              "text": "493"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 189,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Judged after normalization to the internal reference, CitCCD4 appears to be expressed successfully in C2, but the evidence is limited in strength.",
+          "bold": true
+        },
+        {
+          "text": " Two points support \"successful expression\": first, the CitCCD4 transcript of C2 reached 1.1 times the actin level, i.e. the same order of magnitude as the internal reference rather than a background-level fraction; second, the non-transgenic wild type carried only 3.1 × 10⁻³ of actin, a 351-fold difference that cannot be explained by a primer-dimer melt peak or by a small amount of homologous background. 35S-CitCCD4 gave 1.51 times, also in the same order of magnitude."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 190,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Three limitations must be stated at the same time. First, "
+        },
+        {
+          "text": "the primers show non-specific amplification",
+          "bold": true
+        },
+        {
+          "text": ": the wild type carries no CitCCD4 transgene, yet 6/6 wells amplified a product with Ct 31.49 ± 1.00 and a single melt peak at 87 °C, indicating that the primer pair has homologous background in the "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " cDNA; how much of the \"1.07 times\" comes from the transgene and how much from background therefore cannot be distinguished with the present primers. Second, "
+        },
+        {
+          "text": "cross-plate comparison inflates the fold change",
+          "bold": true
+        },
+        {
+          "text": ": WT and C2 came from two different batches of cDNA (the actin Ct of the two plates differed by about 9 cycles), so the figure of 351 times contains an amplification effect and can only be read as an order-of-magnitude difference. Third, "
+        },
+        {
+          "text": "the Ct of C2 is already close to the detection limit",
+          "bold": true
+        },
+        {
+          "text": ": its target Ct lies in the same 30–33 range as actin, near the reliable quantification boundary of 35 cycles, with considerable replicate-to-replicate fluctuation (SD of ΔCt 0.66, equivalent to 1.6 times)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 191,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The conclusion of this report is therefore: "
+        },
+        {
+          "text": "at the transcript level CitCCD4 is expressed, at an order of magnitude comparable to the internal reference and clearly above the non-transgenic control; but limited by primer non-specificity and cross-plate comparison, a precise expression level cannot yet be given.",
+          "bold": true
+        },
+        {
+          "text": " To establish this firmly, the primers must be redesigned to avoid the homologous "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " segments, validated with WT cDNA (WT being required to give NoCt or Ct > 35), and all lines must be re-quantified on the same plate with −RT controls and a standard curve added."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 192,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Thin-layer chromatography",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 193,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Total pigment extracts of C2 and the wild type were analysed by TLC and observed under both visible light and 365 nm (Fig. 30). The two plates (two development systems) gave consistent results:"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 194,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Visible light",
+          "bold": true
+        },
+        {
+          "text": ": both lanes showed a typical carotenoid profile — yellow in the upper part (xanthophylls and carotenes), a green band in the middle (chlorophyll), and several pale yellow bands in the lower part;"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 195,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "365 nm (greyscale)",
+          "bold": true
+        },
+        {
+          "text": ": 5–6 bright bands appeared, alternating in a \"red (fluorescent) — dark (non-fluorescent absorption band)\" structure."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 196,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "These bright bands are not carotenoids. Carotenoids have no measurable fluorescence and appear under UV only as dark bands caused by absorption; the species that emit red light are porphyrins (chlorophyll and its pheophytin derivatives, fluorescence peak 650–670 nm). The alternating \"red–black\" structure on the plate is precisely the overlay of these two classes of substances."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 197,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Both plates show that the band positions of the two lanes coincided completely and that C2 produced no new band. If CitCCD4 had indeed produced appreciable β-citraurin (a C30 aldehyde), it should appear between β-cryptoxanthin and zeaxanthin as an orange-red band; this region in C2 contained only very pale yellow bands, with no orange-red band. All bands of C2 were weaker than those of the wild type, consistent with its lower total carotenoid content (837.8 versus 2840.5 μg/g, 0.29 times)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 198,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "This result agrees with a detection-limit calculation: the β-citraurin content of C2 was 0.00702 μg/g (targeted quantification with a standard curve), i.e. only 0.007 ng per mg of dry algae. The visual detection limit under visible light and at 365 nm is about 2–5 ng/spot, so about 0.7 g of dry algae would have to be spotted at a single point to become visible, whereas routine spotting uses only 1–5 mg — a difference of 2–3 orders of magnitude. TLC in this system can therefore serve only as qualitative evidence of \"an identical profile with no new pigment\", and cannot be used to judge CitCCD4 activity."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 200,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 30 TLC of the total pigment extracts of C2 and the wild type.",
+          "bold": true
+        },
+        {
+          "text": " (a) and (c) are the results of the two plates under visible light; (b) and (d) are the corresponding observations at 365 nm (the original colour photographs were converted to greyscale to display the bands). In each plate the left lane is the wild type (WT) and the right lane is C2 (RBCS2-CitCCD4). The bright bands at 365 nm are the red fluorescence of porphyrins (chlorophyll and its pheophytin derivatives), whereas carotenoids appear as non-fluorescent dark bands; the band positions of the two lanes are identical and C2 shows no new band."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 201,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "6 Targeted quantitative mass spectrometry",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 202,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Carotenoid contents of C2 and the empty-vector (EV) control line were determined with a targeted MRM panel (47 targets; 1 sample per group) (Table 9, Table 10, Fig. 31). The EV control line is the same batch of wild algae transformed with the empty pCAMBIA1302 vector, which carries no gene of interest, and was taken through exactly the same transformation, hygromycin selection and cultivation procedures as this project; the two groups therefore differ only in whether they carry the CitCCD4 expression cassette."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 203,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "In the panel, 16 targets have authentic standards and independent standard curves (weighted 1/x, r > 0.99); the 15 analytes relevant to this report are listed in Table 6-1, whereas 31 esterified xanthophylls have no independent standards and were uniformly semi-quantified against the neoxanthin curve. The target product β-citraurin has its own standard curve (y = 4.40 × 10⁶ x + 3.56 × 10³, r = 0.997), and the readings of C2 and the EV control, 0.00702 and 0.00441 μg/g, correspond to 7.0 and 4.4 times the lower limit of quantification respectively, falling within the linear range of the curve; β-citraurin is therefore an absolute quantification that can be compared directly. In contrast, high-abundance components such as lutein, violaxanthin and antheraxanthin far exceed the ULOQ (lutein 491 and 194 μg/g in C2 and the EV control respectively, ULOQ 25 μg/g), so their absolute values are only semi-quantitative. Because the total quantification pool of C2 is 2.24 times that of the EV control (837.8 versus 374.8 μg/g), this section uses pool shares (per mille, ‰) and molar product / substrate ratios throughout."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 204,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 9 Standard curves and quantification ranges of the targets covered in this report",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 205,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Compound",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "Calibration equation",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "r",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "LLOQ (μg/g)",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "ULOQ (μg/g)",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Violaxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.71 × 10⁵ x − 2.24 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.995"
+            }
+          ],
+          [
+            {
+              "text": "0.010"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Neoxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.81 × 10⁶ x − 5.12 × 10⁴"
+            }
+          ],
+          [
+            {
+              "text": "0.995"
+            }
+          ],
+          [
+            {
+              "text": "0.025"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Citraurin"
+            }
+          ],
+          [
+            {
+              "text": "y = 4.40 × 10⁶ x + 3.56 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.997"
+            }
+          ],
+          [
+            {
+              "text": "0.0010"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Antheraxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 2.88 × 10⁵ x + 2.74 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.995"
+            }
+          ],
+          [
+            {
+              "text": "0.10"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Lutein"
+            }
+          ],
+          [
+            {
+              "text": "y = 8.23 × 10⁵ x + 5.99 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.993"
+            }
+          ],
+          [
+            {
+              "text": "0.0050"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "8′-apo-β-carotenal"
+            }
+          ],
+          [
+            {
+              "text": "y = 3.48 × 10⁶ x + 1.09 × 10⁴"
+            }
+          ],
+          [
+            {
+              "text": "0.991"
+            }
+          ],
+          [
+            {
+              "text": "0.0025"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Zeaxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 4.75 × 10⁵ x + 2.62 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.992"
+            }
+          ],
+          [
+            {
+              "text": "0.050"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Phytoene"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.42 × 10⁵ x − 1.02 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.998"
+            }
+          ],
+          [
+            {
+              "text": "0.050"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "α-Cryptoxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 9.52 × 10⁵ x − 1.32 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.996"
+            }
+          ],
+          [
+            {
+              "text": "0.0005"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Cryptoxanthin"
+            }
+          ],
+          [
+            {
+              "text": "y = 7.25 × 10⁵ x − 3.29 × 10²"
+            }
+          ],
+          [
+            {
+              "text": "0.996"
+            }
+          ],
+          [
+            {
+              "text": "0.010"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Echinenone"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.39 × 10⁷ x − 3.68 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.992"
+            }
+          ],
+          [
+            {
+              "text": "0.0005"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "α-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "y = 9.88 × 10⁵ x − 4.25 × 10²"
+            }
+          ],
+          [
+            {
+              "text": "0.997"
+            }
+          ],
+          [
+            {
+              "text": "0.010"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "y = 8.26 × 10⁵ x − 6.91 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.995"
+            }
+          ],
+          [
+            {
+              "text": "0.0025"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "γ-Carotene"
+            }
+          ],
+          [
+            {
+              "text": "y = 3.66 × 10⁵ x − 5.92 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.991"
+            }
+          ],
+          [
+            {
+              "text": "0.10"
+            }
+          ],
+          [
+            {
+              "text": "10"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Lycopene"
+            }
+          ],
+          [
+            {
+              "text": "y = 1.47 × 10⁵ x − 6.09 × 10³"
+            }
+          ],
+          [
+            {
+              "text": "0.993"
+            }
+          ],
+          [
+            {
+              "text": "0.050"
+            }
+          ],
+          [
+            {
+              "text": "25"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 207,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Note: the 31 esterified xanthophylls (fatty-acid esters of lutein, violaxanthin, zeaxanthin, β-cryptoxanthin, etc.) have no independent standards and were uniformly semi-quantified against the neoxanthin curve, with no independent LLOQ / ULOQ assigned; their values serve only for between-group comparison and not for absolute quantification."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 208,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Table 10 Key metrics of C2 and the EV control",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 209,
+      "type": "table",
+      "cells": [
+        [
+          [
+            {
+              "text": "Metric",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "C2",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "EV control",
+              "bold": true
+            }
+          ],
+          [
+            {
+              "text": "C2 / EV",
+              "bold": true
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Total quantification pool (μg/g)"
+            }
+          ],
+          [
+            {
+              "text": "837.8"
+            }
+          ],
+          [
+            {
+              "text": "374.8"
+            }
+          ],
+          [
+            {
+              "text": "2.24"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Zeaxanthin (‰)"
+            }
+          ],
+          [
+            {
+              "text": "10.6"
+            }
+          ],
+          [
+            {
+              "text": "74.7"
+            }
+          ],
+          [
+            {
+              "text": "0.142"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Antheraxanthin (‰)"
+            }
+          ],
+          [
+            {
+              "text": "52.0"
+            }
+          ],
+          [
+            {
+              "text": "135"
+            }
+          ],
+          [
+            {
+              "text": "0.385"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Cryptoxanthin (‰)"
+            }
+          ],
+          [
+            {
+              "text": "2.24"
+            }
+          ],
+          [
+            {
+              "text": "3.03"
+            }
+          ],
+          [
+            {
+              "text": "0.739"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Violaxanthin (‰)"
+            }
+          ],
+          [
+            {
+              "text": "216"
+            }
+          ],
+          [
+            {
+              "text": "151"
+            }
+          ],
+          [
+            {
+              "text": "1.43"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "Lutein (‰)"
+            }
+          ],
+          [
+            {
+              "text": "586"
+            }
+          ],
+          [
+            {
+              "text": "519"
+            }
+          ],
+          [
+            {
+              "text": "1.13"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Carotene (‰)"
+            }
+          ],
+          [
+            {
+              "text": "54.3"
+            }
+          ],
+          [
+            {
+              "text": "51.1"
+            }
+          ],
+          [
+            {
+              "text": "1.06"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "De-epoxidation index"
+            }
+          ],
+          [
+            {
+              "text": "0.869"
+            }
+          ],
+          [
+            {
+              "text": "0.606"
+            }
+          ],
+          [
+            {
+              "text": "1.43"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Citraurin (μg/g, absolute)"
+            }
+          ],
+          [
+            {
+              "text": "0.00702"
+            }
+          ],
+          [
+            {
+              "text": "0.00441"
+            }
+          ],
+          [
+            {
+              "text": "1.59"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Citraurin (‰)"
+            }
+          ],
+          [
+            {
+              "text": "0.00838"
+            }
+          ],
+          [
+            {
+              "text": "0.01176"
+            }
+          ],
+          [
+            {
+              "text": "0.71"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Citraurin / β-cryptoxanthin (mol %)"
+            }
+          ],
+          [
+            {
+              "text": "0.478"
+            }
+          ],
+          [
+            {
+              "text": "0.496"
+            }
+          ],
+          [
+            {
+              "text": "0.96"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "β-Citraurin / (β-cryptoxanthin + zeaxanthin) (%)"
+            }
+          ],
+          [
+            {
+              "text": "0.0853"
+            }
+          ],
+          [
+            {
+              "text": "0.0199"
+            }
+          ],
+          [
+            {
+              "text": "4.29"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "text": "8′-apo-β-carotenal / β-carotene (%)"
+            }
+          ],
+          [
+            {
+              "text": "0.123"
+            }
+          ],
+          [
+            {
+              "text": "0.238"
+            }
+          ],
+          [
+            {
+              "text": "0.52"
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "bodyIndex": 211,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "At the substrate end there was a clear and directionally consistent decrease, concentrated on the two preferred substrates of CitCCD4: zeaxanthin fell to 0.142 times the EV control (pool share 10.6 versus 74.7 ‰), antheraxanthin fell to 0.385 times (52.0 versus 135 ‰; the latter is epoxidized from zeaxanthin), and β-cryptoxanthin fell to 0.739 times. In contrast, β-carotene (1.06 times) and lutein (1.13 times), which CitCCD4 does not cleave, were essentially unchanged, and the upstream linear carotenoids (phytoene 0.677, lycopene 0.652, γ-carotene 0.738) declined only slightly. This is the positive signal in this batch of data that comes closest to \"CitCCD4 consuming zeaxanthin\"."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 212,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The product end, however, showed no corresponding enrichment. The absolute amount of β-citraurin was 0.00702 μg/g, 1.59 times that of the EV control (0.00441 μg/g), but this difference arises mainly because the total quantification pool of C2 is 2.24 times higher; on a pool-share basis C2 was 0.00838 ‰ and the EV control 0.01176 ‰, so C2 was only 0.71 times the latter. With the direct substrate as denominator, β-citraurin / β-cryptoxanthin was 0.478 % versus 0.496 % (0.96 times, unchanged); β-citraurin / (β-cryptoxanthin + zeaxanthin) was 0.0853 % versus 0.0199 % (4.29 times), but this increase arises mainly from the denominator being suppressed rather than from a rise in the numerator."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 213,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The conclusion at the carotenoid level is therefore: the decrease at the substrate end is consistent with CitCCD4 activity, but the target product showed no determinable enrichment, and the overall result is not pronounced. Three limitations must be stated at the same time. First, the two groups differed in physiological state from the outset, with de-epoxidation indices of 0.869 and 0.606 respectively, so the decreases in zeaxanthin and antheraxanthin can be fully explained by a state shift of the xanthophyll cycle, and the present data cannot separate the two. Second, β-citraurin is both an accumulating pigment and an intermediate: it can be cleaved again at the 7′,8′ position to crocetin dialdehyde (C20) and esterified with lauric acid, myristic acid and others, and this panel does not cover these downstream products. Third, each group contains only 1 sample with no statistical test, and the absolute amount of β-citraurin is at trace level (4.4–7.0 times the LLOQ)."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 215,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Fig. 31 Carotenoid pathway in ",
+          "bold": true
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true,
+          "bold": true
+        },
+        {
+          "text": ": comparison of C2 (RBCS2-CitCCD4) with the EV control line.",
+          "bold": true
+        },
+        {
+          "text": " Fill = ratio of pool shares, C2 / EV control (blue = lower in C2, orange = higher in C2); dark blue boxes = the main target product (β-citraurin), light blue boxes = eccentric / side-cleavage products (8′-apo-β-carotenal C30, β-cyclocitral C10); dashed boxes = not detected. Values are the per-mille fractions of each compound in its own quantification pool."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 216,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Summary",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 217,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "First, we constructed and sequence-verified the two expression vectors D2 and C2. The consensus sequence of C2 (RBCS2-CitCCD4) matches the design exactly and can be used directly for transformation, whereas D2 lacks 925 bp in the 35S promoter region, again confirming that this promoter recombines readily in the bacterial host. Second, PCR confirmed that the expression cassette was integrated in the C2 transformants. Third, after normalization to the actin internal reference, the CitCCD4 transcript of C2 reached 1.1 times the actin level, whereas the non-transgenic control carried only 3.1 × 10⁻³ (a 351-fold difference), suggesting that CitCCD4 is expressed; but because the primers also amplified in the wild type and the two groups came from different batches of cDNA, this conclusion can serve only as evidence \"leaning towards successful expression\" and must be re-checked after primer redesign. Fourth, TLC showed that C2 and the wild type had identical profiles with no new band, and that the bright bands at 365 nm were the fluorescence of chlorophyll-type porphyrins, unrelated to the product; calculated from the quantification value of 0.00702 μg/g, β-citraurin at routine spotting amounts is far below the visual detection limit. Fifth, targeted quantification showed that the two preferred substrates of CitCCD4 (zeaxanthin 0.142 times, antheraxanthin 0.385 times) were markedly down-regulated, but no enrichment appeared at the product end (pool share 0.71 times, product / substrate ratios unchanged), and the change in the end products of carotenoids is not pronounced."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 218,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The next round should advance from both the \"expression\" and the \"accumulation\" ends at the same time:"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 219,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "1.Suppress the downstream degradation pathways of β-citraurin.",
+          "bold": true
+        },
+        {
+          "text": " β-Citraurin is both a pigment and an intermediate, and at least two fates weaken its accumulation in this system: cleavage again at the 7′,8′ position to crocetin dialdehyde (C20), and esterification with lauric acid, myristic acid, palmitic acid and others. "
+        },
+        {
+          "text": "Dunaliella",
+          "italic": true
+        },
+        {
+          "text": " has an endogenous cytosolic CCD1 (ccd1A / ccd1B), and CCD1 prefers apocarotenoids, making it the most likely \"leak\" for β-citraurin. The next step should therefore be to construct "
+        },
+        {
+          "text": "ccd1A/ccd1B RNAi or CRISPR knockdown lines",
+          "bold": true
+        },
+        {
+          "text": ", cross or co-transform them with C2, and then compare the proportions of β-citraurin and its C20 and esterified products; at the same time, the 7′,8′ cleavage products (crocetin dialdehyde, 3-hydroxy-β-cyclocitral) should be used as indicators of whether it is being over-degraded."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 220,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "2.Redesign the CitCCD4 qPCR primers and validate their specificity against WT cDNA, and repeat the quantification with all lines on the same plate."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 221,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "3.Include the product end (C20 dialdehyde, C10 aldehyde, β-citraurin fatty-acid esters) in the targeted panel, and set n ≥ 3 parallel samples under the same batch of culture and the same treatment, using independent indicators such as the de-epoxidation index to control for differences in physiological state."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 222,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To further increase accumulation, consider adding a chloroplast transit peptide to C2, or optimising plastoglobule targeting so that CitCCD4 sits closer to the membrane phase in which zeaxanthin resides."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 224,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "6.Biosafety Module"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 225,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To ensure the biosafety of engineered "
+        },
+        {
+          "text": "Dunaliella salina",
+          "italic": true
+        },
+        {
+          "text": " in practical applications and prevent it from escaping into natural water environments, we designed a salt concentration-responsive self-elimination system based on the endogenous salt-regulated promoter P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": ", the endogenous weak promoter P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " and the toxin-antitoxin system mazEF. This circuit allows the engineered algal strain to grow normally in high-salt working environments, and automatically trigger cell death when it leaves the high-salt environment and enters external low-salt water bodies."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 226,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Toxin protein MazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 227,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "MazF is the toxin protein in the classic mazEF toxin-antitoxin system, and possesses mRNA endonuclease activity. In our safety system design, MazF acts as the core lethal element. To verify the toxicity and killing efficiency of MazF in the eukaryotic chassis"
+        },
+        {
+          "text": " D. salina",
+          "italic": true
+        },
+        {
+          "text": ", we constructed a strong promoter-driven expression circuit for its functional characterization."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 228,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Construction of Plasmid p1302-CaMV 35S-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 229,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We constructed the expression plasmid p1302-CaMV 35S-mazF driven by the strong constitutive promoter CaMV 35S via restriction digestion and ligation. The constructed plasmid was transformed into "
+        },
+        {
+          "text": "E. coli",
+          "italic": true
+        },
+        {
+          "text": " DH5α competent cells for plasmid cloning and amplification. Single colonies on the transformation plate were picked for colony PCR screening. Agarose gel electrophoresis revealed clear bands of the expected size, while sequencing results further confirmed the successful insertion of the target fragment into the vector backbone."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 231,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 32 Plasmid of p1302-CaMV 35S-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 233,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 33 Result of Colony PCR for p1302-CaMV 35S-mazF in ",
+          "bold": true
+        },
+        {
+          "text": "E.coli",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": " DH5α.Lane M: DL2000 DNA Marker; Lanes 1-11: fragments of ",
+          "bold": true
+        },
+        {
+          "text": "mazF",
+          "bold": true,
+          "italic": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 235,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 34. Sequencing results of p1302-CaMV35S-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 236,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Verification of MazF Killing Function",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 237,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To verify the function of the plasmid constructed in the base algal strain, we transformed plasmid p1302-CaMV 35S-mazF into"
+        },
+        {
+          "text": " D. salina",
+          "italic": true
+        },
+        {
+          "text": ", and performed resistance screening on the medium supplemented with hygromycin B. Using untransformed wild-type "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": " and empty vector-transformed "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": " as negative controls, each group was inoculated in normal "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": " growth medium containing 0.5 M NaCl."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 238,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We evaluated the killing capacity of MazF by continuously monitoring the OD"
+        },
+        {
+          "text": "680",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " value over 10 consecutive days and plotting the growth curve."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 241,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 35. Growth curves of ",
+          "bold": true
+        },
+        {
+          "text": "D. salina",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": " transformed with p1302-CaMV35S-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 242,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Growth curve analysis revealed that both the wild-type and empty vector control groups proliferated healthily, maintaining a stable logarithmic growth trend throughout the 10-day monitoring period. At the end of cultivation, the OD"
+        },
+        {
+          "text": "680 ",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "of the WT and EV groups reached approximately 0.36 and 0.28, respectively. In contrast, the proliferation of the engineered algal strain transformed with p1302-CaMV35S-mazF was significantly inhibited; its cell density showed virtually no increase throughout the entire culture cycle, with the OD"
+        },
+        {
+          "text": "680",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " remaining at merely 0.05. This significant growth inhibition demonstrates that the prokaryotic MazF toxin can serve as a highly efficient lethal effector, exhibiting potent cytotoxicity in the eukaryotic "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": "."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 244,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " Salt-Induced Response System",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 245,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " is an endogenous salt-regulated promoter originating from "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": ". Low-salt environments will suppress its transcriptional activity for downstream genes, while high-salt conditions can significantly activate P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 246,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Construction of Plasmid p2301-P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 247,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The endogenous promoter P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " and reporter gene "
+        },
+        {
+          "text": "EGFP",
+          "italic": true
+        },
+        {
+          "text": " were assembled into the linearized pCAMBIA2301 backbone through homologous recombination. The recombinant product was transformed into "
+        },
+        {
+          "text": "E. coli",
+          "italic": true
+        },
+        {
+          "text": " DH5α competent cells, after which single colonies were picked for colony PCR screening. This step preliminarily verified the successful insertion of the target fragment, and sequencing results also confirmed that all functional elements were correctly assembled."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 249,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 36. Plasmid of p2301-P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 251,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 37 Result of Colony PCR for p2301-P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP",
+          "bold": true
+        },
+        {
+          "text": "."
+        },
+        {
+          "text": " Lane M: DL5000 DNA Marker; Lane1-5: Negative Template Control; Lanes 6–8: fragments of P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP.",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 253,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 38. Sequencing results of p2301-P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 254,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Preliminary Functional Verification of the P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " Reporter System",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 255,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To preliminarily verify the function of this sensing module within the host cells, the successfully constructed p2301-P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-EGFP plasmid was transformed into "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": ". Under fluorescence microscopy, we observed distinct green fluorescence signals. These results qualitatively confirm that the P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " promoter can drive downstream gene expression in"
+        },
+        {
+          "text": " D. salina",
+          "italic": true
+        },
+        {
+          "text": ". Quantitative characterizations, including fluorescence kinetics monitoring and growth curve tracking across different salt concentration gradients, are currently underway."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 256,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Construction of the Complete Biosafety Circuit Based on P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF and P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazE Modules",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 257,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The complete \"survival at high salinity, suicide at low salinity\" biosafety circuit relies on the dynamic balance between two orthogonal modules: the salt-responsive antitoxin module (P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazE) and the weak-promoter-driven toxin module (P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF). In high-salt environments, P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " drives high expression of MazE to neutralize the basal MazF, allowing normal growth. In low-salt environments, MazE expression decreases, and the unneutralized MazF induces cell death."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 258,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": " Verification of P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF module",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 259,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "To construct the toxin module, we amplified the P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " promoter and "
+        },
+        {
+          "text": "mazF",
+          "italic": true
+        },
+        {
+          "text": " gene fragments via PCR, linearized the pCAMBIA1302-Bar backbone, and assembled the components through multi-fragment homologous recombination. The recombinant products were transformed into "
+        },
+        {
+          "text": "E. coli",
+          "italic": true
+        },
+        {
+          "text": " DH5α and screened on kanamycin plates. Colony PCR and gel electrophoresis confirmed the presence of the target bands with no specific amplification in the negative control. Subsequent sequencing verified the sequence integrity, thereby confirming the successful construction of the p1302-Bar-P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF plasmid."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 261,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 39 Plasmid of p1302-Bar-P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 263,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 40. Result of Colony PC",
+          "bold": true
+        },
+        {
+          "text": "R"
+        },
+        {
+          "text": " for p1302-Bar-P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF",
+          "bold": true
+        },
+        {
+          "text": ". Lane M: DL5000 DNA Marker; Lanes 1–5: fragments of P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF; NTC: "
+        },
+        {
+          "text": "Negative Template Control",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 265,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 41. Sequencing results of p1302-Bar-P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 266,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "We transformed the successfully constructed p1302-bar-P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF into "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": ", and completed resistance screening in the glufosinate-supplemented medium."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 267,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "This engineered algal strain and wild-type "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": " were both placed in the culture system for growth kinetics tracking, and the changes in OD₆₈₀ over the set number of days were measured, to evaluate whether "
+        },
+        {
+          "text": "mazF",
+          "italic": true
+        },
+        {
+          "text": " driven by the endogenous weak promoter still retains sufficient lethal potency."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 269,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Figure 42. Growth curves of "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": " ",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": "transformed with p1302-bar-P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF"
+        }
+      ]
+    },
+    {
+      "bodyIndex": 270,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "The growth kinetics monitoring results over 6 days revealed that the wild-type control group consistently maintained a steady logarithmic growth trend, reaching an OD"
+        },
+        {
+          "text": "680",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " of approximately 0.24 on Day 6. In contrast, the engineered algal strain transformed with p1302-bar-P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF exhibited significant and sustained growth inhibition. Although a slight fluctuation was observed during the middle of the cultivation period, the cell density was ultimately suppressed back to the initial baseline level (OD"
+        },
+        {
+          "text": "680",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "≈0.05) by Day 6, resulting in zero net growth. These results demonstrate that the endogenous weak promoter P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": " can drive sufficient MazF expression to effectively arrest cell growth in the absence of the antitoxin. Importantly, this basal lethality confirms its viability as a reliable suicide switch, fulfilling the prerequisite for the subsequent introduction of the MazE antitoxin to construct a controllable biosafety circuit."
+        }
+      ]
+    },
+    {
+      "bodyIndex": 271,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Salt-Dependent Growth Regulation of Engineered ",
+          "bold": true
+        },
+        {
+          "text": "D. salina",
+          "bold": true,
+          "italic": true
+        },
+        {
+          "text": " via P",
+          "bold": true
+        },
+        {
+          "text": "DCA1",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazE and P",
+          "bold": true
+        },
+        {
+          "text": "ip",
+          "bold": true,
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF Coupling",
+          "bold": true
+        }
+      ]
+    },
+    {
+      "bodyIndex": 272,
+      "type": "paragraph",
+      "runs": [
+        {
+          "text": "Currently, the construction of the P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazE antitoxin plasmid is underway. Once completed, we will co-transform both the P"
+        },
+        {
+          "text": "DCA1",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazE and P"
+        },
+        {
+          "text": "ip",
+          "verticalAlign": "subscript"
+        },
+        {
+          "text": "-mazF modules into "
+        },
+        {
+          "text": "D. salina",
+          "italic": true
+        },
+        {
+          "text": ". Future experiments will focus on evaluating the growth kinetics and survival rates of the dual-plasmid engineered strain under varying salinity gradients, ultimately verifying the complete salt-dependent phenotype of the biosafety circuit."
+        }
+      ]
+    }
+  ]
+}

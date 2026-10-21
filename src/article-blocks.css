@@ -94,3 +94,10 @@
 .pbr-widget-shell > div {
   width: 100%;
 }
+
+/* Results follows the Project article typography; grouped Word panels retain their order. */
+.article-page--results .research-blocks h4 { margin: 1.8rem 0 .75rem; font-family: var(--font-serif); font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.4; color: var(--ink); scroll-margin-top: 8rem; }
+.article-page--results figcaption { white-space: pre-line; }
+.article-page--results .results-figure-stack { grid-template-columns: minmax(0, 1fr); }
+.article-page--results .results-figure-stack .research-figure a { min-height: 0; }
+.article-page--results .results-figure-stack .research-figure img { max-height: none; }

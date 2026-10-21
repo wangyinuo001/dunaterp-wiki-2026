@@ -137,3 +137,15 @@ Images are lossless WebP exports (including the image crop specified in Word),
 served through the official iGEM CDN. Source and delivery hashes and the
 character-formatting audit are recorded in `docs/engineering-total-sources.json`.
 Codex assisted with document import, component integration and browser checks.
+
+## 22 October 2026 — Project Results page
+
+The Results page is imported from the user-supplied Results_总.docx. All body
+text, headings, captions, table contents, source numbering and character
+formatting are retained. The 42 numbered figures contain 46 image panels;
+images are lossless WebP exports with only the two crops specified in Word.
+Codex assisted with document import, layout integration and verification;
+no scientific wording, measurements or statistics were generated or rewritten.
+Character-level fidelity, source hashes and image provenance are recorded in
+docs/results-sources.json. New images use local GitHub-review paths pending
+official iGEM asset upload.

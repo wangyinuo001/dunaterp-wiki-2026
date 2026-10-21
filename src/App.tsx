@@ -449,6 +449,7 @@ function Article({ slug }: { slug: string }) {
     slug === 'attributions' ? ' article-page--attributions' : '',
     slug === 'project-description' ? ' article-page--description' : '',
     slug === 'design' ? ' article-page--design' : '',
+    slug === 'results' ? ' article-page--results' : '',
     slug === 'engineering' ? ' article-page--engineering' : '',
   ].join("");
   return <><Header /><PageProgress pathname={`/${slug}`} stops={progressStops} accent={articleAccent} /><main id="main-content" tabIndex={-1} style={{ "--article-accent": articleAccent, "--article-hero-image": `url("${heroImage}")` } as CSSProperties} className={articleClassName}>
@@ -460,6 +461,7 @@ function Article({ slug }: { slug: string }) {
       <div className="article-body">{page.figure && <figure className="feature-figure"><img src={figureSrc} alt={page.figure.alt} loading="lazy" decoding="async" /><figcaption>{renderInlineText(page.figure.caption)}</figcaption></figure>}
         <div className="article-sections">{page.sections.map((section, i) => <section id={`section-${i + 1}`} tabIndex={-1} key={`${i}-${section.title}`}><div className="section-number">{String(i + 1).padStart(2, "0")}</div><div><h2>{section.titleRuns ? <DocumentText runs={section.titleRuns} /> : renderInlineText(section.title)}</h2>{section.body && <p>{renderCitations(section.body, referenceNumbers, citationNumbers)}</p>}{section.blocks && <ArticleBlocks blocks={section.blocks} referenceNumbers={referenceNumbers} sectionId={`section-${i + 1}`} />}{section.items && <ul>{section.items.map((item) => <li key={item}>{renderCitations(item, referenceNumbers, citationNumbers)}</li>)}</ul>}{section.note && <aside>{renderInlineText(section.note)}</aside>}</div></section>)}</div>
         {references.length > 0 && <section id="references" tabIndex={-1} className="article-references"><h2>References</h2><ReferenceList references={references} /></section>}
+
       </div>
     </div>
     </CitationNumbers.Provider>}

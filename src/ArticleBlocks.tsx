@@ -30,7 +30,7 @@ function renderTableCell(text: string) {
 
 function DataTable({ block }: { block: Extract<ContentBlock, { kind: 'table' }> }) {
   const content = <div className="research-table-scroll" role="region" aria-label={block.caption} tabIndex={0}>
-    <table>{block.caption && <caption>{renderInlineText(block.caption)}</caption>}<thead><tr>{block.columns.map((name, index) => <th key={name} scope="col">{block.columnRuns?.[index] ? <DocumentText runs={block.columnRuns[index]} /> : renderInlineText(name)}</th>)}</tr></thead>
+    <table>{block.caption && <caption>{block.captionRuns ? <DocumentText runs={block.captionRuns} /> : renderInlineText(block.caption)}</caption>}<thead><tr>{block.columns.map((name, index) => <th key={name} scope="col">{block.columnRuns?.[index] ? <DocumentText runs={block.columnRuns[index]} /> : renderInlineText(name)}</th>)}</tr></thead>
       <tbody>{block.rows.map((row, i) => <tr key={i}>{row.map((cell, j) => {
         const runs = block.cellRuns?.[i]?.[j];
         const value = runs ? <DocumentText runs={runs} /> : /^https?:\/\//.test(cell) ? <a href={cell}>Reference ↗</a> : renderTableCell(cell);
