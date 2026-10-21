@@ -36,10 +36,10 @@
   },
   {
     "source": "figures/dry-lab/14_regulatory_model.png",
-    "url": "https://static.igem.wiki/teams/6212/wiki/dunaterp-896bdf8593d5.webp",
-    "sha256": "896bdf8593d5f013eb1d0b778840db500aa628d37022e5dca62db0156dbcdebe",
-    "sourceSha256": "aedbdf4579414a88c07a3ecbb3d7ed2580134f3535884c8e83544447b8e8bef0",
-    "bytes": 46792
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/14-regulatory-model.webp",
+    "sha256": "2caddd10f86ca036565eac13ef54984e4eee83f08364063d80eba048823d3f08",
+    "bytes": 55884,
+    "sourceSha256": "bc058388a914381bcda54ceb79d600d79597aba952147dfd22cb94b70b95b820"
   },
   {
     "source": "figures/dry-lab/14_regulatory_model.svg",
@@ -50,10 +50,10 @@
   },
   {
     "source": "figures/dry-lab/15_regulatory_response.png",
-    "url": "https://static.igem.wiki/teams/6212/wiki/dunaterp-93e0ee0c20fe.webp",
-    "sha256": "93e0ee0c20feadd7a401bb2c390830cda9363fc3457120da3263d12d0569268c",
-    "sourceSha256": "72c871e5ecdef37751fe60bb00859145704dd63993e53fb7c19180a1b5aec5e6",
-    "bytes": 114334
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/15-regulatory-response.webp",
+    "sha256": "b90ed584d2f8e5aa34c81b944bc45e0e08d99b3ec752c39f05d8b9dced1cb13c",
+    "bytes": 53638,
+    "sourceSha256": "b369ebf2041b42c154dabe6037820183fccab8416d1bcf01db5483897fea9dfa"
   },
   {
     "source": "figures/dry-lab/15_regulatory_response.svg",
@@ -2560,5 +2560,26 @@
     "sha256": "748ec7526322b198a6b92c36bcc713a6f04b4668af964539a755b19242d450b7",
     "sourceSha256": "35596855291c942feaaeec5f7959943bab1774abd45d599e80501d88ea2c1b54",
     "bytes": 71358
+  },
+  {
+    "source": "figures/dry-lab/16_regulatory_dynamics.png",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/16-regulatory-dynamics.webp",
+    "sha256": "4df8b7139b1aa5c816c607cc301159f9e3fe7203c1b467f09e7dfcd9e6ea8587",
+    "bytes": 77696,
+    "sourceSha256": "eab01a93ccde69e50ea3e2f2f7cafd8be6770e86d0be11062e02acc7f960d7f2"
+  },
+  {
+    "source": "figures/dry-lab/17_regulatory_sweep.png",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/17-regulatory-sweep.webp",
+    "sha256": "4cd6109c9afc088d8b0ddf81d5c674d2f38c33a5f1177e81a91e017b8ce259dc",
+    "bytes": 49192,
+    "sourceSha256": "910bb087e3fd63b9cd0fbce659d9bca918a3530ffcc976c82edbc0f45bbb8c69"
+  },
+  {
+    "source": "figures/dry-lab/18_regulatory_sensitivity.png",
+    "url": "https://static.igem.wiki/teams/6212/wiki/results/18-regulatory-sensitivity.webp",
+    "sha256": "39491b505e1951743304322205b6027ead0201939ff5b69afeb4082b5bf5d984",
+    "bytes": 31432,
+    "sourceSha256": "123704096b0e1587c06690e015effc5505b816f09de4e91a26417769fe12948d"
   }
 ]
