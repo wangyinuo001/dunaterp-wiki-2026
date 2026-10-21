@@ -54,12 +54,12 @@
       "style": "NLM Citing Medicine, citation-sequence (Vancouver family)",
       "rules": [
         "Keep page-local numbered [1] citations and list references in first-citation order; reuse the same number for repeated sources.",
-        "Article: Author surname and initials. Article title. NLM journal abbreviation. Year;volume(issue):pages/article number. doi:linked DOI.",
+        "Article: Author surname and initials. Linked article title. NLM journal abbreviation. Year;volume(issue):pages/article number. DOI retained as the title's destination without visible DOI text.",
         "List all verified authors; complete truncated or missing metadata only after checking the original source. Preserve titles and scientific information.",
-        "Web: Organization/author. Page title [Internet]. Publication/update date when available [cited date]. Available from: linked URL.",
+        "Web: Organization/author. Linked page title [Internet]. Publication/update date when available [cited date]. URL retained as the title's destination without a visible URL.",
         "Dataset: Creator. Dataset title [dataset]. Repository; year. Accession and linked persistent identifier.",
         "Use Duna Serif 16.64px, normal weight, line-height 1.7, a fixed number column/hanging indent, and natural wrapping; italicize scientific names only.",
-        "Make DOI/URL the link rather than the entire paragraph. Do not add journal-title italics, bold years, or [J]/[EB/OL] labels to this NLM layout."
+        "Per the user's 2026-10-22 revision, link only the source title to its verified DOI/URL; hide standalone DOI/URL labels. Do not add journal-title italics, bold years, or [J]/[EB/OL] labels to this NLM layout."
       ],
       "sources": [
         "https://www.ncbi.nlm.nih.gov/books/NBK7265/",
@@ -70,7 +70,7 @@
         "uniqueSources": 62,
         "renderedReferences": 96,
         "sourceRecord": "docs/bibliography-sources.json",
-        "layout": "Duna Serif, 16.64px, weight 400, line-height 1.7, separate number column and DOI/URL links",
+        "layout": "Duna Serif, 16.64px, weight 400, line-height 1.7, separate number column and linked titles; no visible DOI/URL",
         "numbering": "Page-local first-citation order with a shared old-to-new map for Word runs, tables, captions and plain paragraphs."
       },
       "pendingMetadata": [

@@ -4,13 +4,16 @@ import bibliography from './content/bibliography.generated.json';
 
 export type FormattedReference = {
   text: string;
+  beforeTitle: string;
+  title: string;
+  afterTitle: string;
   links: Array<{ prefix: string; label: string; href: string }>;
 };
 
 const entries: Record<string, FormattedReference> = bibliography;
 export const referenceKey = (reference: WikiReference) => (reference.href || reference.label).replace(/\s+/g, ' ').trim();
 export function formatReference(reference: WikiReference): FormattedReference {
-  return entries[referenceKey(reference)] ?? { text: reference.label, links: [] };
+  return entries[referenceKey(reference)] ?? { text: reference.label, beforeTitle: '', title: reference.label, afterTitle: '', links: [] };
 }
 
 function originalReferences(page: WikiPage): WikiReference[] {

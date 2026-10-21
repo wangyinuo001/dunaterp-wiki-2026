@@ -48,9 +48,9 @@ const ACCEL = 620;
 const FRICTION = 12;
 
 // Guided-mode spring, carried over from the previous scroll journey.
-const FOLLOW_STIFFNESS = 70;
-const FOLLOW_DAMPING = 15;
-const MAX_FOLLOW_SPEED = 0.48;
+const FOLLOW_STIFFNESS = 50;
+const FOLLOW_DAMPING = 14;
+const MAX_FOLLOW_SPEED = 0.3;
 
 const STATION_INTERACT_RADIUS = 108;
 const NPC_INTERACT_RADIUS = 62;

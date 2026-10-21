@@ -441,53 +441,6 @@
 
 /* --- interaction prompt ------------------------------------------------- */
 
-.px-guided-stations {
-  position: absolute;
-  z-index: 21;
-  inset: 5.5rem clamp(1rem, 4vw, 4rem) 7.25rem;
-  pointer-events: none;
-}
-
-.px-guided-station {
-  --px-station-presence: 0;
-  --px-station-offset: 14px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  box-sizing: border-box;
-  width: min(29rem, 42vw);
-  padding: 1.05rem 1.15rem 1.15rem;
-  border: 3px solid var(--px-cream);
-  border-top: 6px solid var(--px-accent);
-  background: rgba(6, 34, 31, .94);
-  color: var(--px-salt);
-  box-shadow: 7px 7px 0 rgba(6, 34, 31, .68);
-  opacity: var(--px-station-presence);
-  transform: translateY(calc(-50% + var(--px-station-offset)));
-  transition: opacity .16s linear, transform .16s ease-out;
-  pointer-events: none;
-}
-
-.px-guided-station.is-right { left: auto; right: 0; }
-.px-guided-station.is-current { pointer-events: auto; }
-.px-guided-station header { display: flex; align-items: center; gap: .7rem; margin-bottom: .75rem; }
-.px-guided-station header > span {
-  display: grid;
-  place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  flex: 0 0 auto;
-  background: var(--px-accent);
-  color: var(--px-ink);
-  font: 900 .8rem/1 ui-monospace, Menlo, monospace;
-}
-.px-guided-station header p { margin: 0; color: var(--px-accent); font: 850 .68rem/1.25 ui-monospace, Menlo, monospace; letter-spacing: .12em; }
-.px-guided-station h2 { margin: 0 0 .7rem; font: 900 clamp(1.25rem, 2.3vw, 2rem)/1.08 ui-monospace, Menlo, monospace; text-transform: uppercase; }
-.px-guided-station > p { margin: 0; color: rgba(253, 246, 227, .84); font-size: clamp(.82rem, 1.05vw, .98rem); line-height: 1.58; }
-.px-guided-station > a { display: inline-flex; align-items: center; gap: .6rem; margin-top: .9rem; color: var(--px-accent); font: 850 .75rem/1.2 ui-monospace, Menlo, monospace; letter-spacing: .05em; text-decoration: none; text-transform: uppercase; }
-.px-guided-station > a:hover b { transform: translateX(3px); }
-.px-guided-station > a b { transition: transform .15s ease; }
-
 .px-prompt {
   position: absolute;
   z-index: 22;
@@ -845,11 +798,6 @@
 }
 
 @media (max-width: 800px) {
-  .px-guided-stations { inset: 5.3rem .75rem 11rem; }
-  .px-guided-station,
-  .px-guided-station.is-right { left: 0; right: auto; top: auto; bottom: 0; width: 100%; transform: translateY(var(--px-station-offset)); }
-  .px-guided-station h2 { font-size: 1.2rem; }
-  .px-guided-station > p { font-size: .78rem; line-height: 1.45; }
   .px-controls { left: 1rem; right: 1rem; bottom: 4.6rem; justify-items: stretch; text-align: center; }
   .px-mode { width: 100%; }
   .px-prompt { left: 1rem; right: 1rem; bottom: 12.5rem; transform: none; }
@@ -890,7 +838,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .px-button, .px-route-traveller, .px-archive, .px-guided-station { transition: none; }
+  .px-button, .px-route-traveller, .px-archive { transition: none; }
   .px-loading, .px-loading-crest i { animation: none; }
   .px-route-fill { transition: none; }
   .px-loading, .px-loader-scene::after, .px-loader-scene > i, .px-loader-scene > b, .px-loader-scene > span { animation: none; }

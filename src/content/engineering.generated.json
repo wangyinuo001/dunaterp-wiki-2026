@@ -205,13 +205,13 @@
         {
           "kind": "figure",
           "src": "/figures/wet-lab/engineering-total/engineering-total-03-50ddc5dbb572.webp",
-          "alt": "Fig 3 Sequencing results of plasmid pCAMBIA1302-2146",
-          "caption": "Fig 3 Sequencing results of plasmid pCAMBIA1302-2146",
-          "width": 1319,
-          "height": 1001,
+          "alt": "Fig. 3 Plasmid map of pCAMBIA1302-2146",
+          "caption": "Fig. 3 Plasmid map of pCAMBIA1302-2146",
+          "width": 1008,
+          "height": 554,
           "captionRuns": [
             {
-              "text": "Fig 3 Sequencing results of plasmid pCAMBIA1302-2146"
+              "text": "Fig. 3 Plasmid map of pCAMBIA1302-2146"
             }
           ]
         },
@@ -2980,8 +2980,8 @@
           "src": "/figures/wet-lab/kill-switch-engineering/killswitch-cycle2-growth-curve.png",
           "alt": "Figure 32. Six-day growth curves of Dunaliella salina transformants. WT: wild type; Pip-MazF: p1302-Bar-Pip-mazF transformants. Data are mean ± SEM (n = 3).",
           "caption": "Figure 32. Six-day growth curves of Dunaliella salina transformants. WT: wild type; Pip-MazF: p1302-Bar-Pip-mazF transformants. Data are mean ± SEM (n = 3).",
-          "width": 1328,
-          "height": 862,
+          "width": 1646,
+          "height": 849,
           "captionRuns": [
             {
               "text": "Figure 32. Six-day growth curves of "

@@ -13,6 +13,8 @@ def pages(text):
     return match[1]+start+'-'+(end[cut:]if cut else match[3]+end)
 def format_entry(entry):
     authors=sentence(', '.join(entry['authors']))
+    before_title=authors+' '
+    title=entry['title'].rstrip(' .')
     links=[]
     if entry['kind']=='report':
         return {'text':f"{authors} {sentence(entry['title'])} {entry['year']}. {entry.get('notes','')}".strip(),'links':[]}
@@ -20,16 +22,17 @@ def format_entry(entry):
         issue='('+entry['issue']+')'if entry.get('issue')else''
         volume=';'+entry['volume']+issue if entry.get('volume')else''
         location=':'+pages(entry['pages'])if entry.get('pages')else''
-        text=f"{authors} {sentence(entry['title'])} {sentence(entry['journalAbbr'])} {entry['year']}{volume}{location}."
+        after_title=f"{sentence(title)[len(title):]} {sentence(entry['journalAbbr'])} {entry['year']}{volume}{location}."
         if entry.get('doi'):links=[{'prefix':'doi:','label':entry['doi'],'href':'https://doi.org/'+entry['doi']}]
     else:
         medium='dataset'if entry['kind']=='dataset'else'Internet'
         site=entry.get('site','')
         publication=(site+'; 'if site else'')+entry['year']
-        text=f"{authors} {entry['title']} [{medium}]. {publication} [cited {entry['cited']}]."
-        if entry.get('notes'):text+=' '+entry['notes']
+        title=entry['title']
+        after_title=f" [{medium}]. {publication} [cited {entry['cited']}]."
+        if entry.get('notes'):after_title+=' '+entry['notes']
         if entry.get('url'):links=[{'prefix':'Available from:','label':entry['url'],'href':entry['url']}]
-    return {'text':text,'links':links}
+    return {'text':before_title+title+after_title,'beforeTitle':before_title,'title':title,'afterTitle':after_title,'links':links}
 def main():
     source=json.loads((ROOT/'docs/bibliography-sources.json').read_text(encoding='utf8'))
     entries={key:format_entry(entry)for key,entry in source['records'].items()}

@@ -47,14 +47,14 @@
       "figure": 3,
       "bodyIndex": 22,
       "source": "word/media/image3.jpeg",
-      "sourceSha256": "f03750cca8ed84de0e21b8de10141249b62b237c36b6dfcbb0ce2f2598f7233d",
+      "sourceSha256": "21f30739fecf0ab872e2b48b7cbf5cb1b02ab441f395b9b443664067e79e1135",
       "output": "/figures/wet-lab/engineering-total/engineering-total-03-50ddc5dbb572.webp",
-      "sha256": "50ddc5dbb572b288a3a2e4a91b01178a32e074230bdaa148570853357b8beb9b",
-      "bytes": 469548,
-      "width": 1319,
-      "height": 1001,
+      "sha256": "aacda5018ef952f6e28b632273c1d13183db047bb4bfd006c08f7372590879e2",
+      "bytes": 106354,
+      "width": 1008,
+      "height": 554,
       "crop": null,
-      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-03-50ddc5dbb572.webp"
+      "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-03-aacda5018ef9.webp"
     },
     {
       "figure": 4,
@@ -442,14 +442,14 @@
       "figure": 32,
       "bodyIndex": 294,
       "source": "word/media/image33.png",
-      "sourceSha256": "e0a3ad70a82beebe6b060a2472df4e81cbc1190bccf783a2337d99e264b51f49",
+      "sourceSha256": "ee6b08475ce38ffb3540b07bb46c01498d72d74e49833aacaeae7a7d5e1ee06b",
       "output": "/figures/wet-lab/kill-switch-engineering/killswitch-cycle2-growth-curve.png",
-      "sha256": "7a84daae56a77c5f6862c214f12cf37b8a83cc4d4969690c7053a8b4c5955666",
-      "bytes": 7572,
-      "width": 1328,
-      "height": 862,
+      "sha256": "0cad5b4a5698fe7c9acba764d0d34773678343e87b509c0a947db288e578e798",
+      "bytes": 21912,
+      "width": 1646,
+      "height": 849,
       "crop": null,
-      "url": "https://static.igem.wiki/teams/6212/wiki/lab/kill-switch-engineering/killswitch-cycle2-growth-curve-7a84daae56a7.webp"
+      "url": "https://static.igem.wiki/teams/6212/wiki/lab/kill-switch-engineering/killswitch-cycle2-growth-curve-0cad5b4a5698.webp"
     },
     {
       "figure": 33,

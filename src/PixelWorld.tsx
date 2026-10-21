@@ -1,4 +1,3 @@
-import { renderInlineText } from './inline-text';
 import {
   useCallback,
   useEffect,
@@ -13,6 +12,7 @@ import { PixelEngine, type Mode } from "./pixel/engine";
 import { STATION_COPY } from "./pixel/station-copy";
 import { ExpeditionJournal, recordNpcVisit } from "./ExpeditionJournal";
 import { NpcDialogue } from "./NpcDialogue";
+import { StationDialogue } from "./StationDialogue";
 import type { Npc } from "./pixel/npc-data";
 import { archiveNavigation } from "./site-data";
 import { HomePrologue } from "./home/HomePrologue";
@@ -25,7 +25,7 @@ const ROUTE_EGGS = [
     key: "protein",
     chapter: 2,
     label: "PROTEIN DOCKING",
-    hook: "What does CPP2146 recognise?",
+    hook: "What does TF2146 recognise?",
     href: "/protein",
     accent: "#7de2ff",
     x: "13%",
@@ -83,6 +83,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const engineRef = useRef<PixelEngine | null>(null);
   const scrollLock = useRef(0);
   const archiveTimer = useRef<number | null>(null);
+  const stationTransitionTimer = useRef<number | null>(null);
 
   const [npcPrompt, setNpcPrompt] = useState<Npc | null>(null);
   const [dialogueNpc, setDialogueNpc] = useState<Npc | null>(null);
@@ -92,6 +93,9 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
   const [failed, setFailed] = useState(false);
   const [mode, setMode] = useState<Mode>("guided");
   const [chapter, setChapter] = useState(-1);
+  const [autoStationKey, setAutoStationKey] = useState<string | null>(null);
+  const [renderedStationKey, setRenderedStationKey] = useState<string | null>(null);
+  const [stationVisible, setStationVisible] = useState(false);
   const [atArchive, setAtArchive] = useState(false);
   const [started, setStarted] = useState(false);
   const [story, dispatchStory] = useReducer(storyReducer, false, initialStory);
@@ -111,43 +115,45 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       });
     }
 
-    const presences = STATION_COPY.map(() => 0);
-    const smoothstep = (start: number, end: number, point: number) => {
-      const t = Math.max(0, Math.min(1, (point - start) / (end - start)));
-      return t * t * (3 - 2 * t);
-    };
-    const first = STATION_COPY[0];
-    const last = STATION_COPY[STATION_COPY.length - 1];
-    if (value <= first.u) {
-      presences[0] = smoothstep(0.025, first.u, value);
-    } else if (value >= last.u) {
-      presences[presences.length - 1] = 1 - smoothstep(last.u + 0.055, 0.975, value);
-    } else {
-      const fromIndex = STATION_COPY.findIndex((station, index) => (
-        index < STATION_COPY.length - 1
-        && value >= station.u
-        && value < STATION_COPY[index + 1].u
-      ));
-      const from = STATION_COPY[fromIndex];
-      const to = STATION_COPY[fromIndex + 1];
-      const segment = (value - from.u) / (to.u - from.u);
-      const crossfade = smoothstep(0.34, 0.66, segment);
-      presences[fromIndex] = 1 - crossfade;
-      presences[fromIndex + 1] = crossfade;
-    }
-    const dominant = presences.reduce((best, presence, index) => (
-      presence > presences[best] ? index : best
-    ), 0);
-    root.current?.querySelectorAll<HTMLElement>("[data-guided-station]").forEach((panel, index) => {
-      const presence = presences[index] ?? 0;
-      panel.style.setProperty("--px-station-presence", presence.toFixed(3));
-      panel.style.setProperty("--px-station-offset", `${Math.round((1 - presence) * 14)}px`);
-      const current = index === dominant && presence > 0.16;
-      panel.classList.toggle("is-current", current);
-      panel.setAttribute("aria-hidden", String(!current));
-      panel.inert = !current;
-    });
   }, []);
+
+  useEffect(() => {
+    if (stationTransitionTimer.current !== null) {
+      window.clearTimeout(stationTransitionTimer.current);
+      stationTransitionTimer.current = null;
+    }
+    let revealFrame = 0;
+    const frame = window.requestAnimationFrame(() => {
+      if (autoStationKey) {
+        if (renderedStationKey && renderedStationKey !== autoStationKey) {
+          setStationVisible(false);
+          stationTransitionTimer.current = window.setTimeout(() => {
+            stationTransitionTimer.current = null;
+            setRenderedStationKey(autoStationKey);
+          }, 180);
+        } else {
+          if (!renderedStationKey) setRenderedStationKey(autoStationKey);
+          revealFrame = window.requestAnimationFrame(() => setStationVisible(true));
+        }
+      } else {
+        setStationVisible(false);
+        if (renderedStationKey) {
+          stationTransitionTimer.current = window.setTimeout(() => {
+            stationTransitionTimer.current = null;
+            setRenderedStationKey(null);
+          }, 220);
+        }
+      }
+    });
+    return () => {
+      window.cancelAnimationFrame(frame);
+      if (revealFrame) window.cancelAnimationFrame(revealFrame);
+      if (stationTransitionTimer.current !== null) {
+        window.clearTimeout(stationTransitionTimer.current);
+        stationTransitionTimer.current = null;
+      }
+    };
+  }, [autoStationKey, renderedStationKey]);
 
   useEffect(() => {
     if (!isStory) return;
@@ -185,7 +191,10 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         },
         onMode: setMode,
         onJourney: updateRouteUi,
-        onChapter: setChapter,
+        onChapter: (index) => {
+          setChapter(index);
+          setAutoStationKey(index >= 0 ? STATION_COPY[index]?.key ?? null : null);
+        },
         stationInteractions: false,
         onPrompt: () => undefined,
         onEnter: () => undefined,
@@ -468,24 +477,14 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           <NpcDialogue npcId={dialogueNpc.id} onClose={closeNpcDialogue} />
         )}
 
-        {started && mode !== "free" && !dialogueNpc && !atArchive && (
-          <div className="px-guided-stations" aria-live="polite">
-            {STATION_COPY.map((station, index) => (
-              <section
-                key={station.key}
-                data-guided-station={station.key}
-                className={`px-guided-station${index % 2 ? " is-right" : ""}`}
-                style={{ "--px-accent": station.color } as React.CSSProperties}
-                aria-hidden="true"
-                inert
-              >
-                <header><span>{station.index}</span><p>{station.kicker}</p></header>
-                <h2>{station.title}</h2>
-                <p>{renderInlineText(station.panelLead)}</p>
-                <Link to={station.route}>Explore this chapter <b aria-hidden="true">→</b></Link>
-              </section>
-            ))}
-          </div>
+        {renderedStationKey && mode !== "free" && !dialogueNpc && !atArchive && (
+          <StationDialogue
+            key={renderedStationKey}
+            station={STATION_COPY.find((station) => station.key === renderedStationKey)!}
+            onClose={() => setAutoStationKey(null)}
+            guided
+            visible={stationVisible}
+          />
         )}
 
         {started && mode !== "free" && !dialogueNpc && ROUTE_EGGS
@@ -570,7 +569,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
             <button type="button" className="px-fallback-card" onClick={() => navigate(station.route)}>
               <p className="px-chapter-tag"><span>{station.index} / 04</span>{station.kicker}</p>
               <h2 id={`px-chapter-${station.index}`}>{station.title}</h2>
-              <p>{renderInlineText(station.body)}</p>
+              <p>{station.body}</p>
               <span className="px-card-action">Explore chapter →</span>
             </button>
           </section>

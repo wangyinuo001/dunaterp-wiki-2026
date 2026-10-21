@@ -18,6 +18,18 @@
   animation: stationDialogueIn .16s steps(3) both;
 }
 
+.station-dialogue--guided {
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 14px));
+  transition: opacity .22s ease, transform .22s ease;
+  animation: none;
+}
+
+.station-dialogue--guided.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
 @keyframes stationDialogueIn {
   from { transform: translate(-50%, calc(-50% + 14px)); }
   to { transform: translate(-50%, -50%); }

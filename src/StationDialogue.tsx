@@ -6,10 +6,12 @@ import "./station-dialogue.css";
 type StationDialogueProps = {
   station: StationCopy;
   onClose: () => void;
+  guided?: boolean;
+  visible?: boolean;
 };
 
 /** A route-native information board. It explains a stop without leaving the map. */
-export function StationDialogue({ station, onClose }: StationDialogueProps) {
+export function StationDialogue({ station, onClose, guided = false, visible = true }: StationDialogueProps) {
   const panelRef = useRef<HTMLElement>(null);
   const [page, setPage] = useState(0);
   const titleId = `${useId().replace(/:/g, "")}-station-title`;
@@ -20,6 +22,7 @@ export function StationDialogue({ station, onClose }: StationDialogueProps) {
   const current = pages[page];
 
   useEffect(() => {
+    if (guided) return;
     const frame = requestAnimationFrame(() => {
       panelRef.current?.querySelector<HTMLButtonElement>("button")?.focus({ preventScroll: true });
     });
@@ -59,14 +62,14 @@ export function StationDialogue({ station, onClose }: StationDialogueProps) {
       cancelAnimationFrame(frame);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose, pages.length]);
+  }, [guided, onClose, pages.length]);
 
   return (
     <section
       ref={panelRef}
-      className="station-dialogue"
-      role="dialog"
-      aria-modal="true"
+      className={`station-dialogue${guided ? " station-dialogue--guided" : ""}${visible ? " is-visible" : ""}`}
+      role={guided ? "region" : "dialog"}
+      aria-modal={guided ? undefined : "true"}
       aria-labelledby={titleId}
       style={{ "--station-accent": station.color } as CSSProperties}
     >

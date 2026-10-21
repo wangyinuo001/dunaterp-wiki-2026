@@ -18,7 +18,20 @@ try {
       assert(entries[referenceKey(reference)], `Unformatted reference in ${slug}: ${reference.label}`);
       const formatted = formatReference(reference);
       assert(formatted.text.length > 20 && !/undefined|\[object Object\]|\[J\]|\[EB\/OL\]|Available at:/.test(formatted.text), slug);
+      assert.equal(formatted.beforeTitle + formatted.title + formatted.afterTitle, formatted.text, `${slug}: reference text changed`);
+      assert(formatted.title.length > 0, `${slug}: missing title`);
       for (const link of formatted.links) assert(['http:', 'https:'].includes(new URL(link.href).protocol));
+      const entryHtml = renderToStaticMarkup(React.createElement(ReferenceList, { references: [reference] }));
+      const anchor = entryHtml.match(/<a href="([^"]+)"[^>]*>(.*?)<\/a>/s);
+      const plain = value => value.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'");
+      assert.equal(plain(entryHtml), `[1]${formatted.text}`, `${slug}: visible bibliography text changed`);
+      assert(!/https?:\/\/|doi:|Available from:/i.test(plain(entryHtml)), `${slug}: visible DOI or URL`);
+      if (formatted.links.length) {
+        assert(anchor, `${slug}: title link missing`);
+        assert.equal(plain(anchor[1]), formatted.links[0].href, `${slug}: title destination changed`);
+        assert.equal(plain(anchor[2]), formatted.title, `${slug}: linked text must be the title`);
+        if (/Dunaliella salina/.test(formatted.title)) assert(/<em[^>]*>Dunaliella salina<\/em>/.test(anchor[2]), `${slug}: species italics lost in title`);
+      } else assert.equal(anchor, null, `${slug}: unverified reference received a link`);
       total++;
     }
     for (const number of citationNumbers.values()) assert(number >= 1 && number <= references.length, slug);

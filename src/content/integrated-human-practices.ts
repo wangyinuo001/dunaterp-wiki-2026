@@ -25,7 +25,7 @@ function improvementSections(): WikiSection[] {
 
 export const ihpNavigation = [
   ['Background Research', '/background-research'],
-  ['Stakeholder Analysis', '/stakeholder-analysis'],
+  ['Stakeholder Analysis', '/integrated-human-practices/stakeholder-analysis'],
   ['Project Improvement', '/project-improvement'],
 ] as const;
 
@@ -43,7 +43,7 @@ export const integratedHumanPractices: WikiPage = {
     {
       title: 'Stakeholder Analysis',
       body: 'We then mapped and engaged the groups who shape, assess, regulate, use or may be affected by DunaTerp, and organized their priorities around concrete project decisions.',
-      blocks: [{ kind: 'links', links: [{ label: 'Read Stakeholder Analysis', href: '/stakeholder-analysis' }] }],
+      blocks: [{ kind: 'links', links: [{ label: 'Read Stakeholder Analysis', href: '/integrated-human-practices/stakeholder-analysis' }] }],
     },
     {
       title: 'Project Improvement',
