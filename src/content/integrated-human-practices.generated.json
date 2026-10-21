@@ -1183,22 +1183,7 @@
               }
             ]
           },
-          {
-            "kind": "figure-grid",
-            "figures": [
-              {
-                "src": "/figures/hp/ihp/ihp-improvement-fig-03.webp",
-                "alt": "Fig. 2a Winter training and project brainstorming, panel 1",
-                "caption": ""
-              },
-              {
-                "src": "/figures/hp/ihp/ihp-improvement-fig-04.webp",
-                "alt": "Fig. 2a Winter training and project brainstorming, panel 2",
-                "caption": ""
-              }
-            ],
-            "caption": "Fig. 2a Winter training and project brainstorming"
-          },
+
           {
             "kind": "figure-grid",
             "figures": [
@@ -1904,7 +1889,7 @@
             "kind": "document-paragraph",
             "runs": [
               {
-                "text": "Professor Wu Chuanfang is an associate professor at the School of Life Sciences of Sichuan University. He has long been engaged in research on protein structure and function, molecular biology, and recombinant protein expression and purification, and possesses extensive expertise in protein expression, purification, and molecular interaction analysis. From the perspectives of molecular biology and recombinant protein expression, Professor Wu has provided methodological guidance on the selection of fusion expression elements, design of expression vectors, and evaluation of protein expression levels."
+                "text": "Professor Wu Chuanfang is an associate professor at the School of Life Sciences of Sichuan University. She has long been engaged in research on protein structure and function, molecular biology, and recombinant protein expression and purification, and possesses extensive expertise in protein expression, purification, and molecular interaction analysis. From the perspectives of molecular biology and recombinant protein expression, Professor Wu has provided methodological guidance on the selection of fusion expression elements, design of expression vectors, and evaluation of protein expression levels."
               }
             ]
           },
@@ -2027,7 +2012,8 @@
             ]
           },
           {
-            "kind": "document-paragraph",
+            "kind": "document-heading",
+            "text": "sum up",
             "runs": [
               {
                 "text": "sum up:"
@@ -2076,7 +2062,7 @@
             "kind": "document-paragraph",
             "runs": [
               {
-                "text": "Ms. Zhang Xiaohan serves as the official ambassador for iGEM 2025. She has long been engaged in providing guidance for iGEM projects, facilitating project proposal development, and conducting international review exchanges, offering strategic recommendations on narrative framing and compliance strategies from a review perspective."
+                "text": "Mr. Zhang Xiaohan serves as the official ambassador for iGEM 2025. He has long been engaged in providing guidance for iGEM projects, facilitating project proposal development, and conducting international review exchanges, offering strategic recommendations on narrative framing and compliance strategies from a review perspective."
               }
             ]
           },

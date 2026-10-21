@@ -593,7 +593,7 @@ main:focus:not(:focus-visible) { outline: none; }
 .article-page .toc-group.is-open > .toc-parent { border-left-color: var(--article-accent); color: var(--ink); }
 .article-page .toc-group.is-open > .toc-parent > b { transform: rotate(180deg); }
 .article-page .toc-sublist { display: grid; max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-.35rem); transition: max-height .34s ease, opacity .22s ease, transform .28s ease; }
-.article-page .toc-group.is-open > .toc-sublist { max-height: 36rem; opacity: 1; transform: none; }
+.article-page .toc-group.is-open > .toc-sublist { max-height: 200rem; opacity: 1; transform: none; }
 .article-page .article-toc nav .toc-sublist a { display: block; padding: .52rem .65rem .52rem 1.3rem; font-size: clamp(.85rem, 1.2vw, 1rem); line-height: 1.4; color: #52675f; }
 .article-page .article-toc nav .toc-sublist a.is-active { color: var(--ink); transform: translateX(.2rem); }
 
