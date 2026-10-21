@@ -1,0 +1,88 @@
+{
+  "sourceFile": "Engineering 修改.docx",
+  "sourceSha256": "ee84a8474de46ccf24b77d7dd20be8ffe5f9bc6a5653fa8428e9bf4239afe7a2",
+  "paragraphsMatched": 13,
+  "paragraphsUpdated": 9,
+  "paragraphsAlreadyMatching": 4,
+  "formatting": "Preserve existing runs for unchanged text; retain approved scientific-name italics and OD680 subscript.",
+  "matches": [
+    {
+      "section": 2,
+      "block": 8,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 7, the backbone could be amplified, but the main band of the RBCS2 backbone was consistently accompanied by a weaker nonspecific band beneath it, and the band intensity varied among clones. The CCD1 fragment fared worse: as shown in Fig. 8, multiple nonspecific bands appeared at an annealing temperature of 45 °C, the target band was difficult to separate from the nonspecific ones, and the concentration did not meet the requirement for assembly."
+    },
+    {
+      "section": 2,
+      "block": 20,
+      "changed": true,
+      "sourceParagraph": "As shown in Figs. 9 and 10, the nonspecific bands disappeared, all bands were single and of the correct size, and the concentrations met the assembly requirements. After assembly, all plasmids passed sequencing verification."
+    },
+    {
+      "section": 2,
+      "block": 40,
+      "changed": true,
+      "sourceParagraph": "In total, 1510 metabolites were detected. As shown in Fig. 11, the two CCD1 lines and the wild type separated along PC1, which explained 91.1% of the variance. β-Ionone in the two CCD1 lines was only 1.34- and 1.04-fold relative to the wild type, neither reaching the two-fold threshold, which is consistent with volatilization loss; however, the non-volatile C18 apocarotenoid cleavage products rose consistently by 2.1- to 4.5-fold in both lines, against a background of overall downregulation of terpenoids in the same batch. This counter-trend accumulation indicates that the introduced CCD1 was catalytically active. Further comparison between the cytosolic line and the chloroplast-targeted line showed that the transit peptide fusion did not increase product accumulation, while the upstream precursor mevalonic acid in the chloroplast-targeted line was 2.02-fold that of the cytosolic line, indicating that the limiting factor lies in the enzyme itself rather than in substrate supply."
+    },
+    {
+      "section": 4,
+      "block": 7,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 18, the promoter of the 35S construct was lost entirely, while the backbone and the gene of interest remained."
+    },
+    {
+      "section": 4,
+      "block": 17,
+      "changed": true,
+      "sourceParagraph": "The initial transformation yielded no colonies on the plates. Colonies appeared only after the transformation procedure was adjusted, but they were scarce, with only a few scattered colonies on each of the two plates, as shown in Fig. 19. These clones were picked, expanded, and sequenced; all plasmids were successfully constructed, and the promoter of the 35S construct was no longer lost."
+    },
+    {
+      "section": 4,
+      "block": 27,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 20, the algae in the liquid medium did turn green and dense, but the flask only showed whether the culture as a whole had grown, not which cell had given rise to it. Successfully transformed algae and untransformed algae were mixed together, so no single clone could be picked and no stock could be preserved."
+    },
+    {
+      "section": 4,
+      "block": 37,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 21, well-separated green colonies grew on the plates, and picking single colonies allowed expansion and stocking."
+    },
+    {
+      "section": 4,
+      "block": 47,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 22, the spots were diffuse and showed tailing; no interpretable difference appeared between the CitCCD4 line and the WT, and no target spot was present on the plate."
+    },
+    {
+      "section": 4,
+      "block": 57,
+      "changed": true,
+      "sourceParagraph": "As shown in Fig. 23, the CitCCD4 line showed a new spot at the expected position that was absent in the WT, indicating that CitCCD4 produced β-citraurin in the alga."
+    },
+    {
+      "section": 5,
+      "block": 5,
+      "changed": false,
+      "sourceParagraph": "i. The mazF gene was cloned downstream of the CaMV 35S promoter in the pCAMBIA1302 backbone by restriction-enzyme digestion, generating p1302-CaMV 35S-mazF. The plasmid was transformed into E. coli DH5α; single colonies were picked for colony PCR screening and sequence-verified."
+    },
+    {
+      "section": 5,
+      "block": 6,
+      "changed": false,
+      "sourceParagraph": "ii. The plasmid was delivered into Dunaliella salina by osmotic transformation: 1 M NaCl pre-adaptation for 8 h → resuspension in 0.1 M NaCl → 5.46 μg plasmid DNA + 15 μL of 0.1% Triton X-100 → vortexing for 90 s → recovery culture for 48 h."
+    },
+    {
+      "section": 5,
+      "block": 7,
+      "changed": false,
+      "sourceParagraph": "iii. Positive transformants were selected on hygromycin B (the vector carries the hptII resistance marker) to obtain independent transformed lines."
+    },
+    {
+      "section": 5,
+      "block": 8,
+      "changed": false,
+      "sourceParagraph": "iv. WT and empty-vector transformants served as controls; the three groups were inoculated at the same starting density in PKS/DM liquid medium containing 0.5 M NaCl (26 °C, 50 μmol photons m⁻² s⁻¹, 16 h light / 8 h dark), and OD680 was measured daily for 10 consecutive days."
+    }
+  ]
+}

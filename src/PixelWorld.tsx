@@ -25,7 +25,7 @@ const ROUTE_EGGS = [
     key: "protein",
     chapter: 2,
     label: "PROTEIN DOCKING",
-    hook: "What does TF2146 recognise?",
+    hook: "What does CPP2146 recognise?",
     href: "/protein",
     accent: "#7de2ff",
     x: "13%",

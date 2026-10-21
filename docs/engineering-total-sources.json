@@ -13,7 +13,8 @@
     "approvedCorrections": [
       "Fig. 1The → Fig. 1 The",
       "OOD680 → OD680 (680 remains subscript)"
-    ]
+    ],
+    "revisedParagraphs": 9
   },
   "assets": [
     {
@@ -489,5 +490,6 @@
       "crop": null,
       "url": "https://static.igem.wiki/teams/6212/wiki/engineering/engineering-total-35-fc3cb8f9088c.webp"
     }
-  ]
+  ],
+  "revisionSource": "docs/engineering-revision-sources.json"
 }

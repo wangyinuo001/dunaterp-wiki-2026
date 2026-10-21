@@ -5,11 +5,11 @@ const p = (text: string): ContentBlock => ({ kind: 'paragraph', text });
 const table = (caption: string, columns: string[], rows: string[][], collapsed = false): ContentBlock => ({ kind: 'table', caption, columns, rows, collapsed });
 
 export const tf2146Sections: WikiPage['sections'] = [
-  { title: 'TF2146: a DNA-recognition hypothesis', body: '', blocks: [
-    p('A second line of work examined whether TF2146 could recognize candidate sequences in the pDCA1 DNA element, and whether changing those sequences might disrupt the interaction. TF2146 is our shorthand for the 457-residue candidate Gene.80461::F01_cb4882_c5/f1p0/2146.'),
+  { title: 'CPP2146: a DNA-recognition hypothesis', body: '', blocks: [
+    p('A second line of work examined whether CPP2146 could recognize candidate sequences in the pDCA1 DNA element, and whether changing those sequences might disrupt the interaction. CPP2146 is our shorthand for the 457-residue candidate Gene.80461::F01_cb4882_c5/f1p0/2146.'),
     p('Sequence and structural analysis identified two CXC regions, at residues 32–72 and 117–158, consistent with a CPP/CRC-like DNA-binding hypothesis. In the annotated pDCA1 sequence, we found three regions labelled as CPP-family recognition motif-like sites. Together, these observations gave us a reason to test possible recognition; they did not establish a target sequence or a regulatory effect.'),
-    { kind: 'figure', src: '/figures/dry-lab/tf2146-structure.svg', alt: 'Predicted AlphaFold 3 C-alpha trace of TF2146 residues 32–158, with CXC1 and CXC2 highlighted.', caption: 'Fig. 6 Predicted TF2146 structure with CXC domains' },
-    { kind: 'figure', src: '/figures/dry-lab/protein-dna-docking.png', alt: 'Predicted TF2146 protein and DNA complex used to inspect a candidate recognition interface.', caption: 'Fig. 7 Predicted TF2146–DNA complex' },
+    { kind: 'figure', src: '/figures/dry-lab/cpp2146-structure.svg', alt: 'Predicted AlphaFold 3 C-alpha trace of CPP2146 residues 32–158, with CXC1 and CXC2 highlighted.', caption: 'Fig. 6 Predicted CPP2146 structure with CXC domains' },
+    { kind: 'figure', src: '/figures/dry-lab/protein-dna-docking.png', alt: 'Predicted CPP2146 protein and DNA complex used to inspect a candidate recognition interface.', caption: 'Fig. 7 Predicted CPP2146–DNA complex' },
     table('Three candidate sequence regions', ['Candidate', 'Annotated coordinates · 1-based', 'Sequence · 5′→3′'], [
       ['Site 1', '57–64', 'CTTGTAAA'],
       ['Site 2', '1160–1167', 'TTTGCAAA'],
@@ -18,7 +18,7 @@ export const tf2146Sections: WikiPage['sections'] = [
     p('Coordinates refer to the annotated DNA record, not distance from a measured transcription start site. Site 1 was modeled in a 32 bp window (45–76); adjacent sites 2 and 3 were modeled together in a 40 bp window (1151–1190). These are three candidate regions, not three experimentally established binding interfaces.'),
   ] },
   { title: 'Testing the candidate DNA sequences', body: '', blocks: [
-    p('We prepared eight AlphaFold 3 comparisons, each containing TF2146 and two complementary DNA strands. For site 1, we compared the original sequence, a core-motif mutant and a dinucleotide-shuffled control. For the adjacent pair, we compared the original sequence, each single-site mutant, the double mutant and a shuffled control.'),
+    p('We prepared eight AlphaFold 3 comparisons, each containing CPP2146 and two complementary DNA strands. For site 1, we compared the original sequence, a core-motif mutant and a dinucleotide-shuffled control. For the adjacent pair, we compared the original sequence, each single-site mutant, the double mutant and a shuffled control.'),
     p('Core mutations preserved the base composition of the eight-base motif. Shuffled controls preserved window length, GC fraction, dinucleotide counts and strand endpoints while excluding the original candidate motifs and their reverse complements. The question was whether changing the candidate sequence consistently weakened the predicted protein–DNA interface.'),
     table('DNA-sequence comparison · best reported protein–DNA chain-pair ipTM', ['DNA window', 'Sequence condition', 'ipTM'], [
       ['Site 1', 'Original', '0.54'], ['Site 1', 'Core mutant', '0.50'], ['Site 1', 'Dinucleotide shuffle', '0.44'],
@@ -38,9 +38,9 @@ export const tf2146Sections: WikiPage['sections'] = [
     ], true),
     p('These interface ipTM values are medians across five models in a separate screen; stable contact residues recur in at least three models. They should not be pooled with the best-model values above. CXC deletion gave a computational signal worth retaining, but this screen lacked shuffled-DNA controls and explicit Zn. A changed fold or nonspecific DNA contact can affect the result. It therefore does not validate the proposed motif edits as a way to disrupt recognition.'),
   ] },
-  { title: 'TF2146: what we can conclude', body: '', blocks: [
+  { title: 'CPP2146: what we can conclude', body: '', blocks: [
     p('The analysis narrowed the problem from three motif-like regions to a testable site 1 hypothesis. We examined sequence controls and protein variants, and found that plausible-looking contacts alone were insufficient: motif mutation could relocate the predicted interface, and the adjacent-site comparisons did not follow the expected pattern.'),
-    p('The current computational evidence does not support effective disruption of TF2146–DNA binding by the proposed DNA motif changes. Sequence-specific binding and any effect on pDCA1 activity remain unverified.'),
+    p('The current computational evidence does not support effective disruption of CPP2146–DNA binding by the proposed DNA motif changes. Sequence-specific binding and any effect on pDCA1 activity remain unverified.'),
     p('The next useful comparison is a direct binding assay with the original, core-mutant and shuffled site 1 sequences, followed by a reporter comparison to test regulatory output. Protein expression and folding controls would be needed when interpreting CXC deletion variants. Binding and regulation are distinct outcomes, and each needs its own evidence.'),
-  ], note: 'Current conclusion: the computational evidence does not support effective disruption of TF2146–DNA binding by the proposed motif changes.' },
+  ], note: 'Current conclusion: the computational evidence does not support effective disruption of CPP2146–DNA binding by the proposed motif changes.' },
 ];

@@ -1,0 +1,1183 @@
+{
+  "style": "NLM citation-sequence",
+  "reviewDate": "2026-10-21",
+  "journalAbbreviationSource": "https://ftp.ncbi.nih.gov/pubmed/J_Medline.txt",
+  "records": {
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120965": {
+      "kind": "dataset",
+      "cited": "2026 Oct 21",
+      "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120965",
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120965",
+      "authors": [
+        "Li Y",
+        "Wang G"
+      ],
+      "title": "GSE120965: Transcriptome analysis reveals regulation of gene expression during photoacclimation to high irradiance levels in Dunaliella salina (Chlorophyceae)",
+      "site": "NCBI Gene Expression Omnibus",
+      "year": "2020",
+      "notes": "Submitted 2018; public release 2020. BioProject PRJNA495151."
+    },
+    "https://doi.org/10.1111/pre.12379": {
+      "authors": [
+        "Li Y",
+        "Gu W",
+        "Huang A",
+        "Xie X",
+        "Wu S",
+        "Wang G"
+      ],
+      "year": "2019",
+      "title": "Transcriptome analysis reveals regulation of gene expression during photoacclimation to high irradiance levels in Dunaliella salina (Chlorophyceae)",
+      "journal": "Phycological Research",
+      "volume": "67",
+      "issue": "4",
+      "pages": "291-302",
+      "kind": "article",
+      "journalAbbr": "Phycol Res",
+      "doi": "10.1111/pre.12379",
+      "source": "https://api.crossref.org/works/10.1111%2Fpre.12379",
+      "journalAbbreviationSource": "https://onlinelibrary.wiley.com/page/journal/14401835/homepage/forauthors.html"
+    },
+    "https://doi.org/10.1038/nbt.1883": {
+      "authors": [
+        "Grabherr MG",
+        "Haas BJ",
+        "Yassour M",
+        "Levin JZ",
+        "Thompson DA",
+        "Amit I",
+        "Adiconis X",
+        "Fan L",
+        "Raychowdhury R",
+        "Zeng Q",
+        "Chen Z",
+        "Mauceli E",
+        "Hacohen N",
+        "Gnirke A",
+        "Rhind N",
+        "di Palma F",
+        "Birren BW",
+        "Nusbaum C",
+        "Lindblad-Toh K",
+        "Friedman N",
+        "Regev A"
+      ],
+      "year": "2011",
+      "title": "Full-length transcriptome assembly from RNA-Seq data without a reference genome",
+      "journal": "Nature Biotechnology",
+      "volume": "29",
+      "issue": "7",
+      "pages": "644-652",
+      "kind": "article",
+      "journalAbbr": "Nat Biotechnol",
+      "doi": "10.1038/nbt.1883",
+      "source": "https://api.crossref.org/works/10.1038%2Fnbt.1883"
+    },
+    "https://doi.org/10.1038/nmeth.3176": {
+      "authors": [
+        "Buchfink B",
+        "Xie C",
+        "Huson DH"
+      ],
+      "year": "2015",
+      "title": "Fast and sensitive protein alignment using DIAMOND",
+      "journal": "Nature Methods",
+      "volume": "12",
+      "issue": "1",
+      "pages": "59-60",
+      "kind": "article",
+      "journalAbbr": "Nat Methods",
+      "doi": "10.1038/nmeth.3176",
+      "source": "https://api.crossref.org/works/10.1038%2Fnmeth.3176"
+    },
+    "https://doi.org/10.1186/gb-2010-11-10-r106": {
+      "authors": [
+        "Anders S",
+        "Huber W"
+      ],
+      "year": "2010",
+      "title": "Differential expression analysis for sequence count data",
+      "journal": "Genome Biology",
+      "volume": "11",
+      "issue": "10",
+      "pages": "R106",
+      "kind": "article",
+      "journalAbbr": "Genome Biol",
+      "doi": "10.1186/gb-2010-11-10-r106",
+      "source": "https://api.crossref.org/works/10.1186%2Fgb-2010-11-10-r106"
+    },
+    "https://doi.org/10.1186/s12859-019-3325-0": {
+      "authors": [
+        "Fachet M",
+        "Witte C",
+        "Flassig RJ",
+        "Rihko-Struckmann LK",
+        "McKie-Krisberg Z",
+        "Polle JEW",
+        "Sundmacher K"
+      ],
+      "year": "2020",
+      "title": "Reconstruction and analysis of a carbon-core metabolic network for Dunaliella salina",
+      "journal": "BMC Bioinformatics",
+      "volume": "21",
+      "issue": "1",
+      "pages": "1",
+      "kind": "article",
+      "journalAbbr": "BMC Bioinformatics",
+      "doi": "10.1186/s12859-019-3325-0",
+      "source": "https://api.crossref.org/works/10.1186%2Fs12859-019-3325-0"
+    },
+    "https://doi.org/10.1038/nbt.1614": {
+      "authors": [
+        "Orth JD",
+        "Thiele I",
+        "Palsson BØ"
+      ],
+      "year": "2010",
+      "title": "What is flux balance analysis?",
+      "journal": "Nature Biotechnology",
+      "volume": "28",
+      "issue": "3",
+      "pages": "245-248",
+      "kind": "article",
+      "journalAbbr": "Nat Biotechnol",
+      "doi": "10.1038/nbt.1614",
+      "source": "https://api.crossref.org/works/10.1038%2Fnbt.1614"
+    },
+    "https://doi.org/10.4014/jmb.2208.08044": {
+      "authors": [
+        "Lan Y",
+        "Song Y",
+        "Guo Y",
+        "Qiao D",
+        "Cao Y",
+        "Xu H"
+      ],
+      "year": "2022",
+      "title": "DsLCYB directionally modulated β-carotene of the green alga Dunaliella salina under red light stress",
+      "journal": "Journal of Microbiology and Biotechnology",
+      "volume": "32",
+      "issue": "12",
+      "pages": "1622-1631",
+      "kind": "article",
+      "journalAbbr": "J Microbiol Biotechnol",
+      "doi": "10.4014/jmb.2208.08044",
+      "source": "https://api.crossref.org/works/10.4014%2Fjmb.2208.08044"
+    },
+    "https://doi.org/10.1104/pp.110.155440": {
+      "authors": [
+        "Mialoundama AS",
+        "Heintz D",
+        "Jadid N",
+        "Nkeng P",
+        "Rahier A",
+        "Deli J",
+        "Camara B",
+        "Bouvier F"
+      ],
+      "year": "2010",
+      "title": "Characterization of plant carotenoid cyclases as members of the flavoprotein family functioning with no net redox change",
+      "journal": "Plant Physiology",
+      "volume": "153",
+      "issue": "3",
+      "pages": "970-979",
+      "kind": "article",
+      "journalAbbr": "Plant Physiol",
+      "doi": "10.1104/pp.110.155440",
+      "source": "https://api.crossref.org/works/10.1104%2Fpp.110.155440"
+    },
+    "https://pubchem.ncbi.nlm.nih.gov/compound/446925": {
+      "kind": "web",
+      "cited": "2026 Oct 19",
+      "source": "https://pubchem.ncbi.nlm.nih.gov/compound/446925",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/446925",
+      "authors": [
+        "National Center for Biotechnology Information"
+      ],
+      "title": "PubChem Compound Summary for CID 446925, Lycopene",
+      "year": "2026"
+    },
+    "https://doi.org/10.1038/s41586-024-07487-w": {
+      "authors": [
+        "Abramson J",
+        "Adler J",
+        "Dunger J",
+        "Evans R",
+        "Green T",
+        "Pritzel A",
+        "Ronneberger O",
+        "Willmore L",
+        "Ballard AJ",
+        "Bambrick J",
+        "Bodenstein SW",
+        "Evans DA",
+        "Hung CC",
+        "O’Neill M",
+        "Reiman D",
+        "Tunyasuvunakool K",
+        "Wu Z",
+        "Žemgulytė A",
+        "Arvaniti E",
+        "Beattie C",
+        "Bertolli O",
+        "Bridgland A",
+        "Cherepanov A",
+        "Congreve M",
+        "Cowen-Rivers AI",
+        "Cowie A",
+        "Figurnov M",
+        "Fuchs FB",
+        "Gladman H",
+        "Jain R",
+        "Khan YA",
+        "Low CMR",
+        "Perlin K",
+        "Potapenko A",
+        "Savy P",
+        "Singh S",
+        "Stecula A",
+        "Thillaisundaram A",
+        "Tong C",
+        "Yakneen S",
+        "Zhong ED",
+        "Zielinski M",
+        "Žídek A",
+        "Bapst V",
+        "Kohli P",
+        "Jaderberg M",
+        "Hassabis D",
+        "Jumper JM"
+      ],
+      "year": "2024",
+      "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
+      "journal": "Nature",
+      "volume": "630",
+      "issue": "8016",
+      "pages": "493-500",
+      "kind": "article",
+      "journalAbbr": "Nature",
+      "doi": "10.1038/s41586-024-07487-w",
+      "source": "https://api.crossref.org/works/10.1038%2Fs41586-024-07487-w"
+    },
+    "https://doi.org/10.1093/nar/gki387": {
+      "authors": [
+        "Schymkowitz J",
+        "Borg J",
+        "Stricher F",
+        "Nys R",
+        "Rousseau F",
+        "Serrano L"
+      ],
+      "year": "2005",
+      "title": "The FoldX web server: an online force field",
+      "journal": "Nucleic Acids Research",
+      "volume": "33",
+      "issue": "Web Server",
+      "pages": "W382-W388",
+      "kind": "article",
+      "journalAbbr": "Nucleic Acids Res",
+      "doi": "10.1093/nar/gki387",
+      "source": "https://api.crossref.org/works/10.1093%2Fnar%2Fgki387"
+    },
+    "https://doi.org/10.1021/acs.jcim.1c00203": {
+      "authors": [
+        "Eberhardt J",
+        "Santos-Martins D",
+        "Tillack AF",
+        "Forli S"
+      ],
+      "year": "2021",
+      "title": "AutoDock Vina 1.2.0: new docking methods, expanded force field, and Python bindings",
+      "journal": "Journal of Chemical Information and Modeling",
+      "volume": "61",
+      "issue": "8",
+      "pages": "3891-3898",
+      "kind": "article",
+      "journalAbbr": "J Chem Inf Model",
+      "doi": "10.1021/acs.jcim.1c00203",
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jcim.1c00203"
+    },
+    "https://doi.org/10.1016/j.softx.2015.06.001": {
+      "authors": [
+        "Abraham MJ",
+        "Murtola T",
+        "Schulz R",
+        "Páll S",
+        "Smith JC",
+        "Hess B",
+        "Lindahl E"
+      ],
+      "year": "2015",
+      "title": "GROMACS: high performance molecular simulations through multi-level parallelism from laptops to supercomputers",
+      "journal": "SoftwareX",
+      "volume": "1-2",
+      "issue": "",
+      "pages": "19-25",
+      "kind": "article",
+      "journalAbbr": "SoftwareX",
+      "doi": "10.1016/j.softx.2015.06.001",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.softx.2015.06.001"
+    },
+    "https://doi.org/10.1002/jcc.20035": {
+      "authors": [
+        "Wang J",
+        "Wolf RM",
+        "Caldwell JW",
+        "Kollman PA",
+        "Case DA"
+      ],
+      "year": "2004",
+      "title": "Development and testing of a general AMBER force field",
+      "journal": "Journal of Computational Chemistry",
+      "volume": "25",
+      "issue": "9",
+      "pages": "1157-1174",
+      "kind": "article",
+      "journalAbbr": "J Comput Chem",
+      "doi": "10.1002/jcc.20035",
+      "source": "https://api.crossref.org/works/10.1002%2Fjcc.20035"
+    },
+    "https://www.researchandmarkets.com/reports/5312392/natural-food-colorants-market-share-analysis": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.researchandmarkets.com/reports/5312392/natural-food-colorants-market-share-analysis",
+      "url": "https://www.researchandmarkets.com/reports/5312392/natural-food-colorants-market-share-analysis",
+      "authors": [
+        "Research and Markets"
+      ],
+      "title": "Natural Food Colorants Market Share Analysis, Industry Trends & Statistics, Growth Forecasts (2026–2031)",
+      "year": "[date unknown]"
+    },
+    "https://www.technavio.com/report/botanical-and-plant-derived-drugs-market-industry-analysis": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.technavio.com/report/botanical-and-plant-derived-drugs-market-industry-analysis",
+      "url": "https://www.technavio.com/report/botanical-and-plant-derived-drugs-market-industry-analysis",
+      "authors": [
+        "Technavio"
+      ],
+      "title": "Botanical and Plant-Derived Drugs Market Industry Analysis",
+      "year": "[date unknown]"
+    },
+    "Tan H, Chen X, Liang N, et al. Transcriptome analysis reveals novel enzymes for apo-carotenoid biosynthesis in saffron and allows construction of a pathway for crocetin synthesis in yeast[J]. Journal of Experimental Botany, 2019, 70(18): 4819–4834.": {
+      "authors": [
+        "Tan H",
+        "Chen X",
+        "Liang N",
+        "Chen R",
+        "Chen J",
+        "Hu C",
+        "Li Q",
+        "Li Q",
+        "Pei W",
+        "Xiao W",
+        "Yuan Y",
+        "Chen W",
+        "Zhang L"
+      ],
+      "title": "Transcriptome analysis reveals novel enzymes for apo-carotenoid biosynthesis in saffron and allows construction of a pathway for crocetin synthesis in yeast",
+      "year": "2019",
+      "journal": "Journal of Experimental Botany",
+      "volume": "70",
+      "issue": "18",
+      "pages": "4819-4834",
+      "kind": "article",
+      "journalAbbr": "J Exp Bot",
+      "doi": "10.1093/jxb/erz211",
+      "source": "https://api.crossref.org/works?rows=2&query.bibliographic=Tan%20H%2C%20Chen%20X%2C%20Liang%20N%2C%20et%20al.%20Transcriptome%20analysis%20reveals%20novel%20enzymes%20for%20apo-carotenoid%20biosynthesis%20in%20saffron%20and%20allows%20construction%20of%20a%20pathway%20for%20crocetin%20synthesis%20in%20yeast%5BJ%5D.%20Journal%20of%20Experimental%20Botany%2C%202019%2C%2070%2818%29%3A%204819%E2%80%934834."
+    },
+    "Zhang Z, Wang B, Hu Q, Sommerfeld M, Li Y, Han D. A new paradigm for producing astaxanthin from the unicellular green alga Haematococcus pluvialis[J]. Biotechnology and Bioengineering, 2016.": {
+      "authors": [
+        "Zhang Z",
+        "Wang B",
+        "Hu Q",
+        "Sommerfeld M",
+        "Li Y",
+        "Han D"
+      ],
+      "year": "2016",
+      "title": "A new paradigm for producing astaxanthin from the unicellular green alga Haematococcus pluvialis",
+      "journal": "Biotechnology and Bioengineering",
+      "volume": "113",
+      "issue": "10",
+      "pages": "2088-2099",
+      "kind": "article",
+      "journalAbbr": "Biotechnol Bioeng",
+      "doi": "10.1002/bit.25976",
+      "source": "https://api.crossref.org/works/10.1002%2Fbit.25976"
+    },
+    "Mohamadnia S, Valverde-Pérez B, Tavakoli O, Angelidaki I. Progress and prospects in metabolic engineering approaches for isoprenoid biosynthesis in microalgae. Biotechnol Biofuels Bioprod. 2025;18(1):64.": {
+      "authors": [
+        "Mohamadnia S",
+        "Valverde-Pérez B",
+        "Tavakoli O",
+        "Angelidaki I"
+      ],
+      "year": "2025",
+      "title": "Progress and prospects in metabolic engineering approaches for isoprenoid biosynthesis in microalgae",
+      "journal": "Biotechnology for Biofuels and Bioproducts",
+      "volume": "18",
+      "issue": "1",
+      "pages": "64",
+      "kind": "article",
+      "journalAbbr": "Biotechnol Biofuels Bioprod",
+      "doi": "10.1186/s13068-025-02665-y",
+      "source": "https://api.crossref.org/works/10.1186%2Fs13068-025-02665-y"
+    },
+    "Zarandi-Miandoab L, Hejazi MA, Bagherieh-Najjar MB, Chaparzadeh N. Optimization of the Four Most Effective Factors on β-Carotene Production by Dunaliella salina Using Response Surface Methodology. Iran J Pharm Res. 2019;18(3):1566-1579.": {
+      "authors": [
+        "Zarandi-Miandoab L",
+        "Hejazi MA",
+        "Bagherieh-Najjar MB",
+        "Chaparzadeh N"
+      ],
+      "year": "2019",
+      "title": "Optimization of the Four Most Effective Factors on β-Carotene Production by Dunaliella salina Using Response Surface Methodology",
+      "journal": "Iran J Pharm Res",
+      "volume": "18",
+      "issue": "3",
+      "pages": "1566-1579",
+      "kind": "article",
+      "journalAbbr": "Iran J Pharm Res",
+      "doi": "10.22037/ijpr.2019.1100752",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/32641964/"
+    },
+    "Haouazine Y, et al. Environmental and biotechnological potential of Dunaliella salina for sustainable environmental applications. Ecological Engineering & Environmental Technology. 2025.": {
+      "authors": [
+        "Haouazine Y",
+        "El Abdellaoui F",
+        "Mouniane Y",
+        "El Madhi Y",
+        "Hmouni D"
+      ],
+      "year": "2025",
+      "title": "Environmental and biotechnological potential of Dunaliella salina for sustainable environmental applications",
+      "journal": "Ecological Engineering & Environmental Technology",
+      "volume": "26",
+      "issue": "11",
+      "pages": "101-117",
+      "kind": "article",
+      "journalAbbr": "Ecol Eng Environ Technol",
+      "doi": "10.12912/27197050/211755",
+      "source": "https://api.crossref.org/works?rows=2&query.bibliographic=Haouazine%20Y%2C%20et%20al.%20Environmental%20and%20biotechnological%20potential%20of%20Dunaliella%20salina%20for%20sustainable%20environmental%20applications.%20Ecological%20Engineering%20%26%20Environmental%20Technology.%202025."
+    },
+    "Paparella A, Shaltiel-Harpaza L, Ibdah M. β-Ionone: Its Occurrence and Biological Function and Metabolic Engineering. Plants (Basel). 2021;10(4):754.": {
+      "authors": [
+        "Paparella A",
+        "Shaltiel-Harpaza L",
+        "Ibdah M"
+      ],
+      "year": "2021",
+      "title": "β-Ionone: Its Occurrence and Biological Function and Metabolic Engineering",
+      "journal": "Plants",
+      "volume": "10",
+      "issue": "4",
+      "pages": "754",
+      "kind": "article",
+      "journalAbbr": "Plants (Basel)",
+      "doi": "10.3390/plants10040754",
+      "source": "https://api.crossref.org/works/10.3390%2Fplants10040754"
+    },
+    "https://2023.igem.wiki/msp-maastricht/kill-switch.html": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://2023.igem.wiki/msp-maastricht/kill-switch.html",
+      "url": "https://2023.igem.wiki/msp-maastricht/kill-switch.html",
+      "authors": [
+        "MSP-Maastricht"
+      ],
+      "title": "Kill-Switch (MazE/MazF toxin-antitoxin system)",
+      "site": "iGEM",
+      "year": "2023"
+    },
+    "Alagawany M, Rudayni HA, El-Kholy MS, Alawam AS, Allam AA, Elnesr SS, Abass KS, Farag MR. Promising effects and therapeutic applications of Dunaliella salina algae as a functional food in humans and animals: Toward sustainable animal production and food security. Food Bioscience. 2025;71:107280.": {
+      "authors": [
+        "Alagawany M",
+        "Rudayni HA",
+        "El-Kholy MS",
+        "Alawam AS",
+        "Allam AA",
+        "Elnesr SS",
+        "Abass KS",
+        "Farag MR"
+      ],
+      "year": "2025",
+      "title": "Promising effects and therapeutic applications of Dunaliella salina algae as a functional food in humans and animals: Toward sustainable animal production and food security",
+      "journal": "Food Bioscience",
+      "volume": "71",
+      "issue": "",
+      "pages": "107280",
+      "kind": "article",
+      "journalAbbr": "Food Biosci",
+      "doi": "10.1016/j.fbio.2025.107280",
+      "source": "https://api.crossref.org/works?rows=2&query.bibliographic=Alagawany%20M%2C%20Rudayni%20HA%2C%20El-Kholy%20MS%2C%20Alawam%20AS%2C%20Allam%20AA%2C%20Elnesr%20SS%2C%20Abass%20KS%2C%20Farag%20MR.%20Promising%20effects%20and%20therapeutic%20applications%20of%20Dunaliella%20salina%20algae%20as%20a%20functional%20food%20in%20humans%20and%20animals%3A%20Toward%20sustainable%20animal%20production%20and%20food%20security.%20Food%20Bioscience.%202025%3B71%3A107280."
+    },
+    "https://doi.org/10.1007/s00253-023-12894-6": {
+      "authors": [
+        "Song Y",
+        "Lan Y",
+        "Li K",
+        "Qiao D",
+        "Cao Y",
+        "Xu H"
+      ],
+      "year": "2024",
+      "title": "Regulation of a novel DsGATA1 from Dunaliella salina on the synthesis of carotenoids under red light",
+      "journal": "Applied Microbiology and Biotechnology",
+      "volume": "108",
+      "issue": "1",
+      "pages": "82",
+      "kind": "article",
+      "journalAbbr": "Appl Microbiol Biotechnol",
+      "doi": "10.1007/s00253-023-12894-6",
+      "source": "https://api.crossref.org/works/10.1007%2Fs00253-023-12894-6"
+    },
+    "https://planttfdb.gao-lab.org/family.php?fam=CPP&sp=Dsa": {
+      "kind": "web",
+      "cited": "2026 Oct 14",
+      "source": "https://planttfdb.gao-lab.org/family.php?fam=CPP&sp=Dsa",
+      "url": "https://planttfdb.gao-lab.org/family.php?fam=CPP&sp=Dsa",
+      "authors": [
+        "PlantTFDB"
+      ],
+      "title": "CPP family: Dunaliella salina",
+      "site": "Plant Transcription Factor Database",
+      "year": "[date unknown]"
+    },
+    "https://doi.org/10.1186/s12915-020-00795-3": {
+      "authors": [
+        "Xu Z",
+        "Pu X",
+        "Gao R",
+        "Demurtas OC",
+        "Fleck SJ",
+        "Richter M",
+        "He C",
+        "Ji A",
+        "Sun W",
+        "Kong J",
+        "Hu K",
+        "Ren F",
+        "Song J",
+        "Wang Z",
+        "Gao T",
+        "Xiong C",
+        "Yu H",
+        "Xin T",
+        "Albert VA",
+        "Giuliano G",
+        "Chen S",
+        "Song J"
+      ],
+      "year": "2020",
+      "title": "Tandem gene duplications drive divergent evolution of caffeine and crocin biosynthetic pathways in plants",
+      "journal": "BMC Biology",
+      "volume": "18",
+      "issue": "1",
+      "pages": "63",
+      "kind": "article",
+      "journalAbbr": "BMC Biol",
+      "doi": "10.1186/s12915-020-00795-3",
+      "source": "https://api.crossref.org/works/10.1186%2Fs12915-020-00795-3"
+    },
+    "https://doi.org/10.1111/pbi.13901": {
+      "authors": [
+        "Zheng X",
+        "Mi J",
+        "Balakrishna A",
+        "Liew KX",
+        "Ablazov A",
+        "Sougrat R",
+        "Al‐Babili S"
+      ],
+      "year": "2022",
+      "title": "Gardenia carotenoid cleavage dioxygenase 4a is an efficient tool for biotechnological production of crocins in green and non-green plant tissues",
+      "journal": "Plant Biotechnology Journal",
+      "volume": "20",
+      "issue": "11",
+      "pages": "2202-2216",
+      "kind": "article",
+      "journalAbbr": "Plant Biotechnol J",
+      "doi": "10.1111/pbi.13901",
+      "source": "https://api.crossref.org/works/10.1111%2Fpbi.13901"
+    },
+    "https://doi.org/10.1007/s11120-015-0188-8": {
+      "authors": [
+        "Anila N",
+        "Simon DP",
+        "Chandrashekar A",
+        "Ravishankar GA",
+        "Sarada R"
+      ],
+      "year": "2016",
+      "title": "Metabolic engineering of Dunaliella salina for production of ketocarotenoids",
+      "journal": "Photosynthesis Research",
+      "volume": "127",
+      "issue": "3",
+      "pages": "321-333",
+      "kind": "article",
+      "journalAbbr": "Photosynth Res",
+      "doi": "10.1007/s11120-015-0188-8",
+      "source": "https://api.crossref.org/works/10.1007%2Fs11120-015-0188-8"
+    },
+    "https://doi.org/10.1007/s11274-026-05199-z": {
+      "authors": [
+        "Zhang H",
+        "Kong Y",
+        "Shao Y",
+        "Zhang Z",
+        "Zhao C",
+        "Xu F",
+        "Yang F",
+        "Sun F",
+        "Cui Y",
+        "Wu Y",
+        "Meng C",
+        "Gao Z"
+      ],
+      "year": "2026",
+      "title": "Metabolic engineering of Dunaliella salina enhances astaxanthin production: combined effects of heterologous enzyme co-expression and dual-stress optimization",
+      "journal": "World Journal of Microbiology and Biotechnology",
+      "volume": "42",
+      "issue": "9",
+      "pages": "470",
+      "kind": "article",
+      "journalAbbr": "World J Microbiol Biotechnol",
+      "doi": "10.1007/s11274-026-05199-z",
+      "source": "https://api.crossref.org/works/10.1007%2Fs11274-026-05199-z"
+    },
+    "https://doi.org/10.1016/j.plaphy.2024.108697": {
+      "authors": [
+        "Chen HH",
+        "Wu JX",
+        "Huang R",
+        "Dai JL",
+        "Liang MH",
+        "Jiang JG"
+      ],
+      "year": "2024",
+      "title": "Enhancing astaxanthin accumulation through the expression of the plant-derived astaxanthin biosynthetic pathway in Dunaliella salina",
+      "journal": "Plant Physiology and Biochemistry",
+      "volume": "211",
+      "issue": "",
+      "pages": "108697",
+      "kind": "article",
+      "journalAbbr": "Plant Physiol Biochem",
+      "doi": "10.1016/j.plaphy.2024.108697",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.plaphy.2024.108697"
+    },
+    "https://doi.org/10.1007/s11033-009-9901-z": {
+      "authors": [
+        "Li J",
+        "Lu Y",
+        "Xue L",
+        "Xie H"
+      ],
+      "year": "2010",
+      "title": "A structurally novel salt-regulated promoter of duplicated carbonic anhydrase gene 1 from Dunaliella salina",
+      "journal": "Molecular Biology Reports",
+      "volume": "37",
+      "issue": "2",
+      "pages": "1143-1154",
+      "kind": "article",
+      "journalAbbr": "Mol Biol Rep",
+      "doi": "10.1007/s11033-009-9901-z",
+      "source": "https://api.crossref.org/works/10.1007%2Fs11033-009-9901-z"
+    },
+    "Chen, H.-H., Xie, Y.-C., Xie, S.-r., & Jiang, J.-G. (2024). Comprehensive plasmid toolkit for multipart assembly in the Dunaliella salina nuclear system. Algal Research, 78, 103413.": {
+      "authors": [
+        "Chen HH",
+        "Xie YC",
+        "Xie SR",
+        "Jiang JG"
+      ],
+      "year": "2024",
+      "title": "Comprehensive plasmid toolkit for multipart assembly in the Dunaliella salina nuclear system",
+      "journal": "Algal Research",
+      "volume": "78",
+      "issue": "",
+      "pages": "103413",
+      "kind": "article",
+      "journalAbbr": "Algal Res",
+      "doi": "10.1016/j.algal.2024.103413",
+      "source": "https://api.crossref.org/works?rows=2&query.bibliographic=Chen%2C%20H.-H.%2C%20Xie%2C%20Y.-C.%2C%20Xie%2C%20S.-r.%2C%20%26%20Jiang%2C%20J.-G.%20%282024%29.%20Comprehensive%20plasmid%20toolkit%20for%20multipart%20assembly%20in%20the%20Dunaliella%20salina%20nuclear%20system.%20Algal%20Research%2C%2078%2C%20103413."
+    },
+    "https://doi.org/10.1104/pp.113.223297": {
+      "authors": [
+        "Ma G",
+        "Zhang L",
+        "Matsuta A",
+        "Matsutani K",
+        "Yamawaki K",
+        "Yahata M",
+        "Wahyudi A",
+        "Motohashi R",
+        "Kato M"
+      ],
+      "year": "2013",
+      "title": "Enzymatic formation of β-citraurin from β-cryptoxanthin and zeaxanthin by carotenoid cleavage dioxygenase4 in the flavedo of citrus fruit",
+      "journal": "Plant Physiology",
+      "volume": "163",
+      "issue": "2",
+      "pages": "682-695",
+      "kind": "article",
+      "journalAbbr": "Plant Physiol",
+      "doi": "10.1104/pp.113.223297",
+      "source": "https://api.crossref.org/works/10.1104%2Fpp.113.223297"
+    },
+    "https://doi.org/10.1016/j.molp.2019.04.014": {
+      "authors": [
+        "Zheng X",
+        "Zhu K",
+        "Sun Q",
+        "Zhang W",
+        "Wang X",
+        "Cao H",
+        "Tan M",
+        "Xie Z",
+        "Zeng Y",
+        "Ye J",
+        "Chai L",
+        "Xu Q",
+        "Pan Z",
+        "Xiao S",
+        "Fraser PD",
+        "Deng X"
+      ],
+      "year": "2019",
+      "title": "Natural variation in CCD4 promoter underpins species-specific evolution of red coloration in citrus peel",
+      "journal": "Molecular Plant",
+      "volume": "12",
+      "issue": "9",
+      "pages": "1294-1307",
+      "kind": "article",
+      "journalAbbr": "Mol Plant",
+      "doi": "10.1016/j.molp.2019.04.014",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.molp.2019.04.014"
+    },
+    "https://doi.org/10.1371/journal.pone.0158322": {
+      "authors": [
+        "Srinivasan R",
+        "Gothandam KM"
+      ],
+      "year": "2016",
+      "title": "Synergistic action of D-glucose and acetosyringone on Agrobacterium strains for efficient Dunaliella transformation",
+      "journal": "PLOS ONE",
+      "volume": "11",
+      "issue": "6",
+      "pages": "e0158322",
+      "kind": "article",
+      "journalAbbr": "PLoS One",
+      "doi": "10.1371/journal.pone.0158322",
+      "source": "https://api.crossref.org/works/10.1371%2Fjournal.pone.0158322"
+    },
+    "https://doi.org/10.1080/09670262.2010.550386": {
+      "authors": [
+        "Anila N",
+        "Chandrashekar A",
+        "Ravishankar GA",
+        "Sarada R"
+      ],
+      "year": "2011",
+      "title": "Establishment of Agrobacterium tumefaciens-mediated genetic transformation in Dunaliella bardawil",
+      "journal": "European Journal of Phycology",
+      "volume": "46",
+      "issue": "1",
+      "pages": "36-44",
+      "kind": "article",
+      "journalAbbr": "Eur J Phycol",
+      "doi": "10.1080/09670262.2010.550386",
+      "source": "https://api.crossref.org/works/10.1080%2F09670262.2010.550386"
+    },
+    "https://doi.org/10.1016/j.enzmictec.2024.110464": {
+      "authors": [
+        "Chen HH",
+        "Zheng QX",
+        "Yu F",
+        "Xie SR",
+        "Jiang JG"
+      ],
+      "year": "2024",
+      "title": "Development of a chloroplast expression system for Dunaliella salina",
+      "journal": "Enzyme and Microbial Technology",
+      "volume": "179",
+      "issue": "",
+      "pages": "110464",
+      "kind": "article",
+      "journalAbbr": "Enzyme Microb Technol",
+      "doi": "10.1016/j.enzmictec.2024.110464",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.enzmictec.2024.110464"
+    },
+    "https://doi.org/10.1016/j.gde.2005.02.007": {
+      "authors": [
+        "Bintu L",
+        "Buchler NE",
+        "Garcia HG",
+        "Gerland U",
+        "Hwa T",
+        "Kondev J",
+        "Phillips R"
+      ],
+      "year": "2005",
+      "title": "Transcriptional regulation by the numbers: models",
+      "journal": "Current Opinion in Genetics & Development",
+      "volume": "15",
+      "issue": "2",
+      "pages": "116-124",
+      "kind": "article",
+      "journalAbbr": "Curr Opin Genet Dev",
+      "doi": "10.1016/j.gde.2005.02.007",
+      "source": "https://api.crossref.org/works/10.1016%2Fj.gde.2005.02.007"
+    },
+    "https://doi.org/10.1111/1462-2920.13539": {
+      "authors": [
+        "Liang MH",
+        "Lu Y",
+        "Chen HH",
+        "Jiang JG"
+      ],
+      "year": "2017",
+      "title": "The salt-regulated element in the promoter of lycopene β-cyclase gene confers a salt regulatory pattern in carotenogenesis of Dunaliella bardawil",
+      "journal": "Environmental Microbiology",
+      "volume": "19",
+      "issue": "3",
+      "pages": "982-989",
+      "kind": "article",
+      "journalAbbr": "Environ Microbiol",
+      "doi": "10.1111/1462-2920.13539",
+      "source": "https://api.crossref.org/works/10.1111%2F1462-2920.13539"
+    },
+    "https://doi.org/10.1002/elsc.200900003": {
+      "authors": [
+        "Posten C"
+      ],
+      "year": "2009",
+      "title": "Design principles of photo-bioreactors for cultivation of microalgae",
+      "journal": "Engineering in Life Sciences",
+      "volume": "9",
+      "issue": "3",
+      "pages": "165-177",
+      "kind": "article",
+      "journalAbbr": "Eng Life Sci",
+      "doi": "10.1002/elsc.200900003",
+      "source": "https://api.crossref.org/works/10.1002%2Felsc.200900003"
+    },
+    "https://doi.org/10.1007/s00253-010-3047-8": {
+      "authors": [
+        "Carvalho AP",
+        "Silva SO",
+        "Baptista JM",
+        "Malcata FX"
+      ],
+      "year": "2011",
+      "title": "Light requirements in microalgal photobioreactors: an overview of biophotonic aspects",
+      "journal": "Applied Microbiology and Biotechnology",
+      "volume": "89",
+      "issue": "5",
+      "pages": "1275-1288",
+      "kind": "article",
+      "journalAbbr": "Appl Microbiol Biotechnol",
+      "doi": "10.1007/s00253-010-3047-8",
+      "source": "https://api.crossref.org/works/10.1007%2Fs00253-010-3047-8"
+    },
+    "https://doi.org/10.1002/jcp.21715": {
+      "authors": [
+        "Chen H",
+        "Jiang JG"
+      ],
+      "year": "2009",
+      "title": "Osmotic responses of Dunaliella to the changes of salinity",
+      "journal": "Journal of Cellular Physiology",
+      "volume": "219",
+      "issue": "2",
+      "pages": "251-258",
+      "kind": "article",
+      "journalAbbr": "J Cell Physiol",
+      "doi": "10.1002/jcp.21715",
+      "source": "https://api.crossref.org/works/10.1002%2Fjcp.21715"
+    },
+    "https://doi.org/10.1016/S1097-2765(03)00402-7": {
+      "authors": [
+        "Zhang Y",
+        "Zhang J",
+        "Hoeflich KP",
+        "Ikura M",
+        "Qing G",
+        "Inouye M"
+      ],
+      "year": "2003",
+      "title": "MazF cleaves cellular mRNAs specifically at ACA to block protein synthesis in Escherichia coli",
+      "journal": "Molecular Cell",
+      "volume": "12",
+      "issue": "4",
+      "pages": "913-923",
+      "kind": "article",
+      "journalAbbr": "Mol Cell",
+      "doi": "10.1016/s1097-2765(03)00402-7",
+      "source": "https://api.crossref.org/works/10.1016%2FS1097-2765%2803%2900402-7"
+    },
+    "https://doi.org/10.1111/j.1529-8817.2011.01036.x": {
+      "authors": [
+        "Farhat N",
+        "Rabhi M",
+        "Falleh H",
+        "Jouini J",
+        "Abdelly C",
+        "Smaoui A"
+      ],
+      "year": "2011",
+      "title": "Optimization of salt concentrations for a higher carotenoid production in Dunaliella salina (Chlorophyceae)",
+      "journal": "Journal of Phycology",
+      "volume": "47",
+      "issue": "5",
+      "pages": "1072-1077",
+      "kind": "article",
+      "journalAbbr": "J Phycol",
+      "doi": "10.1111/j.1529-8817.2011.01036.x",
+      "source": "https://api.crossref.org/works/10.1111%2Fj.1529-8817.2011.01036.x"
+    },
+    "https://doi.org/10.4067/S0716-97602005000200005": {
+      "authors": [
+        "GÓMEZ PI",
+        "GONZÁLEZ MA"
+      ],
+      "year": "2005",
+      "title": "The effect of temperature and irradiance on the growth and carotenogenic capacity of seven strains of Dunaliella salina cultivated under laboratory conditions",
+      "journal": "Biological Research",
+      "volume": "38",
+      "issue": "2-3",
+      "pages": "151–162",
+      "kind": "article",
+      "journalAbbr": "Biol Res",
+      "doi": "10.4067/s0716-97602005000200005",
+      "source": "https://api.crossref.org/works/10.4067%2FS0716-97602005000200005"
+    },
+    "https://registry.igem.org/organisations/b53d8950-5efe-4d5a-89b8-294aa00758ab": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://registry.igem.org/organisations/b53d8950-5efe-4d5a-89b8-294aa00758ab",
+      "url": "https://registry.igem.org/organisations/b53d8950-5efe-4d5a-89b8-294aa00758ab",
+      "authors": [
+        "SCU-China"
+      ],
+      "title": "SCU-China (2026) Registry record",
+      "site": "iGEM Registry",
+      "year": "2026"
+    },
+    "https://doi.org/10.1186/1746-1448-1-2": {
+      "authors": [
+        "Oren A"
+      ],
+      "year": "2005",
+      "title": "A hundred years of Dunaliella research: 1905–2005",
+      "journal": "Saline Systems",
+      "volume": "1",
+      "issue": "1",
+      "pages": "2",
+      "kind": "article",
+      "journalAbbr": "Saline Syst",
+      "doi": "10.1186/1746-1448-1-2",
+      "source": "https://api.crossref.org/works/10.1186%2F1746-1448-1-2"
+    },
+    "https://doi.org/10.13560/j.cnki.biotech.bull.1985.2017.01.007": {
+      "authors": [
+        "Sun LC",
+        "Li SY",
+        "Wang FZ",
+        "Xin FJ"
+      ],
+      "year": "2017",
+      "title": "Advances in the synthetic biology of terpenoid compounds",
+      "journal": "Biotechnology Bulletin",
+      "volume": "33",
+      "issue": "1",
+      "pages": "64–75",
+      "kind": "article",
+      "doi": "10.13560/j.cnki.biotech.bull.1985.2017.01.007",
+      "source": "https://biotech.aiijournal.com/EN/article/downloadArticleFile.do?attachType=PDF&id=11389",
+      "journalAbbr": "Biotechnol Bull",
+      "journalAbbreviationSource": "https://biotech.aiijournal.com/EN/Y2025/V41/I10/277"
+    },
+    "https://doi.org/10.16418/j.issn.1000-3045.20241130005": {
+      "authors": [
+        "Chi H",
+        "Er L",
+        "Liu T"
+      ],
+      "year": "2025",
+      "title": "Efficient discovery and industrial manufacturing of terpenoid compounds",
+      "journal": "Bulletin of Chinese Academy of Sciences",
+      "volume": "40",
+      "issue": "1",
+      "pages": "47–66",
+      "kind": "article",
+      "doi": "10.16418/j.issn.1000-3045.20241130005",
+      "source": "https://bulletinofcas.researchcommons.org/journal/vol40/iss1/6/",
+      "journalAbbr": "Bulletin of Chinese Academy of Sciences"
+    },
+    "Xue, Y., Wang, H., Zhao, D., et al. (2025). Advances in the biosynthesis and functions of plant terpenoid compounds. Plant Research, 45(4), 479–490.": {
+      "authors": [
+        "Xue Y",
+        "Wang H",
+        "Zhao D",
+        "et al."
+      ],
+      "year": "2025",
+      "title": "Advances in the biosynthesis and functions of plant terpenoid compounds",
+      "journal": "Plant Research",
+      "volume": "45",
+      "issue": "4",
+      "pages": "479–490",
+      "kind": "article",
+      "journalAbbr": "Plant Research"
+    },
+    "https://www.24chemicalresearch.com/reports/284490/global-regional-terpenoids-forecast-supply-dem-analysis-competitive-market": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.24chemicalresearch.com/reports/284490/global-regional-terpenoids-forecast-supply-dem-analysis-competitive-market",
+      "url": "https://www.24chemicalresearch.com/reports/284490/global-regional-terpenoids-forecast-supply-dem-analysis-competitive-market",
+      "authors": [
+        "24ChemicalResearch"
+      ],
+      "year": "2026",
+      "title": "Terpenoids Market, Global Outlook and Forecast 2026–2034"
+    },
+    "http://www.ce.cn/cysc/newmain/yc/jsxw/202512/t20251222_2656796.shtml": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "http://www.ce.cn/cysc/newmain/yc/jsxw/202512/t20251222_2656796.shtml",
+      "url": "http://www.ce.cn/cysc/newmain/yc/jsxw/202512/t20251222_2656796.shtml",
+      "authors": [
+        "China Economic Net"
+      ],
+      "year": "2025",
+      "title": "China’s biomanufacturing industry steadily expands, reaching a total scale of RMB 1.1 trillion"
+    },
+    "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=100341": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=100341",
+      "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=100341",
+      "authors": [
+        "Standing Committee of the National People’s Congress of the People’s Republic of China"
+      ],
+      "year": "2024",
+      "title": "Biosecurity Law of the People’s Republic of China (2024 Amendment)"
+    },
+    "https://www.moa.gov.cn/ztzl/zjyqwgz/zcfg/201007/t20100717_1601306.htm": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.moa.gov.cn/ztzl/zjyqwgz/zcfg/201007/t20100717_1601306.htm",
+      "url": "https://www.moa.gov.cn/ztzl/zjyqwgz/zcfg/201007/t20100717_1601306.htm",
+      "authors": [
+        "State Council of the People’s Republic of China"
+      ],
+      "year": "2017",
+      "title": "Regulations on the Safety Administration of Agricultural Genetically Modified Organisms"
+    },
+    "https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/stzl/202401/W020240116549219389782.pdf": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/stzl/202401/W020240116549219389782.pdf",
+      "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/stzl/202401/W020240116549219389782.pdf",
+      "authors": [
+        "Ministry of Ecology and Environment of the People’s Republic of China"
+      ],
+      "year": "2023",
+      "title": "Technical Guidelines for Ecological Risk Assessment of Environmental Release of Genetically Modified Plants (Trial)"
+    },
+    "https://m.chinacrops.org/267/202406/4808.html": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://m.chinacrops.org/267/202406/4808.html",
+      "url": "https://m.chinacrops.org/267/202406/4808.html",
+      "authors": [
+        "Ministry of Agriculture and Rural Affairs of the People’s Republic of China"
+      ],
+      "year": "2022",
+      "title": "Guidelines for the Safety Evaluation of Gene-Edited Plants for Agricultural Use (Trial)"
+    },
+    "https://www.samr.gov.cn/xw/zj/art/2024/art_758e872df179499bacb923efc69b4f67.html": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.samr.gov.cn/xw/zj/art/2024/art_758e872df179499bacb923efc69b4f67.html",
+      "url": "https://www.samr.gov.cn/xw/zj/art/2024/art_758e872df179499bacb923efc69b4f67.html",
+      "authors": [
+        "State Administration for Market Regulation"
+      ],
+      "year": "2024",
+      "title": "Research Symposium on Promoting Development and Science-Based Regulation Through Synthetic Biology"
+    },
+    "https://eur-lex.europa.eu/eli/reg/2015/2283/oj": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://eur-lex.europa.eu/eli/reg/2015/2283/oj",
+      "url": "https://eur-lex.europa.eu/eli/reg/2015/2283/oj",
+      "authors": [
+        "European Parliament and Council"
+      ],
+      "year": "2015",
+      "title": "Regulation (EU) 2015/2283 on Novel Foods"
+    },
+    "https://www.epa.gov/sites/default/files/2020-10/documents/algae_supplement_091420.pdf": {
+      "kind": "web",
+      "cited": "2026 Oct 21",
+      "source": "https://www.epa.gov/sites/default/files/2020-10/documents/algae_supplement_091420.pdf",
+      "url": "https://www.epa.gov/sites/default/files/2020-10/documents/algae_supplement_091420.pdf",
+      "authors": [
+        "U.S. Environmental Protection Agency"
+      ],
+      "year": "2020",
+      "title": "Algae Supplement to the Points to Consider in the Preparation of TSCA Biotechnology Submissions"
+    },
+    "https://www.mdpi.com/1422-0067/26/7/3174": {
+      "authors": [
+        "Eckerstorfer MF",
+        "Dolezel M",
+        "Miklau M",
+        "Greiter A",
+        "Heissenberger A",
+        "Kastenhofer K",
+        "Schulz F",
+        "Hagen K",
+        "Otto M",
+        "Engelhard M"
+      ],
+      "year": "2025",
+      "title": "Environmental Applications of GM Microorganisms: Tiny Critters Posing Huge Challenges for Risk Assessment and Governance",
+      "journal": "International Journal of Molecular Sciences",
+      "volume": "26",
+      "issue": "7",
+      "pages": "3174",
+      "kind": "article",
+      "journalAbbr": "Int J Mol Sci",
+      "doi": "10.3390/ijms26073174",
+      "source": "https://api.crossref.org/works/10.3390%2Fijms26073174"
+    },
+    "SCU-China (2026). Biosafety-Results. Team experimental report supplied for this Results page. Figures 4-1–4-11; construction, growth assays and current circuit status.": {
+      "kind": "report",
+      "authors": [
+        "SCU-China"
+      ],
+      "title": "Biosafety-Results",
+      "year": "2026",
+      "notes": "Unpublished team experimental report. Figures 4-1–4-11; construction, growth assays and current circuit status. Source: team-supplied Biosafety-Results.docx."
+    },
+    "/engineering": {
+      "kind": "report",
+      "authors": [
+        "SCU-China"
+      ],
+      "title": "Engineering: CPP2146, CCD1, BKT and CitCCD4 construction and characterisation",
+      "year": "2026",
+      "notes": "Team experimental records summarised on the Engineering page of this Wiki."
+    }
+  },
+  "pendingMetadata": [
+    {
+      "key": "Xue, Y., Wang, H., Zhao, D., et al. (2025). Advances in the biosynthesis and functions of plant terpenoid compounds. Plant Research, 45(4), 479–490.",
+      "reason": "No exact original publication record recovered; retain supplied metadata without inventing missing details."
+    }
+  ],
+  "metadataDifferences": []
+}

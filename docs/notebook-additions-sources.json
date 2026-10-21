@@ -9,11 +9,19 @@
       "pages": 34
     },
     {
-      "source": "2146 Experiment  Notebook (1).docx",
-      "sourceSha256": "d73d9b8ef50673fad5c0000dcec6221fc792905b3f1e6d3ffbff0bb950e4ebea",
+      "source": "Notebook safety.pdf",
+      "sourceSha256": "a3844f39d4d06d39b6033370985b56ea01334c026e7d25783f0b22d93f34286b",
+      "output": "/protocols/Notebook_Safety_EN.pdf",
+      "outputSha256": "a3844f39d4d06d39b6033370985b56ea01334c026e7d25783f0b22d93f34286b",
+      "conversion": "Original PDF copied without modification",
+      "pages": 16
+    },
+    {
+      "source": "2146 notebook.pdf",
+      "sourceSha256": "c1f8152cd4f986a1ad1a6273acefba5c315f55c708131b81dbe9eaceac417e17",
       "output": "/protocols/Notebook_CPP2146_EN.pdf",
-      "outputSha256": "5114cf428f960140d6a7c94da0991bb2d829f6115c12afc58877c666a6f04a2b",
-      "conversion": "Microsoft Word PDF export; source opened read-only without editing",
+      "outputSha256": "c1f8152cd4f986a1ad1a6273acefba5c315f55c708131b81dbe9eaceac417e17",
+      "conversion": "Original PDF copied without modification",
       "pages": 35
     }
   ]

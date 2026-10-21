@@ -145,7 +145,7 @@
   "protocols/Experiment_Molecular_Cloning_EN.pdf": "https://static.igem.wiki/teams/6212/wiki/protocols/experiment-molecular-cloning-77c825d91335.pdf",
   "protocols/Experiment_Team_EN.docx": "protocols/Experiment_Team_EN.docx",
   "protocols/Notebook_Astaxanthin_Crocetin_EN.pdf": "https://static.igem.wiki/teams/6212/wiki/protocols/notebook-astaxanthin-crocetin-bbf1af389dde.pdf",
-  "protocols/Notebook_Safety_EN.pdf": "https://static.igem.wiki/teams/6212/wiki/protocols/notebook-safety-53b85509cffc.pdf",
+  "protocols/Notebook_Safety_EN.pdf": "protocols/Notebook_Safety_EN.pdf?v=a3844f39d4d0",
   "protocols/hp/responsible-ai-practice-handbook.pdf": "https://static.igem.wiki/teams/6212/wiki/hp/hp-responsible-ai-practice-handbook-cca16a417372.pdf",
   "protocols/hp/synthetic-biology-education-practice-handbook.pdf": "https://static.igem.wiki/teams/6212/wiki/hp/hp-synthetic-biology-education-practice-handbook-8fd573afd33a.pdf",
   "researcher-sheet.png": "https://static.igem.wiki/teams/6212/wiki/dunaterp-d0e06b99186b.webp",
@@ -344,5 +344,6 @@
   "figures/results/biosafety-08-bbccf03c0a84.webp": "figures/results/biosafety-08-bbccf03c0a84.webp",
   "figures/results/biosafety-09-35596855291c.webp": "figures/results/biosafety-09-35596855291c.webp",
   "figures/results/biosafety-10-95d2fe35d611.webp": "figures/results/biosafety-10-95d2fe35d611.webp",
-  "figures/results/biosafety-11-1969882b099e.webp": "figures/results/biosafety-11-1969882b099e.webp"
+  "figures/results/biosafety-11-1969882b099e.webp": "figures/results/biosafety-11-1969882b099e.webp",
+  "protocols/Notebook_CPP2146_EN.pdf": "protocols/Notebook_CPP2146_EN.pdf?v=c1f8152cd4f9"
 }

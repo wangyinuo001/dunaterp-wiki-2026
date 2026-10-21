@@ -639,14 +639,18 @@ main:focus:not(:focus-visible) { outline: none; }
 }
 .article-page .article-references .reference-list { display: grid; gap: 1rem; }
 .article-page .article-references .reference-list p {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: .5em;
   margin: 0;
   color: var(--ink);
-  font: 500 clamp(1rem, 1.3vw, 1.16rem)/1.72 var(--font-serif);
+  font: 400 1.04rem/1.7 var(--font-serif);
   scroll-margin-top: 7rem;
 }
 .article-page .article-references .reference-list a {
-  color: inherit;
-  text-decoration: none;
+  color: #176c82;
+  text-decoration: underline;
+  text-underline-offset: .18em;
   overflow-wrap: anywhere;
 }
 .article-page .article-references .reference-list a:hover,

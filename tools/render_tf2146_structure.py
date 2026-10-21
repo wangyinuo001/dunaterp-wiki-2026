@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the protein chain from the archived TF2146–DNA prediction."""
+"""Render the protein chain from the archived CPP2146–DNA prediction."""
 
 from pathlib import Path
 
@@ -16,7 +16,7 @@ SOURCE = (
     / "archive/retired_2026-09-19/transcriptomics-cpp/sequences/DsCPP1/"
     / "DsTF2146-Adjacent2Motif_like.pdb"
 )
-OUTPUT = ROOT / "public/figures/dry-lab/tf2146-structure.svg"
+OUTPUT = ROOT / "public/figures/dry-lab/cpp2146-structure.svg"
 
 
 def first_model_ca_trace(pdb_path: Path):
@@ -60,7 +60,7 @@ def main():
     xyz = [item[1] for item in points]
 
     fig = plt.figure(figsize=(10.8, 6.7), facecolor="#fffef9")
-    fig.text(0.07, 0.94, "TF2146 · CXC-RICH N-TERMINAL STRUCTURE", color="#173f35",
+    fig.text(0.07, 0.94, "CPP2146 · CXC-RICH N-TERMINAL STRUCTURE", color="#173f35",
              fontsize=15, fontweight="bold", family="DejaVu Sans")
     fig.text(0.07, 0.895, "Predicted AlphaFold 3 chain A · residues 32–158 · flanking regions omitted",
              color="#5e746a", fontsize=10.5, family="DejaVu Sans")
@@ -99,7 +99,7 @@ def main():
         x += 0.22 if "N-terminal" not in label else 0.28
 
     fig.savefig(OUTPUT, format="svg", facecolor="#fffef9", bbox_inches="tight", metadata={
-        "Title": "TF2146 predicted CXC-region structure",
+        "Title": "CPP2146 predicted CXC-region structure",
         "Description": "Residues 32–158 from the first AlphaFold 3 chain A model. CXC1 and CXC2 are highlighted; flanking regions are omitted.",
     })
     plt.close(fig)

@@ -237,6 +237,13 @@ def main(source: Path):
     serialized = serialized.replace('Fig. 1The atlas', 'Fig. 1 The atlas')
     serialized = serialized.replace('and OOD"', 'and OD"')
     page = json.loads(serialized)
+    revisions = json.loads((ROOT/'tools/engineering-revisions.json').read_text(encoding='utf-8'))
+    for revision in revisions:
+        matches = [block for module in page['sections'] for block in module['blocks']
+                   if block['kind'] == 'document-paragraph' and ''.join(run['text'] for run in block['runs']) == revision['old']]
+        assert len(matches) == 1 and len(matches[0]['runs']) == 1, 'Engineering revision target changed'
+        matches[0]['runs'][0]['text'] = revision['new']
+    fidelity['revisedParagraphs'] = len(revisions)
     fidelity['approvedCorrections'] = ['Fig. 1The → Fig. 1 The', 'OOD680 → OD680 (680 remains subscript)']
     output = ROOT/'src/content/engineering.generated.json'
     output.write_text(json.dumps(page, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')

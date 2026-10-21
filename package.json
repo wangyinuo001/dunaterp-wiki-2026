@@ -12,6 +12,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --max-warnings 0",
     "check:dry-lab": "node tools/check-dry-lab.mjs",
+    "check:references": "node tools/check-bibliography.mjs",
     "preview": "vite preview",
     "art:check": "vite build --config tools/art-check/vite.config.ts && node tools/art-check/shoot.mjs",
     "preview:single": "vite build --config tools/preview/vite.config.ts && node tools/preview/build.mjs",

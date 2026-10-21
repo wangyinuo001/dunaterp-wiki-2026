@@ -17,15 +17,16 @@
       "topic": "Shared figure-grid captions are 20.8px versus regular figure captions 17.28px at 1280px."
     },
     "5": {
-      "status": "awaiting_manual_verification",
+      "status": "implemented_from_engineering_revision_docx",
       "topic": "Engineering in-text figure citations disagree with consolidated figure numbering.",
       "examples": {
         "betaIonone": "Body Fig. 1–5 versus captions Fig. 7–11",
         "betaCitraurin": "Body Fig. 1–6 versus captions Fig. 18–23"
-      }
+      },
+      "sourceRecord": "docs/engineering-revision-sources.json"
     },
     "7": {
-      "status": "canonical_name_recorded_rename_not_applied",
+      "status": "implemented",
       "canonicalName": "CPP2146",
       "identity": "User confirms CPP2146 and TF2146 refer to the same object.",
       "impact": [
@@ -45,10 +46,11 @@
         "src/content/dry-lab.ts": 11,
         "src/App.tsx": 1,
         "src/content/attributions.ts": 3
-      }
+      },
+      "implementation": "Canonical CPP2146 in all active pages, Contents, home story/station copy, figure labels and the retained Results draft. Model equations, parameter JSON and source sequence identifiers unchanged."
     },
     "9": {
-      "status": "awaiting_user_review",
+      "status": "implemented",
       "style": "NLM Citing Medicine, citation-sequence (Vancouver family)",
       "rules": [
         "Keep page-local numbered [1] citations and list references in first-citation order; reuse the same number for repeated sources.",
@@ -63,7 +65,20 @@
         "https://www.ncbi.nlm.nih.gov/books/NBK7265/",
         "https://www.ncbi.nlm.nih.gov/books/NBK7282/"
       ],
-      "sample": "D:/IGEM/wiki-consistency-audit/reference-style-review.html"
+      "sample": "D:/IGEM/wiki-consistency-audit/reference-style-review.html",
+      "implementation": {
+        "uniqueSources": 62,
+        "renderedReferences": 96,
+        "sourceRecord": "docs/bibliography-sources.json",
+        "layout": "Duna Serif, 16.64px, weight 400, line-height 1.7, separate number column and DOI/URL links",
+        "numbering": "Page-local first-citation order with a shared old-to-new map for Word runs, tables, captions and plain paragraphs."
+      },
+      "pendingMetadata": [
+        {
+          "key": "Xue, Y., Wang, H., Zhao, D., et al. (2025). Advances in the biosynthesis and functions of plant terpenoid compounds. Plant Research, 45(4), 479–490.",
+          "reason": "No exact original publication record recovered; retain supplied metadata without inventing missing details."
+        }
+      ]
     }
   },
   "limits": "Changes affect editable webpage text. Text baked into figures or embedded/downloaded PDFs retains the source typography."

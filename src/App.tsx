@@ -7,7 +7,10 @@ import { ihpNavigation } from "./content/integrated-human-practices";
 import { ArticleBlocks } from './ArticleBlocks';
 import { renderInlineText } from './inline-text';
 import { DocumentText } from './DocumentText';
-import type { DocumentTextRun, WikiReference } from './content/types';
+import type { DocumentTextRun } from './content/types';
+import { pageBibliography } from './bibliography';
+import { CitationNumbers } from './citation-numbers';
+import { ReferenceList } from './ReferenceList';
 
 const PixelWorld = lazy(() => import("./PixelWorld").then((module) => ({ default: module.PixelWorld })));
 const MODELING_PATHS = ['/dry-lab', '/transcriptomics', '/metabolomics', '/protein', '/model', '/safety-and-security'];
@@ -146,23 +149,6 @@ function Footer() {
   </footer>;
 }
 
-function pageReferences(page: (typeof pages)[string]) {
-  if (page.references) return page.references;
-  const seen = new Set<string>();
-  const references: WikiReference[] = [];
-  for (const section of page.sections) {
-    for (const block of section.blocks ?? []) {
-      if (block.kind !== "links") continue;
-      for (const link of block.links) {
-        if (!/^https?:\/\//i.test(link.href) || seen.has(link.href)) continue;
-        seen.add(link.href);
-        references.push({ ...link, kind: 'Web resource' });
-      }
-    }
-  }
-  return references;
-}
-
 function firstPageFigure(page: (typeof pages)[string]) {
   if (page.figure) return page.figure.src;
   for (const section of page.sections) {
@@ -174,12 +160,12 @@ function firstPageFigure(page: (typeof pages)[string]) {
   return "/figures/project/salt-strata.svg";
 }
 
-function renderCitations(text: string, referenceNumbers: Map<string, number>) {
+function renderCitations(text: string, referenceNumbers: Map<string, number>, citationNumbers: ReadonlyMap<number, number>) {
   if (referenceNumbers.size === 0) return renderInlineText(text);
   const parts = text.split(/\[(\d+)\]/g);
   return parts.map((part, index) => {
     if (index % 2 === 0) return renderInlineText(part, index);
-    const number = Number(part);
+    const number = citationNumbers.get(Number(part)) ?? Number(part);
     return number > 0 && number <= referenceNumbers.size
       ? <a className="inline-citation" href={`#reference-${number}`} key={`${index}-${number}`}>[{number}]</a>
       : `[${part}]`;
@@ -225,7 +211,7 @@ const TOC_CHAPTERS: Record<string, TocChapterDefinition[]> = {
   ],
   protein: [
     { title: "LCYB Design & Screening", start: 0, end: 6 },
-    { title: "TF2146–DNA Recognition", start: 7, end: 10 },
+    { title: "CPP2146–DNA Recognition", start: 7, end: 10 },
     { title: "Constructs & Docking Scope", start: 11, end: 12 },
   ],
   hardware: [
@@ -426,8 +412,7 @@ function Article({ slug }: { slug: string }) {
   const figureSrc = page.figure ? resolveFigureSrc(page.figure.src) : "";
   const hasContent = page.sections.length > 0;
   const isModeling = MODELING_PATHS.includes(`/${slug}`);
-  const references = pageReferences(page);
-  const referenceNumbers = new Map(references.map((reference, index) => [reference.href ?? `#reference-${index + 1}`, index + 1]));
+  const { references, referenceNumbers, citationNumbers } = pageBibliography(page);
   const isWetLab = group?.label === 'Project';
   const navigationLabel = group?.items.find(([, href]) => href === `/${slug}`)?.[0];
   const heroTitle = navigationLabel ?? page.title;
@@ -471,17 +456,15 @@ function Article({ slug }: { slug: string }) {
     <header className="article-hero"><div><h1>{renderInlineText(heroTitle)}</h1></div></header>
     {slug === "attributions" && page.intro && <p className="attributions-introduction">{renderInlineText(page.intro)}</p>}
     {slug === 'team' && page.intro && <p className="team-introduction">{renderInlineText(page.intro)}</p>}
-    {hasContent && <>
+    {hasContent && <CitationNumbers.Provider value={citationNumbers}>
     <div className="article-layout"><ArticleToc slug={slug} sections={tocSections} hasReferences={references.length > 0} />
       <div className="article-body">{page.figure && <figure className="feature-figure"><img src={figureSrc} alt={page.figure.alt} loading="lazy" decoding="async" /><figcaption>{renderInlineText(page.figure.caption)}</figcaption></figure>}
-        <div className="article-sections">{page.sections.map((section, i) => <section id={`section-${i + 1}`} tabIndex={-1} key={`${i}-${section.title}`}><div className="section-number">{String(i + 1).padStart(2, "0")}</div><div><h2>{section.titleRuns ? <DocumentText runs={section.titleRuns} /> : renderInlineText(section.title)}</h2>{section.body && <p>{renderCitations(section.body, referenceNumbers)}</p>}{section.blocks && <ArticleBlocks blocks={section.blocks} referenceNumbers={referenceNumbers} sectionId={`section-${i + 1}`} />}{section.items && <ul>{section.items.map((item) => <li key={item}>{renderCitations(item, referenceNumbers)}</li>)}</ul>}{section.note && <aside>{renderInlineText(section.note)}</aside>}</div></section>)}</div>
-        {references.length > 0 && <section id="references" tabIndex={-1} className="article-references"><h2>References</h2><div className="reference-list">{references.map((reference, index) => <p id={`reference-${index + 1}`} key={reference.href ?? reference.label}>
-          <span className="reference-number">[{index + 1}] </span>
-          {reference.labelRuns ? <DocumentText runs={reference.labelRuns} /> : reference.href?.startsWith('/') ? <Link to={reference.href}>{renderInlineText(reference.label)}</Link> : reference.href ? <a href={reference.href} target="_blank" rel="noreferrer">{renderInlineText(reference.label)}</a> : renderInlineText(reference.label)}
-        </p>)}</div></section>}
+        <div className="article-sections">{page.sections.map((section, i) => <section id={`section-${i + 1}`} tabIndex={-1} key={`${i}-${section.title}`}><div className="section-number">{String(i + 1).padStart(2, "0")}</div><div><h2>{section.titleRuns ? <DocumentText runs={section.titleRuns} /> : renderInlineText(section.title)}</h2>{section.body && <p>{renderCitations(section.body, referenceNumbers, citationNumbers)}</p>}{section.blocks && <ArticleBlocks blocks={section.blocks} referenceNumbers={referenceNumbers} sectionId={`section-${i + 1}`} />}{section.items && <ul>{section.items.map((item) => <li key={item}>{renderCitations(item, referenceNumbers, citationNumbers)}</li>)}</ul>}{section.note && <aside>{renderInlineText(section.note)}</aside>}</div></section>)}</div>
+        {references.length > 0 && <section id="references" tabIndex={-1} className="article-references"><h2>References</h2><ReferenceList references={references} /></section>}
+
       </div>
     </div>
-    </>}
+    </CitationNumbers.Provider>}
   </main><Footer /></>;
 }
 

@@ -35,3 +35,6 @@ jobs:
         env:
           VITE_BASE_PATH: /dunaterp-wiki/
         run: npm run check:dry-lab
+
+      - name: Check references and citation order
+        run: npm run check:references

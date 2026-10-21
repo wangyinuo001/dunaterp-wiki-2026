@@ -688,7 +688,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 1, the backbone could be amplified, but the main band of the RBCS2 backbone was consistently accompanied by a weaker nonspecific band beneath it, and the band intensity varied among clones. The CCD1 fragment fared worse: as shown in Fig. 2, multiple nonspecific bands appeared at an annealing temperature of 45 °C, the target band was difficult to separate from the nonspecific ones, and the concentration did not meet the requirement for assembly."
+              "text": "As shown in Fig. 7, the backbone could be amplified, but the main band of the RBCS2 backbone was consistently accompanied by a weaker nonspecific band beneath it, and the band intensity varied among clones. The CCD1 fragment fared worse: as shown in Fig. 8, multiple nonspecific bands appeared at an annealing temperature of 45 °C, the target band was difficult to separate from the nonspecific ones, and the concentration did not meet the requirement for assembly."
             }
           ]
         },
@@ -857,7 +857,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Figs. 3 and 4, the nonspecific bands disappeared, all bands were single and of the correct size, and the concentrations met the assembly requirements. After assembly, all plasmids passed sequencing verification."
+              "text": "As shown in Figs. 9 and 10, the nonspecific bands disappeared, all bands were single and of the correct size, and the concentrations met the assembly requirements. After assembly, all plasmids passed sequencing verification."
             }
           ]
         },
@@ -1057,7 +1057,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "In total, 1510 metabolites were detected. As shown in Fig. 5, the two CCD1 lines and the wild type separated along PC1, which explained 91.1% of the variance. β-Ionone in the two CCD1 lines was only 1.34- and 1.04-fold relative to the wild type, neither reaching the two-fold threshold, which is consistent with volatilization loss; however, the non-volatile C18 apocarotenoid cleavage products rose consistently by 2.1- to 4.5-fold in both lines, against a background of overall downregulation of terpenoids in the same batch. This counter-trend accumulation indicates that the introduced CCD1 was catalytically active. Further comparison between the cytosolic line and the chloroplast-targeted line showed that the transit peptide fusion did not increase product accumulation, while the upstream precursor mevalonic acid in the chloroplast-targeted line was 2.02-fold that of the cytosolic line, indicating that the limiting factor lies in the enzyme itself rather than in substrate supply."
+              "text": "In total, 1510 metabolites were detected. As shown in Fig. 11, the two CCD1 lines and the wild type separated along PC1, which explained 91.1% of the variance. β-Ionone in the two CCD1 lines was only 1.34- and 1.04-fold relative to the wild type, neither reaching the two-fold threshold, which is consistent with volatilization loss; however, the non-volatile C18 apocarotenoid cleavage products rose consistently by 2.1- to 4.5-fold in both lines, against a background of overall downregulation of terpenoids in the same batch. This counter-trend accumulation indicates that the introduced CCD1 was catalytically active. Further comparison between the cytosolic line and the chloroplast-targeted line showed that the transit peptide fusion did not increase product accumulation, while the upstream precursor mevalonic acid in the chloroplast-targeted line was 2.02-fold that of the cytosolic line, indicating that the limiting factor lies in the enzyme itself rather than in substrate supply."
             }
           ]
         },
@@ -1920,7 +1920,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 1, the promoter of the 35S construct was lost entirely, while the backbone and the gene of interest remained."
+              "text": "As shown in Fig. 18, the promoter of the 35S construct was lost entirely, while the backbone and the gene of interest remained."
             }
           ]
         },
@@ -2027,7 +2027,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "The initial transformation yielded no colonies on the plates. Colonies appeared only after the transformation procedure was adjusted, but they were scarce, with only a few scattered colonies on each of the two plates, as shown in Fig. 2. These clones were picked, expanded, and sequenced; all plasmids were successfully constructed, and the promoter of the 35S construct was no longer lost."
+              "text": "The initial transformation yielded no colonies on the plates. Colonies appeared only after the transformation procedure was adjusted, but they were scarce, with only a few scattered colonies on each of the two plates, as shown in Fig. 19. These clones were picked, expanded, and sequenced; all plasmids were successfully constructed, and the promoter of the 35S construct was no longer lost."
             }
           ]
         },
@@ -2141,7 +2141,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 3, the algae in the liquid medium did turn green and dense, but the flask only showed whether the culture as a whole had grown, not which cell had given rise to it. Successfully transformed algae and untransformed algae were mixed together, so no single clone could be picked and no stock could be preserved."
+              "text": "As shown in Fig. 20, the algae in the liquid medium did turn green and dense, but the flask only showed whether the culture as a whole had grown, not which cell had given rise to it. Successfully transformed algae and untransformed algae were mixed together, so no single clone could be picked and no stock could be preserved."
             }
           ]
         },
@@ -2241,7 +2241,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 4, well-separated green colonies grew on the plates, and picking single colonies allowed expansion and stocking."
+              "text": "As shown in Fig. 21, well-separated green colonies grew on the plates, and picking single colonies allowed expansion and stocking."
             }
           ]
         },
@@ -2341,7 +2341,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 5, the spots were diffuse and showed tailing; no interpretable difference appeared between the CitCCD4 line and the WT, and no target spot was present on the plate."
+              "text": "As shown in Fig. 22, the spots were diffuse and showed tailing; no interpretable difference appeared between the CitCCD4 line and the WT, and no target spot was present on the plate."
             }
           ]
         },
@@ -2441,7 +2441,7 @@
           "kind": "document-paragraph",
           "runs": [
             {
-              "text": "As shown in Fig. 6, the CitCCD4 line showed a new spot at the expected position that was absent in the WT, indicating that CitCCD4 produced β-citraurin in the alga."
+              "text": "As shown in Fig. 23, the CitCCD4 line showed a new spot at the expected position that was absent in the WT, indicating that CitCCD4 produced β-citraurin in the alga."
             }
           ]
         },

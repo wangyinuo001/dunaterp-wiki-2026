@@ -13,7 +13,7 @@ export const protein: WikiPage = {
   title: 'Protein design and DNA recognition',
   eyebrow: 'Dry Lab / Protein',
   status: 'team-draft',
-  intro: 'Transcriptomics identifies LCYB as the shared control point in the light response. This page examines two molecular levers on that same node: enzyme-side LCYB substitutions that may change lycopene conversion, and regulator-side TF2146–DNA recognition that may change LCYB expression. The selected structural parameters and testable sites are then passed to the regulatory model.',
+  intro: 'Transcriptomics identifies LCYB as the shared control point in the light response. This page examines two molecular levers on that same node: enzyme-side LCYB substitutions that may change lycopene conversion, and regulator-side CPP2146–DNA recognition that may change LCYB expression. The selected structural parameters and testable sites are then passed to the regulatory model.',
   references: [refs.pubchemLycopene, refs.alphafold3, refs.foldx, refs.vina, refs.gromacs, refs.gaff],
   sections: [
     { title: 'LCYB: the design question', body: '', blocks: [
@@ -102,7 +102,7 @@ export const protein: WikiPage = {
     ...tf2146Sections,
     ...syntheticDnaSections,
     { title: 'Two molecular levers, one LCYB control point', body: '', blocks: [
-      p('The LCYB and TF2146 analyses describe two parts of one control system. LCYB variants act at the catalytic layer by changing the enzyme that converts lycopene toward β-carotene. TF2146 and its candidate DNA motif act at the regulatory layer by changing the promoter input that determines how much LCYB transcript and active enzyme can accumulate.'),
+      p('The LCYB and CPP2146 analyses describe two parts of one control system. LCYB variants act at the catalytic layer by changing the enzyme that converts lycopene toward β-carotene. CPP2146 and its candidate DNA motif act at the regulatory layer by changing the promoter input that determines how much LCYB transcript and active enzyme can accumulate.'),
       p('These outputs enter the mathematical model through different parameters but converge on the same LCYB node. Promoter affinity and regulatory input shape occupancy and transcription, while LCYB abundance and catalytic capacity shape lycopene conversion. Modeling them together shows whether a proposed molecular change survives the complete path from DNA recognition to β-carotene supply.'),
       { kind: 'links', links: [{ label: 'Continue to Mathematical Modeling', href: '/model' }] },
     ] },

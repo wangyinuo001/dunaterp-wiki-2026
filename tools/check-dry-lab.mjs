@@ -117,7 +117,7 @@ try {
     const captions = pages[slug].sections.flatMap(s => s.blocks ?? []).flatMap(block => block.kind === 'figure' ? [block.caption] : block.kind === 'figure-row' || block.kind === 'figure-grid' ? block.figures.map(figure => figure.caption) : []);
     captions.forEach((caption, i) => assert(caption.startsWith('Fig. ' + (i + 1) + ' '), 'Figure numbering in ' + slug + ': ' + caption));
   }
-  assert(!pages.model.sections.some(section => /CPP/i.test(JSON.stringify(section))), 'Unverified CPP regulator remains in modeling');
+  assert(modelText.includes('CPP2146') && !/TF2146/i.test(modelText), 'Use the confirmed CPP2146 name in modeling');
   assert(!pages.transcriptomics.sections.some(section => section.title.startsWith('CPP')), 'CPP-only chapter remains');
   for (const oldFigure of ['branch-allocation.png','light-intensity-pca.png','dry-lab/02_tf_candidates.png']) {
     assert(!fs.existsSync(path.join('public/figures', oldFigure)), 'Obsolete figure remains: ' + oldFigure);

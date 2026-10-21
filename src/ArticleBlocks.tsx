@@ -1,5 +1,6 @@
 import { assetUrl as resolveAsset } from './asset-url';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useContext } from 'react';
+import { CitationNumbers } from './citation-numbers';
 import { Link } from 'react-router-dom';
 import katex from 'katex';
 import type { ContentBlock } from './content/types';
@@ -81,9 +82,10 @@ function ProtocolPdf({ block }: { block: Extract<ContentBlock, { kind: 'pdf' }> 
 }
 
 export function ArticleBlocks({ blocks, referenceNumbers = new Map<string, number>(), sectionId }: { blocks: ContentBlock[]; referenceNumbers?: Map<string, number>; sectionId?: string }) {
+  const citationNumbers = useContext(CitationNumbers);
   return <div className="research-blocks">{blocks.map((block, i) => {
     switch (block.kind) {
-      case 'paragraph': return <p key={i}>{renderCitations(block.text, referenceNumbers)}</p>;
+      case 'paragraph': return <p key={i}>{renderCitations(block.text, referenceNumbers, citationNumbers)}</p>;
       case 'document-paragraph': return <p className="document-paragraph" id={block.id} key={i}><DocumentText runs={block.runs} /></p>;
       case 'document-heading': {
         const Heading = block.level === 4 ? 'h4' : 'h3';
@@ -139,12 +141,12 @@ export function ArticleBlocks({ blocks, referenceNumbers = new Map<string, numbe
   })}</div>;
 }
 
-function renderCitations(text: string, referenceNumbers: Map<string, number>) {
+function renderCitations(text: string, referenceNumbers: Map<string, number>, citationNumbers: ReadonlyMap<number, number>) {
   if (referenceNumbers.size === 0) return renderInlineText(text);
   const parts = text.split(/\[(\d+)\]/g);
   return parts.map((part, index) => {
     if (index % 2 === 0) return renderInlineText(part, index);
-    const number = Number(part);
+    const number = citationNumbers.get(Number(part)) ?? Number(part);
     return number > 0 && number <= referenceNumbers.size
       ? <a className="inline-citation" href={`#reference-${number}`} key={`${index}-${number}`}>[{number}]</a>
       : `[${part}]`;

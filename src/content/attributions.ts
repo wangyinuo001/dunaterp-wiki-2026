@@ -59,7 +59,7 @@ export const studentContributions: AttributionEntry[] = [
   },
   {
     name: 'Jiayu Cheng',
-    contribution: 'Analyzed TF2146 domains, conserved residues, and structures using sequence alignment, zinc-coordination modeling, and FoldX. Built the initial Python biosafety model, coordinated protein-modeling and biosafety tasks, prepared scientific figures, and developed and wrote the initial Protein section of the Wiki.',
+    contribution: 'Analyzed CPP2146 domains, conserved residues, and structures using sequence alignment, zinc-coordination modeling, and FoldX. Built the initial Python biosafety model, coordinated protein-modeling and biosafety tasks, prepared scientific figures, and developed and wrote the initial Protein section of the Wiki.',
   },
   {
     name: 'Hengyu Dai',
@@ -79,7 +79,7 @@ export const studentContributions: AttributionEntry[] = [
   },
   {
     name: 'Lecheng Guo',
-    contribution: 'Analyzed TF2146–DNA models and screened LCYB variants using AF3 and Vina, following Zhe Yu’s mutation designs and preparing FoldX inputs for Jiayu Cheng. Refined Cheng’s initial biosafety model and documented calibration limits; contributed analysis scripts, figures, interactive viewers, and Wiki content.',
+    contribution: 'Analyzed CPP2146–DNA models and screened LCYB variants using AF3 and Vina, following Zhe Yu’s mutation designs and preparing FoldX inputs for Jiayu Cheng. Refined Cheng’s initial biosafety model and documented calibration limits; contributed analysis scripts, figures, interactive viewers, and Wiki content.',
   },
   {
     name: 'Hengwei Liang',
@@ -127,7 +127,7 @@ export const studentContributions: AttributionEntry[] = [
   },
   {
     name: 'Zhe Yu',
-    contribution: 'Performed LCYB molecular docking and TF2146–DNA docking, and designed pocket mutations and transcription-factor variants. Developed Wiki structures, interactive scripts, and interface changes; wrote the Protein docking analyses, introductory narrative and dialogue, and dry-lab reports, and refined scientific visualizations.',
+    contribution: 'Performed LCYB molecular docking and CPP2146–DNA docking, and designed pocket mutations and transcription-factor variants. Developed Wiki structures, interactive scripts, and interface changes; wrote the Protein docking analyses, introductory narrative and dialogue, and dry-lab reports, and refined scientific visualizations.',
   },
   {
     name: 'Ziyang Zhou',

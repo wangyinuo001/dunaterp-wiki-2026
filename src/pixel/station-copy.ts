@@ -82,7 +82,7 @@ export const STATION_COPY: StationCopy[] = [
     panelLead: "DunaTerp is not only a salt-tolerant source of native pigment. Its core design is a programmable metabolic intervention: identify and introduce transcription factor 2146, reshape pathway regulation, and strengthen supply to the β-carotene hub.",
     panelPoints: [
       { label: "DISCOVER", text: "Transcriptomic and sequence analyses provide the route for selecting the project transcription-factor candidate 2146." },
-      { label: "INTRODUCE", text: "The biological design brings TF2146 into the chassis as the regulatory input rather than treating β-carotene accumulation as a fixed natural trait." },
+      { label: "INTRODUCE", text: "The biological design brings CPP2146 into the chassis as the regulatory input rather than treating β-carotene accumulation as a fixed natural trait." },
       { label: "REDIRECT", text: "The intended effect is to alter carotenoid-pathway flux and increase competitive supply to the shared β-carotene pool." },
     ],
     route: "/project-description#section-3",
@@ -98,7 +98,7 @@ export const STATION_COPY: StationCopy[] = [
     index: "04",
     kicker: "FROM HUB TO APPLICATIONS",
     title: "Programmable Product Platform",
-    body: "Modeling links TF2146 regulation to pathway flux; four downstream product designs test how the same β-carotene hub can support distinct outputs.",
+    body: "Modeling links CPP2146 regulation to pathway flux; four downstream product designs test how the same β-carotene hub can support distinct outputs.",
     panelLead: "The platform is evaluated first as a reprogrammable chassis. Modeling connects regulatory input, β-carotene supply and branch competition; four downstream designs then demonstrate the range of products that could be built from that shared hub.",
     panelPoints: [
       { label: "MODEL", text: "The regulatory and metabolic models examine how transcriptional control changes hub supply and competition between pathway demands." },

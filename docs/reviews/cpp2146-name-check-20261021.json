@@ -1,0 +1,17 @@
+{
+  "src/content/dry-lab.ts": "Only the confirmed name changed",
+  "src/content/attributions.ts": "Only the confirmed name changed",
+  "src/content/protein.ts": "Only the confirmed name changed",
+  "src/content/synthetic-dna.ts": "Only the confirmed name changed",
+  "src/pixel/station-copy.ts": "Only the confirmed name changed",
+  "src/PixelWorld.tsx": "Only the confirmed name changed",
+  "src/site-data.ts": "Only the confirmed name changed",
+  "parametersSha256": "3230a57d3a105bc0947317af0fdb7ea539e5334cfc82843aa740587da4a04a4f",
+  "structureFigure": {
+    "source": "public/figures/dry-lab/tf2146-structure.svg",
+    "new": "public/figures/dry-lab/cpp2146-structure.svg",
+    "sourceSha256": "dbb4e73fb4b695d0b00859391ae5156ebecd85d9c6439bcd3348cb04399096a2",
+    "newSha256": "7d93b53580b989019e230890cda19dd9de9d511cbd24416c4a1b491d0a266c3f",
+    "geometry": "All paths outside the old title retained exactly; only the title label and title metadata changed."
+  }
+}

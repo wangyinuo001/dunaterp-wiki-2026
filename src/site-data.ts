@@ -13,6 +13,7 @@ import { labSafety } from './content/lab-safety';
 import { labNotebook } from './content/lab-notebook';
 import { engineering } from './content/engineering';
 import { results } from './content/results';
+import { contribution } from './content/contribution';
 
 export type WikiSection = {
   title: string;
@@ -68,26 +69,7 @@ export const pages: Record<string, WikiPage> = {
   metabolomics,
   protein,
   "project-description": projectDescription,
-  contribution: {
-    title: "What DunaTerp contributes",
-    eyebrow: "Contribution",
-    intro: "This project contributes a chassis-level platform idea, a model-guided route-comparison framework and a salt-responsive containment concept for Dunaliella-based engineering.",
-    status: "team-draft",
-    sections: [
-      {
-        title: "A salt-compatible terpenoid platform",
-        body: "DunaTerp proposes D. salina as more than a naturally pigmented organism. The project frames it as a salt-compatible engineering chassis whose native β-carotene metabolism can support several downstream terpenoid routes from one shared metabolic hub."
-      },
-      {
-        title: "A model-guided design chain",
-        body: "The project links transcriptional regulation, pathway control and downstream product competition in one design chain. Transcript evidence, metabolic modeling and product-route comparison are used together to define which measurements matter most for testing the platform."
-      },
-      {
-        title: "A biosafety concept with explicit assumptions",
-        body: "The salt-responsive containment work contributes a concrete biosafety idea for D. salina cultivation: keep cells viable in high-salt production conditions while increasing effective toxicity after a salinity drop. The value of this contribution lies not only in the circuit concept, but also in making its assumptions, response requirements and likely failure points explicit."
-      },
-    ],
-  },
+  contribution,
   design,
   engineering,
   experiments: {
@@ -218,7 +200,7 @@ export const pages: Record<string, WikiPage> = {
     sections: [
       { title: "A metabolism already oriented toward carotenoids", body: "D. salina contains the MEP-to-carotenoid pathway and can accumulate β-carotene under environmental stress [2]. The project therefore begins with an established pigment network and asks how regulation and branch competition can be reshaped around its native β-carotene pool." },
       { title: "Salt tolerance changes cultivation", body: "Growth in seawater and hypersaline media can reduce freshwater demand and suppress many common contaminants [1]. At the same time, high salinity affects materials, sensors, fluid handling and downstream recovery, so the chassis choice directly informs the reactor and process design." },
-      { title: "Engineering the chassis", body: "Osmotic transformation provides a route for introducing genetic constructs into D. salina. The containment work tests MazF toxicity and weak-promoter control, while the central platform design proposes TF2146 as a regulatory input. These interventions must be evaluated with construct verification, expression measurements and matched pigment or flux data." },
+      { title: "Engineering the chassis", body: "Osmotic transformation provides a route for introducing genetic constructs into D. salina. The containment work tests MazF toxicity and weak-promoter control, while the central platform design proposes CPP2146 as a regulatory input. These interventions must be evaluated with construct verification, expression measurements and matched pigment or flux data." },
     ],
   },
   education,
