@@ -17,6 +17,8 @@ import type { Npc } from "./pixel/npc-data";
 import { archiveNavigation } from "./site-data";
 import { HomePrologue } from "./home/HomePrologue";
 import { initialStory, STORY_BEATS, storyReducer } from "./home/story";
+import { DiscoveryArchive, FieldPanel } from "./FieldNotes";
+import { readFieldProgress, writeFieldProgress, type FieldSite } from "./pixel/field-sites";
 
 type HeaderProps = { light?: boolean };
 const GROUP_ACCENTS = ["#cdf558", "#f7a52d", "#e65c42", "#91e6b0", "#c4a8ff"];
@@ -34,9 +36,9 @@ const ROUTE_EGGS = [
   {
     key: "model",
     chapter: 3,
-    label: "MODEL",
+    label: "Mathematical Modeling",
     hook: "What actually moves the flux?",
-    href: "/model",
+    href: "/mathematical-modeling",
     accent: "#c4a8ff",
     x: "12%",
     y: "36%",
@@ -87,6 +89,9 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
 
   const [npcPrompt, setNpcPrompt] = useState<Npc | null>(null);
   const [dialogueNpc, setDialogueNpc] = useState<Npc | null>(null);
+  const [fieldPrompt, setFieldPrompt] = useState<FieldSite | null>(null);
+  const [fieldPanel, setFieldPanel] = useState<FieldSite | null>(null);
+  const [fieldProgress, setFieldProgress] = useState(readFieldProgress);
   const [progress, setProgress] = useState(0);
   const [ready, setReady] = useState(false);
   const [loadingMinimumElapsed, setLoadingMinimumElapsed] = useState(false);
@@ -199,6 +204,14 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         onPrompt: () => undefined,
         onEnter: () => undefined,
         onNpcPrompt: setNpcPrompt,
+        onFieldPrompt: setFieldPrompt,
+        onFieldInteract: (site) => {
+          engineRef.current?.setPaused(true);
+          setFieldProgress(previous => site.kind === "item"
+            ? { ...previous, collected: [...new Set([...previous.collected, site.id])] }
+            : { ...previous, met: [...new Set([...previous.met, site.id])] });
+          setFieldPanel(site);
+        },
         onNpcInteract: (npc) => {
           recordNpcVisit(npc.id);
           engineRef.current?.setPaused(true);
@@ -222,6 +235,11 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
       engineRef.current = null;
     };
   }, [updateRouteUi]);
+
+  useEffect(() => {
+    writeFieldProgress(fieldProgress);
+    engineRef.current?.setCollectedFields(fieldProgress.collected);
+  }, [fieldProgress, ready]);
 
   useEffect(() => {
     if (!ready || failed) return;
@@ -386,6 +404,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     const engine = engineRef.current;
     if (!engine || !ready || failed) return;
     setDialogueNpc(null);
+    setFieldPanel(null);
     setStarted(false);
     setAtArchive(false);
     engine.beginIntro();
@@ -393,13 +412,19 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
     dispatchStory("REPLAY");
   }, [ready, failed]);
 
+  const closeFieldPanel = useCallback(() => {
+    setFieldPanel(null);
+    engineRef.current?.setPaused(false);
+    requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }));
+  }, []);
+
   const activeChapter = chapter >= 0 ? STATION_COPY[chapter] : null;
   return (
     <main
       id="main-content"
       tabIndex={-1}
       ref={root}
-      className={`px-world${isStory ? " is-prologue" : ""}${story.phase === "TRANSITION" ? " is-handoff" : ""}${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc ? " has-dialogue" : ""}`}
+      className={`px-world${isStory ? " is-prologue" : ""}${story.phase === "TRANSITION" ? " is-handoff" : ""}${ready ? " is-ready" : ""}${started ? " is-started" : ""}${mode === "free" ? " is-free" : ""}${atArchive ? " is-archive" : ""}${failed ? " has-failed" : ""}${dialogueNpc || fieldPanel ? " has-dialogue" : ""}`}
     >
       <div className="home-world-header" inert={isStory}><Header light /></div>
 
@@ -432,16 +457,24 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           </aside>
         </>}
         {mode === "free" && <ExpeditionJournal
+          discoveryCount={fieldProgress.collected.length}
+          fieldNotes={<DiscoveryArchive progress={fieldProgress} onReset={() => setFieldProgress({ collected: [], met: [] })} onPreview={import.meta.env.DEV ? (id) => {
+            document.querySelector<HTMLDialogElement>(".ej-dialog")?.close();
+            requestAnimationFrame(() => { engineRef.current?.setPaused(false); engineRef.current?.previewFieldSite(id); canvas.current?.focus({ preventScroll: true }); });
+          } : undefined} />}
           currentStationKey={npcPrompt?.stationKey ?? activeChapter?.key ?? null}
           onOpenChange={(open) => { engineRef.current?.setPaused(open); if (!open) requestAnimationFrame(() => requestAnimationFrame(() => canvas.current?.focus({ preventScroll: true }))); }}
           onTravel={(key) => { engineRef.current?.travelToStation(key); canvas.current?.focus({ preventScroll: true }); }}
         />}
-        {npcPrompt && mode === "free" && !dialogueNpc && <div className="px-prompt" style={{ "--px-accent": npcPrompt.accent } as React.CSSProperties}>
+        {fieldPrompt && mode === "free" && !fieldPanel && !dialogueNpc && <div className="px-prompt" style={{ "--px-accent": "#cdf558" } as React.CSSProperties}>
+          <span className="px-prompt-key">E</span><div><p>{fieldPrompt.kind === "item" ? "OFF-ROUTE DISCOVERY" : fieldPrompt.category}</p><button type="button" onClick={() => engineRef.current?.interact()}>{fieldPrompt.kind === "item" ? `Inspect ${fieldPrompt.title}` : `Talk to ${fieldPrompt.title}`}</button></div>
+        </div>}
+        {npcPrompt && mode === "free" && !dialogueNpc && !fieldPanel && <div className="px-prompt" style={{ "--px-accent": npcPrompt.accent } as React.CSSProperties}>
           <span className="px-prompt-key">E</span>
           <div><p>{npcPrompt.role} · OFF-ROUTE FIELD GUIDE</p><button type="button" onClick={() => engineRef.current?.talkToNpc()}>Talk to {npcPrompt.name}</button></div>
         </div>}
 
-        {mode === "free" && !dialogueNpc && <div className="px-dpad" role="group" aria-label="Movement controls">
+        {mode === "free" && !dialogueNpc && !fieldPanel && <div className="px-dpad" role="group" aria-label="Movement controls">
           {([['w', '↑', 'Move up'], ['a', '←', 'Move left'], ['s', '↓', 'Move down'], ['d', '→', 'Move right']] as const).map(([key, symbol, label]) => (
             <button key={key} type="button" aria-label={label}
               onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); engineRef.current?.setMoveKey(key, true); }}
@@ -454,7 +487,7 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
           ))}
         </div>}
 
-        {!dialogueNpc && (!atArchive || mode === "free") && <div className="px-controls">
+        {!dialogueNpc && !fieldPanel && (!atArchive || mode === "free") && <div className="px-controls">
           <button type="button" className="story-replay" onClick={replayIntro} disabled={!ready || failed}>PLAY INTRO ↺</button>
           <button
             type="button"
@@ -476,6 +509,8 @@ export function PixelWorld({ Header }: { Header: ComponentType<HeaderProps> }) {
         {dialogueNpc && (
           <NpcDialogue npcId={dialogueNpc.id} onClose={closeNpcDialogue} />
         )}
+
+        {fieldPanel && <FieldPanel site={fieldPanel} onClose={closeFieldPanel} />}
 
         {renderedStationKey && mode !== "free" && !dialogueNpc && !atArchive && (
           <StationDialogue

@@ -11,9 +11,9 @@ const links = (...entries: [string, string][]): ContentBlock => ({ kind: 'links'
 const section = (title: string, ...blocks: ContentBlock[]): WikiSection => ({ title, body: '', blocks });
 
 export const dryLabNavigation = [
-  ['Overview', '/dry-lab'],
+  ['Overview', '/model'],
   ['Transcriptomics', '/transcriptomics'],
-  ['Mathematical Modeling', '/model'],
+  ['Mathematical Modeling', '/mathematical-modeling'],
   ['Metabolomics', '/metabolomics'],
   ['Protein', '/protein'],
   ['Safety', '/safety-and-security'],
@@ -181,7 +181,7 @@ export const metabolomics: WikiPage = {
 };
 
 export const modeling: WikiPage = {
-  title: 'Mathematical Modeling', eyebrow: 'Dry Lab / Model', status: 'team-draft',
+  title: 'Mathematical Modeling', eyebrow: 'Dry Lab / Mathematical Modeling', status: 'team-draft',
   intro: 'Transcriptomics identifies LCYB as the light-responsive control point, while protein analysis supplies two molecular levers on that node: LCYB enzyme design and TF2146–DNA recognition. This page connects those inputs through a five-state dynamic model of promoter occupancy, LCYB transcript, active enzyme, lycopene conversion and β-carotene formation. Its output is the time-dependent β-carotene input passed to the downstream allocation model.',
   references: [refs.bintu2005, refs.liang2017, refs.lan2022, refs.mialoundama2010],
   sections: [
@@ -325,7 +325,7 @@ export const dryLabIndex: WikiPage = {
     section('Regulatory dynamics convert control into precursor supply',
       p('The mathematical model begins where the protein analysis ends. It follows promoter occupancy, LCYB transcript, active enzyme, lycopene and β-carotene as five separate states. A change at the promoter therefore travels through transcription and translation before it reaches metabolism, allowing the model to distinguish response strength from response time.'),
       p('This calculation shows how a large regulatory input can become a smaller metabolic response when promoter occupancy approaches its upper range and lycopene supply begins to limit conversion. Parameter sweeps identify the measurements that matter most, while the simulated LCYB flux vLCYB(t) provides the handoff to the next model: a time-dependent estimate of β-carotene entering the shared product pool.'),
-      links(['See the mathematical model', '/model']),
+      links(['See the mathematical model', '/mathematical-modeling']),
     ),
     section('β-carotene supply becomes a four-way allocation problem',
       p('The metabolic model receives β-carotene as its common precursor and extends the D. salina network toward astaxanthin, β-ionone, β-citraurin and crocetin. Constraint-based simulations compare the four routes across eight light–nitrogen scenarios and relate product formation to a carbon-fixation requirement. A local branch model then follows how β-carotene and zeaxanthin are redistributed over time.'),

@@ -9,6 +9,7 @@ import { PixelRenderer, type Camera, type Drawable } from "./renderer";
 import type { Facing } from "./sprites";
 import { HERO_DISPLAY_H } from "./hero";
 import { createNpcs, type Npc } from "./npc-data";
+import { createFieldSites, type FieldSite } from "./field-sites";
 import { TILE, drag } from "./tiles";
 import {
   buildWorld,
@@ -40,6 +41,8 @@ export type EngineEvents = {
   /** Optional free-roam NPC prompt and journal interaction hooks. */
   onNpcPrompt?: (npc: Npc | null) => void;
   onNpcInteract?: (npc: Npc) => void;
+  onFieldPrompt?: (site: FieldSite | null) => void;
+  onFieldInteract?: (site: FieldSite) => void;
 };
 
 const WALK_SPEED = 62;
@@ -64,6 +67,9 @@ export class PixelEngine {
   readonly world: World;
   /** Positioned journal cast, exposed for DOM overlays and tests. */
   readonly npcs: Npc[];
+  readonly fieldSites: FieldSite[];
+  private readonly collectedFields = new Set<string>();
+  private activeField: FieldSite | null = null;
   private readonly renderer: PixelRenderer;
   private readonly host: HTMLElement;
   private readonly events: EngineEvents;
@@ -122,9 +128,11 @@ export class PixelEngine {
   constructor(canvas: HTMLCanvasElement, host: HTMLElement, events: EngineEvents) {
     this.world = buildWorld();
     this.npcs = createNpcs(this.world);
+    this.fieldSites = createFieldSites(this.world);
     this.renderer = new PixelRenderer(canvas);
     this.host = host;
     this.events = events;
+    this.fieldSites.forEach(site => this.drawables.push({ kind: "field", site, x: site.x, y: site.y }));
 
     const start = this.world.path.sample(TRAILHEAD_U);
     this.hero.x = start.x;
@@ -334,6 +342,10 @@ export class PixelEngine {
   /** Confirm the closest prompt. NPCs win only when they are the closest. */
   interact(): Station | null {
     if (this.paused || this.hasOpenModal()) return null;
+    if (this.activeField) {
+      this.events.onFieldInteract?.(this.activeField);
+      return null;
+    }
     if (this.activeNpc) {
       this.talkToNpc();
       return null;
@@ -379,6 +391,27 @@ export class PixelEngine {
 
   get journey() {
     return this.u;
+  }
+
+  setCollectedFields(ids: readonly string[]) {
+    this.collectedFields.clear();
+    ids.forEach(id => this.collectedFields.add(id));
+    this.updateProximity();
+  }
+
+  /** Local review shortcut, only called by the dev-only preview control. */
+  previewFieldSite(id: string) {
+    if (!import.meta.env.DEV) return;
+    const site = this.fieldSites.find(item => item.id === id);
+    if (!site) return;
+    this.enterFree();
+    const offset = [[32, 16], [-32, 16], [0, 16]].find(([dx, dy]) => [-5, 5].every(bx => [-3, 3].every(by => !isBlockedAt(this.world, site.x + dx + bx, site.y + dy + by)))) ?? [0, 0];
+    this.hero.x = site.x + offset[0];
+    this.hero.y = site.y + offset[1];
+    this.camera.x = this.hero.x;
+    this.camera.y = this.hero.y;
+    this.u = this.world.path.nearestU(this.hero.x, this.hero.y, site.u);
+    this.updateProximity();
   }
 
   // -- input ---------------------------------------------------------------
@@ -443,7 +476,7 @@ export class PixelEngine {
       return;
     }
     if (event.repeat && (key === "e" || key === "enter")) return;
-    if ((key === "e" || key === "enter") && (this.activeNpc || this.activeStation)) {
+    if ((key === "e" || key === "enter") && (this.activeField || this.activeNpc || this.activeStation)) {
       event.preventDefault();
       this.interact();
       return;
@@ -758,8 +791,18 @@ export class PixelEngine {
     // A person takes the prompt only when actually closer than the station;
     // otherwise existing station navigation remains exactly as before.
     const npcWins = nearestNpc !== null && nearestNpcDistance < nearestStationDistance;
-    const nextNpc = npcWins ? nearestNpc : null;
-    const nextStation = npcWins ? null : nearestStation;
+    const field = this.mode === "free" ? this.fieldSites
+      .filter(site => site.kind !== "item" || !this.collectedFields.has(site.id))
+      .map(site => ({ site, distance: Math.hypot(site.x - this.hero.x, site.y - this.hero.y) }))
+      .filter(entry => entry.distance < 46)
+      .sort((a, b) => a.distance - b.distance)[0] : undefined;
+    const nextField = field && field.distance < Math.min(nearestNpcDistance, nearestStationDistance) ? field.site : null;
+    if (nextField !== this.activeField) {
+      this.activeField = nextField;
+      this.events.onFieldPrompt?.(nextField);
+    }
+    const nextNpc = nextField ? null : npcWins ? nearestNpc : null;
+    const nextStation = nextField ? null : npcWins ? null : nearestStation;
     if (nextNpc !== this.activeNpc) {
       this.activeNpc = nextNpc;
       this.events.onNpcPrompt?.(nextNpc);
@@ -851,7 +894,9 @@ export class PixelEngine {
       daylight: this.introReturn
         ? 0.82 * (1 - Math.min(1, this.introReturn.elapsed / (this.reducedMotion ? 0.2 : INTRO_HANDOFF_SECONDS)))
         : this.introShot ? 0.82 : this.u,
-      prompt: this.introShot ? null : this.activeNpc
+      prompt: this.introShot ? null : this.activeField
+        ? { x: this.activeField.x, y: this.activeField.y - 48, text: this.activeField.kind === "item" ? "E  INSPECT" : "E  TALK", accent: "8" }
+        : this.activeNpc
         ? {
           x: this.activeNpc.x,
           // Stack the interaction prompt above the NPC's marker and name.
@@ -871,6 +916,8 @@ export class PixelEngine {
       // requires free roam so they read as optional side conversations.
       showNpcLabels: this.introShot === null,
       hideStationLabels: this.introShot !== null,
+      showFieldSites: this.mode === "free" && this.introShot === null,
+      collectedFields: this.collectedFields,
     });
   };
 }

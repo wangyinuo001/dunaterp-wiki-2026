@@ -26,7 +26,7 @@ function improvementSections(): WikiSection[] {
 export const ihpNavigation = [
   ['Background Research', '/background-research'],
   ['Stakeholder Analysis', '/integrated-human-practices/stakeholder-analysis'],
-  ['Project Improvement', '/project-improvement'],
+  ['Project Improvement', '/human-practices'],
 ] as const;
 
 export const integratedHumanPractices: WikiPage = {
@@ -48,7 +48,7 @@ export const integratedHumanPractices: WikiPage = {
     {
       title: 'Project Improvement',
       body: 'Feedback became part of the engineering process only when it changed a design choice. This chapter records those iterations, the decisions they produced and the questions that remain open.',
-      blocks: [{ kind: 'links', links: [{ label: 'Read Project Improvement', href: '/project-improvement' }] }],
+      blocks: [{ kind: 'links', links: [{ label: 'Read Project Improvement', href: '/human-practices' }] }],
     },
   ],
   references: source.references,

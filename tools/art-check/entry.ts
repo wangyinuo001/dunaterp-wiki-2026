@@ -6,6 +6,7 @@ export { getAtlas } from "../../src/pixel/sprites";
 export { STATION_COPY, ARCHIVE_COPY } from "../../src/pixel/station-copy";
 export { PixelEngine } from "../../src/pixel/engine";
 export { createNpcs } from "../../src/pixel/npc-data";
+export { createFieldSites, FIELD_DEFINITIONS, MIN_FIELD_DISTANCE } from "../../src/pixel/field-sites";
 export { isBlockedAt, isOnDeck } from "../../src/pixel/world-map";
 export { STORY_BEATS, storyReducer, initialStory } from "../../src/home/story";
 

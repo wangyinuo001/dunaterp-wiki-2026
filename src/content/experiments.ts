@@ -41,7 +41,7 @@ export const wetLabSections: WikiSection[] = [
     blocks: [
       ...protocols.map(document => ({ kind: 'download' as const, src: document.file, label: `${document.label} — original protocol (DOCX)` })),
       { kind: 'paragraph', text: 'Sequence-supported transcript annotation and replicate-aware light comparisons identify LCYB as a branch point for further testing. The regulatory model then links LCYB transcript, active enzyme, lycopene and β-carotene, defining the matched measurements needed to test whether expression changes reach pathway flux.' },
-      { kind: 'links', links: [{ label: 'Transcriptomics', href: '/transcriptomics' }, { label: 'Mathematical Modeling', href: '/model' }] },
+      { kind: 'links', links: [{ label: 'Transcriptomics', href: '/transcriptomics' }, { label: 'Mathematical Modeling', href: '/mathematical-modeling' }] },
     ],
   },
 ];

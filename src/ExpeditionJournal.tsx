@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type ReactNode,
 } from "react";
 import "./expedition.css";
 import { NPC_DEFINITIONS } from "./pixel/npc-data";
@@ -33,6 +34,8 @@ export type ExpeditionJournalRequest = {
 };
 
 export type ExpeditionJournalProps = {
+  fieldNotes?: ReactNode;
+  discoveryCount?: number;
   /** Station key currently closest to the player, when one is available. */
   currentStationKey?: string | null;
   /** Called after the native dialog opens or closes. */
@@ -594,6 +597,8 @@ export function ExpeditionJournal({
   onOpenChange,
   openRequest = null,
   onTravel,
+  fieldNotes,
+  discoveryCount = 0,
 }: ExpeditionJournalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -603,7 +608,7 @@ export function ExpeditionJournal({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedNpc, setSelectedNpc] = useState<ExpeditionNpcId>("biologist");
   const [dialogueChoice, setDialogueChoice] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState<"contacts" | "exercises">("contacts");
+  const [activeSection, setActiveSection] = useState<"contacts" | "exercises" | "discoveries">(fieldNotes ? "discoveries" : "contacts");
   const [activeGame, setActiveGame] = useState<GameId>("pathway-order");
   const [resetVersion, setResetVersion] = useState(0);
   const [progress, setProgress] = useState<JournalProgress>(() => readProgress());
@@ -717,13 +722,14 @@ export function ExpeditionJournal({
         ref={triggerRef}
         type="button"
         className="ej-launcher"
-        onClick={() => openJournal(selectedNpc)}
+        onClick={() => openJournal()}
         aria-haspopup="dialog"
         aria-expanded={isOpen}
       >
         <span className="ej-launcher__icon" aria-hidden="true">▤</span>
         <span>Expedition journal</span>
         <span className="ej-launcher__key" aria-label={`${visitedNpcs} of 3 guides met`}>{visitedNpcs}/3</span>
+        {fieldNotes && <span className="fd-count" aria-label={`${discoveryCount} of 6 discoveries`}>◇ {discoveryCount}/6</span>}
       </button>
 
       <dialog
@@ -741,7 +747,7 @@ export function ExpeditionJournal({
               <p className="ej-eyebrow">DUNATERP · FIELD ARCHIVE</p>
               <h1 id={dialogTitleId}>Expedition journal</h1>
               <p id={dialogDescriptionId} className="ej-header__dek">
-                Explore paraphrased summaries of our Human Practices discussions with scholars, industry representatives, and government officials. These fictional guides do not represent individual participants or provide verbatim quotes.
+                Explore discoveries beyond the boardwalk and paraphrased Human Practices discussions. The fictional guides do not represent individual participants or provide verbatim quotes.
               </p>
             </div>
             <div className="ej-header__actions">
@@ -757,13 +763,14 @@ export function ExpeditionJournal({
 
           <div className="ej-dialog__body">
             <aside className="ej-contacts" aria-label="Field contacts">
+              {fieldNotes && <button type="button" className={`ej-exercise-link${activeSection === "discoveries" ? " is-active" : ""}`} onClick={() => setActiveSection("discoveries")} aria-pressed={activeSection === "discoveries"}><span className="ej-eyebrow">BEYOND THE BOARDWALK</span><span>Discoveries · {discoveryCount}/6 recorded</span></button>}
               <div className="ej-section-heading">
                 <p className="ej-eyebrow">FIELD CONTACTS</p>
                 <p>{visitedNpcs}/3 met</p>
               </div>
               <div className="ej-npc-list">
                 {NPC_LIST.map((npc) => {
-                  const isSelected = selectedNpc === npc.id;
+                  const isSelected = activeSection === "contacts" && selectedNpc === npc.id;
                   const isNearby = currentStationKey === npc.stationKey;
                   return (
                     <button
@@ -797,6 +804,7 @@ export function ExpeditionJournal({
             </aside>
 
             <div className="ej-journal-main">
+              {fieldNotes && <div hidden={activeSection !== "discoveries"}>{fieldNotes}</div>}
               <section className="ej-conversation" aria-labelledby={`${idPrefix}-contact-title`} hidden={activeSection !== "contacts"}>
                 <div className="ej-conversation__topline">
                   <span className="ej-location">{nearbyStation ? `Near ${nearbyStation}` : "Salt route · field notes"}</span>

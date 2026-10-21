@@ -570,10 +570,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle I",
+          "text": "Cycle I Initial Construction",
           "runs": [
             {
-              "text": "Cycle I",
+              "text": "Cycle I Initial Construction",
               "bold": true
             }
           ],
@@ -739,10 +739,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle II",
+          "text": "Cycle II Construction Optimization",
           "runs": [
             {
-              "text": "Cycle II",
+              "text": "Cycle II Construction Optimization",
               "bold": true
             }
           ],
@@ -908,10 +908,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle III",
+          "text": "Cycle III TLC Screening",
           "runs": [
             {
-              "text": "Cycle III",
+              "text": "Cycle III TLC Screening",
               "bold": true
             }
           ],
@@ -995,10 +995,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle IV",
+          "text": "Cycle IV Metabolomics Analysis",
           "runs": [
             {
-              "text": "Cycle IV",
+              "text": "Cycle IV Metabolomics Analysis",
               "bold": true
             }
           ],
@@ -1570,12 +1570,11 @@
         },
         {
           "kind": "figure",
-          "src": "/figures/wet-lab/engineering-total/engineering-total-15-48b92c524968.webp",
-          "rotation": 90,
+          "src": "/figures/wet-lab/engineering/engineer15.jpg",
           "alt": "Fig 15 The thin-layer chromatography result of astaxanthin",
           "caption": "Fig 15 The thin-layer chromatography result of astaxanthin",
-          "width": 728,
-          "height": 712,
+          "width": 2046,
+          "height": 2012,
           "captionRuns": [
             {
               "text": "Fig 15 The thin-layer chromatography result of astaxanthin"
@@ -1671,11 +1670,11 @@
         },
         {
           "kind": "figure",
-          "src": "/figures/wet-lab/engineering-total/engineering-total-16-dd71bb9741fc.webp",
+          "src": "/figures/wet-lab/engineering/engineer16.png",
           "alt": "Fig 16 The thin-layer chromatography result of astaxanthin",
           "caption": "Fig 16 The thin-layer chromatography result of astaxanthin\nThe left picture is under natural light, while the right picture is under ultraviolet light.",
-          "width": 1428,
-          "height": 674,
+          "width": 1299,
+          "height": 652,
           "captionRuns": [
             {
               "text": "Fig 16 The thin-layer chromatography result of astaxanthin",
@@ -1851,10 +1850,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle I",
+          "text": "Cycle I Sequencing Verification",
           "runs": [
             {
-              "text": "Cycle I",
+              "text": "Cycle I Sequencing Verification",
               "bold": true
             }
           ],
@@ -1958,10 +1957,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle II",
+          "text": "Cycle II Competent Cell Optimization",
           "runs": [
             {
-              "text": "Cycle II",
+              "text": "Cycle II Competent Cell Optimization",
               "bold": true
             }
           ],
@@ -2065,10 +2064,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle III",
+          "text": "Cycle III Liquid Selection",
           "runs": [
             {
-              "text": "Cycle III",
+              "text": "Cycle III Liquid Selection",
               "bold": true
             }
           ],
@@ -2179,10 +2178,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle IV",
+          "text": "Cycle IV Solid Selection",
           "runs": [
             {
-              "text": "Cycle IV",
+              "text": "Cycle IV Solid Selection",
               "bold": true
             }
           ],
@@ -2279,10 +2278,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle V",
+          "text": "Cycle V TLC Screening",
           "runs": [
             {
-              "text": "Cycle V",
+              "text": "Cycle V TLC Screening",
               "bold": true
             }
           ],
@@ -2379,10 +2378,10 @@
         },
         {
           "kind": "document-heading",
-          "text": "Cycle VI",
+          "text": "Cycle VI TLC Optimization",
           "runs": [
             {
-              "text": "Cycle VI",
+              "text": "Cycle VI TLC Optimization",
               "bold": true
             }
           ],

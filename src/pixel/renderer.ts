@@ -10,6 +10,8 @@ import { prepareHero, HERO_DISPLAY_W, HERO_DISPLAY_H } from "./hero";
 import { rect, surface, type Painter } from "./paint";
 import { deckSegment, getAtlas, npcPersonFrame, stationPlate, type Facing } from "./sprites";
 import type { Npc } from "./npc-data";
+import type { FieldSite } from "./field-sites";
+import { fieldSprite } from "./field-art";
 import { TILE, Tile, paintTile } from "./tiles";
 import {
   MAP_H,
@@ -32,6 +34,7 @@ export type Drawable =
   | { kind: "prop"; prop: Prop }
   | { kind: "station"; station: Station }
   | { kind: "npc"; npc: Npc; x: number; y: number; facing: Facing; frame: number }
+  | { kind: "field"; site: FieldSite; x: number; y: number }
   | { kind: "hero"; x: number; y: number; facing: Facing; frame: number };
 
 export class PixelRenderer {
@@ -175,6 +178,8 @@ export class PixelRenderer {
     /** NPC names and overhead markers keep optional guides visible on the route. */
     showNpcLabels?: boolean;
     hideStationLabels?: boolean;
+    showFieldSites?: boolean;
+    collectedFields?: ReadonlySet<string>;
   }) {
     const { world, camera, drawables, time, daylight, prompt, showNpcLabels = false, hideStationLabels = false } = options;
     const p = this.buffer;
@@ -209,6 +214,7 @@ export class PixelRenderer {
     // Sorted sprite pass.
     const atlas = getAtlas();
     const visible = drawables.filter((item) => {
+      if (item.kind === "field" && !options.showFieldSites) return false;
       const [x, y] = item.kind === "prop"
         ? [item.prop.x, item.prop.y]
         : item.kind === "station"
@@ -277,6 +283,18 @@ export class PixelRenderer {
           Math.round(item.x - sprite.w / 2) - ox,
           Math.round(item.y - sprite.h) - oy,
         );
+      } else if (item.kind === "field") {
+        const sprite = fieldSprite(item.site);
+        const collected = options.collectedFields?.has(item.site.id);
+        ctx.globalAlpha = collected ? .5 : 1;
+        ctx.drawImage(sprite.canvas, Math.round(item.x - sprite.w / 2) - ox, Math.round(item.y - sprite.h) - oy);
+        ctx.globalAlpha = 1;
+        if (!collected) {
+          const x = Math.round(item.x) - ox, y = Math.round(item.y - sprite.h - 4) - oy;
+          ctx.fillStyle = "#fdf6e3";
+          ctx.fillRect(x - 1, y - 3, 2, 7);
+          ctx.fillRect(x - 3, y - 1, 6, 2);
+        }
       } else {
         const sprite = atlas.hero[item.facing][item.frame % 4];
         const shadow = atlas.shadowSmall;
