@@ -12,6 +12,7 @@ import { team } from './content/team';
 import { labSafety } from './content/lab-safety';
 import { labNotebook } from './content/lab-notebook';
 import { engineering } from './content/engineering';
+import { results } from './content/results';
 
 export type WikiSection = {
   title: string;
@@ -36,7 +37,7 @@ export type WikiPage = {
 };
 
 export const navigation: Array<{ label: string; items: ReadonlyArray<readonly [string, string]> }> = [
-  { label: "Project", items: [["Description", "/project-description"], ["Contribution", "/contribution"], ["Design", "/design"], ["Experiments", "/experiments"], ["Engineering", "/engineering"], ["Parts", "/parts"]] },
+  { label: "Project", items: [["Description", "/project-description"], ["Contribution", "/contribution"], ["Design", "/design"], ["Experiments", "/experiments"], ["Results", "/results"], ["Engineering", "/engineering"], ["Parts", "/parts"]] },
   { label: "Dry Lab", items: dryLabNavigation },
   { label: "Human Practices", items: [["Integrated Human Practices", "/integrated-human-practices"], ["Education", "/education"], ["Cooperation", "/cooperation"]] },
   { label: "Lab", items: [["Lab Safety", "/lab-safety"], ["Notebook", "/lab-notebook"]] },
@@ -61,6 +62,7 @@ export const archiveNavigation = navigation.map((group) => group.label === "Dry 
   : group);
 
 export const pages: Record<string, WikiPage> = {
+  results,
   'dry-lab': dryLabIndex,
   transcriptomics,
   metabolomics,
@@ -231,10 +233,10 @@ export const pages: Record<string, WikiPage> = {
 };
 
 export const pageOrder = [...new Set([
-  'project-description', 'contribution', 'design', 'experiments', 'engineering', 'safety-and-security', 'parts',
+  'project-description', 'contribution', 'design', 'experiments', 'results', 'engineering', 'safety-and-security', 'parts',
   'dry-lab', 'transcriptomics', 'metabolomics', 'protein', 'model', 'hardware', 'hardware-design',
   ...Object.keys(pages).filter((key) => ![
-    'project-description', 'contribution', 'design', 'experiments', 'engineering', 'safety-and-security', 'parts',
+    'project-description', 'contribution', 'design', 'experiments', 'results', 'engineering', 'safety-and-security', 'parts',
     'dry-lab', 'transcriptomics', 'metabolomics', 'protein',
     'model', 'hardware', 'hardware-design',
   ].includes(key)),

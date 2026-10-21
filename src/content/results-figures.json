@@ -1,0 +1,90 @@
+[
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-01-7cad7e24e1f9.webp",
+    "alt": "Plasmid map of p1302-CaMV 35S-mazF.",
+    "caption": "Fig. B1. Plasmid map of p1302-CaMV 35S-mazF. Source: team Biosafety-Results, original Figure 4-1.",
+    "width": 1269,
+    "height": 1095
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-02-16d1cd62a862.webp",
+    "alt": "Colony PCR for p1302-CaMV 35S-mazF in E. coli DH5α. M: DL2000 DNA marker; lanes 1–11: mazF fragments.",
+    "caption": "Fig. B2. Colony PCR for p1302-CaMV 35S-mazF in E. coli DH5α. M: DL2000 DNA marker; lanes 1–11: mazF fragments. Source: team Biosafety-Results, original Figure 4-2.",
+    "width": 1116,
+    "height": 415
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-03-08461415cfbd.webp",
+    "alt": "Construct-verification overview labelled as sequencing results in the team report. The image is a construct alignment overview, rather than a raw chromatogram.",
+    "caption": "Fig. B3. Construct-verification overview labelled as sequencing results in the team report. The image is a construct alignment overview, rather than a raw chromatogram. Source: team Biosafety-Results, original Figure 4-3.",
+    "width": 1106,
+    "height": 347
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-04-ba0a2cc7a6dc.webp",
+    "alt": "Ten-day growth curves of WT, empty-vector (EV) and CaMV 35S–MazF lines, measured by OD680 in 0.5 M NaCl. Error bars and significance symbols are reproduced from the team report; their definitions are not specified there.",
+    "caption": "Fig. B4. Ten-day growth curves of WT, empty-vector (EV) and CaMV 35S–MazF lines, measured by OD680 in 0.5 M NaCl. Error bars and significance symbols are reproduced from the team report; their definitions are not specified there. Source: team Biosafety-Results, original Figure 4-4.",
+    "width": 1336,
+    "height": 866
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-05-126527051955.webp",
+    "alt": "Plasmid map of p2301-PDCA1-EGFP.",
+    "caption": "Fig. B5. Plasmid map of p2301-PDCA1-EGFP. Source: team Biosafety-Results, original Figure 4-5.",
+    "width": 1267,
+    "height": 1118
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-06-7b274db548e3.webp",
+    "alt": "Colony PCR for p2301-PDCA1-EGFP. M: DL5000 DNA marker; lanes 1–5: negative template controls; lanes 6–8: PDCA1-EGFP fragments, as labelled in the source report.",
+    "caption": "Fig. B6. Colony PCR for p2301-PDCA1-EGFP. M: DL5000 DNA marker; lanes 1–5: negative template controls; lanes 6–8: PDCA1-EGFP fragments, as labelled in the source report. Source: team Biosafety-Results, original Figure 4-6.",
+    "width": 1105,
+    "height": 544
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-07-8ce4d4b02f83.webp",
+    "alt": "Construct-verification overview for p2301-PDCA1-EGFP, labelled as sequencing results in the team report. Raw sequence traces are not supplied in this panel.",
+    "caption": "Fig. B7. Construct-verification overview for p2301-PDCA1-EGFP, labelled as sequencing results in the team report. Raw sequence traces are not supplied in this panel. Source: team Biosafety-Results, original Figure 4-7.",
+    "width": 1814,
+    "height": 682
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-08-bbccf03c0a84.webp",
+    "alt": "Plasmid map of p1302-Bar-Pip-mazF.",
+    "caption": "Fig. B8. Plasmid map of p1302-Bar-Pip-mazF. Source: team Biosafety-Results, original Figure 4-8.",
+    "width": 806,
+    "height": 744
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-09-35596855291c.webp",
+    "alt": "Colony PCR for p1302-Bar-Pip-mazF. M: DL5000 DNA marker; lanes 1–5: Pip-mazF fragments; NTC: negative template control.",
+    "caption": "Fig. B9. Colony PCR for p1302-Bar-Pip-mazF. M: DL5000 DNA marker; lanes 1–5: Pip-mazF fragments; NTC: negative template control. Source: team Biosafety-Results, original Figure 4-9.",
+    "width": 890,
+    "height": 523
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-10-95d2fe35d611.webp",
+    "alt": "Construct-verification overview for p1302-Bar-Pip-mazF, labelled as sequencing results in the team report. Raw sequence traces are not supplied in this panel.",
+    "caption": "Fig. B10. Construct-verification overview for p1302-Bar-Pip-mazF, labelled as sequencing results in the team report. Raw sequence traces are not supplied in this panel. Source: team Biosafety-Results, original Figure 4-10.",
+    "width": 1658,
+    "height": 660
+  },
+  {
+    "kind": "figure",
+    "src": "/figures/results/biosafety-11-1969882b099e.webp",
+    "alt": "Six-day growth curves of WT and Pip–MazF lines in the supplied Results experiment. Error bars and significance symbols are reproduced from the source; their definitions are not specified in the report.",
+    "caption": "Fig. B11. Six-day growth curves of WT and Pip–MazF lines in the supplied Results experiment. Error bars and significance symbols are reproduced from the source; their definitions are not specified in the report. Source: team Biosafety-Results, original Figure 4-11.",
+    "width": 1002,
+    "height": 517
+  }
+]

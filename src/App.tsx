@@ -197,6 +197,12 @@ type TocChapterDefinition = { title: string; start: number; end: number };
  * remains present in the article.
  */
 const TOC_CHAPTERS: Record<string, TocChapterDefinition[]> = {
+  results: [
+    { title: "Platform Results", start: 0, end: 2 },
+    { title: "Biosafety Experiments", start: 3, end: 6 },
+    { title: "Computational Evidence", start: 7, end: 7 },
+    { title: "Discussion & Next Steps", start: 8, end: 9 },
+  ],
   experiments: [
     { title: "Experiment Overview", start: 0, end: 0 },
     { title: "Experiment Documents", start: 1, end: 5 },
@@ -471,7 +477,7 @@ function Article({ slug }: { slug: string }) {
         <div className="article-sections">{page.sections.map((section, i) => <section id={`section-${i + 1}`} tabIndex={-1} key={`${i}-${section.title}`}><div className="section-number">{String(i + 1).padStart(2, "0")}</div><div><h2>{section.titleRuns ? <DocumentText runs={section.titleRuns} /> : renderInlineText(section.title)}</h2>{section.body && <p>{renderCitations(section.body, referenceNumbers)}</p>}{section.blocks && <ArticleBlocks blocks={section.blocks} referenceNumbers={referenceNumbers} sectionId={`section-${i + 1}`} />}{section.items && <ul>{section.items.map((item) => <li key={item}>{renderCitations(item, referenceNumbers)}</li>)}</ul>}{section.note && <aside>{renderInlineText(section.note)}</aside>}</div></section>)}</div>
         {references.length > 0 && <section id="references" tabIndex={-1} className="article-references"><h2>References</h2><div className="reference-list">{references.map((reference, index) => <p id={`reference-${index + 1}`} key={reference.href ?? reference.label}>
           <span className="reference-number">[{index + 1}] </span>
-          {reference.labelRuns ? <DocumentText runs={reference.labelRuns} /> : reference.href ? <a href={reference.href} target="_blank" rel="noreferrer">{renderInlineText(reference.label)}</a> : renderInlineText(reference.label)}
+          {reference.labelRuns ? <DocumentText runs={reference.labelRuns} /> : reference.href?.startsWith('/') ? <Link to={reference.href}>{renderInlineText(reference.label)}</Link> : reference.href ? <a href={reference.href} target="_blank" rel="noreferrer">{renderInlineText(reference.label)}</a> : renderInlineText(reference.label)}
         </p>)}</div></section>}
       </div>
     </div>

@@ -135,3 +135,15 @@ Images are lossless WebP exports (including the image crop specified in Word),
 served through the official iGEM CDN. Source and delivery hashes and the
 character-formatting audit are recorded in `docs/engineering-total-sources.json`.
 Codex assisted with document import, component integration and browser checks.
+
+## 22 October 2026 — Project Results page
+
+Results summaries use the team's existing Engineering and dry-lab records and
+the supplied Biosafety-Results.docx. Eleven original figures were extracted
+without changes to their pixels and encoded as lossless WebP for local/GitHub
+review. Source hashes, editorial decisions and differences between records
+are documented in docs/results-sources.json and docs/results-review.md.
+Codex assisted with English summaries, evidence interpretation, figure
+extraction, page integration and verification. No experimental observations,
+statistical tests or data were generated. Team scientific review and official
+iGEM asset upload are still required before official release.

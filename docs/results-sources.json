@@ -1,0 +1,119 @@
+{
+  "sourceArchive": "D:/IGEM/result/Biosafety-Results.zip",
+  "sourceDocument": "Biosafety-Results/Biosafety-Results.docx",
+  "documentSha256": "89699fcb6ad8954f45d05f9689d1457cb4a01fb69f6c3d6b627c47561144fbe9",
+  "assets": [
+    {
+      "source": "figures/results/biosafety-01-7cad7e24e1f9.webp",
+      "sourceImage": "word/media/image1.png",
+      "sourceSha256": "7cad7e24e1f98f1a10e00a317c6e6c793eee76c81393c9278769194810df2cec",
+      "sha256": "4a8fb1444337c96ffdb34ff891eb760cb2b02e76dd4826c8e3f7af9e63196770",
+      "bytes": 90356,
+      "originalFigure": "4-1",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-02-16d1cd62a862.webp",
+      "sourceImage": "word/media/image2.png",
+      "sourceSha256": "16d1cd62a862fbbcd97af86c12149fe7692de3aa987fabcbeb5f24a83a49e765",
+      "sha256": "9a2232599ca7232b077d9bc77159f291f6a9a618122092c9165bd704cac9296b",
+      "bytes": 76792,
+      "originalFigure": "4-2",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-03-08461415cfbd.webp",
+      "sourceImage": "word/media/image3.png",
+      "sourceSha256": "08461415cfbd427fc558eab72bb713319e62dd044fb175568fe3c8fd9e16cec2",
+      "sha256": "0f572425d26900f95272f9d3e8bd48080bb3aff373bd13918f657604e8d94ea7",
+      "bytes": 36788,
+      "originalFigure": "4-3",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-04-ba0a2cc7a6dc.webp",
+      "sourceImage": "word/media/image4.png",
+      "sourceSha256": "ba0a2cc7a6dc3017d4f9e0c762dcb44055526ca099ceeee6897533bf3838dc1a",
+      "sha256": "3698c4c42fb280f9317621023d07591594e1488ad2e0df0f160da72a883e136c",
+      "bytes": 10024,
+      "originalFigure": "4-4",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-05-126527051955.webp",
+      "sourceImage": "word/media/image5.png",
+      "sourceSha256": "1265270519550c9564eeafa428b31c889141654080a72e118e1d6fb46f41d17f",
+      "sha256": "a6d792c95b69ef668eb0aadf094e355e8d707991eda07e4eaa6cb5c2ffa97839",
+      "bytes": 91628,
+      "originalFigure": "4-5",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-06-7b274db548e3.webp",
+      "sourceImage": "word/media/image6.png",
+      "sourceSha256": "7b274db548e3463042cc4a91c5d6eded5cee6282d974ad8b587c18a011e168cd",
+      "sha256": "3bcc1b70426921b1dc1c5c94e4902c772b1c75fa52b5b81eb22d4135b710f978",
+      "bytes": 70582,
+      "originalFigure": "4-6",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-07-8ce4d4b02f83.webp",
+      "sourceImage": "word/media/image7.png",
+      "sourceSha256": "8ce4d4b02f837f485ea583baf85a210453e943bd5c7b2bd805554c76836b0555",
+      "sha256": "6c726dac1902cab92756d4e3f212da847665a85af694c45a678e2e1f2948151f",
+      "bytes": 18016,
+      "originalFigure": "4-7",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-08-bbccf03c0a84.webp",
+      "sourceImage": "word/media/image8.png",
+      "sourceSha256": "bbccf03c0a849e8613de52056cd61d0be70cf95a2fe1cf0b4f00d51e4f5196b2",
+      "sha256": "9e64cf3ee0e18ae8e920c55498f8086b57ddd69dfad27bd6697c4cd9facf8e56",
+      "bytes": 65050,
+      "originalFigure": "4-8",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-09-35596855291c.webp",
+      "sourceImage": "word/media/image9.png",
+      "sourceSha256": "35596855291c942feaaeec5f7959943bab1774abd45d599e80501d88ea2c1b54",
+      "sha256": "748ec7526322b198a6b92c36bcc713a6f04b4668af964539a755b19242d450b7",
+      "bytes": 71358,
+      "originalFigure": "4-9",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-10-95d2fe35d611.webp",
+      "sourceImage": "word/media/image10.png",
+      "sourceSha256": "95d2fe35d61133a4f4ee3e7bca1d17034909a0240c35fc93f7281621c55cbb7d",
+      "sha256": "a2874c7ffa0e920f81f2f6247891a7b30d0d96d39eca4712871644451696ffa5",
+      "bytes": 14996,
+      "originalFigure": "4-10",
+      "officialUploadStatus": "pending"
+    },
+    {
+      "source": "figures/results/biosafety-11-1969882b099e.webp",
+      "sourceImage": "word/media/image11.png",
+      "sourceSha256": "1969882b099eea87add558dd692c471624efa7c873784915817ae1d102651479",
+      "sha256": "998048e08b871c8f7f7fbb7209aef263bbfda4d16471e1b82a1a7663fc5949d3",
+      "bytes": 16504,
+      "originalFigure": "4-11",
+      "officialUploadStatus": "pending"
+    }
+  ],
+  "editorialDecisions": [
+    "Summarise team records in Results; preserve original image pixels using lossless WebP.",
+    "Use new Results Pip curve (day 6 approximately 0.05), not the older Engineering curve (approximately 0.165).",
+    "Use qualitative PDCA1 expression only; the supplied report contains no quantitative salt-gradient dataset or microscopy panel.",
+    "Describe OD680 curves as growth inhibition; do not infer death, survival or clearance.",
+    "Keep construct-verification overviews distinct from raw chromatograms.",
+    "Preserve error bars and symbols without inventing statistical definitions."
+  ],
+  "crossPageDiscrepancies": [
+    "Engineering safety Cycle II describes a different Pip growth curve and recovery to 0.165; requires team reconciliation before publication.",
+    "Engineering safety Cycle III describes fluorescence differences at 2 M and 0.5 M; new Results report documents only qualitative expression and says salt-gradient characterisation is ongoing."
+  ],
+  "officialRelease": "New figures currently use local GitHub-preview paths. Upload to official iGEM asset service and replace mappings before official release."
+}
