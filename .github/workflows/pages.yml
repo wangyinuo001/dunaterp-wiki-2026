@@ -53,6 +53,13 @@ jobs:
             metabolomics \
             protein \
             model \
+            mathematical-modeling \
+            human-practices \
+            project-improvement \
+            integrated-human-practices \
+            background-research \
+            integrated-human-practices/stakeholder-analysis \
+            stakeholder-analysis \
             hardware \
             hardware-design \
             contribution \

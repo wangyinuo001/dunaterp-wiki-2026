@@ -52,7 +52,7 @@ export const archiveNavigation = navigation.map((group) => group.label === "Dry 
       ...group,
       items: [
         ["Transcriptomics", "/transcriptomics"],
-        ["Mathematical Modeling", "/model"],
+        ["数学建模", "/mathematical-modeling"],
         ["Metabolomics", "/metabolomics"],
         ["Protein", "/protein"],
         ["Safety", "/safety-and-security"],
@@ -63,7 +63,7 @@ export const archiveNavigation = navigation.map((group) => group.label === "Dry 
   : group);
 
 export const pages: Record<string, WikiPage> = {
-  'dry-lab': dryLabIndex,
+  model: dryLabIndex,
   transcriptomics,
   metabolomics,
   protein,
@@ -138,7 +138,7 @@ export const pages: Record<string, WikiPage> = {
       },
     ],
   },
-  model: modeling,
+  "mathematical-modeling": modeling,
   hardware,
   "hardware-design": hardwareDesign,
   "safety-and-security": safety,
@@ -160,17 +160,24 @@ export const pages: Record<string, WikiPage> = {
   "integrated-human-practices": integratedHumanPractices,
   "background-research": ihpBackgroundResearch,
   "integrated-human-practices/stakeholder-analysis": ihpStakeholderAnalysis,
-  "project-improvement": ihpProjectImprovement,
+  "human-practices": ihpProjectImprovement,
   team,
   attributions,
 };
 
+// Legacy entry points stay usable without duplicating pages in the Wiki map.
+export const pageRedirects: Record<string, string> = {
+  '/dry-lab': '/model',
+  '/project-improvement': '/human-practices',
+  '/stakeholder-analysis': '/integrated-human-practices/stakeholder-analysis',
+};
+
 export const pageOrder = [...new Set([
   'project-description', 'contribution', 'design', 'experiments', 'engineering', 'safety-and-security', 'parts',
-  'dry-lab', 'transcriptomics', 'metabolomics', 'protein', 'model', 'hardware', 'hardware-design',
+  'model', 'transcriptomics', 'metabolomics', 'protein', 'mathematical-modeling', 'hardware', 'hardware-design',
   ...Object.keys(pages).filter((key) => ![
     'project-description', 'contribution', 'design', 'experiments', 'engineering', 'safety-and-security', 'parts',
-    'dry-lab', 'transcriptomics', 'metabolomics', 'protein',
-    'model', 'hardware', 'hardware-design',
+    'model', 'transcriptomics', 'metabolomics', 'protein',
+    'mathematical-modeling', 'hardware', 'hardware-design',
   ].includes(key)),
 ])];

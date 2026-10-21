@@ -1,7 +1,7 @@
 import { assetUrl as resolveFigureSrc } from "./asset-url";
 import { lazy, Suspense, useEffect, useRef, useState, type CSSProperties } from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { archiveNavigation, navigation, pageOrder, pages } from "./site-data";
+import { archiveNavigation, navigation, pageOrder, pageRedirects, pages } from "./site-data";
 import { dryLabMenuGroups } from "./content/dry-lab";
 import { ihpNavigation } from "./content/integrated-human-practices";
 import { ArticleBlocks } from './ArticleBlocks';
@@ -13,8 +13,8 @@ import { CitationNumbers } from './citation-numbers';
 import { ReferenceList } from './ReferenceList';
 
 const PixelWorld = lazy(() => import("./PixelWorld").then((module) => ({ default: module.PixelWorld })));
-const MODELING_PATHS = ['/dry-lab', '/transcriptomics', '/metabolomics', '/protein', '/model', '/safety-and-security'];
-const HUMAN_PRACTICES_PATHS = ['/integrated-human-practices', '/background-research', '/integrated-human-practices/stakeholder-analysis', '/project-improvement', '/education', '/cooperation'];
+const MODELING_PATHS = ['/model', '/transcriptomics', '/metabolomics', '/protein', '/mathematical-modeling', '/safety-and-security'];
+const HUMAN_PRACTICES_PATHS = ['/integrated-human-practices', '/background-research', '/integrated-human-practices/stakeholder-analysis', '/human-practices', '/education', '/cooperation'];
 const ARTICLE_GROUP_HEROES: Record<string, string> = {
   Project: '/images/great-salt-lake-iss063-e-40184.jpg',
   'Dry Lab': '/images/heroes/dry-lab.webp',
@@ -73,7 +73,7 @@ function Header({ light = false }: { light?: boolean }) {
         <div className={`nav-popover${group.label === 'Dry Lab' ? ' nav-popover--dry-lab' : ''}${group.label === 'Human Practices' ? ' nav-popover--human-practices' : ''}`}>
           {group.label === 'Dry Lab' ? <>
             <p>{group.label}</p>
-            <Link to="/dry-lab" aria-current={currentPath === '/dry-lab' ? "page" : undefined}>Overview<span aria-hidden="true">↗</span></Link>
+            <Link to="/model" aria-current={currentPath === '/model' ? "page" : undefined}>Overview<span aria-hidden="true">↗</span></Link>
             {dryLabMenuGroups.map((section) => <section className="nav-popover-section" key={section.label}>
               <h3>{section.label}</h3>
               {section.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}<span aria-hidden="true">↗</span></Link>)}
@@ -99,7 +99,7 @@ function Header({ light = false }: { light?: boolean }) {
     <details className="mobile-menu"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">
       <Link className="mobile-home-link" to="/" aria-current={currentPath === "/" ? "page" : undefined}>Home</Link>
       {navigation.map((group) => <div className="mobile-nav-group" key={group.label}><p>{group.label}</p>{group.label === 'Dry Lab' ? <>
-        <Link to="/dry-lab" aria-current={currentPath === '/dry-lab' ? "page" : undefined}>Overview</Link>
+        <Link to="/model" aria-current={currentPath === '/model' ? "page" : undefined}>Overview</Link>
         {dryLabMenuGroups.map((section) => <section className="mobile-nav-subgroup" key={section.label}><p>{section.label}</p>{section.items.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? "page" : undefined}>{label}</Link>)}</section>)}
       </> : group.label === 'Human Practices' ? <>
         <details className="mobile-nav-nested"><summary>Integrated Human Practices <span aria-hidden="true">⌄</span></summary><div>{ihpNavigation.map(([label, href]) => <Link key={href} to={href} aria-current={currentPath === href ? 'page' : undefined}>{label}</Link>)}</div></details>
@@ -198,7 +198,7 @@ const TOC_CHAPTERS: Record<string, TocChapterDefinition[]> = {
     { title: "Branch Dynamics", start: 6, end: 8 },
     { title: "Conclusions", start: 9, end: 9 },
   ],
-  model: [
+  "mathematical-modeling": [
     { title: "Model Construction", start: 0, end: 2 },
     { title: "Simulation & Results", start: 3, end: 4 },
     { title: "Sensitivity & Validation", start: 5, end: 6 },
@@ -391,7 +391,7 @@ function WikiMap() {
     <header className="map-heading"><div><p className="page-eyebrow">DUNATERP / PROJECT INDEX</p><h1>Explore the<br /><em>whole spectrum.</em></h1></div><p className="map-intro">Follow the science, explore the evidence, and meet the people behind DunaTerp. Every chapter starts here.</p></header>
     <div className="map-grid">{archiveNavigation.map((group, index) => <section id={`map-group-${index + 1}`} key={group.label} className={`map-group map-group--${index}`}><header><span className="map-number">0{index + 1}</span></header><h2>{group.label}</h2><p className="map-description">{groupDescriptions[index]}</p><div className="map-links">{group.items.map(([label, href]) => <Link key={href} to={href}><span>{label}</span><b aria-hidden="true">↗</b></Link>)}</div></section>)}</div>
     <div className="map-return"><span>Start with the story.</span><Link to="/">Return to the salt route <span aria-hidden="true">↗</span></Link></div>
-    <nav className="related-wiki-pages" aria-label="Project-wide pages"><Link to="/dry-lab">Modeling overview</Link><Link to="/alternative-platform">Alternative Platform</Link></nav>
+    <nav className="related-wiki-pages" aria-label="Project-wide pages"><Link to="/model">Modeling overview</Link><Link to="/alternative-platform">Alternative Platform</Link></nav>
   </main><Footer /></>;
 }
 
@@ -430,11 +430,11 @@ function Article({ slug }: { slug: string }) {
     "article-page",
     isWetLab ? ' article-page--wet-lab' : '',
     isWetLab || group?.label === 'Lab' ? ' article-page--light' : '',
-    group?.label === 'Dry Lab' || slug === 'dry-lab' ? ' article-page--dry-lab' : '',
+    group?.label === 'Dry Lab' || slug === 'model' ? ' article-page--dry-lab' : '',
     group?.label === 'Human Practices' ? ' article-page--human-practices' : '',
     slug === 'collaboration' ? ' article-page--collaboration' : '',
     isModeling ? ' article-page--modeling' : '',
-    slug === 'dry-lab' ? ' article-page--overview' : '',
+    slug === 'model' ? ' article-page--overview' : '',
     slug === 'hardware' ? ' article-page--hardware' : '',
     slug === 'safety-and-security' ? ' article-page--safety' : '',
     slug === 'experiments' ? ' article-page--experiments' : '',
@@ -469,7 +469,7 @@ function ScrollAndTitle() {
     const leafTitle = navigation
       .flatMap((group) => group.items)
       .find(([, href]) => href === route)?.[0]
-      ?? (slug === "dry-lab" ? "Dry Lab" : slug === "wiki-map" ? "Wiki Map" : slug ? pages[slug]?.eyebrow : "DunaTerp");
+      ?? (slug === "model" ? "Dry Lab" : slug === "wiki-map" ? "Wiki Map" : slug ? pages[slug]?.eyebrow : "DunaTerp");
     document.title = `SCU-China 2026 | ${leafTitle || "DunaTerp"}`;
     const frame = requestAnimationFrame(() => {
       if (hash) {
@@ -491,12 +491,17 @@ function ScrollAndTitle() {
   return null;
 }
 
+function LegacyPageRedirect({ to }: { to: string }) {
+  const { search, hash } = useLocation();
+  return <Navigate to={{ pathname: to, search, hash }} replace />;
+}
+
 export default function App() {
   const { pathname, search } = useLocation();
   return <><Link className="skip-link" to={{ pathname, search, hash: "#main-content" }}>Skip to content</Link><ScrollAndTitle /><Routes>
     <Route path="/" element={<><Suspense fallback={<BootLoadingScreen />}><PixelWorld Header={Header} /></Suspense><Footer /></>} />
     <Route path="/wiki-map" element={<WikiMap />} />
-    <Route path="/stakeholder-analysis" element={<Navigate to="/integrated-human-practices/stakeholder-analysis" replace />} />
+    {Object.entries(pageRedirects).map(([from, to]) => <Route key={from} path={from} element={<LegacyPageRedirect to={to} />} />)}
     {pageOrder.map((slug) => <Route key={slug} path={`/${slug}`} element={<Article slug={slug} />} />)}
     <Route path="*" element={<Navigate to="/wiki-map" replace />} />
   </Routes></>;

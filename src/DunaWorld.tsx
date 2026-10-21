@@ -61,7 +61,7 @@ const chapters = [
     kicker: "MATHEMATICAL MODEL",
     title: "Find where control moves",
     body: "A five-state model connects regulator abundance and promoter occupancy to LCYB transcription, enzyme abundance and the β-carotene pool. Quantitative prediction begins after the listed kinetic inputs are measured.",
-    link: "/model",
+    link: "/mathematical-modeling",
     c: "#f8cb54",
   },
   {

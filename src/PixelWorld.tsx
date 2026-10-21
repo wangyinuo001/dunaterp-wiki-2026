@@ -36,9 +36,9 @@ const ROUTE_EGGS = [
   {
     key: "model",
     chapter: 3,
-    label: "MODEL",
+    label: "数学建模",
     hook: "What actually moves the flux?",
-    href: "/model",
+    href: "/mathematical-modeling",
     accent: "#c4a8ff",
     x: "12%",
     y: "36%",

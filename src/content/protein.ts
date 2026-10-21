@@ -104,7 +104,7 @@ export const protein: WikiPage = {
     { title: 'Two molecular levers, one LCYB control point', body: '', blocks: [
       p('The LCYB and CPP2146 analyses describe two parts of one control system. LCYB variants act at the catalytic layer by changing the enzyme that converts lycopene toward β-carotene. CPP2146 and its candidate DNA motif act at the regulatory layer by changing the promoter input that determines how much LCYB transcript and active enzyme can accumulate.'),
       p('These outputs enter the mathematical model through different parameters but converge on the same LCYB node. Promoter affinity and regulatory input shape occupancy and transcription, while LCYB abundance and catalytic capacity shape lycopene conversion. Modeling them together shows whether a proposed molecular change survives the complete path from DNA recognition to β-carotene supply.'),
-      { kind: 'links', links: [{ label: 'Continue to Mathematical Modeling', href: '/model' }] },
+      { kind: 'links', links: [{ label: 'Continue to Mathematical Modeling', href: '/mathematical-modeling' }] },
     ] },
   ],
 };

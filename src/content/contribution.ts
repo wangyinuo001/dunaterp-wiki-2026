@@ -37,8 +37,8 @@ export const contribution: WikiPage = {
       'We develop a quantitative assessment framework for salt-responsive containment, distinguishing growth inhibition, conditional killing and cell washout. Sensitivity analysis identifies how response delay, effective mortality and environmental salinity affect predicted containment performance.',
       'We connect optical transport, cultivation dynamics, light–dark cycling and energy analysis with photobioreactor design. This framework translates biological requirements into reactor geometry and operating conditions, providing a reference for evaluating photosynthetic cultivation systems.',
     ], [
-      ['Dry Lab', '/dry-lab'],
-      ['Mathematical Modeling', '/model'],
+      ['Dry Lab', '/model'],
+      ['Mathematical Modeling', '/mathematical-modeling'],
       ['Hardware', '/hardware'],
     ]),
     section('Human Practices', [

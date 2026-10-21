@@ -56,6 +56,8 @@ The GitHub workflow supplies its own base path and creates an SPA fallback for d
 
 See `PIXEL-WORLD.md` for the homepage design, the rules the pixel art depends on, and what still needs browser acceptance.
 
+The standard `/model` page is the modeling overview, with the detailed 数学建模 page at `/mathematical-modeling`. Project Improvement is available at the standard `/human-practices` URL. Legacy `/dry-lab` and `/project-improvement` links redirect while preserving query strings and section anchors.
+
 The immersive homepage is optional navigation. All judging-relevant pages remain directly reachable at predictable routes such as `/contribution`, `/engineering`, `/human-practices`, `/model`, `/alternative-platform`, `/hardware`, and `/safety-and-security`.
 
 

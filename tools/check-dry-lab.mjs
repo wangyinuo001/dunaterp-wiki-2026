@@ -9,13 +9,15 @@ import { MemoryRouter } from 'react-router-dom';
 
 const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
 try {
-  const { pages, navigation, pageOrder } = await server.ssrLoadModule('/src/site-data.ts');
+  const { pages, navigation, pageOrder, pageRedirects } = await server.ssrLoadModule('/src/site-data.ts');
+  const { dryLabIndex, modeling } = await server.ssrLoadModule('/src/content/dry-lab.ts');
+  const { ihpNavigation, ihpProjectImprovement } = await server.ssrLoadModule('/src/content/integrated-human-practices.ts');
   const { ArticleBlocks } = await server.ssrLoadModule('/src/ArticleBlocks.tsx');
   const items = navigation.find(g => g.label === 'Dry Lab').items;
   assert.deepEqual(items, [
-    ['Overview', '/dry-lab'],
+    ['Overview', '/model'],
     ['Transcriptomics', '/transcriptomics'],
-    ['Mathematical Modeling', '/model'],
+    ['数学建模', '/mathematical-modeling'],
     ['Metabolomics', '/metabolomics'],
     ['Protein', '/protein'],
     ['Safety', '/safety-and-security'],
@@ -23,6 +25,17 @@ try {
     ['Hardware Design', '/hardware-design'],
   ]);
   assert.equal(new Set(pageOrder).size, pageOrder.length);
+  assert.equal(pages.model, dryLabIndex);
+  assert.equal(pages['mathematical-modeling'], modeling);
+  assert.equal(pages['mathematical-modeling'].title, '数学建模');
+  assert.equal(pages['human-practices'], ihpProjectImprovement);
+  assert(ihpNavigation.some(([, href]) => href === '/human-practices'));
+  for (const [legacy, canonical] of Object.entries(pageRedirects)) {
+    assert(pages[canonical.slice(1)], `Missing redirect target: ${canonical}`);
+    assert(!pages[legacy.slice(1)], `Legacy route should redirect: ${legacy}`);
+    assert(!pageOrder.includes(legacy.slice(1)), `Duplicate legacy index entry: ${legacy}`);
+  }
+  console.log('Standard model and human-practices routes, mathematical-modeling content, and legacy redirect targets pass.');
   for (const [, href] of items) assert(pages[href.slice(1)], `Missing route ${href}`);
   for (const slug of ['metabolomics','protein','hardware','hardware-design','safety-and-security']) {
     assert(pages[slug].sections.length > 0, `Missing content: ${slug}`);
@@ -50,9 +63,10 @@ try {
   assert(examplesTable.rows.some(row => row[0].includes('Cluster-5009.34218 · LCYB')) && examplesTable.rows.some(row => row[0].includes('Cluster-5009.36796 · LCYB')), 'Both LCYB copies must remain distinct');
   let figures = 0;
   let tables = 0;
-  for (const slug of ['dry-lab','transcriptomics','model','protein','safety-and-security']) {
+  for (const slug of ['model','transcriptomics','mathematical-modeling','protein','safety-and-security']) {
     const page = pages[slug];
-    assert(!/[\u3400-\u9fff]/u.test(JSON.stringify(page)), `Non-English content: ${slug}`);
+    const { title: _title, eyebrow: _eyebrow, ...englishContent } = page;
+    assert(!/[\u3400-\u9fff]/u.test(JSON.stringify(englishContent)), `Non-English content: ${slug}`);
     for (const section of page.sections) {
       for (const block of section.blocks ?? []) {
         const figureBlocks = block.kind === 'figure' ? [block] : block.kind === 'figure-row' || block.kind === 'figure-grid' ? block.figures : [];
@@ -95,13 +109,13 @@ try {
   for (const obsolete of ['PARAMETERS','FIT','ENDPOINTS','ELASTICITY','ROBUSTNESS','BOUNDS']) {
     assert(!data[obsolete], `Obsolete model table remains: ${obsolete}`);
   }
-  const ode = pages.model.sections.flatMap(s=>s.blocks ?? []).find(b=>b.kind==='equation' && b.label==='Regulatory LCYB model');
+  const ode = pages['mathematical-modeling'].sections.flatMap(s=>s.blocks ?? []).find(b=>b.kind==='equation' && b.label==='Regulatory LCYB model');
   assert.equal((ode.text.match(/\\frac\{d/g) ?? []).length,5);
-  assert.deepEqual(pages.model.sections.map(section => section.title), [
+  assert.deepEqual(pages['mathematical-modeling'].sections.map(section => section.title), [
     'Biological question and model scope','Promoter-to-enzyme transfer','Five-state dynamic model',
     'Parameterisation and numerical method','Scenario results','Sensitivity and downstream handoff','Conclusions and experimental validation',
   ]);
-  const modelText = JSON.stringify(pages.model);
+  const modelText = JSON.stringify(pages['mathematical-modeling']);
   assert(modelText.includes('fourth-order Runge–Kutta') && modelText.includes('Δt = 0.01 d') && modelText.includes('±10%'), 'Model solver and sensitivity procedure must be explicit');
   assert(modelText.includes('illustrative parameter set') && modelText.includes('project-specific calibration'), 'Model scenarios must lead into project-specific calibration');
   assert(modelText.includes('Scenario diagnostics and numerical reliability') && modelText.includes('Panel B measures') && modelText.includes('Panel C tests'), 'Fig. 1 must report endpoint, response-time and convergence diagnostics');
@@ -112,8 +126,8 @@ try {
   assert.equal(modelScenarioData.solver.method, 'fixed-step classical RK4');
   assert.equal(modelScenarioData.solver.step_days, 0.01);
   assert.equal(modelScenarioData.sensitivity.length, 12);
-  assert(!/day-7|2\.0988|10\.9518|Car09|nine-state|FBA/i.test(JSON.stringify(pages.model)), 'Obsolete quantitative claim remains');
-  for (const slug of ['transcriptomics','model','protein']) {
+  assert(!/day-7|2\.0988|10\.9518|Car09|nine-state|FBA/i.test(JSON.stringify(pages['mathematical-modeling'])), 'Obsolete quantitative claim remains');
+  for (const slug of ['transcriptomics','mathematical-modeling','protein']) {
     const captions = pages[slug].sections.flatMap(s => s.blocks ?? []).flatMap(block => block.kind === 'figure' ? [block.caption] : block.kind === 'figure-row' || block.kind === 'figure-grid' ? block.figures.map(figure => figure.caption) : []);
     captions.forEach((caption, i) => assert(caption.startsWith('Fig. ' + (i + 1) + ' '), 'Figure numbering in ' + slug + ': ' + caption));
   }
@@ -128,7 +142,7 @@ try {
   }
   assert.equal(figures,18);
   const workflow = fs.readFileSync('.github/workflows/pages.yml','utf8');
-  for(const slug of ['dry-lab','transcriptomics','metabolomics','protein','model','hardware','hardware-design']) assert(workflow.includes(`            ${slug} \\`));
+  for(const slug of ['dry-lab','model','mathematical-modeling','human-practices','project-improvement','transcriptomics','metabolomics','protein','hardware','hardware-design']) assert(workflow.includes(`            ${slug} \\`));
   console.log(`Dry Lab checks passed: complete eight-entry navigation, populated protein and safety pages, ${figures} figures, ${tables} tables, three explicit transcriptomics contrasts and 5 core ODEs.`);
 } finally {
   await server.close();
